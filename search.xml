@@ -32,4 +32,177 @@
     <url>/2023/03/14/demo2/</url>
     <content><![CDATA[]]></content>
   </entry>
+  <entry>
+    <title>Calculus Note</title>
+    <url>/2023/03/15/Calculus/</url>
+    <content><![CDATA[<h2 id="Multivariate-Function-Differential-Calculus"><a href="#Multivariate-Function-Differential-Calculus" class="headerlink" title="$Multivariate Function Differential Calculus$"></a>$Multivariate Function Differential Calculus$</h2><h3 id="5"><a href="#5" class="headerlink" title="$5.$"></a>$5.$</h3><h4 id="Definitions"><a href="#Definitions" class="headerlink" title="$Definitions$"></a>$Definitions$</h4><ul>
+<li><strong>距离</strong>：平方和。</li>
+<li><strong>邻域</strong>：设$P_0\in \mathbb{R}^n, \delta&gt;0$,点集 $N_\delta\left(P_0\right)&#x3D;\left{P \mid P \in \mathbb{R}^n, \rho\left(P, P_0\right)&lt;\delta\right}$称为点$P_0$的$\delta$邻域,简称邻域.<br><strong>去心邻域</strong>：$\stackrel{\circ}{N}_\delta\left(P_0\right)&#x3D;N_\delta\left(P_0\right) \backslash\left{P_0\right}$</li>
+<li><strong>内点</strong>：$P_0\in G$,且存在$\delta&gt;0$,使得$N_\delta\left(P_0\right) \subset G$</li>
+<li><strong>外点</strong>：若$P_0\notin G$,且存在$\delta&gt;0$,使得$N_\delta\left(P_0\right) \cap G&#x3D;\varnothing$</li>
+<li><strong>边界点</strong>：若$P_0\in \mathbb{R}^n$,且对任意的$\delta&gt;0, N_\delta\left(P_0\right)$中既有点属于$G$,又有点不属于$G$</li>
+<li><strong>聚点</strong>：若$P_0\in \mathbb{R}^n$,且对任意的$\delta&gt;0, \stackrel{\circ}{N}_\delta\left(P_0\right)$中总有点属于$G$<blockquote>
+<p>聚点不一定属于$G$</p>
+</blockquote>
+</li>
+<li><strong>内部</strong>：$G$的内点的集合,记为$G^{\circ}$.</li>
+<li><strong>边界</strong>：$G$的全部边界点的集合,记为$\partial G$.<blockquote>
+<p>有理数集的边界点是全体实数。</p>
+</blockquote>
+</li>
+<li><strong>开集</strong>：若$G$的所有点都是$G$的内点,即$G&#x3D;G^{\circ}$</li>
+<li><strong>闭集</strong>：若$G$关于全集$\mathbb{R}^n$的补集(即$\left.\mathbb{R}^n \backslash G\right)$为开集</li>
+<li><strong>连通集</strong>：如果点集$G$内任意两点,都可用曲线连接起来,且该曲线上的点都属于$G$</li>
+<li><strong>开区域</strong>：若$G$是开集,又是连通集</li>
+<li>闭区域：若存在非空开区域$A$,使得$G&#x3D;A \cup \partial A$</li>
+<li><strong>区域</strong>：开区域与闭区域统称区域.<ul>
+<li>空集$\varnothing$既是开集又是闭集</li>
+<li>全空间$\mathbb{R}^n$既是开集又是闭集</li>
+<li>$\mathbb{R}^n$的任何非空真子集都不可能既是开集又是闭集.</li>
+</ul>
+</li>
+<li><strong>有界集</strong>：设$G \subseteq \mathbb{R}^n, P_0\in \mathbb{R}^n$.存在$k \in \mathbb{R}$,使得$G \subset N_k\left(P_0\right)$</li>
+<li><strong>无界集</strong>：不是有界集</li>
+<li><strong>直径</strong>：距离最远的两个点距离 $d(G)&#x3D;\sup \left{\rho\left(P_1, P_2\right) \mid \forall P_1, P_2\in G\right}$（对于开集呢？）</li>
+<li><strong>多元函数</strong>，<strong>自变量</strong>，<strong>因变量</strong>，<strong>定义域</strong>（$D(f)$），<strong>值域</strong>，<strong>多元隐函数</strong>，<strong>多元复合函数</strong>，<strong>多元初等函数</strong>，<strong>多元有界函数</strong>……<blockquote>
+<p>根据定义，一个点集的孤立点是属于该集合的，但是它存在一个去心邻域，其内不含这个集合的点。你可以在二维平面上想象一个大大的圆，它外面还有一个离得很远点，它们共同组成了这个集合。对于外面的那个点来说，它也是这个集合的一部分，但是因为它脱离了组织，它的去心邻域很大一部分都不属于这个集合，所以它确确实实满足一个孤立点的条件。可它是边界点吗？是的！它的任意邻域，注意，是邻域满足既含点集中的内点，也含点集的外点。如果它的邻域不太大，没有包到隔壁那个圆的话，它的内点就只有它本身一个，但这也是内点不是？！所以这种情况下的孤立点属于边界点。其实根据定义，你能发现，情况都是类似的。只要是孤立点，必然自己是组织的一分子，周围完全和组织割裂，但因为它是组织的一分子，它也能代表组织，成为边界呀。同样我们把聚点的定义了解下，聚点就是说这一点的任意去心邻域都有属于该集合的点，也就是说除了该点(这点不一定是自己人），还要有自己人，这才能叫“聚”嘛！单打独斗的是孤立点，拉帮结派的才叫聚点。所以说孤立点不是聚点。其实就是这么回事。———知乎<br>边界点一定不是内点，内点一定是聚点，聚点一定不是孤立点，孤立点一定是边界点。</p>
+</blockquote>
+</li>
+<li><strong>二重极限</strong>：$\lim_{\substack{x&#x3D;x_0}} {f(x, y)}&#x3D;A \Longleftrightarrow \forall \varepsilon&gt;0, \exists \delta&gt;0$,当$0&lt;\sqrt{\left(x-x_0\right)^2+\left(y-y_0\right)^2}&lt;\delta$时,恒有$|{f(x, y)}-A|&lt;\varepsilon$.<blockquote>
+<p>要求是聚点，否则无法趋近。</p>
+</blockquote>
+</li>
+<li><strong>累次极限</strong>：固定另一个求一个极限，再求另一个。<br>$\boldsymbol{Caution}$：<ul>
+<li>二重极限和累次极限不是相同概念, 二重极限存在$\nLeftrightarrow$两个累次极限存在（且相等）；</li>
+<li>累次极限不能调换次序计算。两个累次极限不一定相等，也不一定都存在。</li>
+<li>二重极限和累次极限都存在时一定相等</li>
+</ul>
+</li>
+<li><strong>连续</strong>：设$G \subseteq \mathbb{R}^n$,函数$f$在$G$上有定义, $P_0$是$G$的聚点且$P_0\in G$.$\lim_{P \rightarrow P_0} {f(P)}&#x3D;f\left(P_0\right)$  否则在$P_0$<strong>间断</strong></li>
+<li><strong>增量</strong>：$\Delta x&#x3D;x-x_0, \quad \Delta y&#x3D;y-y_0$, </li>
+<li><strong>偏导数</strong>：$\lim_{\Delta x \rightarrow0} \frac{f\left(x_0+\Delta x, y_0\right)-f\left(x_0, y_0\right)}{\Delta x}$：$f_x^{\prime}\left(x_0, y_0\right), f_1^{\prime}\left(x_0, y_0\right), \quad \frac{\partial f}{\partial x}\left(x_0, y_0\right),\left.\quad \frac{\partial f}{\partial x}\right|<em>{\left(x_0, y_0\right)}, \quad \frac{\partial z}{\partial x}\left(x_0, y_0\right),\left.\quad \frac{\partial z}{\partial x}\right|</em>{\left(x_0, y_0\right)}$<br><strong>可偏导</strong>：<br>二元函数${f(x, y)}$在点$\left(x_0, y_0\right)$处对$x$及对$y$的两个偏导数都存在<br>二元函数${f(x, y)}$在开区域$G$中每一点皆可偏导<br><code>几何意义</code>：<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://s2.loli.net/2023/01/17/eMGaHE3zkhBF6ul.png"
+                      alt="图片.png"
+                ><blockquote>
+<p>对于二元函数$z&#x3D;{f(x, y)}$而言,在一点$\left(x_0, y_0\right)$处可偏导,却不一定在该点连续.</p>
+</blockquote>
+<strong>偏导有界则连续</strong>：设函数$z&#x3D;{f(x, y)}$在$P_0\left(x_0, y_0\right)$的某邻域$N_\delta\left(P_0\right)$内可偏导,且$f_x^{\prime}(x, y)$, $f_\nu^{\prime}(x, y)$在$N_\delta\left(P_0\right)$内有界,则函数${f(x, y)}$在$P_0$处连续.</li>
+<li><strong>二阶偏导数</strong>：求偏导再求偏导<br>$\frac{\partial}{\partial x} f_x^{\prime}(x, y), \quad \frac{\partial}{\partial y} f_x^{\prime}(x, y), \quad \frac{\partial}{\partial x} f_y^{\prime}(x, y), \quad \frac{\partial}{\partial y} f_y^{\prime}(x, y)$<br>$\begin{gathered}f_{x x}^{\prime \prime}(x, y), \quad f_{x y}^{\prime \prime}(x, y), \quad f_{y x}^{\prime \prime}(x, y), \quad f_{y y}^{\prime \prime}(x, y), \ \frac{\partial^2f}{\partial x^2}, \quad \frac{\partial^2f}{\partial x \partial y}, \quad \frac{\partial^2f}{\partial y \partial x}, \frac{\partial^2f}{\partial y^2} \ f_{11}^{\prime \prime}, \quad f_{12}^{\prime \prime}, \quad f_{21}^{\prime \prime}, \quad f_{22}^{\prime \prime} .\end{gathered}$<br>$z_{x x}^{\prime \prime}, \frac{\partial^2z}{\partial x^2},z_{11}^{\prime \prime}$.</li>
+<li><strong>高阶偏导数</strong>：显然，略。</li>
+<li><strong>全增量</strong>：$\Delta z&#x3D;{f(x, y)}-f\left(x_0, y_0\right)&#x3D;f\left(x_0+\Delta x, y_0+\Delta y\right)-f\left(x_0, y_0\right)$ </li>
+<li><strong>全微分</strong>：$\mathrm{d} z&#x3D;A \Delta x+B \Delta y$<blockquote>
+<p>均可推广至三元及以上</p>
+</blockquote>
+</li>
+<li><strong>极值，极值点</strong>：类似一元。</li>
+<li><strong>驻点</strong>：偏导数为零的点。</li>
+<li><strong>条件极值</strong>：在约束条件下的极值。</li>
+<li><strong>方向导数</strong>：</li>
+</ul>
+<h4 id="Theorem"><a href="#Theorem" class="headerlink" title="$Theorem$"></a>$Theorem$</h4><ul>
+<li><p><strong>极限四则运算</strong>，<strong>无穷小运算法则</strong>，<strong>极限唯一性</strong>，<strong>局部有界性</strong>，<strong>夹逼准则</strong>……均适用</p>
+</li>
+<li><p>有限个多元连续函数的和、差、积、商(分母不为零)仍是连续函数</p>
+</li>
+<li><p>多元连续函数的复合函数仍是连续函数</p>
+</li>
+<li><p>多元初等函数在其定义域上每一点连续</p>
+</li>
+<li><p><strong>零点定理</strong>：设$G \subseteq \mathbb{R}^n$为有界闭区域,函数$f$在$G$上连续,若$P_1, P_2\in G$,且$f\left(P_1\right) f\left(P_2\right)&lt;0,$则存在$P_0\in G$,使得$f\left(P_0\right)&#x3D;0$.</p>
+</li>
+<li><p><strong>介值定理</strong>：设$G \subseteq \mathbb{R}^n$为有界闭区域,函数$f$在$G$上连续,$P_1, P_2\in G$,且$f\left(P_1\right) \neq f\left(P_2\right)$.设$\mu$为满足不等式<br>$\left.f\left(P_1\right)&lt;\mu&lt;f\left(P_2\right) \quad \text { (或} f\left(P_2\right)&lt;\mu&lt;f\left(P_1\right)\right)<br>$的任意实数,则存在$P_0\in G$,使得$f\left(P_0\right)&#x3D;\mu$.</p>
+</li>
+<li><p><strong>有界性定理</strong>：设$G \subseteq \mathbb{R}^n$为有界闭区域,函数$f$在$G$上连续,则函数$f$在$G$上有界.</p>
+</li>
+<li><p><strong>最值定理</strong>：设$G \subseteq \mathbb{R}^n$为有界闭区域,函数$f$在$G$上连续,则函数$f$在$G$上取得最大值和最小值.</p>
+</li>
+<li><p><strong>与求导次序无关的充分条件</strong>：若二阶混合偏导数$f_{x y}^{\prime \prime}(x, y)$与$f_{y x}^{\prime \prime}(x, y)$在$(x, y)$处皆连续,则$f_{x y}^{\prime \prime}(x, y)&#x3D;$ $f_{y x}^{\prime \prime}(x, y)$,即混合偏导数与求导的次序无关.</p>
+</li>
+<li><p><strong>可微则连续，可微则可偏导</strong>$（\mathrm{d} z&#x3D;\frac{\partial z}{\partial x} \mathrm{<del>d} x+\frac{\partial z}{\partial y} \mathrm{</del>d} y）$。（均不能逆推）<br><strong>可偏导且偏导数均连续，则可微</strong>。<br><strong>连续可微</strong>：略。</p>
+<img src=https://s2.loli.net/2023/02/27/YsF4vK5yPp9ZToe.png width="200">
+> 均可推广至三元及以上</li>
+<li><p><strong>微分法则</strong>：跟一元完全一样。</p>
+</li>
+<li><p><strong>链式法则</strong>：（仅给出三种情况）</p>
+<ol>
+<li>（外层可微，内层可导）$\frac{\mathrm{d} z}{\mathrm{<del>d} x}&#x3D;\frac{\partial z}{\partial u} \frac{\mathrm{d} u}{\mathrm{</del>d} x}+\frac{\partial z}{\partial v} \frac{\mathrm{d} v}{\mathrm{~d} x}$. <img src=https://s2.loli.net/2023/03/02/YCXguQ3xj746HKB.png width=120></li>
+<li>（外层可微，内层可偏导）$\begin{aligned} &amp; \frac{\partial z}{\partial x}&#x3D;\frac{\partial z}{\partial u} \frac{\partial u}{\partial x}+\frac{\partial z}{\partial v} \frac{\partial v}{\partial x} \ &amp; \frac{\partial z}{\partial y}&#x3D;\frac{\partial z}{\partial u} \frac{\partial u}{\partial y}+\frac{\partial z}{\partial v} \frac{\partial v}{\partial y}\end{aligned}$ <img src=https://s2.loli.net/2023/03/02/eYX1Up7v4cAVHBd.png width=120></li>
+<li>(u,v可偏导，外层四元可微) $\begin{gathered}\frac{\partial z}{\partial x}&#x3D;\frac{\partial f}{\partial x}+\frac{\partial f}{\partial u} \frac{\partial u}{\partial x}+\frac{\partial f}{\partial v} \frac{\partial v}{\partial x}, \ \frac{\partial z}{\partial y}&#x3D;\frac{\partial f}{\partial y}+\frac{\partial f}{\partial u} \frac{\partial u}{\partial y}+\frac{\partial f}{\partial v} \frac{\partial v}{\partial y} .\end{gathered}$<blockquote>
+<p>注意$f$不能写成$z$</p>
+</blockquote>
+</li>
+</ol>
+<img src=https://s2.loli.net/2023/03/02/t5QcHkDpeYvNgL1.png width=120>
+</li>
+<li><p><strong>一阶全微分的形式不变性</strong>：无论$u, v$是自变量还是中间变量,函数$z&#x3D;{f(u, v)}$的一阶全微分形式是一样的.</p>
+</li>
+<li><p><strong>隐函数的偏导数</strong>：</p>
+<ul>
+<li><strong>存在定理1</strong>：F该点为0，邻域连续可微，对y不为0.<br>唯一 $y&#x3D;f(x)$,$f^{\prime}(x)&#x3D;-\frac{F_x^{\prime}(x, y)}{F_y^{\prime}(x, y)}$</li>
+<li><strong>存在定理2</strong>：F该点为0，邻域连续可微，对z不为0.<br>唯一 $z&#x3D;f(x,y)$,$\frac{\partial f}{\partial x}&#x3D;-\frac{F_x^{\prime}(x, y, z)}{F_z^{\prime}(x, y, z)}, \quad \frac{\partial f}{\partial y}&#x3D;-\frac{F_y^{\prime}(x, y, z)}{F_z^{\prime}(x, y, z)}$</li>
+<li><strong>存在定理3</strong>：F,H该点为0，邻域连续可微<br>存在唯一$u&#x3D;(x,y),v&#x3D;(x,y)$，<br>$\begin{aligned} &amp; \frac{\partial u}{\partial x}&#x3D;-\frac{\frac{D(F, H)}{D(x, v)}}{\frac{D(F, H)}{D(u, v)}}, \quad \frac{\partial u}{\partial y}&#x3D;-\frac{\frac{D(F, H)}{D(y, v)}}{\frac{D(F, H)}{D(u, v)}} \ &amp; \frac{\partial v}{\partial x}&#x3D;-\frac{\frac{D(F, H)}{D(u, x)}}{\frac{D(F, H)}{D(u, v)}}, \quad \frac{\partial v}{\partial y}&#x3D;-\frac{\frac{D(F, H)}{D(u, y)}}{\frac{D(F, H)}{D(u, v)}} . \ &amp; \end{aligned}$</li>
+</ul>
+</li>
+<li><p>缺：多元函数洛必达法则</p>
+</li>
+<li><p><strong>空间曲线的</strong></p>
+<ul>
+<li>参数式<br><strong>切线</strong>：$\frac{x-\varphi\left(t_0\right)}{\varphi^{\prime}\left(t_0\right)}&#x3D;\frac{y-\psi\left(t_0\right)}{\psi^{\prime}\left(t_0\right)}&#x3D;\frac{z-\omega\left(t_0\right)}{\omega^{\prime}\left(t_0\right)}$.<br><strong>法平面</strong>：$\varphi^{\prime}\left(t_0\right)\left(x-\varphi\left(t_0\right)\right)+\psi^{\prime}\left(t_0\right)\left(y-\psi\left(t_0\right)\right)+\omega^{\prime}\left(t_0\right)\left(z-\omega\left(t_0\right)\right)&#x3D;0$.</li>
+<li>一般式<br><strong>切线</strong>：$\frac{x-x_0}{\left.\frac{D(F, H)}{D(y, z)}\right|<em>{P_0}}&#x3D;\frac{y-y_0}{\left.\frac{D(F, H)}{D(z, x)}\right|</em>{P_0}}&#x3D;\frac{z-z_0}{\left.\frac{D(F, H)}{D(x, y)}\right|_{P_0}}$<br><strong>法平面</strong>：$\left|\begin{array}{ccc}x-x_0&amp; y-y_0&amp; z-z_0\ F_x^{\prime}\left(P_0\right) &amp; F_y^{\prime}\left(P_0\right) &amp; F_z^{\prime}\left(P_0\right) \ H_x^{\prime}\left(P_0\right) &amp; H_y^{\prime}\left(P_0\right) &amp; H_z^{\prime}\left(P_0\right)\end{array}\right|&#x3D;0$<blockquote>
+<p>备注：推出过程中涉及的 $n_1&#x3D;\left(F_x^{\prime}, F_y^{\prime}, F_z^{\prime}\right), \quad n_2&#x3D;\left(H_x^{\prime}, H_y^{\prime}, H_z^{\prime}\right)$ 其实是两个曲面在该点处的法向量。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p><strong>空间曲面的</strong></p>
+<ul>
+<li>取一条过该点曲线：<br><strong>切平面</strong>：$F_x^{\prime}\left(P_0\right)\left(x-x_0\right)+F_y^{\prime}\left(P_0\right)\left(y-y_0\right)+F_z^{\prime}\left(P_0\right)\left(z-z_0\right)&#x3D;0$.<br><strong>法线</strong>：$\frac{x-x_0}{F_x^{\prime}\left(P_0\right)}&#x3D;\frac{y-y_0}{F_y^{\prime}\left(P_0\right)}&#x3D;\frac{z-z_0}{F_z^{\prime}\left(P_0\right)}$</li>
+<li>取曲面参数式：<br><strong>切平面</strong>：$\left|\begin{array}{ccc}x-x_0&amp; y-y_0&amp; z-z_0\ x_u^{\prime}\left(u_0, v_0\right) &amp; y_u^{\prime}\left(u_0, v_0\right) &amp; z_u^{\prime}\left(u_0, v_0\right) \ x_v^{\prime}\left(u_0, v_0\right) &amp; y_v^{\prime}\left(u_0, v_0\right) &amp; z_v^{\prime}\left(u_0, v_0\right)\end{array}\right|&#x3D;0$<br><strong>切线</strong>：$\frac{x-x_0}{A\left(u_0, v_0\right)}&#x3D;\frac{y-y_0}{B\left(u_0, v_0\right)}&#x3D;\frac{z-z_0}{C\left(u_0, v_0\right)}$.<br>（$\boldsymbol{r}_u^{\prime} \times \boldsymbol{r}_v^{\prime}&#x3D;(A, B, C)&#x3D;\left(\frac{D(y, z)}{D(u, v)}, \frac{D(z, x)}{D(u, v)}, \frac{D(x, y)}{D(u, v)}\right)$）</li>
+</ul>
+</li>
+<li><p><strong>极值的必要条件</strong>：偏导数为0。<br>（可疑极值点：驻点，不可偏导的点）</p>
+</li>
+<li><p><strong>极值判别法1</strong>：去心邻域任取点，$\mu(x, y)&#x3D;f_x^{\prime}(x, y)\left(x-x_0\right)+f_y^{\prime}(x, y)\left(y-y_0\right)&gt;0$极小值$&lt;0$极大值。</p>
+</li>
+<li><p><strong>极值判别法2</strong>：在该点处偏导数都等于零时：<br>$A&#x3D;f_{x x}^{\prime \prime}\left(x_0, y_0\right), \quad B&#x3D;f_{x y}^{\prime \prime}\left(x_0, y_0\right), \quad C&#x3D;f_{y y}^{\prime \prime}\left(x_0, y_0\right)$</p>
+<ul>
+<li>若$B^2-A C&lt;0, A&gt;0$,则$f\left(x_0, y_0\right)$为极小值;</li>
+<li>若$B^2-A C&lt;0, A&lt;0$,则$f\left(x_0, y_0\right)$为极大值;</li>
+<li>若$B^2-A C&gt;0$,则$f\left(x_0, y_0\right)$不是极值.<blockquote>
+<p>如果等于0，则具体情况具体分析，如判断邻域里必有大于和小于的点。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>【最值那块还少点东西】</p>
+</li>
+<li><p><strong>拉格朗日乘数法</strong>：约束：$\varphi(x, y, z)&#x3D;0$<br>${F(x, y, z, \lambda)}&#x3D;{f(x, y, z)}+\lambda \varphi(x, y, z)$<br>可疑极值点满足：<br>$\left{\begin{array}{l}<br>F_x^{\prime}&#x3D;f_x^{\prime}(x, y, z)+\lambda \varphi_x^{\prime}(x, y, z)&#x3D;0, \<br>F_y^{\prime}&#x3D;f_y^{\prime}(x, y, z)+\lambda \varphi_y^{\prime}(x, y, z)&#x3D;0, \<br>F_z^{\prime}&#x3D;f_z^{\prime}(x, y, z)+\lambda \varphi_z^{\prime}(x, y, z)&#x3D;0, \<br>F_\lambda^{\prime}&#x3D;\varphi(x, y, z)&#x3D;0.<br>\end{array}\right.$</p>
+</li>
+</ul>
+<h4 id="Method"><a href="#Method" class="headerlink" title="$Method$"></a>$Method$</h4><p>趋近方式不再只有若干种，可以通过任意条直线或曲线等,因而：</p>
+<h6 id="证明极限存在："><a href="#证明极限存在：" class="headerlink" title="证明极限存在："></a>证明极限存在：</h6><p>任意方式趋近均相同值</p>
+<h6 id="证明极限不存在："><a href="#证明极限不存在：" class="headerlink" title="证明极限不存在："></a>证明极限不存在：</h6><p>两种方式极限值不同</p>
+<h6 id="求极限："><a href="#求极限：" class="headerlink" title="求极限："></a>求极限：</h6><ol>
+<li>定义法</li>
+<li>四则运算，无穷小运算，等价无穷小替换，夹逼准则…….</li>
+<li>一种特殊手段：换成极坐标形式讨论（主要针对趋于(0,0)）</li>
+</ol>
+<img src=https://s2.loli.net/2023/02/16/LdRJ753kzTUsyZ6.png width="200">
+
+<p>可以先以某一条直线趋近先猜后证。<br>证明极限不存在时直线都相等时可以考虑用曲线趋近，注意构造齐次。</p>
+<h6 id="可微性的证明："><a href="#可微性的证明：" class="headerlink" title="可微性的证明："></a>可微性的证明：</h6><ol>
+<li>定义<br>$\Delta z&#x3D;{f(x+\Delta x, y+\Delta y)}-f(x, y)$可表示为$\Delta z&#x3D;A \Delta x+B \Delta y+o(\rho)$<blockquote>
+<p>直接形式：<br>$\lim_{\substack{\Delta x \rightarrow0\ \Delta y \rightarrow0}} \frac{f\left(x_0+\Delta x, y_0+\Delta y\right)-f\left(x_0, y_0\right)-f_x\left(x_0, y_0\right) \Delta x-f_y(x, y) \Delta y}{\rho}&#x3D;0$</p>
+</blockquote>
+</li>
+<li>均可偏导且偏导数均连续</li>
+</ol>
+<p>小黄书注意的题：6.6,7,10（去上面求出该点函数值）</p>
+]]></content>
+      <tags>
+        <tag>Note</tag>
+      </tags>
+  </entry>
 </search>
