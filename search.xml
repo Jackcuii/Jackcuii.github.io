@@ -229,4 +229,20 @@
         <tag>Homework</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Excerption:Quaternions</title>
+    <url>/2023/03/18/Excerption-Quaternions/</url>
+    <content><![CDATA[
+
+	<div class="row">
+    <embed src="/1.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+
+]]></content>
+      <tags>
+        <tag>CS</tag>
+      </tags>
+  </entry>
 </search>
