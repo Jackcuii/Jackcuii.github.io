@@ -83,4 +83,91 @@
         <tag>Chatter</tag>
       </tags>
   </entry>
+  <entry>
+    <title>ysyx:0001:Proper Questioning</title>
+    <url>/2023/03/20/ysyx0001/</url>
+    <content><![CDATA[<h2 id="ANNONCEMENT"><a href="#ANNONCEMENT" class="headerlink" title="[ANNONCEMENT]"></a>[ANNONCEMENT]</h2><p>ysyx的课程规范实则是不鼓励分享的，发在这里其实只是做一个类似个人存档的东西或者跟没参加的同学分享，再加上我比较菜，所以参加这个课程的同学慎入。</p>
+<h2 id="0001-正确的提问"><a href="#0001-正确的提问" class="headerlink" title="0001:正确的提问"></a>0001:正确的提问</h2><h3 id="提问的智慧"><a href="#提问的智慧" class="headerlink" title="提问的智慧"></a>提问的智慧</h3><h4 id="Before"><a href="#Before" class="headerlink" title="Before"></a>Before</h4><ul>
+<li>提前的努力：Former Articles, Searching Engine, Manual, FAQ, Experiment, Friends, SourceCode….</li>
+<li>明示尝试的过程</li>
+<li>摆正位置</li>
+</ul>
+<h4 id="During"><a href="#During" class="headerlink" title="During"></a>During</h4><h5 id="正确的位置"><a href="#正确的位置" class="headerlink" title="正确的位置"></a>正确的位置</h5><ul>
+<li>慎发私人邮件</li>
+<li>NO cross-post</li>
+<li>Stack Exchange Community<ul>
+<li>格式化</li>
+<li>Vote</li>
+<li>Tag</li>
+<li>补充信息标记帖子而不是回复<ul>
+<li>Super User 是问一些通用的电脑问题.</li>
+<li>Stack Overflow 是问写程序有关的问题。</li>
+<li>Server Fault 是问服务器和网管(网关？)相关的问题。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>IRC</li>
+<li>用户列表（论坛）&#x2F;开发者列表（论坛）&#x2F;维护者列表<ul>
+<li>优先级依次降低。</li>
+</ul>
+</li>
+</ul>
+<h5 id="提问标题"><a href="#提问标题" class="headerlink" title="提问标题"></a>提问标题</h5><ul>
+<li>目标（哪些东西）-差异（与期望不一致的地方）式</li>
+<li>回复中提出问题也要明确（一般另起炉灶比较好）</li>
+</ul>
+<h5 id="提问规范"><a href="#提问规范" class="headerlink" title="提问规范"></a>提问规范</h5><ul>
+<li>不要麻烦回答者把答案发到……处</li>
+<li>拼写，标点符号，大小写，意思准确。</li>
+<li>英语。</li>
+<li>英语不好请叠甲<ul>
+<li>English is not my native language; please excuse   typing errors.</li>
+<li>If you speak $LANGUAGE, please email&#x2F;PM me; I may need assistance translating my question.</li>
+<li>I am familiar with the technical terms, but some slang expressions and idioms are difficult for me.</li>
+<li>I’ve posted my question in $LANGUAGE and English. I’ll be glad to translate responses, if you only use one or the other.</li>
+</ul>
+</li>
+<li>纯文字 NO HTML</li>
+<li>不要使用MS Office等封闭格式</li>
+<li>不要打一大堆表情</li>
+<li>精确的描述<ul>
+<li>症状</li>
+<li>问题发生的环境（配置，操作系统，应用程序……）</li>
+<li>你如何理解</li>
+<li>你的诊断步骤</li>
+<li>最近的软硬件变更</li>
+<li>尽可能提供一个复现方法</li>
+</ul>
+</li>
+<li>表述尽可能精炼</li>
+<li>不要动辄说找到BUG</li>
+<li>不要说你的猜测，如果非要说的话，指明。</li>
+<li>按时间顺序</li>
+<li>先描述目的，在说明问题</li>
+<li>明确的说明你的有限的需求</li>
+<li>代码问题<ul>
+<li>截取一个尽量小的能独立运行的测试用例</li>
+</ul>
+</li>
+<li>去掉无意义的疑问句</li>
+<li>不要加一些“紧急”词汇</li>
+<li>有礼貌</li>
+<li>解决问题之后写一个简短的声明<ul>
+<li>最好回复在原帖上，并修改原帖的标题</li>
+</ul>
+</li>
+</ul>
+<h4 id="After"><a href="#After" class="headerlink" title="After"></a>After</h4><p>（答案解读）</p>
+<ul>
+<li>RTFM &amp; STFW</li>
+<li>挨骂则忍着</li>
+<li>无回复则等着</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>CS</tag>
+        <tag>ysyx</tag>
+      </tags>
+  </entry>
 </search>
