@@ -215,7 +215,8 @@
                       alt="kkk"
                 ></li>
 </ul>
-<h3 id="课程作业：读后感"><a href="#课程作业：读后感" class="headerlink" title="课程作业：读后感"></a>课程作业：读后感</h3>]]></content>
+<h3 id="课程作业：读后感"><a href="#课程作业：读后感" class="headerlink" title="课程作业：读后感"></a>课程作业：读后感</h3><p>A</p>
+]]></content>
       <tags>
         <tag>CS</tag>
         <tag>ysyx</tag>
@@ -256,6 +257,45 @@
 ]]></content>
       <tags>
         <tag>Resource</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ysyx:0002:Use of Linux</title>
+    <url>/2023/03/28/ysyx0002/</url>
+    <content><![CDATA[<h2 id="ANNONCEMENT"><a href="#ANNONCEMENT" class="headerlink" title="[ANNONCEMENT]"></a>[ANNONCEMENT]</h2><p>ysyx的课程规范实则是不鼓励分享的，发在这里其实只是做一个类似个人存档的东西或者跟没参加的同学分享，再加上我比较菜，所以参加这个课程的同学慎入。</p>
+<h2 id="0002：Use-of-Linux"><a href="#0002：Use-of-Linux" class="headerlink" title="0002：Use of Linux"></a>0002：Use of Linux</h2><h3 id="Install-the-virtual-machine"><a href="#Install-the-virtual-machine" class="headerlink" title="Install the virtual machine"></a>Install the virtual machine</h3><p><code>DEBUG</code>如果没有跳过Update，只能用Aptitude依次降级来安装工具。<br><code>DEBUG</code>装中文包，删掉Thunderbird &amp; LibreOffice</p>
+<h3 id="Use-of-vim"><a href="#Use-of-vim" class="headerlink" title="Use of vim"></a>Use of vim</h3><p>Note on vim (written in vim)</p>
+<ul>
+<li>move hjkl</li>
+<li>quit without save :q!<br>quit saved :wq</li>
+<li>delete a letter x</li>
+<li>insert i<br>append a<br>append at the end of the line A</li>
+<li>delete d+MOTION<br>delete several lines ndd</li>
+<li>(TIMES)MOTION s start of next word<br>          e end of this word<br>          0 start of this line</li>
+<li>undo last command u<br> whole line U<br>redo Ctrl-R</li>
+<li>put p</li>
+<li>replace r</li>
+<li>change a few words ce<br>change the whole line cc<br>change the rest of the line c$<br>cw,c(TIMES)MOTION…</li>
+<li>line info Ctrl-g<br>bottom of file G<br>start of file gg<br>to specific line (POSITION)G</li>
+<li>search &#x2F;+key<br>next n<br>op direction N<br>search in backward position ?<br>go back Ctrl-0<br>go forward Ctrl-I</li>
+<li>look fpr match %</li>
+<li>s&#x2F;ORIGIN&#x2F;NEW substitude 1 time<br>…&#x2F;g substitude globally<br>a,b… substitude from line a to line b<br>…&#x2F;gc substitude globally with enquiry for each</li>
+<li>(: to the command-line)use external command !</li>
+<li>save a copy w</li>
+<li>visual select v+MOTION</li>
+<li>retrieve from file r+FILENAME<br>     output of external commmand :r !…</li>
+<li>open up a new line below o<br>open up a new line above O</li>
+<li>replace mode(like insert key in Windows) R</li>
+<li>copy y (yw,yy,y+Visual mode…)<br>paste p</li>
+<li>set option set [OPTIONNAME]<br>set off set [noOPTIONNAME]</li>
+<li>help :help NAME</li>
+<li>Ctrl-d complement list<br>TAB complement</li>
+</ul>
+<p>Learning Vim is like breaking the bones to let one grow taller!<br>    230328.Jackcui.NJU</p>
+]]></content>
+      <tags>
+        <tag>CS</tag>
+        <tag>ysyx</tag>
       </tags>
   </entry>
 </search>
