@@ -362,4 +362,33 @@
         <tag>Math</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Excerption:CO:一些解释Booth Algorithm的文章，备查阅</title>
+    <url>/2023/04/15/booth/</url>
+    <content><![CDATA[<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://zhuanlan.zhihu.com/p/433924897"
+                      alt="FPGA的算法解析2：乘法器（基础乘法器+Booth乘法器+LUT乘法器）"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://www.bilibili.com/read/cv13796536"
+                      alt="理解布斯乘法 "
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://www.zhihu.com/question/37637775"
+                      alt="怎么理解Booth算法?"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://zhuanlan.zhihu.com/p/107600366"
+                      alt="布斯乘法以及带符号数的运算"
+                ></p>
+]]></content>
+      <tags>
+        <tag>CS</tag>
+      </tags>
+  </entry>
 </search>
