@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Calculus II Chapter 7</title>
+    <url>/2023/04/14/Calculus-II-Chapter-7/</url>
+    <content><![CDATA[<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://s2.loli.net/2023/04/14/oafpmO6uGRI2JV5.png"
+                      alt="图片.png"
+                ></p>
+]]></content>
+      <tags>
+        <tag>Note</tag>
+        <tag>Math</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Calculus II Chapter 5</title>
     <url>/2023/03/16/Calculus-II-Chapter-5/</url>
     <content><![CDATA[<p><img  
@@ -13,6 +28,49 @@
       <tags>
         <tag>Note</tag>
         <tag>Math</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Calculus II Chapter 6</title>
+    <url>/2023/04/13/Calculus-II-Chapter-6/</url>
+    <content><![CDATA[<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://s2.loli.net/2023/04/13/lqsXP3O4WxvQBKf.png"
+                      alt="图片.png"
+                ></p>
+]]></content>
+      <tags>
+        <tag>Note</tag>
+        <tag>Math</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Chatter:关于数理逻辑</title>
+    <url>/2023/03/20/Chatter2/</url>
+    <content><![CDATA[<p>（这里的数理逻辑并不是那个课，是泛指的梳理逻辑思维）<br>这其实只是开一个坑。<br>其实很久以来都在探究就是我数学比较菜的原因。<br>包括思维模式，认知模型，习惯，或者干脆是懒等等。<br>这个东西固然和天赋有关，但似乎也不完全有关。<br>似乎与知识的组织形式和思维的顺序习惯有一定的关系，甚至是性格。<br>这么想似乎有为失败找借口或者反向皮格马利翁效应或者自我催眠或者精神胜利法等等嫌疑，不过确实觉得这是一个比较值得探讨的话题。<br>会陆续在这个帖子里更一些思考（）。<br>评论区功能配置起来有些麻烦，大家（虽然好像也没人看）有什么想法就发QQ吧（doge）</p>
+]]></content>
+      <tags>
+        <tag>Chatter</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Chatter:关于CTF的一些想法</title>
+    <url>/2023/03/20/Chatter1/</url>
+    <content><![CDATA[<p>昨天去听了Trinity的讲座，感觉CTF这个东西还是很有趣的。<br>不为了比赛，随便玩一玩也是非常可以的。<br>无奈这一阶段确实没有什么精力去搞。</p>
+<p>不过说回来，还是觉得基础的网络安全技术应该是必备技能之一。<br>就好像你出去旅游怎么保管东西被打劫了怎么跑什么的必须要会吧。<br>更何况，（以下和谐内容大家慢慢读）<br>只有你掌握了这个技术（其实还有web技术），你才知道妮友煤油被兼室，现在虢内这个虢氰，这种罔洛煎茶只会层层嘉玛。<br>如果你队浙芳面衣吴锁之，纳聋子兜套道尼投尚勒，尼兜坎补盗。</p>
+]]></content>
+      <tags>
+        <tag>Chatter</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>评论区终于好使了~</title>
+    <url>/2023/03/24/Chatter4/</url>
+    <content><![CDATA[<p>费了好大的劲终于正常运行了<br>感谢Redefine主题的开发者大佬%%%%%%%%<br>Tip.评论区登不登录都可以</p>
+]]></content>
+      <tags>
+        <tag>demo</tag>
       </tags>
   </entry>
   <entry>
@@ -67,27 +125,18 @@
       </tags>
   </entry>
   <entry>
-    <title>Excerption:Quaternions</title>
-    <url>/2023/03/18/Excerption-Quaternions/</url>
-    <content><![CDATA[<p>知乎上转的，关于四元数的帖子<br>转载的，转载的，转载的<br>底下的版权信息不好关，就懒得关了。</p>
-
-
-	<div class="row">
-    <embed src="/1.pdf" width="100%" height="550" type="application/pdf">
-	</div>
-
-
-
+    <title>Chatter:发句牢骚</title>
+    <url>/2023/04/04/Chatter5/</url>
+    <content><![CDATA[<p>玛德要学的东西太多了！！！！<br>（说一句就一句，没了）</p>
 ]]></content>
       <tags>
-        <tag>CS</tag>
+        <tag>Chatter</tag>
       </tags>
   </entry>
   <entry>
-    <title>Chatter:关于CTF的一些想法</title>
-    <url>/2023/03/20/Chatter1/</url>
-    <content><![CDATA[<p>昨天去听了Trinity的讲座，感觉CTF这个东西还是很有趣的。<br>不为了比赛，随便玩一玩也是非常可以的。<br>无奈这一阶段确实没有什么精力去搞。</p>
-<p>不过说回来，还是觉得基础的网络安全技术应该是必备技能之一。<br>就好像你出去旅游怎么保管东西被打劫了怎么跑什么的必须要会吧。<br>更何况，（以下和谐内容大家慢慢读）<br>只有你掌握了这个技术（其实还有web技术），你才知道妮友煤油被兼室，现在虢内这个虢氰，这种罔洛煎茶只会层层嘉玛。<br>如果你队浙芳面衣吴锁之，纳聋子兜套道尼投尚勒，尼兜坎补盗。</p>
+    <title>Chatter:-</title>
+    <url>/2023/04/06/Chatter6/</url>
+    <content><![CDATA[<p>Being busy to be strong means being NOT STRONG.<br>NOT STRONG distorts us.<br>We HAVE TO be strong.</p>
 ]]></content>
       <tags>
         <tag>Chatter</tag>
@@ -109,194 +158,20 @@
       </tags>
   </entry>
   <entry>
-    <title>demo</title>
-    <url>/2023/03/14/demo/</url>
-    <content><![CDATA[<p>Brilliant!!!!!!!!!!</p>
-<span id="more"></span>
+    <title>Excerption:Quaternions</title>
+    <url>/2023/03/18/Excerption-Quaternions/</url>
+    <content><![CDATA[<p>知乎上转的，关于四元数的帖子<br>转载的，转载的，转载的<br>底下的版权信息不好关，就懒得关了。</p>
 
-<p>ZR bless you!!!!!</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Chatter:关于数理逻辑</title>
-    <url>/2023/03/20/Chatter2/</url>
-    <content><![CDATA[<p>（这里的数理逻辑并不是那个课，是泛指的梳理逻辑思维）<br>这其实只是开一个坑。<br>其实很久以来都在探究就是我数学比较菜的原因。<br>包括思维模式，认知模型，习惯，或者干脆是懒等等。<br>这个东西固然和天赋有关，但似乎也不完全有关。<br>似乎与知识的组织形式和思维的顺序习惯有一定的关系，甚至是性格。<br>这么想似乎有为失败找借口或者反向皮格马利翁效应或者自我催眠或者精神胜利法等等嫌疑，不过确实觉得这是一个比较值得探讨的话题。<br>会陆续在这个帖子里更一些思考（）。<br>评论区功能配置起来有些麻烦，大家（虽然好像也没人看）有什么想法就发QQ吧（doge）</p>
-]]></content>
-      <tags>
-        <tag>Chatter</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ysyx:0001:Proper Questioning</title>
-    <url>/2023/03/20/ysyx0001/</url>
-    <content><![CDATA[<h2 id="ANNONCEMENT"><a href="#ANNONCEMENT" class="headerlink" title="[ANNONCEMENT]"></a>[ANNONCEMENT]</h2><p>ysyx的课程规范实则是不鼓励分享的，发在这里其实只是做一个类似个人存档的东西或者跟没参加的同学分享，再加上我比较菜，所以参加这个课程的同学慎入。</p>
-<h2 id="0001-正确的提问"><a href="#0001-正确的提问" class="headerlink" title="0001:正确的提问"></a>0001:正确的提问</h2><h3 id="提问的智慧"><a href="#提问的智慧" class="headerlink" title="提问的智慧"></a>提问的智慧</h3><h4 id="Before"><a href="#Before" class="headerlink" title="Before"></a>Before</h4><ul>
-<li>提前的努力：Former Articles, Searching Engine, Manual, FAQ, Experiment, Friends, SourceCode….</li>
-<li>明示尝试的过程</li>
-<li>摆正位置</li>
-</ul>
-<h4 id="During"><a href="#During" class="headerlink" title="During"></a>During</h4><h5 id="正确的位置"><a href="#正确的位置" class="headerlink" title="正确的位置"></a>正确的位置</h5><ul>
-<li>慎发私人邮件</li>
-<li>NO cross-post</li>
-<li>Stack Exchange Community<ul>
-<li>格式化</li>
-<li>Vote</li>
-<li>Tag</li>
-<li>补充信息标记帖子而不是回复<ul>
-<li>Super User 是问一些通用的电脑问题.</li>
-<li>Stack Overflow 是问写程序有关的问题。</li>
-<li>Server Fault 是问服务器和网管(网关？)相关的问题。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>IRC</li>
-<li>用户列表（论坛）&#x2F;开发者列表（论坛）&#x2F;维护者列表<ul>
-<li>优先级依次降低。</li>
-</ul>
-</li>
-</ul>
-<h5 id="提问标题"><a href="#提问标题" class="headerlink" title="提问标题"></a>提问标题</h5><ul>
-<li>目标（哪些东西）-差异（与期望不一致的地方）式</li>
-<li>回复中提出问题也要明确（一般另起炉灶比较好）</li>
-</ul>
-<h5 id="提问规范"><a href="#提问规范" class="headerlink" title="提问规范"></a>提问规范</h5><ul>
-<li>不要麻烦回答者把答案发到……处</li>
-<li>拼写，标点符号，大小写，意思准确。</li>
-<li>英语。</li>
-<li>英语不好请叠甲<ul>
-<li>English is not my native language; please excuse   typing errors.</li>
-<li>If you speak $LANGUAGE, please email&#x2F;PM me; I may need assistance translating my question.</li>
-<li>I am familiar with the technical terms, but some slang expressions and idioms are difficult for me.</li>
-<li>I’ve posted my question in $LANGUAGE and English. I’ll be glad to translate responses, if you only use one or the other.</li>
-</ul>
-</li>
-<li>纯文字 NO HTML</li>
-<li>不要使用MS Office等封闭格式</li>
-<li>不要打一大堆表情</li>
-<li>精确的描述<ul>
-<li>症状</li>
-<li>问题发生的环境（配置，操作系统，应用程序……）</li>
-<li>你如何理解</li>
-<li>你的诊断步骤</li>
-<li>最近的软硬件变更</li>
-<li>尽可能提供一个复现方法</li>
-</ul>
-</li>
-<li>表述尽可能精炼</li>
-<li>不要动辄说找到BUG</li>
-<li>不要说你的猜测，如果非要说的话，指明。</li>
-<li>按时间顺序</li>
-<li>先描述目的，在说明问题</li>
-<li>明确的说明你的有限的需求</li>
-<li>代码问题<ul>
-<li>截取一个尽量小的能独立运行的测试用例</li>
-</ul>
-</li>
-<li>去掉无意义的疑问句</li>
-<li>不要加一些“紧急”词汇</li>
-<li>有礼貌</li>
-<li>解决问题之后写一个简短的声明<ul>
-<li>最好回复在原帖上，并修改原帖的标题</li>
-</ul>
-</li>
-</ul>
-<h4 id="After"><a href="#After" class="headerlink" title="After"></a>After</h4><p>（答案解读）</p>
-<ul>
-<li>RTFM &amp; STFW</li>
-<li>挨骂则忍着</li>
-<li>无回复则等着</li>
-</ul>
-<h3 id="别像傻子一样提问（一致内容已经合并到前文）"><a href="#别像傻子一样提问（一致内容已经合并到前文）" class="headerlink" title="别像傻子一样提问（一致内容已经合并到前文）"></a>别像傻子一样提问（一致内容已经合并到前文）</h3><ul>
-<li>杜绝X-Y问题，不要自以为是的给出一个误导性的引申问题。</li>
-<li><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://github.com/tangx/Stop-Ask-Questions-The-Stupid-Ways/raw/master/images/you-are-not-prepared.png"
-                      alt="kkk"
-                ></li>
-</ul>
-<h3 id="课程作业：读后感"><a href="#课程作业：读后感" class="headerlink" title="课程作业：读后感"></a>课程作业：读后感</h3><p>A</p>
+
+	<div class="row">
+    <embed src="/1.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+
 ]]></content>
       <tags>
         <tag>CS</tag>
-        <tag>ysyx</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Resource:CSDN Download Tool</title>
-    <url>/2023/03/18/Source-CSDN-Download-Tool/</url>
-    <content><![CDATA[<p>今天需要下载CSDN的东西，<br>找了一个工具网站。 <a class="link"   href="http://servicedev.tpddns.cn:8181/#/main/welcome" >Portal <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>收费的，时不时轻度使用可以，总比开98一个月的CSDN会员强（雾）</p>
-]]></content>
-      <tags>
-        <tag>Resource</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>评论区终于好使了~</title>
-    <url>/2023/03/24/Chatter4/</url>
-    <content><![CDATA[<p>费了好大的劲终于正常运行了<br>感谢Redefine主题的开发者大佬%%%%%%%%<br>Tip.评论区登不登录都可以</p>
-]]></content>
-      <tags>
-        <tag>demo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Resource:一本电子书《史学战线》</title>
-    <url>/2023/03/26/sxzx/</url>
-    <content><![CDATA[<p>帮一位学姐去找了一本古早期刊。<br>才知道鼓楼图书馆里这些灯都没有隐藏阅览室。<br>现把这个拍照版（用扫描软件怕看不清）共享出来，也算是为了人类知识数字化开源做点贡献。<br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://s2.loli.net/2023/03/26/UqSRX2PvyO3QLVx.png"
-                      alt="图片.png"
-                ><br>发点恐怖图（doge）<br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://s2.loli.net/2023/03/26/RzGBNQirOEkVKTd.png"
-                      alt="图片.png"
-                ><br>原pdf太大了，这里挂一个样本（包括一个封面，发刊词和全五册的目录（也不知道是不是只有五册，网上关于这个刊物的信息一点没有））<br>想看原件请邮箱找我。<br><a href="/6.pdf">史学战线_Sample</a></p>
-]]></content>
-      <tags>
-        <tag>Resource</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ysyx:0002:Use of Linux</title>
-    <url>/2023/03/28/ysyx0002/</url>
-    <content><![CDATA[<h2 id="ANNONCEMENT"><a href="#ANNONCEMENT" class="headerlink" title="[ANNONCEMENT]"></a>[ANNONCEMENT]</h2><p>ysyx的课程规范实则是不鼓励分享的，发在这里其实只是做一个类似个人存档的东西或者跟没参加的同学分享，再加上我比较菜，所以参加这个课程的同学慎入。</p>
-<h2 id="0002：Use-of-Linux"><a href="#0002：Use-of-Linux" class="headerlink" title="0002：Use of Linux"></a>0002：Use of Linux</h2><h3 id="Install-the-virtual-machine"><a href="#Install-the-virtual-machine" class="headerlink" title="Install the virtual machine"></a>Install the virtual machine</h3><p><code>DEBUG</code>如果没有跳过Update，只能用Aptitude依次降级来安装工具。<br><code>DEBUG</code>装中文包，删掉Thunderbird &amp; LibreOffice</p>
-<h3 id="Use-of-vim"><a href="#Use-of-vim" class="headerlink" title="Use of vim"></a>Use of vim</h3><p>Note on vim (written in vim)</p>
-<ul>
-<li>move hjkl</li>
-<li>quit without save :q!<br>quit saved :wq</li>
-<li>delete a letter x</li>
-<li>insert i<br>append a<br>append at the end of the line A</li>
-<li>delete d+MOTION<br>delete several lines ndd</li>
-<li>(TIMES)MOTION s start of next word<br>          e end of this word<br>          0 start of this line</li>
-<li>undo last command u<br> whole line U<br>redo Ctrl-R</li>
-<li>put p</li>
-<li>replace r</li>
-<li>change a few words ce<br>change the whole line cc<br>change the rest of the line c$<br>cw,c(TIMES)MOTION…</li>
-<li>line info Ctrl-g<br>bottom of file G<br>start of file gg<br>to specific line (POSITION)G</li>
-<li>search &#x2F;+key<br>next n<br>op direction N<br>search in backward position ?<br>go back Ctrl-0<br>go forward Ctrl-I</li>
-<li>look fpr match %</li>
-<li>s&#x2F;ORIGIN&#x2F;NEW substitude 1 time<br>…&#x2F;g substitude globally<br>a,b… substitude from line a to line b<br>…&#x2F;gc substitude globally with enquiry for each</li>
-<li>(: to the command-line)use external command !</li>
-<li>save a copy w</li>
-<li>visual select v+MOTION</li>
-<li>retrieve from file r+FILENAME<br>     output of external commmand :r !…</li>
-<li>open up a new line below o<br>open up a new line above O</li>
-<li>replace mode(like insert key in Windows) R</li>
-<li>copy y (yw,yy,y+Visual mode…)<br>paste p</li>
-<li>set option set [OPTIONNAME]<br>set off set [noOPTIONNAME]</li>
-<li>help :help NAME</li>
-<li>Ctrl-d complement list<br>TAB complement</li>
-</ul>
-<p>Learning Vim is like breaking the bones to let one grow taller!<br>    230328.Jackcui.NJU</p>
-]]></content>
-      <tags>
-        <tag>CS</tag>
-        <tag>ysyx</tag>
       </tags>
   </entry>
   <entry>
@@ -315,51 +190,12 @@
       </tags>
   </entry>
   <entry>
-    <title>Chatter:发句牢骚</title>
-    <url>/2023/04/04/Chatter5/</url>
-    <content><![CDATA[<p>玛德要学的东西太多了！！！！<br>（说一句就一句，没了）</p>
+    <title>Resource:CSDN Download Tool</title>
+    <url>/2023/03/18/Source-CSDN-Download-Tool/</url>
+    <content><![CDATA[<p>今天需要下载CSDN的东西，<br>找了一个工具网站。 <a class="link"   href="http://servicedev.tpddns.cn:8181/#/main/welcome" >Portal <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>收费的，时不时轻度使用可以，总比开98一个月的CSDN会员强（雾）</p>
 ]]></content>
       <tags>
-        <tag>Chatter</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Chatter:-</title>
-    <url>/2023/04/06/Chatter6/</url>
-    <content><![CDATA[<p>Being busy to be strong means being NOT STRONG.<br>NOT STRONG distorts us.<br>We HAVE TO be strong.</p>
-]]></content>
-      <tags>
-        <tag>Chatter</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Calculus II Chapter 6</title>
-    <url>/2023/04/13/Calculus-II-Chapter-6/</url>
-    <content><![CDATA[<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://s2.loli.net/2023/04/13/lqsXP3O4WxvQBKf.png"
-                      alt="图片.png"
-                ></p>
-]]></content>
-      <tags>
-        <tag>Note</tag>
-        <tag>Math</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Calculus II Chapter 7</title>
-    <url>/2023/04/14/Calculus-II-Chapter-7/</url>
-    <content><![CDATA[<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://s2.loli.net/2023/04/14/oafpmO6uGRI2JV5.png"
-                      alt="图片.png"
-                ></p>
-]]></content>
-      <tags>
-        <tag>Note</tag>
-        <tag>Math</tag>
+        <tag>Resource</tag>
       </tags>
   </entry>
   <entry>
@@ -392,6 +228,34 @@
       </tags>
   </entry>
   <entry>
+    <title>demo</title>
+    <url>/2023/03/14/demo/</url>
+    <content><![CDATA[<p>Brilliant!!!!!!!!!!</p>
+<span id="more"></span>
+
+<p>ZR bless you!!!!!</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Resource:一本电子书《史学战线》</title>
+    <url>/2023/03/26/sxzx/</url>
+    <content><![CDATA[<p>帮一位学姐去找了一本古早期刊。<br>才知道鼓楼图书馆里这些灯都没有隐藏阅览室。<br>现把这个拍照版（用扫描软件怕看不清）共享出来，也算是为了人类知识数字化开源做点贡献。<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://s2.loli.net/2023/03/26/UqSRX2PvyO3QLVx.png"
+                      alt="图片.png"
+                ><br>发点恐怖图（doge）<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://s2.loli.net/2023/03/26/RzGBNQirOEkVKTd.png"
+                      alt="图片.png"
+                ><br>原pdf太大了，这里挂一个样本（包括一个封面，发刊词和全五册的目录（也不知道是不是只有五册，网上关于这个刊物的信息一点没有））<br>想看原件请邮箱找我。<br><a href="/6.pdf">史学战线_Sample</a></p>
+]]></content>
+      <tags>
+        <tag>Resource</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Discrete Mathemetics 试题调研</title>
     <url>/2023/04/18/dm/</url>
     <content><![CDATA[<h4 id="命题逻辑初步-amp-推理规则-amp-推理系统-amp-谓词逻辑-amp-证明方法"><a href="#命题逻辑初步-amp-推理规则-amp-推理系统-amp-谓词逻辑-amp-证明方法" class="headerlink" title="命题逻辑初步&amp;推理规则&amp;推理系统&amp;谓词逻辑&amp;证明方法"></a>命题逻辑初步&amp;推理规则&amp;推理系统&amp;谓词逻辑&amp;证明方法</h4><h5 id="做题记忆知识点"><a href="#做题记忆知识点" class="headerlink" title="做题记忆知识点"></a>做题记忆知识点</h5><ul>
@@ -410,9 +274,8 @@
 </ul>
 <h5 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h5><h6 id="逻辑等值式的证明"><a href="#逻辑等值式的证明" class="headerlink" title="逻辑等值式的证明"></a>逻辑等值式的证明</h6><ol>
 <li>列真值表</li>
-<li>通过逻辑等价推导</li>
+<li>通过逻辑等价推导<br>$Compl.$ None.</li>
 </ol>
-<p>$Compl.$ None.</p>
 <h6 id="寻找成真指派，可满足性"><a href="#寻找成真指派，可满足性" class="headerlink" title="寻找成真指派，可满足性"></a>寻找成真指派，可满足性</h6><ol>
 <li>不可满足分情况讨论即可</li>
 <li>可满足构造一组解即可</li>
@@ -538,8 +401,144 @@
 <h4 id="递归与数学归纳"><a href="#递归与数学归纳" class="headerlink" title="递归与数学归纳"></a>递归与数学归纳</h4><h5 id="题目-3"><a href="#题目-3" class="headerlink" title="题目"></a>题目</h5><h6 id="用第一-x2F-第二数学归纳法证明"><a href="#用第一-x2F-第二数学归纳法证明" class="headerlink" title="用第一&#x2F;第二数学归纳法证明"></a>用第一&#x2F;第二数学归纳法证明</h6><p>$Compl.Rosen.1.8.39$</p>
 <h6 id="用结构归纳法证明"><a href="#用结构归纳法证明" class="headerlink" title="用结构归纳法证明"></a>用结构归纳法证明</h6><h4 id="排列组合"><a href="#排列组合" class="headerlink" title="排列组合"></a>排列组合</h4><h4 id="离散概率"><a href="#离散概率" class="headerlink" title="离散概率"></a>离散概率</h4>]]></content>
       <tags>
-        <tag>Course</tag>
         <tag>Math</tag>
+        <tag>Course</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ysyx:0001:Proper Questioning</title>
+    <url>/2023/03/20/ysyx0001/</url>
+    <content><![CDATA[<h2 id="ANNONCEMENT"><a href="#ANNONCEMENT" class="headerlink" title="[ANNONCEMENT]"></a>[ANNONCEMENT]</h2><p>ysyx的课程规范实则是不鼓励分享的，发在这里其实只是做一个类似个人存档的东西或者跟没参加的同学分享，再加上我比较菜，所以参加这个课程的同学慎入。</p>
+<h2 id="0001-正确的提问"><a href="#0001-正确的提问" class="headerlink" title="0001:正确的提问"></a>0001:正确的提问</h2><h3 id="提问的智慧"><a href="#提问的智慧" class="headerlink" title="提问的智慧"></a>提问的智慧</h3><h4 id="Before"><a href="#Before" class="headerlink" title="Before"></a>Before</h4><ul>
+<li>提前的努力：Former Articles, Searching Engine, Manual, FAQ, Experiment, Friends, SourceCode….</li>
+<li>明示尝试的过程</li>
+<li>摆正位置</li>
+</ul>
+<h4 id="During"><a href="#During" class="headerlink" title="During"></a>During</h4><h5 id="正确的位置"><a href="#正确的位置" class="headerlink" title="正确的位置"></a>正确的位置</h5><ul>
+<li>慎发私人邮件</li>
+<li>NO cross-post</li>
+<li>Stack Exchange Community<ul>
+<li>格式化</li>
+<li>Vote</li>
+<li>Tag</li>
+<li>补充信息标记帖子而不是回复<ul>
+<li>Super User 是问一些通用的电脑问题.</li>
+<li>Stack Overflow 是问写程序有关的问题。</li>
+<li>Server Fault 是问服务器和网管(网关？)相关的问题。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>IRC</li>
+<li>用户列表（论坛）&#x2F;开发者列表（论坛）&#x2F;维护者列表<ul>
+<li>优先级依次降低。</li>
+</ul>
+</li>
+</ul>
+<h5 id="提问标题"><a href="#提问标题" class="headerlink" title="提问标题"></a>提问标题</h5><ul>
+<li>目标（哪些东西）-差异（与期望不一致的地方）式</li>
+<li>回复中提出问题也要明确（一般另起炉灶比较好）</li>
+</ul>
+<h5 id="提问规范"><a href="#提问规范" class="headerlink" title="提问规范"></a>提问规范</h5><ul>
+<li>不要麻烦回答者把答案发到……处</li>
+<li>拼写，标点符号，大小写，意思准确。</li>
+<li>英语。</li>
+<li>英语不好请叠甲<ul>
+<li>English is not my native language; please excuse   typing errors.</li>
+<li>If you speak $LANGUAGE, please email&#x2F;PM me; I may need assistance translating my question.</li>
+<li>I am familiar with the technical terms, but some slang expressions and idioms are difficult for me.</li>
+<li>I’ve posted my question in $LANGUAGE and English. I’ll be glad to translate responses, if you only use one or the other.</li>
+</ul>
+</li>
+<li>纯文字 NO HTML</li>
+<li>不要使用MS Office等封闭格式</li>
+<li>不要打一大堆表情</li>
+<li>精确的描述<ul>
+<li>症状</li>
+<li>问题发生的环境（配置，操作系统，应用程序……）</li>
+<li>你如何理解</li>
+<li>你的诊断步骤</li>
+<li>最近的软硬件变更</li>
+<li>尽可能提供一个复现方法</li>
+</ul>
+</li>
+<li>表述尽可能精炼</li>
+<li>不要动辄说找到BUG</li>
+<li>不要说你的猜测，如果非要说的话，指明。</li>
+<li>按时间顺序</li>
+<li>先描述目的，在说明问题</li>
+<li>明确的说明你的有限的需求</li>
+<li>代码问题<ul>
+<li>截取一个尽量小的能独立运行的测试用例</li>
+</ul>
+</li>
+<li>去掉无意义的疑问句</li>
+<li>不要加一些“紧急”词汇</li>
+<li>有礼貌</li>
+<li>解决问题之后写一个简短的声明<ul>
+<li>最好回复在原帖上，并修改原帖的标题</li>
+</ul>
+</li>
+</ul>
+<h4 id="After"><a href="#After" class="headerlink" title="After"></a>After</h4><p>（答案解读）</p>
+<ul>
+<li>RTFM &amp; STFW</li>
+<li>挨骂则忍着</li>
+<li>无回复则等着</li>
+</ul>
+<h3 id="别像傻子一样提问（一致内容已经合并到前文）"><a href="#别像傻子一样提问（一致内容已经合并到前文）" class="headerlink" title="别像傻子一样提问（一致内容已经合并到前文）"></a>别像傻子一样提问（一致内容已经合并到前文）</h3><ul>
+<li>杜绝X-Y问题，不要自以为是的给出一个误导性的引申问题。</li>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://github.com/tangx/Stop-Ask-Questions-The-Stupid-Ways/raw/master/images/you-are-not-prepared.png"
+                      alt="kkk"
+                ></li>
+</ul>
+<h3 id="课程作业：读后感"><a href="#课程作业：读后感" class="headerlink" title="课程作业：读后感"></a>课程作业：读后感</h3><p>A</p>
+]]></content>
+      <tags>
+        <tag>CS</tag>
+        <tag>ysyx</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ysyx:0002:Use of Linux</title>
+    <url>/2023/03/28/ysyx0002/</url>
+    <content><![CDATA[<h2 id="ANNONCEMENT"><a href="#ANNONCEMENT" class="headerlink" title="[ANNONCEMENT]"></a>[ANNONCEMENT]</h2><p>ysyx的课程规范实则是不鼓励分享的，发在这里其实只是做一个类似个人存档的东西或者跟没参加的同学分享，再加上我比较菜，所以参加这个课程的同学慎入。</p>
+<h2 id="0002：Use-of-Linux"><a href="#0002：Use-of-Linux" class="headerlink" title="0002：Use of Linux"></a>0002：Use of Linux</h2><h3 id="Install-the-virtual-machine"><a href="#Install-the-virtual-machine" class="headerlink" title="Install the virtual machine"></a>Install the virtual machine</h3><p><code>DEBUG</code>如果没有跳过Update，只能用Aptitude依次降级来安装工具。<br><code>DEBUG</code>装中文包，删掉Thunderbird &amp; LibreOffice</p>
+<h3 id="Use-of-vim"><a href="#Use-of-vim" class="headerlink" title="Use of vim"></a>Use of vim</h3><p>Note on vim (written in vim)</p>
+<ul>
+<li>move hjkl</li>
+<li>quit without save :q!<br>quit saved :wq</li>
+<li>delete a letter x</li>
+<li>insert i<br>append a<br>append at the end of the line A</li>
+<li>delete d+MOTION<br>delete several lines ndd</li>
+<li>(TIMES)MOTION s start of next word<br>          e end of this word<br>          0 start of this line</li>
+<li>undo last command u<br> whole line U<br>redo Ctrl-R</li>
+<li>put p</li>
+<li>replace r</li>
+<li>change a few words ce<br>change the whole line cc<br>change the rest of the line c$<br>cw,c(TIMES)MOTION…</li>
+<li>line info Ctrl-g<br>bottom of file G<br>start of file gg<br>to specific line (POSITION)G</li>
+<li>search &#x2F;+key<br>next n<br>op direction N<br>search in backward position ?<br>go back Ctrl-0<br>go forward Ctrl-I</li>
+<li>look fpr match %</li>
+<li>s&#x2F;ORIGIN&#x2F;NEW substitude 1 time<br>…&#x2F;g substitude globally<br>a,b… substitude from line a to line b<br>…&#x2F;gc substitude globally with enquiry for each</li>
+<li>(: to the command-line)use external command !</li>
+<li>save a copy w</li>
+<li>visual select v+MOTION</li>
+<li>retrieve from file r+FILENAME<br>     output of external commmand :r !…</li>
+<li>open up a new line below o<br>open up a new line above O</li>
+<li>replace mode(like insert key in Windows) R</li>
+<li>copy y (yw,yy,y+Visual mode…)<br>paste p</li>
+<li>set option set [OPTIONNAME]<br>set off set [noOPTIONNAME]</li>
+<li>help :help NAME</li>
+<li>Ctrl-d complement list<br>TAB complement</li>
+</ul>
+<p>Learning Vim is like breaking the bones to let one grow taller!<br>    230328.Jackcui.NJU</p>
+]]></content>
+      <tags>
+        <tag>CS</tag>
+        <tag>ysyx</tag>
       </tags>
   </entry>
 </search>
