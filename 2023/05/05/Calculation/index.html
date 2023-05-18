@@ -14,18 +14,18 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="http://example.com/2023/05/02/zmdn/"/>
+    <link rel="canonical" href="http://example.com/2023/05/05/calculation/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="zmdn">
+    <meta property="og:title" content="CO:运算器和计算方法">
     <meta property="og:description" content="Jackcui personal homepage.">
-    <meta property="og:url" content="http://example.com2023/05/02/zmdn/">
+    <meta property="og:url" content="http://example.com2023/05/05/Calculation/">
     
     <meta property="og:site_name" content="Jackcui&#39;s Chatter">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="zmdn">
+    <meta name="twitter:title" content="CO:运算器和计算方法">
     <meta name="twitter:description" content="Jackcui personal homepage.">
     <meta name="twitter:image" content="/images/redefine-logo.svg">
     <!--- Icon Part-->
@@ -37,7 +37,7 @@
     
     <title>
         
-            zmdn -
+            CO:运算器和计算方法 -
         
         Jackcui&#39;s Chatter
     </title>
@@ -306,7 +306,7 @@
             
             
                 <div class="article-title">
-                    <h1 class="article-title-regular">zmdn</h1>
+                    <h1 class="article-title-regular">CO:运算器和计算方法</h1>
                 </div>
             
                 
@@ -328,15 +328,15 @@
                             <div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
-        <span class="pc">2023-05-02 18:31:17</span>
-        <span class="mobile">2023-05-02 18:31</span>
+        <span class="pc">2023-05-05 08:10:09</span>
+        <span class="mobile">2023-05-05 08:10</span>
         <span class="hover-info">Created</span>
     </span>
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="pc">2023-05-02 18:34:11</span>
-            <span class="mobile">2023-05-02 18:34</span>
+            <span class="pc">2023-05-09 14:37:49</span>
+            <span class="mobile">2023-05-09 14:37</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -348,7 +348,11 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/Film/">Film</a>&nbsp;
+                        <a href="/tags/CS/">CS</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/CO/">CO</a>&nbsp;
                     </li>
                 
             </ul>
@@ -358,12 +362,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-file-word"></i>&nbsp;<span>56 Words</span>
+            <i class="fa-regular fa-file-word"></i>&nbsp;<span>845 Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>1 Mins</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>2 Mins</span>
         </span>
     
     
@@ -379,12 +383,20 @@
             
 
             <div class="article-content markdown-body">
-                <p>五一跟zr先生看了这么多年，很少看这个题材的，也是因为哈尔滨的缘故，看后有很多想法，张容先生也指正了一些，这里开一个坑，后面补<br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://s2.loli.net/2023/05/02/9WfpeU1gyMLCl5Q.png"
-                      alt="图片.png"
-                ></p>
+                <h3 id="前记"><a href="#前记" class="headerlink" title="前记"></a>前记</h3><p>写DLCO第六章的作业，发现什么都不会，正好也临近期末，就把这些东西都看明白整理一下，尽可能把细枝末节都写清楚。<br>本文参考书目为<br><em><strong>计算机组成与设计：硬件&#x2F;软件接口 RISC-V版<br>机械工业出版社, RISC-V, 2020<br>戴维 A.帕特森_ 约翰 L.亨尼斯</strong></em><br>下简述为<code>COaD</code></p>
+<h3 id="定点数加减"><a href="#定点数加减" class="headerlink" title="定点数加减"></a>定点数加减</h3><p>基础不讲，请自行查阅各种“原码与补码”的资料。</p>
+<h4 id="无符号加减法"><a href="#无符号加减法" class="headerlink" title="无符号加减法"></a>无符号加减法</h4><p>处理溢出：无符号一般不需要处理溢出，如果想要处理，只需要判断和数是否小于两个加数即可。</p>
+<h4 id="带符号加减法"><a href="#带符号加减法" class="headerlink" title="带符号加减法"></a>带符号加减法</h4><p>处理溢出：<br><img src=https://s2.loli.net/2023/05/05/5BxV3Niz2nmYlSP.png width=400px></p>
+<p>当溢出发生时，数据位的值会影响到符号位从而使符号位产生错误的值（当然数据位也是错的），如表格所示，只需要基于表格进行判断即可。<br>值得注意的是，因为n位加法最多只能溢出一位,所以这种方法是完备的。</p>
+<h4 id="硬件实现"><a href="#硬件实现" class="headerlink" title="硬件实现"></a>硬件实现</h4><h5 id="行波进位加减法器-Ripple-Carry-Adder"><a href="#行波进位加减法器-Ripple-Carry-Adder" class="headerlink" title="行波进位加减法器 (Ripple-Carry Adder)"></a>行波进位加减法器 (Ripple-Carry Adder)</h5><p><code>COaD</code>P420</p>
+<blockquote>
+<p>对于初学者，还是强烈建议先自己思考如何实现，而不是查阅教材，此练习见于NJU DLCO Lab2的思考题部分。</p>
+</blockquote>
+<h5 id="先行进位加减法器-Carry-Lookahead-Adder-i-e-CLA"><a href="#先行进位加减法器-Carry-Lookahead-Adder-i-e-CLA" class="headerlink" title="先行进位加减法器 (Carry Lookahead Adder, i.e. CLA)"></a>先行进位加减法器 (Carry Lookahead Adder, i.e. CLA)</h5><p><code>COaD</code>P427 A.6.2 书中水管的比喻非常精彩。</p>
+<h5 id="局部先行进位加减法器-Partial-Carry-Lookahead-Adder"><a href="#局部先行进位加减法器-Partial-Carry-Lookahead-Adder" class="headerlink" title="局部先行进位加减法器 (Partial Carry Lookahead Adder)"></a>局部先行进位加减法器 (Partial Carry Lookahead Adder)</h5><p>嵌套：RCA(CLAs)<br><img src=https://s2.loli.net/2023/05/05/ovwGZXrBNuJWpVm.png width =400px></p>
+<h5 id="多级先行进位加减法器-Block-Carry-Lookahead-Adder-i-e-BCLA"><a href="#多级先行进位加减法器-Block-Carry-Lookahead-Adder-i-e-BCLA" class="headerlink" title="多级先行进位加减法器 (Block Carry Lookahead Adder, i.e. BCLA)"></a>多级先行进位加减法器 (Block Carry Lookahead Adder, i.e. BCLA)</h5><p>嵌套：CLA(RCAs)（究竟是什么还要再确定）<br><code>COaD</code>P428 A.6.3</p>
+<h3 id="带符号定点数乘法"><a href="#带符号定点数乘法" class="headerlink" title="带符号定点数乘法"></a>带符号定点数乘法</h3><p>这一部分的内容比较奇怪，因为没有看到任何一本其他教材中提及了这些内容。</p>
+<h4 id="原码一位乘法"><a href="#原码一位乘法" class="headerlink" title="原码一位乘法"></a>原码一位乘法</h4><h4 id="原码二位乘法"><a href="#原码二位乘法" class="headerlink" title="原码二位乘法"></a>原码二位乘法</h4><h4 id="补码一位乘法"><a href="#补码一位乘法" class="headerlink" title="补码一位乘法"></a>补码一位乘法</h4><h5 id="Just-Sign-Extension"><a href="#Just-Sign-Extension" class="headerlink" title="Just Sign Extension?"></a>Just Sign Extension?</h5><h5 id="Robertson-Algorithm"><a href="#Robertson-Algorithm" class="headerlink" title="Robertson Algorithm?"></a>Robertson Algorithm?</h5><h5 id="Booth-Algorithm"><a href="#Booth-Algorithm" class="headerlink" title="Booth Algorithm"></a>Booth Algorithm</h5><h4 id="补码两位乘法"><a href="#补码两位乘法" class="headerlink" title="补码两位乘法"></a>补码两位乘法</h4><h5 id="MBA"><a href="#MBA" class="headerlink" title="MBA"></a>MBA</h5><h5 id="Wallace-Tree"><a href="#Wallace-Tree" class="headerlink" title="Wallace Tree"></a>Wallace Tree</h5><h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><p>个人认为，这门课程体现了本科教育改革的一个现象，就是改了，但没完全改。<br>课程规划上学习了西方，更具有实践意义，理论与实践兼具，但教材设计和教学设计仍是老一套，知识点手册似的逐条传输，理解还是需要同学们的自行搜索。<br>对比一下北美计科四强的Slides，还是有很大差距。<br>有一种说法是，国内的教材和课程设计是为了在更短的时间内教授全部的课程内容，个人认为这种说法是不成立的，纵观世界一流的学校，他们用着更厚的教材，很少页数的ppt，但依然能完成教学内容，细致准确，提纲挈领的Lecture，可以使学生反而更快的掌握知识。<br>另外就是，这种实验为导向的计组课程，其实远在改革之前华子已经走出了第一步，所谓“奋战三星期，造台计算机”，早已经名声在外，可以说课程改革并不是为他们准备的。<br>呢喃作为计组课程改革的重镇，固然是需要在设计上向下兼容，向全国推广，但呢喃还需要做出更切实的工作，才能配得上对自身的定位和雄心，而不是躺在红头文件的功劳簿上。</p>
 
             </div>
 
@@ -392,11 +404,11 @@
                 <div class="post-copyright-info">
                     <div class="article-copyright-info-container">
     <ul>
-        <li>Post title：zmdn</li>
+        <li>Post title：CO:运算器和计算方法</li>
         <li>Post author：Jackcui</li>
-        <li>Create time：2023-05-02 18:31:17</li>
+        <li>Create time：2023-05-05 08:10:09</li>
         <li>
-            Post link：https://jackcuii.github.io/2023/05/02/zmdn/
+            Post link：https://jackcuii.github.io/2023/05/05/Calculation/
         </li>
         <li>
             Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
@@ -411,7 +423,11 @@
                 <ul class="post-tags-box">
                     
                         <li class="tag-item">
-                            <a href="/tags/Film/">#Film</a>&nbsp;
+                            <a href="/tags/CS/">#CS</a>&nbsp;
+                        </li>
+                    
+                        <li class="tag-item">
+                            <a href="/tags/CO/">#CO</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -425,13 +441,13 @@
                         <div class="article-prev">
                             <a class="prev"
                             rel="prev"
-                            href="/2023/05/05/Calculation/"
+                            href="/2023/05/18/Calculus-II-Chapter-9/"
                             >
                                 <span class="left arrow-icon flex-center">
                                     <i class="fa-solid fa-chevron-left"></i>
                                 </span>
                                 <span class="title flex-center">
-                                    <span class="post-nav-title-item">CO:运算器和计算方法</span>
+                                    <span class="post-nav-title-item">Cal</span>
                                     <span class="post-nav-item">Prev posts</span>
                                 </span>
                             </a>
@@ -441,10 +457,10 @@
                         <div class="article-next">
                             <a class="next"
                             rel="next"
-                            href="/2023/04/18/dm/"
+                            href="/2023/05/02/zmdn/"
                             >
                                 <span class="title flex-center">
-                                    <span class="post-nav-title-item">Discrete Mathemetics 试题调研</span>
+                                    <span class="post-nav-title-item">zmdn</span>
                                     <span class="post-nav-item">Next posts</span>
                                 </span>
                                 <span class="right arrow-icon flex-center">
@@ -509,8 +525,8 @@
                 <div class="post-toc-wrap">
     <div class="post-toc">
         <div class="toc-title">On this page</div>
-        <div class="page-title">zmdn</div>
-        
+        <div class="page-title">CO:运算器和计算方法</div>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E8%AE%B0"><span class="nav-text">前记</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E7%82%B9%E6%95%B0%E5%8A%A0%E5%87%8F"><span class="nav-text">定点数加减</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%97%A0%E7%AC%A6%E5%8F%B7%E5%8A%A0%E5%87%8F%E6%B3%95"><span class="nav-text">无符号加减法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%A6%E7%AC%A6%E5%8F%B7%E5%8A%A0%E5%87%8F%E6%B3%95"><span class="nav-text">带符号加减法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A1%AC%E4%BB%B6%E5%AE%9E%E7%8E%B0"><span class="nav-text">硬件实现</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%A1%8C%E6%B3%A2%E8%BF%9B%E4%BD%8D%E5%8A%A0%E5%87%8F%E6%B3%95%E5%99%A8-Ripple-Carry-Adder"><span class="nav-text">行波进位加减法器 (Ripple-Carry Adder)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%85%88%E8%A1%8C%E8%BF%9B%E4%BD%8D%E5%8A%A0%E5%87%8F%E6%B3%95%E5%99%A8-Carry-Lookahead-Adder-i-e-CLA"><span class="nav-text">先行进位加减法器 (Carry Lookahead Adder, i.e. CLA)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%B1%80%E9%83%A8%E5%85%88%E8%A1%8C%E8%BF%9B%E4%BD%8D%E5%8A%A0%E5%87%8F%E6%B3%95%E5%99%A8-Partial-Carry-Lookahead-Adder"><span class="nav-text">局部先行进位加减法器 (Partial Carry Lookahead Adder)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%A4%9A%E7%BA%A7%E5%85%88%E8%A1%8C%E8%BF%9B%E4%BD%8D%E5%8A%A0%E5%87%8F%E6%B3%95%E5%99%A8-Block-Carry-Lookahead-Adder-i-e-BCLA"><span class="nav-text">多级先行进位加减法器 (Block Carry Lookahead Adder, i.e. BCLA)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%A6%E7%AC%A6%E5%8F%B7%E5%AE%9A%E7%82%B9%E6%95%B0%E4%B9%98%E6%B3%95"><span class="nav-text">带符号定点数乘法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8E%9F%E7%A0%81%E4%B8%80%E4%BD%8D%E4%B9%98%E6%B3%95"><span class="nav-text">原码一位乘法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8E%9F%E7%A0%81%E4%BA%8C%E4%BD%8D%E4%B9%98%E6%B3%95"><span class="nav-text">原码二位乘法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%A5%E7%A0%81%E4%B8%80%E4%BD%8D%E4%B9%98%E6%B3%95"><span class="nav-text">补码一位乘法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Just-Sign-Extension"><span class="nav-text">Just Sign Extension?</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Robertson-Algorithm"><span class="nav-text">Robertson Algorithm?</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Booth-Algorithm"><span class="nav-text">Booth Algorithm</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A1%A5%E7%A0%81%E4%B8%A4%E4%BD%8D%E4%B9%98%E6%B3%95"><span class="nav-text">补码两位乘法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#MBA"><span class="nav-text">MBA</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Wallace-Tree"><span class="nav-text">Wallace Tree</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="nav-text">后记</span></a></li></ol>
 
     </div>
 </div>
