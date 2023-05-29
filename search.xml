@@ -669,4 +669,34 @@
         <tag>Photo</tag>
       </tags>
   </entry>
+  <entry>
+    <title>dlcofinal</title>
+    <url>/2023/05/29/dlcofinal/</url>
+    <content><![CDATA[<h2 id="Chapter1"><a href="#Chapter1" class="headerlink" title="Chapter1"></a>Chapter1</h2><h3 id="Von-Neumann-Architecture"><a href="#Von-Neumann-Architecture" class="headerlink" title="Von Neumann Architecture"></a>Von Neumann Architecture</h3><h3 id="语言"><a href="#语言" class="headerlink" title="语言"></a>语言</h3><h3 id="系统抽象层"><a href="#系统抽象层" class="headerlink" title="系统抽象层"></a>系统抽象层</h3><h3 id="数据表示"><a href="#数据表示" class="headerlink" title="数据表示"></a>数据表示</h3><h4 id="进制"><a href="#进制" class="headerlink" title="进制"></a>进制</h4><h5 id="表示"><a href="#表示" class="headerlink" title="表示"></a>表示</h5><ul>
+<li>尾缀<ul>
+<li>B(Binary)</li>
+<li>O(Octal)</li>
+<li>D(Decimal)</li>
+<li>H(Hexadecimal)</li>
+</ul>
+</li>
+<li>前缀<br>16进制：0x</li>
+<li>$(…)_x$</li>
+</ul>
+<h5 id="R2Decimal"><a href="#R2Decimal" class="headerlink" title="R2Decimal"></a>R2Decimal</h5><p>按权值展开</p>
+<h5 id="Decimal2R"><a href="#Decimal2R" class="headerlink" title="Decimal2R"></a>Decimal2R</h5><ul>
+<li>整数部分：除基取余，下低上高。</li>
+<li>小数部分：乘基取整，上高下低。（乘到某一位截止即为估算）</li>
+</ul>
+<h4 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h4><h5 id="定点数"><a href="#定点数" class="headerlink" title="定点数"></a>定点数</h5><blockquote>
+<p>注意编码其实是由编码空间向真值空间的映射(不一定是单射)</p>
+</blockquote>
+<h6 id="原码"><a href="#原码" class="headerlink" title="原码"></a>原码</h6><p>$sign+value_{n-1}$<br>$all-0,1000…$均表示$0$</p>
+<h6 id="补码"><a href="#补码" class="headerlink" title="补码"></a>补码</h6><p>$Complement(X)&#x3D;2^n+X,2^{n-1}\leqslant X&lt;2^{n-1}$</p>
+]]></content>
+      <tags>
+        <tag>Course</tag>
+        <tag>CS</tag>
+      </tags>
+  </entry>
 </search>
