@@ -1007,12 +1007,36 @@
   <entry>
     <title>CA Reading Notes</title>
     <url>/2023/07/03/ca1/</url>
-    <content><![CDATA[<h2 id="Parallelism-amp-Parallel-Architectures-Data-level-parallelism-Task-level-parallelism"><a href="#Parallelism-amp-Parallel-Architectures-Data-level-parallelism-Task-level-parallelism" class="headerlink" title="Parallelism &amp; Parallel Architectures- Data-level parallelism- Task-level parallelism"></a>Parallelism &amp; Parallel Architectures<br>- Data-level parallelism<br>- Task-level parallelism</h2><h2 id="P10-Instruction-level-parallelism-Vector-architectures-graphic-processor-units-GPUs-and-multimedia-instruction-sets-Thread-level-parallelism-Request-level-parallelism"><a href="#P10-Instruction-level-parallelism-Vector-architectures-graphic-processor-units-GPUs-and-multimedia-instruction-sets-Thread-level-parallelism-Request-level-parallelism" class="headerlink" title="(P10)- Instruction-level parallelism- Vector architectures, graphic processor units (GPUs), and multimedia instruction sets- Thread-level parallelism- Request-level parallelism"></a>(P10)<br>- Instruction-level parallelism<br>- Vector architectures, graphic processor units (GPUs), and multimedia instruction sets<br>- Thread-level parallelism<br>- Request-level parallelism</h2><ul>
+    <content><![CDATA[<h5 id="Parallelism-amp-Parallel-Architectures"><a href="#Parallelism-amp-Parallel-Architectures" class="headerlink" title="Parallelism &amp; Parallel Architectures"></a>Parallelism &amp; Parallel Architectures</h5><ul>
+<li>Data-level parallelism</li>
+<li>Task-level parallelism</li>
+</ul>
+<hr>
+<p>(P10)</p>
+<ul>
+<li>Instruction-level parallelism</li>
+<li>Vector architectures, graphic processor units (GPUs), and multimedia instruction sets</li>
+<li>Thread-level parallelism</li>
+<li>Request-level parallelism</li>
+</ul>
+<hr>
+<ul>
 <li>SISD: single instruction stream, single data stream</li>
 <li>SIMD</li>
 <li>MISD</li>
 <li>MIMD</li>
 </ul>
+<h5 id="ISA"><a href="#ISA" class="headerlink" title="ISA"></a>ISA</h5><p>class of ISA: register-memory(80x86), load-store(RISC-V)…</p>
+<ul>
+<li>memory addressing(P13)</li>
+<li>addressing modes</li>
+<li>types and sizes of operands</li>
+<li>operations</li>
+<li>control flow instructions</li>
+<li>ISA encoding</li>
+</ul>
+<hr>
+<p>Design Principle:</p>
 ]]></content>
       <tags>
         <tag>CS</tag>
