@@ -1035,8 +1035,13 @@
 <li>control flow instructions</li>
 <li>ISA encoding</li>
 </ul>
-<hr>
-<p>Design Principle:</p>
+<h5 id="Design-Principles"><a href="#Design-Principles" class="headerlink" title="Design Principles"></a>Design Principles</h5><p>(P18)</p>
+<h5 id="Power-and-energy"><a href="#Power-and-energy" class="headerlink" title="Power and energy"></a>Power and energy</h5><p>Energy is now the major constraint.</p>
+<ul>
+<li>maximum power<br>voltage indexing methods</li>
+<li>Thermal design power (TDP)</li>
+<li>energy but not power to evaluate<br>power could be used when max power is fixed<br>$$ E \propto Capacitive \times V^2 $$<br>$$ P \propto Capacitive \times V^2 \times Freq $$<br>reduce the voltage(1V up to now, hard for further reduction)<br>Caution: lowering the frequency will not reduce the energy consumption.</li>
+</ul>
 ]]></content>
       <tags>
         <tag>CS</tag>
