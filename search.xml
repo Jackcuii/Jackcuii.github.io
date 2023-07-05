@@ -1040,8 +1040,16 @@
 <ul>
 <li>maximum power<br>voltage indexing methods</li>
 <li>Thermal design power (TDP)</li>
-<li>energy but not power to evaluate<br>power could be used when max power is fixed<br>$$ E \propto Capacitive \times V^2 $$<br>$$ P \propto Capacitive \times V^2 \times Freq $$<br>reduce the voltage(1V up to now, hard for further reduction)<br>Caution: lowering the frequency will not reduce the energy consumption.</li>
+<li>energy but not power to evaluate<br>power could be used when max power is fixed<br>$$ E \propto Capacitive \times V^2 $$<br>$$ P \propto Capacitive \times V^2 \times Freq $$</li>
 </ul>
+<p>reduce the voltage(1V up to now, hard for further reduction)<br>Caution: lowering the frequency will not reduce the energy consumption.<br><strong>Enhance energy efficiency with flat clock rates and constant voltage：</strong>(P27)  </p>
+<ul>
+<li>stop part of the clock when idle</li>
+<li>Dynamic voltage-frequency scaling(DVFS)</li>
+<li>Design for typical case</li>
+<li>Overclocking</li>
+</ul>
+<p><strong>static power</strong><br>$$ P_{static} \propto Voltage \times Current_{leak} $$<br>transister size ↓  –→ current leakage ↑</p>
 ]]></content>
       <tags>
         <tag>CS</tag>
