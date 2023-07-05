@@ -1047,4 +1047,38 @@
         <tag>CS</tag>
       </tags>
   </entry>
+  <entry>
+    <title>ysyx:0004:计算机系统的状态机模型</title>
+    <url>/2023/07/04/tempp/</url>
+    <content><![CDATA[<h2 id="ANNONCEMENT"><a href="#ANNONCEMENT" class="headerlink" title="[ANNONCEMENT]"></a>[ANNONCEMENT]</h2><p>ysyx的课程规范实则是不鼓励分享的，发在这里其实只是做一个类似个人存档的东西或者跟没参加的同学分享，再加上我比较菜，所以参加这个课程的同学慎入。</p>
+<hr>
+<p>程序，ISA和CPU都可以理解为状态机。</p>
+<h5 id="程序是状态机"><a href="#程序是状态机" class="headerlink" title="程序是状态机"></a>程序是状态机</h5><p>状态集合$S&#x3D;{&lt;V,PC&gt;}$<br>$V$变量取值集合<br>$PC$程序计数器,即程序执行位置<br>激励事件即为执行$PC$处的语句，状态转移规则为语句的语义。</p>
+<blockquote>
+<p>C语言程序的main()函数并不是第一个调用的，main()的最后一条语句并不是最后调用的<br>工具：trace和gdb<br>  <img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://s2.loli.net/2023/07/04/ukaq9brWdF325X4.png"
+                      alt="图片.png"
+                ><br>  <img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://s2.loli.net/2023/07/04/doNOHI89tc5bZGj.png"
+                      alt="图片.png"
+                ></p>
+</blockquote>
+<p><code>正确的学习路径：Book→Manual</code></p>
+<h5 id="CPU是状态机"><a href="#CPU是状态机" class="headerlink" title="CPU是状态机"></a>CPU是状态机</h5><p>显见，CPU是数字逻辑电路，由数字电路课程内容。<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://s2.loli.net/2023/07/04/Sct43FPX7oZuWz6.png"
+                      alt="图片.png"
+                ></p>
+<h5 id="指令集也是状态机"><a href="#指令集也是状态机" class="headerlink" title="指令集也是状态机"></a>指令集也是状态机</h5><p>$S&#x3D;{&lt;R,M&gt;}$<br>$R$:寄存器(PC &amp; GPR)<br>$M$:内存</p>
+]]></content>
+      <tags>
+        <tag>CS</tag>
+        <tag>ysyx</tag>
+      </tags>
+  </entry>
 </search>
