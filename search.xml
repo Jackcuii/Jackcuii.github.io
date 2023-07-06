@@ -1050,6 +1050,8 @@
 <li>Overclocking</li>
 </ul>
 <p><strong>static power</strong><br>$$ P_{static} \propto Voltage \times Current_{leak} $$<br>transister size ↓  –→ current leakage ↑</p>
+<p>race-to-halt(P28)</p>
+<p>Shift in design<br>Combination of general-purpose cores and specialized accelerators\</p>
 ]]></content>
       <tags>
         <tag>CS</tag>
