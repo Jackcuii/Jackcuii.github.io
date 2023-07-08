@@ -1120,4 +1120,72 @@
         <tag>ysyx</tag>
       </tags>
   </entry>
+  <entry>
+    <title>ysyx:0003:Missing Semester</title>
+    <url>/2023/07/08/ysyx0003/</url>
+    <content><![CDATA[<h2 id="ANNONCEMENT"><a href="#ANNONCEMENT" class="headerlink" title="[ANNONCEMENT]"></a>[ANNONCEMENT]</h2><p>ysyx的课程规范实则是不鼓励分享的，发在这里其实只是做一个类似个人存档的东西或者跟没参加的同学分享，再加上我比较菜，所以参加这个课程的同学慎入。</p>
+<hr>
+<h3 id="Missing-semester"><a href="#Missing-semester" class="headerlink" title="Missing semester"></a>Missing semester</h3><p><a class="link"   href="https://missing.csail.mit.edu/" >Portal <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h4 id="Class-I"><a href="#Class-I" class="headerlink" title="Class I"></a>Class I</h4><ul>
+<li>echo [String]</li>
+</ul>
+<p>connect operands with “” or <br>“” and ‘’:<br><a class="link"   href="https://www.gnu.org/software/bash/manual/html_node/Quoting.html" >Portal <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<ul>
+<li>pwd: show direactory</li>
+<li>. this dir</li>
+<li>.. upper dir</li>
+<li>~ &#x3D;&#x2F;home&#x2F;[User]</li>
+<li>“-“ last dir</li>
+<li>cat concatenate the files to the output</li>
+<li>grep look up in the file</li>
+<li>diff strings comparison</li>
+</ul>
+<h5 id="argument"><a href="#argument" class="headerlink" title="argument"></a>argument</h5><ul>
+<li><p>–help</p>
+</li>
+<li><p>-l (long format)</p>
+</li>
+<li><p>ls -l<br>(3*r(read)w(write)x(execute)) certification for owner group everyone<br>the first letter: d-&gt;directory<br>  for directory, execute it means “cd” it</p>
+</li>
+<li><p>mv move and rename </p>
+</li>
+<li><p>cp [from] [to](both are path or file name) copy and rename</p>
+</li>
+<li><p>rm [path] delete<br>flag -r recursive </p>
+</li>
+<li><p>mkdir make directory</p>
+</li>
+<li><p>man <strong>wait for extension</strong></p>
+</li>
+<li><p>ctrl-l clean the window</p>
+</li>
+<li><p>touch change the timestamp</p>
+</li>
+<li><p>chmod change the .l  use:picture</p>
+</li>
+</ul>
+<h5 id="stream"><a href="#stream" class="headerlink" title="stream"></a>stream</h5><p>input stream, out stream<br>default is the terminal<br>rewrite &gt;(o) &lt;(i) overwrite 2&gt;(error)<br>        &gt;&gt; &lt;&lt; append<br>pipe | take the output of the left and send to the input of the right</p>
+<h5 id="root"><a href="#root" class="headerlink" title="root"></a>root</h5><p>have all administration<br>sudo [command]<br>caution that all the commands are well encapsulated so they don’t know the pipeline or redirection, they are run by Shell individually. (So caution the position of sudo)<br>sudo su change to super terminal<br>exit<br>tee [files] copy from the standard input to the standard output and files<br>xdg -open open a file with proper program</p>
+<h5 id="Assigmnment"><a href="#Assigmnment" class="headerlink" title="Assigmnment"></a>Assigmnment</h5><p>Shebang: <a class="link"   href="https://en.wikipedia.org/wiki/Shebang_(Unix)" >Wikipedia <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>Maybe I could not look up the CPU temperature in a virtual machine.</p>
+<h4 id="Class-II"><a href="#Class-II" class="headerlink" title="Class II"></a>Class II</h4><p>Shell Programming (Script language)</p>
+<h5 id="assign-variable"><a href="#assign-variable" class="headerlink" title="assign variable"></a>assign variable</h5><p>a&#x3D;b<br>(no space, or it will be regard as a call)<br>“” envaluates $… , but ‘’ not.<br>a&#x3D;$([Command])<br><strong>Process Substitution</strong><br>&lt;([Command])</p>
+<ol>
+<li>execute the command</li>
+<li>store the output in temporary file</li>
+<li>replace the (…) with the temp file name</li>
+</ol>
+<h5 id="define-function"><a href="#define-function" class="headerlink" title="define function"></a>define function</h5><p>example() {<br>    mkdir -p “$1”<br>    cd “$1”<br>}</p>
+<blockquote>
+<p>$0 - Name of the script<br>  $1 to $9 - Arguments to the script. $1 is the first argument and so on.<br>  $@ - All the arguments<br>  $# - Number of arguments<br>  $? - Return code of the previous command<br>  $$ - Process identification number (PID) for the current script<br>  !! - Entire last command, including arguments. A common pattern is to execute a command only for it to fail due to missing permissions; you can quickly re-execute the command with sudo by doing sudo !!<br>  $_ - Last argument from the last command. If you are in an interactive shell, you can also quickly get this value by typing Esc followed by . or Alt+.</p>
+</blockquote>
+<p>write into a script<br>xxx.sh<br>source xxx.sh &#x2F;(similar to import in Python)</p>
+<h5 id="Logical-junctions"><a href="#Logical-junctions" class="headerlink" title="Logical junctions"></a>Logical junctions</h5><p>style like C<br>fusing<br>true&#x2F;false in the logic expression<br>the logical value is the error value (not return value?)</p>
+<h5 id="Comparisons"><a href="#Comparisons" class="headerlink" title="Comparisons"></a>Comparisons</h5><p>test,[],[[]]<br>refer to “man test” and <a class="link"   href="http://mywiki.wooledge.org/BashFAQ/031" >Portal <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h5 id="Globbing"><a href="#Globbing" class="headerlink" title="Globbing"></a>Globbing</h5><p>expand to all the combinations<br>“*“ anything<br>? any one letter<br>{} any one in the set<br>{a,b,c,d,e} {a…e}</p>
+]]></content>
+      <tags>
+        <tag>CS</tag>
+        <tag>ysyx</tag>
+      </tags>
+  </entry>
 </search>
