@@ -335,8 +335,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="pc">2023-07-11 13:36:45</span>
-            <span class="mobile">2023-07-11 13:36</span>
+            <span class="pc">2023-07-11 14:21:57</span>
+            <span class="mobile">2023-07-11 14:21</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -358,12 +358,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-file-word"></i>&nbsp;<span>627 Words</span>
+            <i class="fa-regular fa-file-word"></i>&nbsp;<span>920 Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>2 Mins</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>3 Mins</span>
         </span>
     
     
@@ -398,9 +398,23 @@
 <li>tup</li>
 <li>数组，跟Python有一点点类似，但是默认都是不可变的<div class="highlight-container" data-rel="Rust"><figure class="iseeu highlight rust"><figcaption><span>粘过来一点示例</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="variable">a</span> = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"><span class="comment">// a 是一个长度为 5 的整型数组</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="variable">b</span> = [<span class="string">&quot;January&quot;</span>, <span class="string">&quot;February&quot;</span>, <span class="string">&quot;March&quot;</span>];</span><br><span class="line"><span class="comment">// b 是一个长度为 3 的字符串数组</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="variable">c</span>: [<span class="type">i32</span>; <span class="number">5</span>] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"><span class="comment">// c 是一个长度为 5 的 i32 数组</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="variable">d</span> = [<span class="number">3</span>; <span class="number">5</span>];</span><br><span class="line"><span class="comment">// 等同于 let d = [3, 3, 3, 3, 3];</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> <span class="variable">first</span> = a[<span class="number">0</span>];</span><br><span class="line"><span class="keyword">let</span> <span class="variable">second</span> = a[<span class="number">1</span>];</span><br><span class="line"><span class="comment">// 数组访问</span></span><br><span class="line"></span><br><span class="line">a[<span class="number">0</span>] = <span class="number">123</span>; <span class="comment">// 错误：数组 a 不可变</span></span><br><span class="line"><span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">a</span> = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line">a[<span class="number">0</span>] = <span class="number">4</span>; <span class="comment">// 正确</span></span><br></pre></td></tr></table></figure></div></li>
 </ul>
-<h2 id="Annotation"><a href="#Annotation" class="headerlink" title="Annotation"></a>Annotation</h2><p>形似C<br>三个正斜杠 &#x2F;&#x2F;&#x2F; 依然是合法的注释开始。所以 Rust 可以用 &#x2F;&#x2F;&#x2F; 作为说明文档注释的开头<br>可以显示在 IDE 中<br>Cargo 具有 cargo doc 功能，开发者可以通过这个命令将工程中的说明注释转换成 HTML 格式的说明文档。</p>
-<h2 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h2><p>fn &lt;函数名&gt; ( &lt;参数&gt; ) &lt;函数体&gt;<br>不要求顺序</p>
-
+<h3 id="Annotation"><a href="#Annotation" class="headerlink" title="Annotation"></a>Annotation</h3><p>形似C<br>三个正斜杠 &#x2F;&#x2F;&#x2F; 依然是合法的注释开始。所以 Rust 可以用 &#x2F;&#x2F;&#x2F; 作为说明文档注释的开头<br>可以显示在 IDE 中<br>Cargo 具有 cargo doc 功能，开发者可以通过这个命令将工程中的说明注释转换成 HTML 格式的说明文档。</p>
+<h3 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h3><p>fn &lt;函数名&gt; ( &lt;参数&gt; name: type ) &lt;函数体&gt;<br>不要求顺序</p>
+<div class="highlight-container" data-rel="Rust"><figure class="iseeu highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="keyword">let</span> <span class="variable">x</span> = <span class="number">3</span>;</span><br><span class="line">    x + <span class="number">1</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></div>
+<p>块中可以使用函数语句，最后一个步骤是表达式，此表达式的结果值是整个表达式块所代表的值。这种表达式块叫做函数体表达式。<br>道理有点类似于lambda表达式<br>返回值必须指明，否则认为是纯过程</p>
+<div class="highlight-container" data-rel="Rust"><figure class="iseeu highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">fn</span> <span class="title function_">add</span>(a: <span class="type">i32</span>, b: <span class="type">i32</span>) <span class="punctuation">-&gt;</span> <span class="type">i32</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<h3 id="Control-Flow"><a href="#Control-Flow" class="headerlink" title="Control Flow"></a>Control Flow</h3><p>条件语句非常类似于C<br>两个区别</p>
+<ol>
+<li>不能用单语句代替块(必须用花括号)</li>
+<li>条件<code>可以</code>不写小括号</li>
+</ol>
+<p>条件语句并不是非零即真，而必须是bool！<br>条件的选项当然也可以是函数体表达式</p>
+<div class="highlight-container" data-rel="Rust"><figure class="iseeu highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">fn</span> <span class="title function_">main</span>() &#123;</span><br><span class="line">    <span class="keyword">let</span> <span class="variable">a</span> = <span class="number">3</span>;</span><br><span class="line">    <span class="keyword">let</span> <span class="variable">number</span> = <span class="keyword">if</span> a &gt; <span class="number">0</span> &#123; <span class="number">1</span> &#125; <span class="keyword">else</span> &#123; -<span class="number">1</span> &#125;;</span><br><span class="line">    <span class="built_in">println!</span>(<span class="string">&quot;number 为 &#123;&#125;&quot;</span>, number);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>为什么if外面不需要花括号？？？？？？？？</p>
+<p>循环while类似于C，区别同if&#x2F;else<br>for循环类似于Python,还有一种有趣的整形遍历</p>
+<div class="highlight-container" data-rel="Rust"><figure class="iseeu highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="variable">i</span> <span class="keyword">in</span> <span class="number">0</span>..<span class="number">5</span> &#123;</span><br><span class="line">        <span class="built_in">println!</span>(<span class="string">&quot;a[&#123;&#125;] = &#123;&#125;&quot;</span>, i, a[i]);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></div>
+<p>无限循环 loop<br>还可以有返回值的循环<br><code>break ...;</code><br>这里究竟是函数还是表达式？？？？？？？？</p>
+<h2 id="Rust-高级特性"><a href="#Rust-高级特性" class="headerlink" title="Rust 高级特性"></a>Rust 高级特性</h2>
             </div>
 
             
@@ -510,7 +524,7 @@
     <div class="post-toc">
         <div class="toc-title">On this page</div>
         <div class="page-title">Rust</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Preface"><span class="nav-text">Preface</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Rust-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="nav-text">Rust 环境配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cargo-%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8"><span class="nav-text">Cargo 包管理器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80"><span class="nav-text">语言基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Declaring-Variables"><span class="nav-text">Declaring Variables</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Types"><span class="nav-text">Types</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Annotation"><span class="nav-text">Annotation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Function"><span class="nav-text">Function</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Preface"><span class="nav-text">Preface</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Rust-%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="nav-text">Rust 环境配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cargo-%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8"><span class="nav-text">Cargo 包管理器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80"><span class="nav-text">语言基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Declaring-Variables"><span class="nav-text">Declaring Variables</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Types"><span class="nav-text">Types</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Annotation"><span class="nav-text">Annotation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Function"><span class="nav-text">Function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Control-Flow"><span class="nav-text">Control Flow</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Rust-%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7"><span class="nav-text">Rust 高级特性</span></a></li></ol>
 
     </div>
 </div>
