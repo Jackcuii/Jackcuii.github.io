@@ -335,8 +335,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="pc">2023-07-11 10:40:44</span>
-            <span class="mobile">2023-07-11 10:40</span>
+            <span class="pc">2023-07-11 10:45:55</span>
+            <span class="mobile">2023-07-11 10:45</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -358,7 +358,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-file-word"></i>&nbsp;<span>186 Words</span>
+            <i class="fa-regular fa-file-word"></i>&nbsp;<span>229 Words</span>
         </span>
     
     
@@ -385,7 +385,11 @@
 <h2 id="语言基础"><a href="#语言基础" class="headerlink" title="语言基础"></a>语言基础</h2><p>println!() 和 print!()。这两个”函数”都是向命令行输出字符串的方法，区别仅在于前者会在输出的最后附加输出一个换行符。</p>
 <p>输出类似于Python的format</p>
 <p>格式字符串中通过  分别转义代表 { 和 }。但是其他常用转义字符与 C 语言里的转义字符一样，都是反斜杠开头的形式。</p>
-<h3 id="Declaring-Variables"><a href="#Declaring-Variables" class="headerlink" title="Declaring Variables"></a>Declaring Variables</h3><div class="highlight-container" data-rel="Rust"><figure class="iseeu highlight rust"><figcaption><span>&#123;.line-numbers&#125;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="variable">x</span> = <span class="number">5</span>;</span><br></pre></td></tr></table></figure></div>
+<h3 id="Declaring-Variables"><a href="#Declaring-Variables" class="headerlink" title="Declaring Variables"></a>Declaring Variables</h3><div class="highlight-container" data-rel="Rust"><figure class="iseeu highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="variable">x</span> = <span class="number">5</span>;</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Rust"><figure class="iseeu highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">&quot;abc&quot;</span>; <span class="comment">//错，类型不同</span></span><br><span class="line">a = <span class="number">4.56</span>; <span class="comment">//错，Rust不允许损失精度的强制类型转换</span></span><br><span class="line">a = <span class="number">456</span>; <span class="comment">//错，这是个“不可变变量”</span></span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-container" data-rel="Rust"><figure class="iseeu highlight rust"><figcaption><span>可变变量</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">x</span> = <span class="number">5</span>;</span><br><span class="line">x = <span class="number">6</span>;</span><br></pre></td></tr></table></figure></div>
+
             </div>
 
             
