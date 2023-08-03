@@ -1147,6 +1147,24 @@
 <h6 id="中间代码生成"><a href="#中间代码生成" class="headerlink" title="中间代码生成"></a>中间代码生成</h6><p><img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2023/07/17/lIy7rERbGt32VKh.png" alt="图片.png"></p>
 <h6 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h6><p><img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2023/07/17/zCudk9gDmoeyFah.png" alt="图片.png"></p>
 <h6 id="目标代码生成"><a href="#目标代码生成" class="headerlink" title="目标代码生成"></a>目标代码生成</h6><p><img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2023/07/17/ZGRiMh1JOUbnD6L.png" alt="图片.png"></p>
+<h5 id="binary"><a href="#binary" class="headerlink" title="binary"></a>binary</h5><h6 id="汇编"><a href="#汇编" class="headerlink" title="汇编"></a>汇编</h6><p><img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2023/08/03/YnANmrcbGhVLP3I.png" alt="图片.png"></p>
+<h6 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h6><p><img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2023/08/03/3jb4YupCTZhaoe9.png" alt="图片.png"><br>动态链接机制？？</p>
+<h6 id="执行"><a href="#执行" class="headerlink" title="执行"></a>执行</h6><p><img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2023/08/03/sypNRDJ7cS9kFqb.png" alt="图片.png"><br>#####<br><code>通过日志观察工具的行为</code></p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">clang - fsyntax-only -Xclang -ast-dump a.c</span><br></pre></td></tr></table></figure></div>
+<p>C语言标准有一些是符合一定范围即可</p>
+<ul>
+<li>有一些 未指定行为(Unspecified behaviour)<br>在认可情况下都可以随便选择。</li>
+<li>还有一些 事先定义行为(Implementation-defined behaviour)<br>在一定环境下，选择必须是一定的。</li>
+<li>未定义行为(Undefined behaviour)<br>完全不符合标准，甚至都不能用对错来形容。</li>
+</ul>
+<p><img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2023/08/03/WwF6aQb7zq3ETU1.png" alt="图片.png"><br><img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2023/08/03/pbsi4Rjy3feAKgc.png" alt="图片.png"></p>
+<blockquote>
+<p>2个经典问题</p>
+</blockquote>
+<ul>
+<li>2147483648 问题</li>
+<li>char 的类型提升问题</li>
+</ul>
 ]]></content>
       <tags>
         <tag>CS</tag>
