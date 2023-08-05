@@ -1214,10 +1214,42 @@
 </li>
 <li><p>chmod change the .l  use:picture</p>
 </li>
+<li><p>rg</p>
+</li>
+<li><p>convert process image</p>
+</li>
+<li><p>ffmpeg process video</p>
+</li>
+<li><p>tldr</p>
+</li>
+<li><p>find</p>
+</li>
+<li><p>locate (update the database: updatedb)</p>
+</li>
+<li><p>rg -t,-C,-stats…</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">rg -u --files-without-match &quot;^#\!&quot; -t sh</span><br></pre></td></tr></table></figure></div></li>
+<li><p>ack,ag…</p>
+</li>
+<li><p>history past commands in terminal</p>
+</li>
+<li><p>ctrl-R (in terminal)</p>
+</li>
+<li><p>tree</p>
+</li>
+<li><p>broot(uninstalled)</p>
+</li>
+<li><p>nnn,ranger…</p>
+</li>
+<li><p>xdg-open</p>
+</li>
+<li><p>export</p>
+</li>
+<li><p>xargs make the standard input stream be the arguments</p>
+</li>
 </ul>
-<h5 id="stream"><a href="#stream" class="headerlink" title="stream"></a>stream</h5><p>input stream, out stream<br>default is the terminal<br>rewrite &gt;(o) &lt;(i) overwrite 2&gt;(error)<br>        &gt;&gt; &lt;&lt; append<br>pipe | take the output of the left and send to the input of the right</p>
+<h5 id="stream"><a href="#stream" class="headerlink" title="stream"></a>stream</h5><p>input stream, out stream<br>default is the terminal<br>rewrite &gt;(o) &lt;(i) overwrite 2&gt;(error)<br>        &gt;&gt; &lt;&lt; append<br>“&amp;&gt;” &#x3D; “&gt;” + “2&gt;”<br>pipe | take the output of the left and send to the input of the right</p>
 <h5 id="root"><a href="#root" class="headerlink" title="root"></a>root</h5><p>have all administration<br>sudo [command]<br>caution that all the commands are well encapsulated so they don’t know the pipeline or redirection, they are run by Shell individually. (So caution the position of sudo)<br>sudo su change to super terminal<br>exit<br>tee [files] copy from the standard input to the standard output and files<br>xdg -open open a file with proper program</p>
-<h5 id="Assigmnment"><a href="#Assigmnment" class="headerlink" title="Assigmnment"></a>Assigmnment</h5><p>Shebang: <a class="link"   href="https://en.wikipedia.org/wiki/Shebang_(Unix)" >Wikipedia <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>Maybe I could not look up the CPU temperature in a virtual machine.</p>
+<h5 id="Assigmnment"><a href="#Assigmnment" class="headerlink" title="Assigmnment"></a>Assigmnment</h5><p>Maybe I could not look up the CPU temperature in a virtual machine.</p>
 <h4 id="Class-II"><a href="#Class-II" class="headerlink" title="Class II"></a>Class II</h4><p>Shell Programming (Script language)</p>
 <h5 id="assign-variable"><a href="#assign-variable" class="headerlink" title="assign variable"></a>assign variable</h5><p>a&#x3D;b<br>(no space, or it will be regard as a call)<br>“” envaluates $… , but ‘’ not.<br>a&#x3D;$([Command])<br><strong>Process Substitution</strong><br>&lt;([Command])</p>
 <ol>
@@ -1233,7 +1265,19 @@
 <h5 id="Logical-junctions"><a href="#Logical-junctions" class="headerlink" title="Logical junctions"></a>Logical junctions</h5><p>style like C<br>fusing<br>true&#x2F;false in the logic expression<br>the logical value is the error value (not return value?)</p>
 <h5 id="Comparisons"><a href="#Comparisons" class="headerlink" title="Comparisons"></a>Comparisons</h5><p>test,[],[[]]<br>refer to “man test” and <a class="link"   href="http://mywiki.wooledge.org/BashFAQ/031" >Portal <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 <h5 id="Globbing"><a href="#Globbing" class="headerlink" title="Globbing"></a>Globbing</h5><p>expand to all the combinations<br>“*“ anything<br>? any one letter<br>{} any one in the set<br>{a,b,c,d,e} {a…e}</p>
-]]></content>
+<h5 id="Shebang"><a href="#Shebang" class="headerlink" title="Shebang"></a>Shebang</h5><p>Shebang: <a class="link"   href="https://en.wikipedia.org/wiki/Shebang_(Unix)" >Wikipedia <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>e.g. #!&#x2F;usr&#x2F;bin&#x2F;env python</p>
+<blockquote>
+<p>function and script<br>  function should be the same language as the shell<br>    but script needn’t<br>    Functions are loaded once when their definition is read. Scripts are loaded every time they are executed.<br>    Functions are executed in the current shell environment whereas scripts execute in their own process.<br>    Functions are executed in the current shell environment whereas scripts execute in their own process. Thus, functions can modify environment variables, e.g. change your current directory, whereas scripts can’t. Scripts will be passed by value environment variables that have been exported using export#</p>
+</blockquote>
+<h5 id="debug"><a href="#debug" class="headerlink" title="debug"></a>debug</h5><p>shellcheck</p>
+<p><strong>difference between executing script and load script</strong></p>
+<h5 id="Assignment"><a href="#Assignment" class="headerlink" title="Assignment"></a>Assignment</h5><ol>
+<li>-a</li>
+<li>-l -h</li>
+<li>-l –sort&#x3D;t</li>
+<li>–color</li>
+</ol>
+<h4 id="Class-III-Vim"><a href="#Class-III-Vim" class="headerlink" title="Class III Vim"></a>Class III Vim</h4><h4 id="Class-I-Class-III-Vim"><a href="#Class-I-Class-III-Vim" class="headerlink" title="Class I#### Class III Vim"></a>Class I#### Class III Vim</h4><h4 id="Class-IV"><a href="#Class-IV" class="headerlink" title="Class IV"></a>Class IV</h4>]]></content>
       <tags>
         <tag>CS</tag>
         <tag>ysyx</tag>
