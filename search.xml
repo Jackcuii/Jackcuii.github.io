@@ -1432,4 +1432,27 @@
         <tag>Chatter</tag>
       </tags>
   </entry>
+  <entry>
+    <title>ysyx:0006:Creview</title>
+    <url>/2023/08/08/ysyx0006/</url>
+    <content><![CDATA[<h3 id="GNU-make-的使用"><a href="#GNU-make-的使用" class="headerlink" title="GNU make 的使用"></a>GNU make 的使用</h3><h4 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h4><p>这里面涉及的东西比较多，就先找了两个博客看了看。<br><a class="link"   href="https://zhuanlan.zhihu.com/p/525611543" >Blog1 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link"   href="https://zhuanlan.zhihu.com/p/376493209" >Blog2 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link"   href="https://www.gnu.org/software/make/manual/html_node/index.html" >FM <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h4 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h4><p><strong>命令行前面必须是TAB</strong></p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">TARGETS : PREREQUISITES</span><br><span class="line">    COMMAND</span><br></pre></td></tr></table></figure></div>
+<p>依赖如果是文件则会查找，如果是其他目标则会调用<br>TARGET和PREREQUISITES都可以是空格连接的若干条<br>run的时候会展开<br>第一个TARGET是默认执行的<br>调用make时也可以显式指定</p>
+<blockquote>
+<p>值得注意的是，make会自动检查一个目标是否需要重建，规则是如果依赖中有任何一个是比目标更新的，那么就需要重建。如果目标和依赖都是文件，那么就要根据目标文件和依赖文件的修改时间来确定。<br><strong>phony target</strong><br>clean,all…<br>指定伪目标（保证一定会被重建）</p>
+</blockquote>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">.PHONY: ...</span><br></pre></td></tr></table></figure></div>
+<p><strong>Variable</strong><br>Assignment: “&#x3D;”<br>Evaluation: $(…)<br>还可以使用”+&#x3D;”默认加上之后用空格连接</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">CC = gcc                        # 编译器</span><br><span class="line">INCLUDES = -I./mymath           # 依赖路径</span><br><span class="line">LIBS = -lm                      # 库</span><br><span class="line">CFLAGS = -Wall -O2              # 编译选项</span><br><span class="line">SOURCES = main.c                # 源码</span><br><span class="line">SOURCES += ./mymath/mymath.c</span><br><span class="line">TARGETS = main                  # 目标文件名</span><br><span class="line">SHELL = /bin/sh                 # shell的可执行路径</span><br></pre></td></tr></table></figure></div>
+<p><strong>Implicit variable</strong></p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">RM = rm -f</span><br><span class="line">MAKE = make</span><br></pre></td></tr></table></figure></div>
+<p><strong>Automatic variable</strong></p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">$@ # 本条规则的目标文件</span><br><span class="line">$^ # 本条规则的所有依赖</span><br><span class="line">$&lt; # 本条规则的第一个依赖文件，如果把头文件也写进了依赖里，这个变量将会有用</span><br><span class="line">$? # 本条规则的依赖里，这次运行时更新了的依赖</span><br></pre></td></tr></table></figure></div>
+<p><strong>include</strong><br>比方说可以写一个config单独管理变量<br><strong>函数与递归调用</strong><br>见Blog1后面的的例子。</p>
+]]></content>
+      <tags>
+        <tag>ysyx</tag>
+      </tags>
+  </entry>
 </search>
