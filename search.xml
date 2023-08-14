@@ -1435,7 +1435,8 @@
   <entry>
     <title>ysyx:0006:Creview</title>
     <url>/2023/08/08/ysyx0006/</url>
-    <content><![CDATA[<h3 id="GNU-make-的使用"><a href="#GNU-make-的使用" class="headerlink" title="GNU make 的使用"></a>GNU make 的使用</h3><h4 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h4><p>这里面涉及的东西比较多，就先找了两个博客看了看。<br><a class="link"   href="https://zhuanlan.zhihu.com/p/525611543" >Blog1 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link"   href="https://zhuanlan.zhihu.com/p/376493209" >Blog2 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link"   href="https://www.gnu.org/software/make/manual/html_node/index.html" >FM <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+    <content><![CDATA[<h3 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h3><p>复习C时候的笔记，说是复习，其实没系统学习过，大多数是从不同地方粘贴过来的，所以可能不连贯。</p>
+<h3 id="GNU-make-的使用"><a href="#GNU-make-的使用" class="headerlink" title="GNU make 的使用"></a>GNU make 的使用</h3><h4 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h4><p>这里面涉及的东西比较多，就先找了两个博客看了看。<br><a class="link"   href="https://zhuanlan.zhihu.com/p/525611543" >Blog1 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link"   href="https://zhuanlan.zhihu.com/p/376493209" >Blog2 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link"   href="https://www.gnu.org/software/make/manual/html_node/index.html" >FM <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 <h4 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h4><p><strong>命令行前面必须是TAB</strong></p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">TARGETS : PREREQUISITES</span><br><span class="line">    COMMAND</span><br></pre></td></tr></table></figure></div>
 <p>依赖如果是文件则会查找，如果是其他目标则会调用<br>TARGET和PREREQUISITES都可以是空格连接的若干条<br>run的时候会展开<br>第一个TARGET是默认执行的<br>调用make时也可以显式指定</p>
@@ -1473,7 +1474,9 @@
                       alt="图片.png"
                 ><br>Interesting!</p>
 <h3 id="Bool-expression"><a href="#Bool-expression" class="headerlink" title="Bool expression"></a>Bool expression</h3><p>用一个整数来代替，0代表false，其它值代表true。</p>
-<h3 id="pointer"><a href="#pointer" class="headerlink" title="pointer"></a>pointer</h3><p>译者注，除了sizeof、&amp;操作和声明之外，数组名称都会被编译器推导为指向其首个元素的指针。对于这些情况，不要用“是”这个词，而是要用“推导”。<br>感觉还是runoob的写的比较清楚<br><a class="link"   href="https://www.runoob.com/cprogramming/c-pointers.html" >Runoob <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h3 id="pointer"><a href="#pointer" class="headerlink" title="pointer"></a>pointer</h3><p>译者注，除了sizeof、&amp;操作和声明之外，数组名称都会被编译器推导为指向其首个元素的指针。对于这些情况，不要用“是”这个词，而是要用“推导”。</p>
+<p>感觉还是runoob的写的比较清楚<br><a class="link"   href="https://www.runoob.com/cprogramming/c-pointers.html" >Runoob <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>C 允许您从函数返回指针。为了做到这点，您必须声明一个返回指针的函数，如下所示：<br>int * myFunction()<br>{<br>.<br>.<br>.<br>}<br>另外，C 语言不支持在调用函数时返回局部变量的地址，除非定义局部变量为 static 变量。</p>
 <ul>
 <li>type *ptr<br>type类型的指针，名为ptr。</li>
 <li>*ptr<br>ptr所指向位置的值。</li>

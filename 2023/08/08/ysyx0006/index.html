@@ -335,8 +335,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="pc">2023-08-14 12:22</span>
-            <span class="mobile">2023-08-14 12:22</span>
+            <span class="pc">2023-08-14 15:14:53</span>
+            <span class="mobile">2023-08-14 15:14</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -358,12 +358,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-file-word"></i>&nbsp;<span>1.9k Words</span>
+            <i class="fa-regular fa-file-word"></i>&nbsp;<span>2k Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>6 Mins</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>7 Mins</span>
         </span>
     
     
@@ -379,7 +379,8 @@
             
 
             <div class="article-content markdown-body">
-                <h3 id="GNU-make-的使用"><a href="#GNU-make-的使用" class="headerlink" title="GNU make 的使用"></a>GNU make 的使用</h3><h4 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h4><p>这里面涉及的东西比较多，就先找了两个博客看了看。<br><a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/525611543" >Blog1 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/376493209" >Blog2 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://www.gnu.org/software/make/manual/html_node/index.html" >FM <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <h3 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h3><p>复习C时候的笔记，说是复习，其实没系统学习过，大多数是从不同地方粘贴过来的，所以可能不连贯。</p>
+<h3 id="GNU-make-的使用"><a href="#GNU-make-的使用" class="headerlink" title="GNU make 的使用"></a>GNU make 的使用</h3><h4 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h4><p>这里面涉及的东西比较多，就先找了两个博客看了看。<br><a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/525611543" >Blog1 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/376493209" >Blog2 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://www.gnu.org/software/make/manual/html_node/index.html" >FM <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 <h4 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h4><p><strong>命令行前面必须是TAB</strong></p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">TARGETS : PREREQUISITES</span><br><span class="line">    COMMAND</span><br></pre></td></tr></table></figure></div>
 <p>依赖如果是文件则会查找，如果是其他目标则会调用<br>TARGET和PREREQUISITES都可以是空格连接的若干条<br>run的时候会展开<br>第一个TARGET是默认执行的<br>调用make时也可以显式指定</p>
@@ -417,7 +418,9 @@
                       alt="图片.png"
                 ><br>Interesting!</p>
 <h3 id="Bool-expression"><a href="#Bool-expression" class="headerlink" title="Bool expression"></a>Bool expression</h3><p>用一个整数来代替，0代表false，其它值代表true。</p>
-<h3 id="pointer"><a href="#pointer" class="headerlink" title="pointer"></a>pointer</h3><p>译者注，除了sizeof、&amp;操作和声明之外，数组名称都会被编译器推导为指向其首个元素的指针。对于这些情况，不要用“是”这个词，而是要用“推导”。<br>感觉还是runoob的写的比较清楚<br><a class="link"   target="_blank" rel="noopener" href="https://www.runoob.com/cprogramming/c-pointers.html" >Runoob <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h3 id="pointer"><a href="#pointer" class="headerlink" title="pointer"></a>pointer</h3><p>译者注，除了sizeof、&amp;操作和声明之外，数组名称都会被编译器推导为指向其首个元素的指针。对于这些情况，不要用“是”这个词，而是要用“推导”。</p>
+<p>感觉还是runoob的写的比较清楚<br><a class="link"   target="_blank" rel="noopener" href="https://www.runoob.com/cprogramming/c-pointers.html" >Runoob <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>C 允许您从函数返回指针。为了做到这点，您必须声明一个返回指针的函数，如下所示：<br>int * myFunction()<br>{<br>.<br>.<br>.<br>}<br>另外，C 语言不支持在调用函数时返回局部变量的地址，除非定义局部变量为 static 变量。</p>
 <ul>
 <li>type *ptr<br>type类型的指针，名为ptr。</li>
 <li>*ptr<br>ptr所指向位置的值。</li>
@@ -544,7 +547,7 @@
     <div class="post-toc">
         <div class="toc-title">On this page</div>
         <div class="page-title">ysyx:0006:Creview</div>
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#GNU-make-%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-text">GNU make 的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Links"><span class="nav-text">Links</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Notes"><span class="nav-text">Notes</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA"><span class="nav-text">格式化输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Valgrind"><span class="nav-text">Valgrind</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String"><span class="nav-text">String</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bool-expression"><span class="nav-text">Bool expression</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pointer"><span class="nav-text">pointer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#function-pointer"><span class="nav-text">function pointer</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Preface"><span class="nav-text">Preface</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GNU-make-%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-text">GNU make 的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Links"><span class="nav-text">Links</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Notes"><span class="nav-text">Notes</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA"><span class="nav-text">格式化输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Valgrind"><span class="nav-text">Valgrind</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String"><span class="nav-text">String</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bool-expression"><span class="nav-text">Bool expression</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pointer"><span class="nav-text">pointer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#function-pointer"><span class="nav-text">function pointer</span></a></li></ol>
 
     </div>
 </div>
