@@ -1492,7 +1492,52 @@
 <div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">Database_delete</span><span class="params">(<span class="keyword">struct</span> Connection *conn, <span class="type">int</span> id)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">Address</span> <span class="title">addr</span> =</span> &#123;.id = id, .<span class="built_in">set</span> = <span class="number">0</span>&#125;;</span><br><span class="line">    conn-&gt;db-&gt;rows[id] = addr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 <div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">Database_create</span><span class="params">(<span class="keyword">struct</span> Connection *conn)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; MAX_ROWS; i++) &#123;</span><br><span class="line">        <span class="comment">// make a prototype to initialize it </span></span><br><span class="line">        <span class="class"><span class="keyword">struct</span> <span class="title">Address</span> <span class="title">addr</span> =</span> &#123;.id = i, .<span class="built_in">set</span> = <span class="number">0</span>&#125;;</span><br><span class="line">        <span class="comment">// then just assign it</span></span><br><span class="line">        conn-&gt;db-&gt;rows[i] = addr;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 <p>为什么可以这么写？？？？</p>
-<h3 id="function-pointer"><a href="#function-pointer" class="headerlink" title="function pointer"></a>function pointer</h3><p>关于函数指针的求值问题<br><a class="link"   href="https://www.cnblogs.com/hellscream-yi/p/7943848.html" >一篇比较全面的博客 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h3 id="function-pointer"><a href="#function-pointer" class="headerlink" title="function pointer"></a>function pointer</h3><p>关于函数指针的求值问题<br><a class="link"   href="https://www.cnblogs.com/hellscream-yi/p/7943848.html" >一篇比较全面的博客 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>感觉就是对函数式编程的支持。</p>
+<p>关于typedef的使用<br><a class="link"   href="https://www.runoob.com/cprogramming/c-typedef.html" >Runoob <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link"   href="https://zhuanlan.zhihu.com/p/44406832" >Zhihu <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>还是没太看懂用作别名的用法，感觉逻辑并不统一，编译或者预编译的时候是如何操作的？</p>
+<p>动态内存<br><a class="link"   href="https://blog.csdn.net/h17047/article/details/127722150" >csdn <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+]]></content>
+      <tags>
+        <tag>ysyx</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Blue for blue——《蓝》</title>
+    <url>/2023/08/14/l/</url>
+    <content><![CDATA[]]></content>
+      <tags>
+        <tag>Film</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ysyx:0008:verilog &amp; use of verilator</title>
+    <url>/2023/08/19/ysyx0008/</url>
+    <content><![CDATA[<h3 id="操作符和表达式"><a href="#操作符和表达式" class="headerlink" title="操作符和表达式"></a>操作符和表达式</h3><ul>
+<li>同类型操作符之间，除条件操作符从右往左关联，其余操作符都是自左向右关联。圆括号内表达式优先执行。<br>对变量进行声明时，要根据变量的操作符对变量的位宽进行合理声明，不要让结果溢出。上述例子中，相加的 2 个变量位宽为 4bit，那么结果寄存器变量位宽最少为 5bit。否则，高位将被截断，导致结果高位丢失。无符号数乘法时，结果变量位宽应该为 2 个操作数位宽之和。</li>
+<li>负数表示时，可以直接在十进制数字前面增加一个减号 -，也可以指定位宽。因为负数使用二进制补码来表示，不指定位宽来表示负数，编译器在转换时，会自动分配位宽，从而导致意想不到的结果。</li>
+<li>算术操作符如果操作数某一位为 X，则计算结果也会全部出现 X。</li>
+<li>关系操作符的正常结果有 2 种，真（1）或假（0）。</li>
+<li>如果操作数中有一位为 x 或 z，则关系表达式的结果为 x。</li>
+<li>等价操作符包括逻辑相等（&#x3D;&#x3D;），逻辑不等（!&#x3D;），全等（&#x3D;&#x3D;&#x3D;），非全等（!&#x3D;&#x3D;）。<br>等价操作符的正常结果有 2 种：为真（1）或假（0）。<br>逻辑相等&#x2F;不等操作符不能比较 x 或 z，当操作数包含一个 x 或 z，则结果为不确定值。<br>全等比较时，如果按位比较有相同的 x 或 z，返回结果也可以为 1，即全等比较可比较 x 或 z。所以，全等比较的结果一定不包含 x。</li>
+</ul>
+<h3 id="编译指令（类似于宏定义）"><a href="#编译指令（类似于宏定义）" class="headerlink" title="编译指令（类似于宏定义）"></a>编译指令（类似于宏定义）</h3><p><a class="link"   href="https://www.runoob.com/w3cnote/verilog-compile-instruction.html" >Runoob <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h3 id="时延和时序控制"><a href="#时延和时序控制" class="headerlink" title="时延和时序控制"></a>时延和时序控制</h3><p><a class="link"   href="https://www.runoob.com/w3cnote/verilog-time-delay.html" >关于显示指定的时间和Setuptime <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link"   href="https://www.runoob.com/w3cnote/verilog-timing-control.html" >关于时延控制和触发 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h3 id="过程结构"><a href="#过程结构" class="headerlink" title="过程结构"></a>过程结构</h3><p>所有结构正常情况下相互并行(各自产生独立的控制流)<br>initial 只进行一次<br>always 重复进行<br>更多时候，在设计电路时，always 时序逻辑块中多用非阻塞赋值，always 组合逻辑块中多用阻塞赋值；在仿真电路时，initial 块中一般多用阻塞赋值。<br><a class="link"   href="https://www.runoob.com/w3cnote/verilog-process-assign.html" >一个避免时序冒险的例子 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>顺序块 begin…end<br>并行块 fork…join<br>命名块（可以相互控制和访问）</p>
+<blockquote>
+<p>disable 在 always 或 forever 块中使用时只能退出当前回合，下一次语句还是会在 always 或 forever 中执行。因为 always 块和 forever 块是一直执行的，此时的 disable 有点类似 C 语言中的 continue 功能。</p>
+</blockquote>
+<h3 id="控制流"><a href="#控制流" class="headerlink" title="控制流"></a>控制流</h3><p><a class="link"   href="https://www.runoob.com/w3cnote/verilog-loop.html" >loop <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p><a class="link"   href="https://www.runoob.com/w3cnote/verilog-tutorial.html" >Runoob <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+]]></content>
+      <tags>
+        <tag>CS</tag>
+        <tag>ysyx</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ysyx:0007:Verilator环境配置</title>
+    <url>/2023/08/14/ysyx0007/</url>
+    <content><![CDATA[<h2 id="ANNONCEMENT"><a href="#ANNONCEMENT" class="headerlink" title="[ANNONCEMENT]"></a>[ANNONCEMENT]</h2><p>ysyx的课程规范实则是不鼓励分享的，发在这里其实只是做一个类似个人存档的东西或者跟没参加的同学分享，再加上我比较菜，所以参加这个课程的同学慎入。</p>
+<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><p>存两个链接<br><a class="link"   href="https://ysyx.oscc.cc/docs/ics-pa/git.html" >PA Document <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link"   href="https://missing.csail.mit.edu/2020/version-control/" >MS <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 ]]></content>
       <tags>
         <tag>ysyx</tag>
