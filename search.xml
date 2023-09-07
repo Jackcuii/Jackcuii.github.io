@@ -1609,4 +1609,60 @@
         <tag>Math</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Data Structure Notes</title>
+    <url>/2023/09/07/DS/</url>
+    <content><![CDATA[<h3 id="关于数据结构的形而上"><a href="#关于数据结构的形而上" class="headerlink" title="*关于数据结构的形而上"></a>*关于数据结构的形而上</h3><p>参见ch1.pdf,P1-P34.</p>
+<h3 id="算法复杂度分析"><a href="#算法复杂度分析" class="headerlink" title="算法复杂度分析"></a>算法复杂度分析</h3><h4 id="程序步"><a href="#程序步" class="headerlink" title="程序步"></a>程序步</h4><p>注释：程序步数为0<br>声明语句：程序步数为0<br>表达式、赋值语句：程序步数为1<br>循环语句：循环控制语句每次执行的程序步数为1<br>…</p>
+<h4 id="渐进复杂度分析"><a href="#渐进复杂度分析" class="headerlink" title="渐进复杂度分析"></a>渐进复杂度分析</h4><p>$O(f(n))$而已，即决定数量级。<br>Ontario.</p>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p><a class="link"   href="https://cs.nju.edu.cn/lwj/course/ds.html" >NJU DS lwj <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+]]></content>
+      <tags>
+        <tag>Note</tag>
+        <tag>CS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>c++ OOP Review</title>
+    <url>/2023/09/07/cgrass/</url>
+    <content><![CDATA[<h3 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h3><p>学OI的时候没怎么用到OOP的内容，最近DS要用，补充一下，简单记一点零碎的东西。</p>
+<h3 id="Content"><a href="#Content" class="headerlink" title="Content"></a>Content</h3><p>（Default: private inherit）</p>
+<ol>
+<li>public 继承：基类 public 成员，protected 成员，private 成员的访问属性在派生类中分别变成：public, protected, private</li>
+<li>protected 继承：基类 public 成员，protected 成员，private 成员的访问属性在派生类中分别变成：protected, protected, private</li>
+<li>private 继承：基类 public 成员，protected 成员，private 成员的访问属性在派生类中分别变成：private, private, private</li>
+</ol>
+<p><a class="link"   href="https://www.runoob.com/cplusplus/cpp-constructor-destructor.html" >初始化列表 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link"   href="https://blog.csdn.net/lwbeyond/article/details/6202256/" >关于拷贝构造函数 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>因为友元函数没有this指针，则参数要有三种情况：<br>要访问非static成员时，需要对象做参数；<br>要访问static成员或全局变量时，则不需要对象做参数；<br>如果做参数的对象是全局对象，则不需要对象做参数.<br>可以直接调用友元函数，不需要通过对象或指针</p>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3>]]></content>
+      <tags>
+        <tag>CS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Cognitive Science</title>
+    <url>/2023/09/07/cogsci/</url>
+    <content><![CDATA[<h3 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h3><p>心理学系 肖承丽老师开的 认知科学导论笔记。</p>
+<h3 id="导论之导论"><a href="#导论之导论" class="headerlink" title="导论之导论"></a>导论之导论</h3><p><code>认知科学包括的学科</code> 参见：Cognitive science society<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://s2.loli.net/2023/09/07/qaunfNoVl1MzD3X.png"
+                      alt="CogSciLogoForWeb-green.png"
+                ><br>研究对象：思维头脑<br>对信息的处理：注意、从外部世界获取、存储、加工….<br>有选择的记忆和遗忘<br><strong>零碎记录一些观点</strong></p>
+<ul>
+<li>“倒一点牛奶问题”，有限元的推理？在有限元的语境中推理。</li>
+<li>Why“智能同构”<br>（“Robot”不是“机器‘人’”）<br>经济，符合人的使用习惯</li>
+<li>人与人工智能的异同，人对人工智能要持有什么态度？<br>石黑一雄《克拉拉与太阳》 </li>
+<li>自我是记忆的结果</li>
+<li>侯世达《表象与本质》</li>
+<li>关于联觉 之前有一个多模态整合的模型？</li>
+<li>关于语言改变思维：<br>关于《枪炮病菌与钢铁》并不会语言的识别鸟的土著人</li>
+<li>“研表究明”问题 理解缓冲区</li>
+</ul>
+<h3 id="认知神经科学"><a href="#认知神经科学" class="headerlink" title="认知神经科学"></a>认知神经科学</h3>]]></content>
+      <tags>
+        <tag>Note</tag>
+        <tag>CS</tag>
+      </tags>
+  </entry>
 </search>
