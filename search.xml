@@ -1807,4 +1807,38 @@
         <tag>Film</tag>
       </tags>
   </entry>
+  <entry>
+    <title>CA Reading Notes:Appendix B</title>
+    <url>/2023/09/11/caB/</url>
+    <content><![CDATA[<p>Memory stall cycles formula<br>CPU execution time formula<br>Address trace?<br>miss rates and miss penalties often different for reads and writes<br>Misses per instruction is architecture-dependent<br>Categories:<br>Fully associative—&gt;Set associate—&gt; Direct mapped<br><img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2023/09/09/5nMgLHuEwU4oDKA.png" alt="图片.png"><br>Vast majority: direct, two-way set, four-way set<br><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.986ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 878 453"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D45A" d="M21 287Q22 293 24 303T36 341T56 388T88 425T132 442T175 435T205 417T221 395T229 376L231 369Q231 367 232 367L243 378Q303 442 384 442Q401 442 415 440T441 433T460 423T475 411T485 398T493 385T497 373T500 364T502 357L510 367Q573 442 659 442Q713 442 746 415T780 336Q780 285 742 178T704 50Q705 36 709 31T724 26Q752 26 776 56T815 138Q818 149 821 151T837 153Q857 153 857 145Q857 144 853 130Q845 101 831 73T785 17T716 -10Q669 -10 648 17T627 73Q627 92 663 193T700 345Q700 404 656 404H651Q565 404 506 303L499 291L466 157Q433 26 428 16Q415 -11 385 -11Q372 -11 364 -4T353 8T350 18Q350 29 384 161L420 307Q423 322 423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 181Q151 335 151 342Q154 357 154 369Q154 405 129 405Q107 405 92 377T69 316T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g></g></g></svg></mjx-container> blocks —&gt; <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.986ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 878 453"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D45A" d="M21 287Q22 293 24 303T36 341T56 388T88 425T132 442T175 435T205 417T221 395T229 376L231 369Q231 367 232 367L243 378Q303 442 384 442Q401 442 415 440T441 433T460 423T475 411T485 398T493 385T497 373T500 364T502 357L510 367Q573 442 659 442Q713 442 746 415T780 336Q780 285 742 178T704 50Q705 36 709 31T724 26Q752 26 776 56T815 138Q818 149 821 151T837 153Q857 153 857 145Q857 144 853 130Q845 101 831 73T785 17T716 -10Q669 -10 648 17T627 73Q627 92 663 193T700 345Q700 404 656 404H651Q565 404 506 303L499 291L466 157Q433 26 428 16Q415 -11 385 -11Q372 -11 364 -4T353 8T350 18Q350 29 384 161L420 307Q423 322 423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 181Q151 335 151 342Q154 357 154 369Q154 405 129 405Q107 405 92 377T69 316T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g></g></g></svg></mjx-container>-way set</p>
+<h4 id="Addressing"><a href="#Addressing" class="headerlink" title="Addressing"></a>Addressing</h4><p><img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2023/09/09/4UHmGroqiMTQ9ZW.png" alt="图片.png"><br>Tags - check block in the set<br>Index - select the set<br>Block offset - data position in the block<br>The bits for tags and index are flexible according to the categories.</p>
+<h4 id="Replacement"><a href="#Replacement" class="headerlink" title="Replacement"></a>Replacement</h4><p>3.5 categories</p>
+<ul>
+<li><p>Random</p>
+</li>
+<li><p>LRU(Least recently used)</p>
+</li>
+<li><p>FIFO(first in, first out)</p>
+</li>
+<li><p>pseudo-LRU (Refer to B-9)</p>
+</li>
+</ul>
+<h4 id="Writing"><a href="#Writing" class="headerlink" title="Writing"></a>Writing</h4><p>writes are often slower than reads.<br>reads could manipulate more bits than needed, but writes can’t.</p>
+<ul>
+<li>Write through—The information is written to both the block in the cache and to<br>the block in the lower-level memory.</li>
+<li>Write back—The information is written only to the block in the cache. The<br>modified cache block is written to main memory only when it is replaced.<br>dirty bit (record whether modified in the cache)</li>
+</ul>
+<p>As we will see, I/O and multiprocessors are fickle: they want write back for<br>processor caches to <strong>reduce the memory traffic</strong> and write through to <strong>keep the cache consistent with lower levels of the memory hierarchy</strong>.<br>avoid <em>write stall</em> , use write buffer</p>
+<p>two options on a write miss:</p>
+<ul>
+<li>Write allocate—The block is allocated on a write miss, followed by the pre-<br>ceding write hit actions. In this natural option, write misses act like read misses.</li>
+<li>No-write allocate—This apparently unusual alternative is write misses do not<br>affect the cache. Instead, the block is modified only in the lower-level memory.</li>
+</ul>
+<p>联系能力不够，再加上时间不集中，看的时候感觉还是理解的不是很清楚，挂两个中文知乎的链接。<br><a class="link" href="https://zhuanlan.zhihu.com/p/606766780?utm_id=0">这个说的比较泛化 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link" href="https://zhuanlan.zhihu.com/p/482651908">这个集中于Cache，可以说是说的非常具体了，竟然是呢喃学长的CA读书笔记 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link" href="https://zhuanlan.zhihu.com/p/472010311">一个书籍推荐的博客 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+]]></content>
+      <tags>
+        <tag>CS</tag>
+        <tag>Architecture</tag>
+      </tags>
+  </entry>
 </search>
