@@ -1675,12 +1675,7 @@
     <title>Cognitive Science</title>
     <url>/2023/09/07/cogsci/</url>
     <content><![CDATA[<h3 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h3><p>心理学系 肖承丽老师开的 认知科学导论笔记。</p>
-<h3 id="导论之导论"><a href="#导论之导论" class="headerlink" title="导论之导论"></a>导论之导论</h3><p><code>认知科学包括的学科</code> 参见：Cognitive science society<br><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="https://s2.loli.net/2023/09/07/qaunfNoVl1MzD3X.png"
-                      alt="CogSciLogoForWeb-green.png"
-                ><br>研究对象：思维头脑<br>对信息的处理：注意、从外部世界获取、存储、加工….<br>有选择的记忆和遗忘<br><strong>零碎记录一些观点</strong></p>
+<h3 id="导论之导论"><a href="#导论之导论" class="headerlink" title="导论之导论"></a>导论之导论</h3><p><code>认知科学包括的学科</code> 参见：Cognitive science society<br><img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2023/09/07/qaunfNoVl1MzD3X.png" alt="CogSciLogoForWeb-green.png"><br>研究对象：思维头脑<br>对信息的处理：注意、从外部世界获取、存储、加工….<br>有选择的记忆和遗忘<br><strong>零碎记录一些观点</strong></p>
 <ul>
 <li>“倒一点牛奶问题”，有限元的推理？在有限元的语境中推理。</li>
 <li>Why“智能同构”<br>（“Robot”不是“机器‘人’”）<br>经济，符合人的使用习惯</li>
@@ -1691,7 +1686,24 @@
 <li>关于语言改变思维：<br>关于《枪炮病菌与钢铁》并不会语言的识别鸟的土著人</li>
 <li>“研表究明”问题 理解缓冲区</li>
 </ul>
-<h3 id="认知神经科学"><a href="#认知神经科学" class="headerlink" title="认知神经科学"></a>认知神经科学</h3>]]></content>
+<h3 id="认知神经科学"><a href="#认知神经科学" class="headerlink" title="认知神经科学"></a>认知神经科学</h3><p>认知心理学&lt;==&gt;神经科学</p>
+<h4 id="神经元结构"><a href="#神经元结构" class="headerlink" title="神经元结构"></a>神经元结构</h4><p>中学知识</p>
+<h4 id="神经元连接"><a href="#神经元连接" class="headerlink" title="神经元连接"></a>神经元连接</h4><p>中学知识<br>单个输出不足以使后神经元放电<br>接收约1000个信号输入<br>时间整合和空间整合<br>不同的神经递质、不同的释放机制<br>The same sum of neorons…<br>Connections</p>
+<ul>
+<li>0→7 链接变多</li>
+<li>7→15 Pruning，反而变少了</li>
+</ul>
+<p>神经信息的编码</p>
+<ul>
+<li>放电模式</li>
+<li>专属通路</li>
+</ul>
+<p>The book Chapter 2</p>
+<p>Myelination 髓鞘化<br>late: prefontial cortex<br>Early: 边缘系统</p>
+<h4 id="脑结构"><a href="#脑结构" class="headerlink" title="脑结构"></a>脑结构</h4><p>左右脑相互独立靠胼胝体相连,中脑….Pic…<br>Brain Evoulution 哺乳动物及以后 Neocortex<br>感觉灵敏和运动控制灵敏各部分不同<br>两点触碰判断：最不敏感是后背，最敏感是舌头</p>
+<h4 id="General"><a href="#General" class="headerlink" title="General"></a>General</h4><p>Many mental functions semm to localized to specific regions or constellations in the brain. However, further processing appears to take place in different sites.</p>
+<p>存在代偿性机制</p>
+]]></content>
       <tags>
         <tag>Note</tag>
         <tag>CS</tag>
