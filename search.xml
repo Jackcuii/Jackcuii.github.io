@@ -1732,9 +1732,14 @@
 </ul>
 <p>The book Chapter 2</p>
 <p>Myelination 髓鞘化<br>late: prefontial cortex<br>Early: 边缘系统</p>
-<h4 id="脑结构"><a href="#脑结构" class="headerlink" title="脑结构"></a>脑结构</h4><p>左右脑相互独立靠胼胝体相连,中脑….Pic…<br>Brain Evoulution 哺乳动物及以后 Neocortex<br>感觉灵敏和运动控制灵敏各部分不同<br>两点触碰判断：最不敏感是后背，最敏感是舌头</p>
+<h4 id="脑结构"><a href="#脑结构" class="headerlink" title="脑结构"></a>脑结构</h4><p><img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2023/09/21/xVi1Gs92Y3ap58d.png" alt="图片.png"><br><img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2023/09/21/eKEqrZMs8h72TSx.png" alt="图片.png"><br>左右脑相互独立靠胼胝体相连,中脑….Pic…<br>Brain Evoulution 哺乳动物及以后 Neocortex<br>感觉灵敏和运动控制灵敏各部分不同<br>两点触碰判断：最不敏感是后背，最敏感是舌头</p>
 <h4 id="General"><a href="#General" class="headerlink" title="General"></a>General</h4><p>Many mental functions semm to localized to specific regions or constellations in the brain. However, further processing appears to take place in different sites.</p>
 <p>存在代偿性机制</p>
+<h3 id="神经科学探测技术"><a href="#神经科学探测技术" class="headerlink" title="神经科学探测技术"></a>神经科学探测技术</h3><h4 id="相关性成像"><a href="#相关性成像" class="headerlink" title="相关性成像"></a>相关性成像</h4><p>电信号：EEG,ERP（事件相关电位）<br>磁信号：MRI,fMRI等<br>近红外：fNRIS</p>
+<h4 id="因果性成像"><a href="#因果性成像" class="headerlink" title="因果性成像"></a>因果性成像</h4><p>TMS 经颅磁刺激<br>TES 经颅电刺激</p>
+<p>*Tulving: Episodic &amp; Semantic memory.<br>*Peterson: Word Processing 梯度作差</p>
+<p>非注意的极其深刻的记忆?<br>梦是假记忆？<br>梦的场景是成像吗？如何证明？</p>
+<h3 id="左右半脑（偏侧化）"><a href="#左右半脑（偏侧化）" class="headerlink" title="左右半脑（偏侧化）"></a>左右半脑（偏侧化）</h3><p>感官（视、听）和控制（手）都是交叉的。<br>*Cerebral commissurotomy<br><img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2023/09/21/2vlnWRL4KIGPwCz.png" alt="图片.png"><br>那如果捂住一个耳朵呢<br><img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2023/09/21/Bf9pwTdnX8ih5C1.png" alt="图片.png"><br><img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2023/09/21/nsvDQZkwY9bxCjE.png" alt="图片.png"></p>
 ]]></content>
       <tags>
         <tag>Note</tag>
@@ -1892,6 +1897,23 @@
 ]]></content>
       <tags>
         <tag>Note</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>杯水车薪的，该不会还不会的数据结构试题调研</title>
+    <url>/2023/09/21/OI/</url>
+    <content><![CDATA[<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><strong>非原创</strong>，主要来源博客和洛谷题解，原作者和链接在此处统一注明，文中会如有侵权请联系删除。<br>Ref.1. <a class="link"   href="https://oi-wiki.org/" >OI Wiki <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>Ref.2. <a class="link"   href="https://www.luogu.com.cn/problem/solution/P1121?page=1" >@Develop <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h2 id="啥也不会的数据结构"><a href="#啥也不会的数据结构" class="headerlink" title="啥也不会的数据结构"></a>啥也不会的数据结构</h2><h3 id="关于前缀和"><a href="#关于前缀和" class="headerlink" title="关于前缀和"></a>关于前缀和</h3><p>对区间和分析，变成两数关系，不支持动态<br>NJUNTOJ 4</p>
+<h3 id="关于差分"><a href="#关于差分" class="headerlink" title="关于差分"></a>关于差分</h3><p>对区间所有值动态操作O(1)，查具体值慢O(n)<br>LUOGU 1083</p>
+<h2 id="规约不到的基本问题"><a href="#规约不到的基本问题" class="headerlink" title="规约不到的基本问题"></a>规约不到的基本问题</h2><h3 id="子段和-Ref-2"><a href="#子段和-Ref-2" class="headerlink" title="子段和(Ref.2)"></a>子段和(Ref.2)</h3><p>chapter1最大子段和</p>
+<ul>
+<li>$O\left(n^3\right)$ 枚举区间起点和终点，暴力求和；</li>
+<li>$O\left(n^2\right)$ 枚举左右端点时 $j&#x3D;i-&gt;m$ 可以动态维护 $i \sim j$ 的前缀和；<br>$O\left(n^2\right)$ 预处理前缀和，枚举左右端点时$O(1)$计算；<br>$O(n \log n)$ 枚举中点,分别往前面和后面计算一个包含center的最大子段和，预处理前缀和一次判断是 $O(1)$ 的;<br>$O(n)$ 考虑 $d p$ ，设状态 $f[i]$ 为包含且以 $a[i]$ 结尾的最大值，方程： $f[i]&#x3D;\max (f[i-1],0)+a[i]$ ；<br>$O(n)$一个以$a[i]$结尾最大子段的定义： $\operatorname{sum}[i]-\min (\operatorname{sum}[k])(1&lt;&#x3D;k&lt;i)$ ，计算$\min (\operatorname{sum}[k])$可以动态维护一个前缀和的最小值;<br>chapter2子段长度不大于$m$的最大子段和<br>$O(n)$仍然考虑最大子段和的定义，动态维护$\min (\operatorname{sum}[k])(i-m&lt;&#x3D;k&lt;i)$ ，使用单调队列维护，队列中的数递增(参考$P1886$滑动窗口);<br>chapter3子段长度不小于m的最大子段和<br>$O($ longn $)$可以将分治思想中的枚举中点改成枚举一个中段，同理；(但是显然需要枚举一个段的话编码难度会提升)<br>$O(n)$先计算一次不限长最大子段和，再从头开始，枚举每一个长为$m$的子段，在它前面拼上以$a[i-1]$结尾的最大子段和;方程: $f^{\prime}[i]&#x3D;\max (f[i-1],0)+\operatorname{sum}[i+m]-\operatorname{sum}[i-1]$ ，最后取一个$\max$;<br>$O(n)$动态维护$\min (\operatorname{sum}[k])(1&lt;&#x3D;k&lt;&#x3D;i-m)$ ，比上一种编码简洁，只需要一次循环，维护前缀和；</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Note</tag>
+        <tag>Math</tag>
       </tags>
   </entry>
 </search>
