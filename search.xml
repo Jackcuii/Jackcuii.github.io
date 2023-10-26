@@ -1773,6 +1773,24 @@
 <h3 id="广义表"><a href="#广义表" class="headerlink" title="广义表"></a>广义表</h3><p>完全不知道制造出这个ADT有什么可说的。。。<br>头是头，尾是表里其他元素<strong>组成的表</strong>。<br>Node 三种类型： 表头，原子，子表<br>就是Scheme里的List (Python 里其实也是这玩意)</p>
 <p>深度定义：其实就是最深的套几层括号。</p>
 <p>实现的时候要引用计数，不然多引用的时候，删子表会炸。</p>
+<h3 id="Tree"><a href="#Tree" class="headerlink" title="Tree"></a>Tree</h3><h4 id="Binary-Tree"><a href="#Binary-Tree" class="headerlink" title="Binary Tree"></a>Binary Tree</h4><ul>
+<li>若二叉树结点的层次从 1 开始, 则在二叉树的第 i 层最多有 2i-1 个结点。</li>
+<li>深度为 k 的二叉树最少有 k 个结点，最多有 2k-1个结点。</li>
+<li>对任何一棵二叉树，如果其叶结点有 $n_0$ 个, 度为 2 的非叶结点有 $n_2$ 个,   则有$n0＝n2＋1$</li>
+<li>具有 n (n≥0) 个结点的完全二叉树的深度为 $log2(n+1)$</li>
+</ul>
+<p>线性映射<br>若$i &#x3D; 1$, 则 i 无双亲<br>若$i &gt; 1$, 则 i 的双亲为$[i／2]$<br>若$2<em>i &lt;&#x3D; n$, 则 i 的左子女为 $2</em> i$<br>若$2<em>i+1 &lt;&#x3D; n$, 则 i 的右子女为$2</em>i+1$<br>若 i 为奇数, 且$i !&#x3D; 1$, 则其左兄弟为$i-1$<br>若 i 为偶数, 且$i !&#x3D; n$, 则其右兄弟为$i+1$</p>
+<p>四种遍历<br>前序中序确定树</p>
+<h5 id="三序线索化二叉树"><a href="#三序线索化二叉树" class="headerlink" title="三序线索化二叉树"></a>三序线索化二叉树</h5><p>这*东西有什么用？见ppt?</p>
+<h5 id="一般树存储"><a href="#一般树存储" class="headerlink" title="一般树存储"></a>一般树存储</h5><p>留了一个不知道有什么用的子女兄弟存储（见ppt），剩下的都是废话。</p>
+<h5 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h5><p>深搜，广搜，废话连篇，略。</p>
+<h4 id="Forest"><a href="#Forest" class="headerlink" title="Forest"></a>Forest</h4><p>遍历关注一下广度，就是子女兄弟法。</p>
+<h4 id="Heap"><a href="#Heap" class="headerlink" title="Heap"></a>Heap</h4><h5 id="二叉堆"><a href="#二叉堆" class="headerlink" title="二叉堆"></a>二叉堆</h5><p>以及<strong>对顶堆</strong>。<br><a class="link"   href="https://oi-wiki.org/ds/binary-heap/" >https://oi-wiki.org/ds/binary-heap/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h4 id="树状数组"><a href="#树状数组" class="headerlink" title="树状数组"></a>树状数组</h4><h5 id="核心性质"><a href="#核心性质" class="headerlink" title="核心性质"></a>核心性质</h5><p><code>时刻注意和二进制编码的联系</code></p>
+<ul>
+<li>对于任意$v&gt;u$ ，当且仅当$v$是$u$的祖先，c[u]真包含于$c[v]$ （上面几条性质的总结）。这就是树状数组单点修改的核心原理。</li>
+<li>设$u&#x3D;s \times2^{k+1}+2^k$ ，则其儿子数量为$k&#x3D;\log_2\operatorname{lowbit}(u)$ ，编号分别为$u-2^t(0\leq t&lt;k)$ 。<br>举例：假设$k&#x3D;3， u$的二进制编号为$\ldots1000$ ，则$u$有三个儿子，二进制编号分别为$\ldots0111, \ldots0110、 \ldots0100$ 。</li>
+</ul>
 <h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p><a class="link"   href="https://cs.nju.edu.cn/lwj/course/ds.html" >NJU DS lwj <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 ]]></content>
       <tags>
@@ -1951,7 +1969,65 @@
 <li>慢速获得特征之间的关系</li>
 </ul>
 </li>
+<li>样例特征平均（算术/众数）</li>
+<li>只接触样例即可</li>
+<li>熟悉原型的情况下变化范围可以更小(更敏感)</li>
+<li>转换距离</li>
+<li>抽象原型</li>
+<li>Not for all cases</li>
+<li>recognition among experts</li>
 </ul>
+<h5 id="Face-Recognition"><a href="#Face-Recognition" class="headerlink" title="*Face Recognition"></a>*Face Recognition</h5><p>→ Holistic Processing - different from object recognition<br>本族效应（社会心理学）<br>inversion effect<br>part-whole effect<br>composite effect<br>阻碍局部，专门的脑区</p>
+<h3 id="Attention"><a href="#Attention" class="headerlink" title="Attention"></a>Attention</h3><p>Inner: 心理事件<br>Outer: 外部事件<br>Metaphors: Bottleneck, Spotlight<br>Our attention is not a spotlight!<br>Actually several spotlights.</p>
+<h4 id="听觉注意"><a href="#听觉注意" class="headerlink" title="听觉注意"></a>听觉注意</h4><p><strong>双耳分听实验</strong></p>
+<ul>
+<li>追随实验 ：非注意的耳朵只处理少量信息: 性别，人声与否…</li>
+<li>cocktail party effect: can hear your name in a noisy environment</li>
+</ul>
+<p><strong>filtering theory</strong><br>眼睛的运动会不会影响听觉的注意？<br><strong>Treisman’s Attenuation Theory</strong></p>
+<ul>
+<li>非注意被削弱</li>
+<li>不同的词有不同的阈值<br>始终被处理，人群哈哈大笑之后能回溯一段</li>
+</ul>
+<p><strong>Late Selection Theory</strong><br>全被知觉，部分不被选择。</p>
+<p>一个问题：如何选择地铁报站声音？</p>
+<h4 id="视觉注意"><a href="#视觉注意" class="headerlink" title="视觉注意"></a>视觉注意</h4><ul>
+<li>pop-out effect</li>
+</ul>
+<p><strong>Feature Integration Theory</strong></p>
+<ul>
+<li>pre-attentive stage<ul>
+<li>feature maps: color, not-closure, orientation, size…</li>
+</ul>
+</li>
+<li>illusory conjunctions</li>
+</ul>
+<p>人好像更倾向于注意右侧的信息?<br>我们是否注意梦中内容？注意会影响记忆吗？<br><strong>视野忽视</strong></p>
+<ul>
+<li>顶叶受损（实验证明Outer和Inner都影响）</li>
+<li>忽视一侧，忽视整体，忽视细节</li>
+<li>两侧顶叶分工不同</li>
+</ul>
+<p><strong>视觉追踪</strong></p>
+<ul>
+<li>发现能力取决于相似性<br>The gorilla experiment</li>
+</ul>
+<p><strong>Exogenous &amp; Endogenous Cuing</strong><br>Exogenous could not be blocked subjectively.<br>Endogenous could be blocked subjectively.</p>
+<ul>
+<li>Natural mapping</li>
+</ul>
+<p><strong>Social attention</strong></p>
+<p>思考题1！！！麦克阿瑟将军 梗 雅思阅读<br>关键词放在左侧和右侧<br>游戏的按钮 Start 和 Resume<br>还有就是用户协议的时候<br>电脑桌面<br>楼里的路牌<br>改变名字的大小写和高度<br>竖着的一个南京大学（阅读顺序，从上到下的南京大学）<br>字的笔画的密度<br>复杂字，简单字，无意义字，和骂人话<br>调代码(a,b,c)<br>上课坐在中间<br>有关联的启动</p>
+<h4 id="中枢注意"><a href="#中枢注意" class="headerlink" title="中枢注意"></a>中枢注意</h4><p><strong>Multi-tasking</strong><br>注意力执行任务存在缓冲区吗？？</p>
+<ul>
+<li>中枢瓶颈</li>
+</ul>
+<p><strong>Attentional Blink</strong><br><strong>Automaticity</strong><br>Practice→Unconsciousness<br><strong>Stroop Effect</strong><br>Reading is a highly-automatic process.</p>
+<ul>
+<li>Number Stroop Effect</li>
+<li>Emotional Stroop Effect<br>…</li>
+</ul>
+<p><strong>Simon Effect</strong></p>
 ]]></content>
       <tags>
         <tag>Note</tag>
