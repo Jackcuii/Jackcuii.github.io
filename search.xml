@@ -2133,7 +2133,57 @@
 </ul>
 <p><strong>Flashbulb memory</strong><br>依然会受到干扰。</p>
 <h4 id="Mnemonics"><a href="#Mnemonics" class="headerlink" title="Mnemonics"></a>Mnemonics</h4><h5 id="Memory-Palace"><a href="#Memory-Palace" class="headerlink" title="Memory Palace"></a>Memory Palace</h5><p>可能是期末题：通过名字记住长相。<br>Best cue is the first letter of the word.</p>
-<h3 id="额外作业！！！！！！！"><a href="#额外作业！！！！！！！" class="headerlink" title="额外作业！！！！！！！"></a>额外作业！！！！！！！</h3><p>strong synesthesia</p>
+<p>strong synesthesia</p>
+<h3 id="Knowledge-Representation"><a href="#Knowledge-Representation" class="headerlink" title="Knowledge Representation"></a>Knowledge Representation</h3><ul>
+<li>Declarative Knowledge</li>
+<li>Procedural Knowledge</li>
+</ul>
+<h4 id="Early"><a href="#Early" class="headerlink" title="Early"></a>Early</h4><ul>
+<li>semantic organization</li>
+<li>associatism</li>
+</ul>
+<h4 id="Models"><a href="#Models" class="headerlink" title="Models"></a>Models</h4><ul>
+<li>Set-Theory Model<ul>
+<li>Set of features</li>
+<li>Set of samples</li>
+</ul>
+</li>
+<li>Semantic-comparison Model</li>
+<li>Network Model<ul>
+<li>Spreading Activation Model </li>
+<li>Layered Network Models</li>
+</ul>
+</li>
+<li>Propositional Network Model<ul>
+<li>HAM<ul>
+<li>proposition tree</li>
+</ul>
+</li>
+<li>ACT<ul>
+<li>IF-THEN</li>
+<li>temporal string</li>
+<li>spatial image</li>
+<li>abstract proposition</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="Amnesia"><a href="#Amnesia" class="headerlink" title="Amnesia"></a>Amnesia</h4><ul>
+<li>Retrograde Amnesia</li>
+<li>Anterograde Amnesia</li>
+</ul>
+<h4 id="Brain-view"><a href="#Brain-view" class="headerlink" title="Brain view"></a>Brain view</h4><ul>
+<li>perceptual-functional theory<ul>
+<li>Apraxia</li>
+</ul>
+</li>
+<li>grounded cognition<ul>
+<li>mirror neurons</li>
+<li>embodied cognition</li>
+</ul>
+</li>
+</ul>
 ]]></content>
       <tags>
         <tag>Note</tag>
@@ -2342,5 +2392,209 @@
       <tags>
         <tag>Chatter</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Go语言笔记</title>
+    <url>/2023/11/19/go/</url>
+    <content><![CDATA[<h3 id="Go-程序结构"><a href="#Go-程序结构" class="headerlink" title="Go 程序结构"></a>Go 程序结构</h3><div class="highlight-container" data-rel="Go"><figure class="iseeu highlight go"><figcaption><span>Hello World in Go</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main <span class="comment">//identify the package, essential, every Go program must start with a package declaration, and the multi-file programs must have main package</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span> <span class="comment">//import the package</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">   <span class="comment">/* 这是我的第一个简单的程序 */</span></span><br><span class="line">   fmt.Println(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>当标识符（包括常量、变量、类型、函数名、结构字段等等）以一个大写字母开头，如：Group1，那么使用这种形式的标识符的对象就可以被外部包的代码所使用（客户端程序需要先导入这个包），（像面向对象语言中的 public）；标识符如果以小写字母开头，则对包外是不可见的，但是他们在整个包的内部是可见并且可用的（像面向对象语言中的 protected ）。<br><code>&#123; 不能放在单独的一行</code></p>
+<ul>
+<li>不一定要将文件名与包名定成同一个。</li>
+<li>文件夹名与包名并非需要一致。</li>
+<li>同一个文件夹下的文件只能有一个包名，否则编译报错。</li>
+</ul>
+<p><code>不压行不需要写&#39;;&#39;</code></p>
+<ul>
+<li>字符串支持’+’<div class="highlight-container" data-rel="Go"><figure class="iseeu highlight go"><figcaption><span>Blank Principles</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> x <span class="type">int</span></span><br><span class="line"><span class="keyword">const</span> Pi <span class="type">float64</span> = <span class="number">3.14159265358979323846</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></div></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>CS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2023/11/16/nature/</url>
+    <content><![CDATA[<p>First sentence<br>The goal of the experiment</p>
+<p>“To investigate the response of A or B on X or Y we measured [this or that]…”<br>Second Sentence<br>Present any relevant results</p>
+<p>“Here we found…”<br>Third sentence<br>Refer to a figure or table or both</p>
+<p>“Figure 1 and table 1 show…”<br>Fourth sentence<br>Conclude with a short statement</p>
+<p>“This suggests that [this or that] depends significantly on X or Y…”</p>
+<p>Next time you work on a paper, try to apply the structure recommended in this module. Alternatively, you could practice using this structure to describe a single experiment you performed recently - it is a good way to summarize what you have done even if you are not going to publish these results soon. This paragraph will help you to organize your thoughts and to articulate your findings to colleagues in presentations.</p>
+<p>Consider the following recommendations. Aim for about 400 words, but include all of the parts of the suggested structure that are compatible with your research.</p>
+<pre><code>bullet
+
+The experiment&#39;s aims: A sentence saying what you wanted to achieve.
+
+bullet
+
+Your approach: A sentence or two saying what you did to achieve it.
+
+bullet
+
+Your key result: A few sentences presenting the most important results, citing figures and tables.
+
+bullet
+
+Evaluation and interpretation: What do these results mean? What can you deduce from these results?
+
+bullet
+
+Implications: A sentence or two on how your results will impact your field, or what you will do next to build on them.
+</code></pre>
+<p>Remember to discuss one experiment or simulation per paragraph. Do not be afraid to address problems you had when obtaining your data.</p>
+<p>Getting feedback on your paragraph</p>
+<p>Ask a colleague to read your paragraph(s) and provide some feedback. Offer the same service in return. Try to get&#x2F;give at least five specific pieces of feedback. Here are some guiding questions:</p>
+<pre><code>bullet
+
+After reading the paragraph, do you think the opening sentence gives a clear statement of the aims of the experiment? Or is it too vague, or too specific?
+
+bullet
+
+Does the whole paragraph follow the argument? Does the paragraph form one consistent narrative?
+
+bullet
+
+Does the paragraph clearly explain how the various ideas are related to each other?
+
+bullet
+
+Are there any components missing that you think should be there?
+
+bullet
+
+Is the paragraph too long or too short? If so, what should be taken out or added?
+
+bullet
+
+How about the writing? Is it clear and unambiguous?
+
+bullet
+
+Are the individual sentences too long? If so, does it make sense to break them into smaller segments? 
+
+
+In this module, you learned what readers expect to see in each section of a paper, and therefore what to include, and where.
+</code></pre>
+<p>The introduction should give enough background to the reader to understand your scientific question and the importance of your findings. However, be mindful of only including key information and resist the temptation of doing a fully comprehensive literature review.</p>
+<p>The methods section needs to include enough detail to allow a specialist in your field to reproduce your results.</p>
+<p>In the results section, make sure that you showcase your key hypotheses, experiments and findings, and organize them in the optimal logical way (not necessarily chronologically) to deliver a great story backed-up by evidence.</p>
+<p>The discussion and conclusion sections should highlight the significance of your findings in the context of your field and mention caveats and alternative explanations. </p>
+<p>Overall, try to keep your reader in mind at all stages of the writing process. This will help you craft a story that is carefully structured so it’s easy to follow, interesting and accessible to researchers in your field but also to scientists in related fields.</p>
+<p>Further work</p>
+<p>Here is a checklist to help you optimize the structure and language of your paper. You can use this checklist when writing a manuscript or when evaluating someone else’s article.</p>
+<p>General questions:</p>
+<pre><code>Does my manuscript tell a story?
+
+Is the topic of my paper clearly presented early on?
+
+Are all paragraphs logically structured?
+
+Are the paragraphs connected by smooth transitions?
+
+Do they contain one idea or topic per paragraph?
+</code></pre>
+<p>Introduction: What did you do? Why did you do it?</p>
+<pre><code>Does it provide a clear and coherent description of the background literature?
+
+Does it accurately report the contribution of all referenced works to the field?
+
+Are the scope and objectives of my manuscript clearly established?
+
+Does my introduction briefly describe what was accomplished in my research?
+
+Does it provide a brief statement of my principal findings and conclusions?
+
+Does my introduction establish the significance of my current work in relation to previous research?
+</code></pre>
+<p>Methods: How did you do it?</p>
+<pre><code>Does my methods section provide enough detail for it to be reproduced by someone else?
+
+Is it logically organized and presented?
+
+Have I appropriately referenced where needed?
+
+Is the use of all methods justified?
+
+Have I described statistical methods in enough detail?
+
+Have I explained all data exclusions?
+</code></pre>
+<p>Results and Discussion: What did you find out? What does it mean? Why should I trust your data? Why should I care?</p>
+<pre><code>Have I presented my data logically and concisely, with important trends extracted and described?
+
+Have I clearly presented my main findings?
+
+Are my conclusions well substantiated by evidence?
+
+Does my discussion make clear points? Does it draw firm conclusions?
+</code></pre>
+<p>Conclusion: What’s next?</p>
+<pre><code>Have I discussed the significance of my findings? Is it related to the objectives of my study in a transparent way?
+
+Have I provided a clear understanding of how the results fit into a bigger picture and provide advances in my field and related fields?
+
+
+In this module, you learned what readers expect to see in each section of a paper, and therefore what to include, and where.
+</code></pre>
+<p>The introduction should give enough background to the reader to understand your scientific question and the importance of your findings. However, be mindful of only including key information and resist the temptation of doing a fully comprehensive literature review.</p>
+<p>The methods section needs to include enough detail to allow a specialist in your field to reproduce your results.</p>
+<p>In the results section, make sure that you showcase your key hypotheses, experiments and findings, and organize them in the optimal logical way (not necessarily chronologically) to deliver a great story backed-up by evidence.</p>
+<p>The discussion and conclusion sections should highlight the significance of your findings in the context of your field and mention caveats and alternative explanations. </p>
+<p>Overall, try to keep your reader in mind at all stages of the writing process. This will help you craft a story that is carefully structured so it’s easy to follow, interesting and accessible to researchers in your field but also to scientists in related fields.</p>
+<p>Further work</p>
+<p>Here is a checklist to help you optimize the structure and language of your paper. You can use this checklist when writing a manuscript or when evaluating someone else’s article.</p>
+<p>General questions:</p>
+<pre><code>Does my manuscript tell a story?
+
+Is the topic of my paper clearly presented early on?
+
+Are all paragraphs logically structured?
+
+Are the paragraphs connected by smooth transitions?
+
+Do they contain one idea or topic per paragraph?
+</code></pre>
+<p>Introduction: What did you do? Why did you do it?</p>
+<pre><code>Does it provide a clear and coherent description of the background literature?
+
+Does it accurately report the contribution of all referenced works to the field?
+
+Are the scope and objectives of my manuscript clearly established?
+
+Does my introduction briefly describe what was accomplished in my research?
+
+Does it provide a brief statement of my principal findings and conclusions?
+
+Does my introduction establish the significance of my current work in relation to previous research?
+</code></pre>
+<p>Methods: How did you do it?</p>
+<pre><code>Does my methods section provide enough detail for it to be reproduced by someone else?
+
+Is it logically organized and presented?
+
+Have I appropriately referenced where needed?
+
+Is the use of all methods justified?
+
+Have I described statistical methods in enough detail?
+
+Have I explained all data exclusions?
+</code></pre>
+<p>Results and Discussion: What did you find out? What does it mean? Why should I trust your data? Why should I care?</p>
+<pre><code>Have I presented my data logically and concisely, with important trends extracted and described?
+
+Have I clearly presented my main findings?
+
+Are my conclusions well substantiated by evidence?
+
+Does my discussion make clear points? Does it draw firm conclusions?
+</code></pre>
+<p>Conclusion: What’s next?</p>
+<pre><code>Have I discussed the significance of my findings? Is it related to the objectives of my study in a transparent way?
+
+Have I provided a clear understanding of how the results fit into a bigger picture and provide advances in my field and related fields?
+</code></pre>
+]]></content>
   </entry>
 </search>
