@@ -335,8 +335,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="pc">2023-11-20 07:59:30</span>
-            <span class="mobile">2023-11-20 07:59</span>
+            <span class="pc">2023-11-20 11:20:38</span>
+            <span class="mobile">2023-11-20 11:20</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -358,12 +358,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-file-word"></i>&nbsp;<span>276 Words</span>
+            <i class="fa-regular fa-file-word"></i>&nbsp;<span>597 Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>1 Mins</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>2 Mins</span>
         </span>
     
     
@@ -386,10 +386,36 @@
 <li>文件夹名与包名并非需要一致。</li>
 <li>同一个文件夹下的文件只能有一个包名，否则编译报错。</li>
 </ul>
-<p><code>不压行不需要写&#39;;&#39;</code></p>
+<h3 id="Go-基本语法"><a href="#Go-基本语法" class="headerlink" title="Go 基本语法"></a>Go 基本语法</h3><p><code>不压行不需要写&#39;;&#39;</code></p>
 <ul>
-<li>字符串支持’+’<div class="highlight-container" data-rel="Go"><figure class="iseeu highlight go"><figcaption><span>Blank Principles</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x <span class="type">int</span></span><br><span class="line"><span class="keyword">const</span> Pi <span class="type">float64</span> = <span class="number">3.14159265358979323846</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></div></li>
+<li>字符串支持’+’<div class="highlight-container" data-rel="Go"><figure class="iseeu highlight go"><figcaption><span>Blank Principles</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x <span class="type">int</span></span><br><span class="line"><span class="keyword">const</span> Pi <span class="type">float64</span> = <span class="number">3.14159265358979323846</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> x &gt; <span class="number">0</span> &#123;</span><br><span class="line">    <span class="comment">// do something</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">result := add(<span class="number">2</span>, <span class="number">3</span>)</span><br></pre></td></tr></table></figure></div>
+All the blanks above are <strong>essential</strong>.</li>
 </ul>
+<div class="highlight-container" data-rel="Go"><figure class="iseeu highlight go"><figcaption><span>Several imports</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> fmt2 <span class="string">&quot;fmt&quot;</span> <span class="comment">//alias</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> ( </span><br><span class="line">    <span class="string">&quot; &quot;</span></span><br><span class="line">    <span class="string">&quot; &quot;</span> </span><br><span class="line">) <span class="comment">// import multiple packages simultaneously</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+
+
+<ul>
+<li><p>通过 <code>const</code> 关键字来进行常量的定义。</p>
+</li>
+<li><p>通过在函数体外部使用 <code>var</code> 关键字来进行全局变量的声明和赋值。</p>
+</li>
+<li><p>通过 <code>type</code> 关键字来进行结构(struct)和接口(interface)的声明。</p>
+</li>
+<li><p>通过 <code>func</code> 关键字来进行函数的声明。</p>
+</li>
+</ul>
+<div class="highlight-container" data-rel="Go"><figure class="iseeu highlight go"><figcaption><span>Declaration</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> b, c <span class="type">int</span> = <span class="number">1</span>, <span class="number">2</span>  <span class="comment">// multi-assignment is allowed</span></span><br><span class="line"></span><br><span class="line">a := <span class="number">1</span> <span class="comment">// short assignment is allowed, type is auto detected</span></span><br></pre></td></tr></table></figure></div>
+<ul>
+<li>local variable must be used, universal variable can be unused.</li>
+</ul>
+<p>Special: iota</p>
+<div class="highlight-container" data-rel="Go"><figure class="iseeu highlight go"><figcaption><span>Sample of iota</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="keyword">const</span> (</span><br><span class="line">            a = <span class="literal">iota</span>   <span class="comment">//0</span></span><br><span class="line">            b          <span class="comment">//1</span></span><br><span class="line">            c          <span class="comment">//2</span></span><br><span class="line">            d = <span class="string">&quot;ha&quot;</span>   <span class="comment">//独立值，iota += 1</span></span><br><span class="line">            e          <span class="comment">//&quot;ha&quot;   iota += 1</span></span><br><span class="line">            f = <span class="number">100</span>    <span class="comment">//iota +=1</span></span><br><span class="line">            g          <span class="comment">//100  iota +=1</span></span><br><span class="line">            h = <span class="literal">iota</span>   <span class="comment">//7,恢复计数</span></span><br><span class="line">            i          <span class="comment">//8</span></span><br><span class="line">    )</span><br><span class="line">    fmt.Println(a,b,c,d,e,f,g,h,i)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<blockquote>
+<p>if not given the value, it will automatically inherit the last line.<br><code>iota</code> must be used in <code>const</code>, and be set to 1 at each <code>const</code></p>
+</blockquote>
+<p> 空白标识符 _ 也被用于抛弃值，如值 5 在：_, b &#x3D; 5, 7 中被抛弃。</p>
+<p>_ 实际上是一个只写变量，你不能得到它的值。这样做是因为 Go 语言中你必须使用所有被声明的变量，但有时你并不需要使用从一个函数得到的所有返回值。 </p>
 
             </div>
 
@@ -500,7 +526,7 @@
     <div class="post-toc">
         <div class="toc-title">On this page</div>
         <div class="page-title">Go语言笔记</div>
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Go-%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84"><span class="nav-text">Go 程序结构</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Go-%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84"><span class="nav-text">Go 程序结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Go-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="nav-text">Go 基本语法</span></a></li></ol>
 
     </div>
 </div>
