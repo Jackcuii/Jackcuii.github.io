@@ -335,8 +335,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="pc">2023-11-20 11:23:55</span>
-            <span class="mobile">2023-11-20 11:23</span>
+            <span class="pc">2023-11-20 19:43:38</span>
+            <span class="mobile">2023-11-20 19:43</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -358,12 +358,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-file-word"></i>&nbsp;<span>597 Words</span>
+            <i class="fa-regular fa-file-word"></i>&nbsp;<span>943 Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>2 Mins</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>4 Mins</span>
         </span>
     
     
@@ -379,7 +379,9 @@
             
 
             <div class="article-content markdown-body">
-                <h3 id="Go-程序结构"><a href="#Go-程序结构" class="headerlink" title="Go 程序结构"></a>Go 程序结构</h3><div class="highlight-container" data-rel="Go"><figure class="iseeu highlight go"><figcaption><span>Hello World in Go</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main <span class="comment">//identify the package, essential, every Go program must start with a package declaration, and the multi-file programs must have main package</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span> <span class="comment">//import the package</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">   <span class="comment">/* 这是我的第一个简单的程序 */</span></span><br><span class="line">   fmt.Println(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+                <h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p><a class="link"   target="_blank" rel="noopener" href="https://www.runoob.com/go/go-tutorial.html" >https://www.runoob.com/go/go-tutorial.html <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h3 id="Dependency"><a href="#Dependency" class="headerlink" title="Dependency"></a>Dependency</h3><p>C&#x2F;C++ programming</p>
+<h3 id="Go-程序结构"><a href="#Go-程序结构" class="headerlink" title="Go 程序结构"></a>Go 程序结构</h3><div class="highlight-container" data-rel="Go"><figure class="iseeu highlight go"><figcaption><span>Hello World in Go</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main <span class="comment">//identify the package, essential, every Go program must start with a package declaration, and the multi-file programs must have main package</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span> <span class="comment">//import the package</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">   <span class="comment">/* 这是我的第一个简单的程序 */</span></span><br><span class="line">   fmt.Println(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 <p>当标识符（包括常量、变量、类型、函数名、结构字段等等）以一个大写字母开头，如：Group1，那么使用这种形式的标识符的对象就可以被外部包的代码所使用（客户端程序需要先导入这个包），（像面向对象语言中的 public）；标识符如果以小写字母开头，则对包外是不可见的，但是他们在整个包的内部是可见并且可用的（像面向对象语言中的 protected ）。<br><code>&#123; 不能放在单独的一行</code></p>
 <ul>
 <li>不一定要将文件名与包名定成同一个。</li>
@@ -414,14 +416,30 @@ All the blanks above are <strong>essential</strong>.</li>
 <blockquote>
 <p>if not given the value, it will automatically inherit the last line.<br><code>iota</code> must be used in <code>const</code>, and be set to 1 at each <code>const</code></p>
 </blockquote>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/image-6.png"
-                      alt="Alt text"
-                ></p>
-<p> 空白标识符 _ 也被用于抛弃值，如值 5 在：_, b &#x3D; 5, 7 中被抛弃。</p>
-<p>_ 实际上是一个只写变量，你不能得到它的值。这样做是因为 Go 语言中你必须使用所有被声明的变量，但有时你并不需要使用从一个函数得到的所有返回值。 </p>
+<ul>
+<li>operators are the same as C&#x2F;C++.</li>
+<li>Conditional clause is like C without brackets.</li>
+<li>select clause for channel (NFN)(Not for now)</li>
+<li>Loop is like C, but <code>for</code> is the only loop in Go.</li>
+<li>Go supports <code>goto</code></li>
+</ul>
+<h3 id="Go-函数"><a href="#Go-函数" class="headerlink" title="Go 函数"></a>Go 函数</h3><p>山东语言(bushi 所有的类型都写在后面</p>
+<div class="highlight-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">max</span><span class="params">(num1, num2 <span class="type">int</span>)</span></span> <span class="type">int</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>函数可以多值返回，必须接着。</p>
+<blockquote>
+<p>空白标识符 _ 可被用于抛弃值，如值 5 在：_, b &#x3D; 5, 7 中被抛弃。<br>_ 实际上是一个只写变量，你不能得到它的值。这样做是因为 Go 语言中你必须使用所有被声明的变量，但有时你并不需要使用从一个函数得到的所有返回值。 </p>
+</blockquote>
+<ul>
+<li>for 语句内可以和外部共用变量名</li>
+<li></li>
+</ul>
+<h3 id="Go-函数式编程"><a href="#Go-函数式编程" class="headerlink" title="Go 函数式编程"></a>Go 函数式编程</h3><p>Go supports closure.</p>
+<h3 id="Go-‘OOP’"><a href="#Go-‘OOP’" class="headerlink" title="Go ‘OOP’"></a>Go ‘OOP’</h3><p>Go 中实际上没有显式的OOP，但是可以用方法来实现，方法就是给定接收者的函数。因为Go的多文件组织中存在权限机制，所以其实可以按照OOP范式编程。</p>
+<div class="highlight-container" data-rel="Go"><figure class="iseeu highlight go"><figcaption><span>Go does not have OOP</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c Circle)</span></span> getArea() <span class="type">float64</span> &#123;</span><br><span class="line">  <span class="comment">//c.radius 即为 Circle 类型对象中的属性</span></span><br><span class="line">  <span class="keyword">return</span> <span class="number">3.14</span> * c.radius * c.radius</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<h3 id="Go-array"><a href="#Go-array" class="headerlink" title="Go array"></a>Go array</h3><p>注意：在 Go 语言中，数组的大小是类型的一部分，因此不同大小的数组是不兼容的，也就是说 [5]int 和 [10]int 是不同的类型。</p>
+<div class="highlight-container" data-rel="Go"><figure class="iseeu highlight go"><figcaption><span>Arrays</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">balance := [...]<span class="type">float32</span>&#123;<span class="number">1000.0</span>, <span class="number">2.0</span>, <span class="number">3.4</span>, <span class="number">7.0</span>, <span class="number">50.0</span>&#125;</span><br><span class="line">balance := [<span class="number">5</span>]<span class="type">float32</span>&#123;<span class="number">1</span>:<span class="number">2.0</span>,<span class="number">3</span>:<span class="number">7.0</span>&#125;</span><br></pre></td></tr></table></figure></div>
+<h3 id="Go-pointer"><a href="#Go-pointer" class="headerlink" title="Go pointer"></a>Go pointer</h3><p>very similar to C&#x2F;C++<br>the empty pointer is <code>nil</code> (like Scheme)</p>
+<h3 id="Go-struct"><a href="#Go-struct" class="headerlink" title="Go struct"></a>Go struct</h3><p>特别的是，使用结构体指针访问结构体成员，不需要使用 <code>-&gt;</code> 操作符，直接使用 <code>.</code> 。<br>结构体属性也满足前面提到的大小写原则。</p>
 
             </div>
 
@@ -532,7 +550,7 @@ All the blanks above are <strong>essential</strong>.</li>
     <div class="post-toc">
         <div class="toc-title">On this page</div>
         <div class="page-title">Go语言笔记</div>
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Go-%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84"><span class="nav-text">Go 程序结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Go-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="nav-text">Go 基本语法</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Reference"><span class="nav-text">Reference</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dependency"><span class="nav-text">Dependency</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Go-%E7%A8%8B%E5%BA%8F%E7%BB%93%E6%9E%84"><span class="nav-text">Go 程序结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Go-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="nav-text">Go 基本语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Go-%E5%87%BD%E6%95%B0"><span class="nav-text">Go 函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Go-%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B"><span class="nav-text">Go 函数式编程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Go-%E2%80%98OOP%E2%80%99"><span class="nav-text">Go ‘OOP’</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Go-array"><span class="nav-text">Go array</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Go-pointer"><span class="nav-text">Go pointer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Go-struct"><span class="nav-text">Go struct</span></a></li></ol>
 
     </div>
 </div>

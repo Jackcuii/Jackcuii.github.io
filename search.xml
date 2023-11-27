@@ -2184,6 +2184,24 @@
 </ul>
 </li>
 </ul>
+<h3 id="Mental-images"><a href="#Mental-images" class="headerlink" title="Mental images"></a>Mental images</h3><h4 id="Paivio-Dual-Coding-Theory"><a href="#Paivio-Dual-Coding-Theory" class="headerlink" title="Paivio: Dual Coding Theory"></a>Paivio: Dual Coding Theory</h4><ul>
+<li>Conceptual-peg<blockquote>
+<p>time is represented spatially in all cultures!</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="…"><a href="#…" class="headerlink" title="…"></a>…</h4><h4 id="Functional-Equivalence-Hypothesis"><a href="#Functional-Equivalence-Hypothesis" class="headerlink" title="Functional Equivalence Hypothesis"></a>Functional Equivalence Hypothesis</h4><ul>
+<li>Mental Rotation<br>vision representation v.s. spatial representation</li>
+</ul>
+<h4 id="Cognitive-Maps"><a href="#Cognitive-Maps" class="headerlink" title="Cognitive Maps"></a>Cognitive Maps</h4><ul>
+<li>Tolman’s Cognitive Map<ul>
+<li>Route Learning</li>
+<li>Survey Learning</li>
+</ul>
+</li>
+</ul>
+<p>far - abstract<br>near - concrete</p>
+<p>map is objective and subjective.</p>
 ]]></content>
       <tags>
         <tag>Note</tag>
@@ -2378,10 +2396,13 @@
 <ul>
 <li><strong>[IK]</strong> Immediate Kill</li>
 <li><strong>[FW]</strong> Fei Wu</li>
+<li><strong>[UD]</strong> Can be defined…</li>
 <li><strong>[AJ]</strong> Adjust the solution after read the standard</li>
 </ul>
 <ol>
-<li><strong>P1090</strong> 哈夫曼树，用堆维护即可(nlogn) <strong>[IK]</strong></li>
+<li>11/20 <strong>P1090</strong> 哈夫曼树，用堆维护即可(nlogn) <strong>[IK]</strong></li>
+<li>11/21 <strong>P1212</strong> BF <strong>[UD]</strong></li>
+<li>11/22 <strong>P1213</strong>  菜的一P，还原成同余方程BF即可，注意同余方程的解空间是有限的！有限的！有限的！（须满足结合律）其实是个群论问题 <strong>[UD]</strong></li>
 </ol>
 ]]></content>
       <tags>
@@ -2405,7 +2426,9 @@
   <entry>
     <title>Go语言笔记</title>
     <url>/2023/11/19/go/</url>
-    <content><![CDATA[<h3 id="Go-程序结构"><a href="#Go-程序结构" class="headerlink" title="Go 程序结构"></a>Go 程序结构</h3><div class="highlight-container" data-rel="Go"><figure class="iseeu highlight go"><figcaption><span>Hello World in Go</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main <span class="comment">//identify the package, essential, every Go program must start with a package declaration, and the multi-file programs must have main package</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span> <span class="comment">//import the package</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">   <span class="comment">/* 这是我的第一个简单的程序 */</span></span><br><span class="line">   fmt.Println(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+    <content><![CDATA[<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><p><a class="link"   href="https://www.runoob.com/go/go-tutorial.html" >https://www.runoob.com/go/go-tutorial.html <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h3 id="Dependency"><a href="#Dependency" class="headerlink" title="Dependency"></a>Dependency</h3><p>C&#x2F;C++ programming</p>
+<h3 id="Go-程序结构"><a href="#Go-程序结构" class="headerlink" title="Go 程序结构"></a>Go 程序结构</h3><div class="highlight-container" data-rel="Go"><figure class="iseeu highlight go"><figcaption><span>Hello World in Go</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main <span class="comment">//identify the package, essential, every Go program must start with a package declaration, and the multi-file programs must have main package</span></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span> <span class="comment">//import the package</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">   <span class="comment">/* 这是我的第一个简单的程序 */</span></span><br><span class="line">   fmt.Println(<span class="string">&quot;Hello, World!&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 <p>当标识符（包括常量、变量、类型、函数名、结构字段等等）以一个大写字母开头，如：Group1，那么使用这种形式的标识符的对象就可以被外部包的代码所使用（客户端程序需要先导入这个包），（像面向对象语言中的 public）；标识符如果以小写字母开头，则对包外是不可见的，但是他们在整个包的内部是可见并且可用的（像面向对象语言中的 protected ）。<br><code>&#123; 不能放在单独的一行</code></p>
 <ul>
 <li>不一定要将文件名与包名定成同一个。</li>
@@ -2440,14 +2463,30 @@ All the blanks above are <strong>essential</strong>.</li>
 <blockquote>
 <p>if not given the value, it will automatically inherit the last line.<br><code>iota</code> must be used in <code>const</code>, and be set to 1 at each <code>const</code></p>
 </blockquote>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/image-6.png"
-                      alt="Alt text"
-                ></p>
-<p> 空白标识符 _ 也被用于抛弃值，如值 5 在：_, b &#x3D; 5, 7 中被抛弃。</p>
-<p>_ 实际上是一个只写变量，你不能得到它的值。这样做是因为 Go 语言中你必须使用所有被声明的变量，但有时你并不需要使用从一个函数得到的所有返回值。 </p>
+<ul>
+<li>operators are the same as C&#x2F;C++.</li>
+<li>Conditional clause is like C without brackets.</li>
+<li>select clause for channel (NFN)(Not for now)</li>
+<li>Loop is like C, but <code>for</code> is the only loop in Go.</li>
+<li>Go supports <code>goto</code></li>
+</ul>
+<h3 id="Go-函数"><a href="#Go-函数" class="headerlink" title="Go 函数"></a>Go 函数</h3><p>山东语言(bushi 所有的类型都写在后面</p>
+<div class="highlight-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">max</span><span class="params">(num1, num2 <span class="type">int</span>)</span></span> <span class="type">int</span> &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<p>函数可以多值返回，必须接着。</p>
+<blockquote>
+<p>空白标识符 _ 可被用于抛弃值，如值 5 在：_, b &#x3D; 5, 7 中被抛弃。<br>_ 实际上是一个只写变量，你不能得到它的值。这样做是因为 Go 语言中你必须使用所有被声明的变量，但有时你并不需要使用从一个函数得到的所有返回值。 </p>
+</blockquote>
+<ul>
+<li>for 语句内可以和外部共用变量名</li>
+<li></li>
+</ul>
+<h3 id="Go-函数式编程"><a href="#Go-函数式编程" class="headerlink" title="Go 函数式编程"></a>Go 函数式编程</h3><p>Go supports closure.</p>
+<h3 id="Go-‘OOP’"><a href="#Go-‘OOP’" class="headerlink" title="Go ‘OOP’"></a>Go ‘OOP’</h3><p>Go 中实际上没有显式的OOP，但是可以用方法来实现，方法就是给定接收者的函数。因为Go的多文件组织中存在权限机制，所以其实可以按照OOP范式编程。</p>
+<div class="highlight-container" data-rel="Go"><figure class="iseeu highlight go"><figcaption><span>Go does not have OOP</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(c Circle)</span></span> getArea() <span class="type">float64</span> &#123;</span><br><span class="line">  <span class="comment">//c.radius 即为 Circle 类型对象中的属性</span></span><br><span class="line">  <span class="keyword">return</span> <span class="number">3.14</span> * c.radius * c.radius</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<h3 id="Go-array"><a href="#Go-array" class="headerlink" title="Go array"></a>Go array</h3><p>注意：在 Go 语言中，数组的大小是类型的一部分，因此不同大小的数组是不兼容的，也就是说 [5]int 和 [10]int 是不同的类型。</p>
+<div class="highlight-container" data-rel="Go"><figure class="iseeu highlight go"><figcaption><span>Arrays</span></figcaption><table><tr><td class="code"><pre><span class="line">balance := [...]<span class="type">float32</span>&#123;<span class="number">1000.0</span>, <span class="number">2.0</span>, <span class="number">3.4</span>, <span class="number">7.0</span>, <span class="number">50.0</span>&#125;</span><br><span class="line">balance := [<span class="number">5</span>]<span class="type">float32</span>&#123;<span class="number">1</span>:<span class="number">2.0</span>,<span class="number">3</span>:<span class="number">7.0</span>&#125;</span><br></pre></td></tr></table></figure></div>
+<h3 id="Go-pointer"><a href="#Go-pointer" class="headerlink" title="Go pointer"></a>Go pointer</h3><p>very similar to C&#x2F;C++<br>the empty pointer is <code>nil</code> (like Scheme)</p>
+<h3 id="Go-struct"><a href="#Go-struct" class="headerlink" title="Go struct"></a>Go struct</h3><p>特别的是，使用结构体指针访问结构体成员，不需要使用 <code>-&gt;</code> 操作符，直接使用 <code>.</code> 。<br>结构体属性也满足前面提到的大小写原则。</p>
 ]]></content>
       <tags>
         <tag>CS</tag>
