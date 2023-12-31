@@ -1921,6 +1921,7 @@
 <li>无偏估计可能不合理（可能正负都不对）</li>
 </ul>
 </li>
+<li>超多参数处理技巧<br> <img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2023/12/30/Rmh4IzZj5tDrXaO.png" alt="图片.png"></li>
 </ul>
 <h3 id="假设检验"><a href="#假设检验" class="headerlink" title="假设检验"></a>假设检验</h3><p>原理是小概率事件原理。</p>
 <blockquote>
@@ -2929,7 +2930,19 @@ Have I provided a clear understanding of how the results fit into a bigger pictu
   <entry>
     <title>健康正能量的评教2023Fall(暨学期总结)</title>
     <url>/2023/12/24/pj23Fall/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<ul>
+<li>PA<br>PA之所以单独列出来是因为PA在ICS这门课中占有不可替代的重要的作用。<br>个人认为PA是理想主义的，也必须是理想主义的。<br>有一个问题就是，为什么PA最后要运行《仙剑奇侠传》？<br>我认为这是反应了PA的理想主义内核<br>《仙剑》作为世纪初国内早期PC和和互联网时期的经典游戏。<br>一个标准的researcher乃至独立开发者，都必须具有理想主义内核。</li>
+</ul>
+<p>一方面感觉消耗了远超建议的时间而意识到自己的能力不足<br>一方面深感自己的内容简单带来的危机感</p>
+<p>两条建议：</p>
+<ol>
+<li>恢复PA的难度</li>
+<li>取消黄金版本的PA<br>极端的第三条：</li>
+<li>取消PA课程教学（关于Professional的培养）</li>
+<li>使得doc的instruction更清晰。</li>
+</ol>
+<p>改进评分制度，现在的制度简直就是在鼓励抄祖传代码（版本答案</p>
+]]></content>
       <tags>
         <tag>Chatter</tag>
       </tags>
