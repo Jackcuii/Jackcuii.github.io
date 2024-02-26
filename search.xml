@@ -2957,4 +2957,63 @@ Have I provided a clear understanding of how the results fit into a bigger pictu
         <tag>Chatter</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Notes for Computer Network</title>
+    <url>/2024/02/26/ComputerNetwork/</url>
+    <content><![CDATA[<h2 id="Chapter1-Overview"><a href="#Chapter1-Overview" class="headerlink" title="Chapter1 Overview"></a>Chapter1 Overview</h2><p><strong>Protocol</strong>: (Definition in Textbook P6)</p>
+<ul>
+<li>Protocol is a state machine.</li>
+<li>No protocol ensures 100% reliability.</li>
+</ul>
+<p>Internet includes <strong>Computing devices</strong>, <strong>Communication links</strong> and <strong>Routers</strong>.<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://s2.loli.net/2024/02/26/DNpsBT286zeu5HP.png"
+                      alt="图片.png"
+                ><br>Three key parts:</p>
+<ul>
+<li><p><strong>Network Edge</strong><br><strong>Host</strong>&#x2F;<strong>Endpoint System</strong>: (主机&#x2F;端系统)<br>  includes <strong>Client</strong> and <strong>Server</strong></p>
+</li>
+<li><p><strong>Network Core</strong><br>mainly the <strong>switch</strong><br>two model</p>
+<ul>
+<li>cilent&#x2F;server model</li>
+<li>P2P model</li>
+</ul>
+<p>two switching</p>
+<ul>
+<li>circuit switching</li>
+<li>packet switching<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://s2.loli.net/2024/02/26/vVsKBZky1hD7wNX.png"
+                      alt="图片.png"
+                ></li>
+</ul>
+</li>
+<li><p><strong>Access Networks</strong><br>Endpoint system to Edge router.</p>
+<ul>
+<li>Home: DSL, Cable(HFC), FTTH…</li>
+<li>Enterprise(and home): LAN: Ethernet, WiFi…</li>
+<li>Wide-area wireless: 3G, 4G, LTE, 5G…</li>
+</ul>
+<p>Physical medium: Copper(UTP), Fiber, Radio, Satellite.<br>Guided &amp; Unguided</p>
+</li>
+</ul>
+<p>Distinct the three parts:<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://s2.loli.net/2024/02/26/w2DHrOdFNE3GYXm.png"
+                      alt="图片.png"
+                ></p>
+]]></content>
+      <tags>
+        <tag>CS</tag>
+        <tag>Notes</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>pa</title>
+    <url>/2024/01/28/pa/</url>
+    <content><![CDATA[]]></content>
+  </entry>
 </search>
