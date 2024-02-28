@@ -2960,7 +2960,7 @@ Have I provided a clear understanding of how the results fit into a bigger pictu
   <entry>
     <title>Notes for Computer Network</title>
     <url>/2024/02/26/ComputerNetwork/</url>
-    <content><![CDATA[<h2 id="Chapter1-Overview"><a href="#Chapter1-Overview" class="headerlink" title="Chapter1 Overview"></a>Chapter1 Overview</h2><p><strong>Protocol</strong>: (Definition in Textbook P6)</p>
+    <content><![CDATA[<h2 id="Chapter1-Overview"><a href="#Chapter1-Overview" class="headerlink" title="Chapter1 Overview"></a>Chapter1 Overview</h2><h3 id="Network-Composition"><a href="#Network-Composition" class="headerlink" title="Network Composition"></a>Network Composition</h3><p><strong>Protocol</strong>: (Definition in Textbook P6)</p>
 <ul>
 <li>Protocol is a state machine.</li>
 <li>No protocol ensures 100% reliability.</li>
@@ -2987,7 +2987,7 @@ Have I provided a clear understanding of how the results fit into a bigger pictu
                      src="/images/loading.svg"
                      data-src="https://s2.loli.net/2024/02/26/vVsKBZky1hD7wNX.png"
                       alt="图片.png"
-                ></li>
+                ><br>The core concept of switching: <strong>Statistical Multiplexing</strong></li>
 </ul>
 </li>
 <li><p><strong>Access Networks</strong><br>Endpoint system to Edge router.</p>
@@ -3005,6 +3005,41 @@ Have I provided a clear understanding of how the results fit into a bigger pictu
                      data-src="https://s2.loli.net/2024/02/26/w2DHrOdFNE3GYXm.png"
                       alt="图片.png"
                 ></p>
+<h3 id="From-ISO-OSI-to-modern-Internet-Architecture"><a href="#From-ISO-OSI-to-modern-Internet-Architecture" class="headerlink" title="From ISO-OSI to modern Internet Architecture"></a>From ISO-OSI to modern Internet Architecture</h3><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://s2.loli.net/2024/02/28/qn7aRzD8ZKbxE9l.png"
+                      alt="图片.png"
+                ><br><strong>TCP&#x2F;IP Protocol Stack</strong><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://s2.loli.net/2024/02/28/u4KqtILWTfgc1Fd.png"
+                      alt="图片.png"
+                ><br><strong>Layer encapsulation: Protocol headers</strong><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://s2.loli.net/2024/02/28/t6mKxgnZVYaIWpQ.png"
+                      alt="图片.png"
+                ><br>More detailed:<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://s2.loli.net/2024/02/28/Os1NrmiK9WTZyxL.png"
+                      alt="图片.png"
+                ></p>
+<h3 id="Network-Performance"><a href="#Network-Performance" class="headerlink" title="Network Performance"></a>Network Performance</h3><ul>
+<li><p><strong>Delay</strong></p>
+<ul>
+<li><strong>Transmission Delay</strong> (<em>‘The toll station’</em>)<br>Push data into the link: ${Delay}_{Trans}&#x3D;\frac{Packet Size}{Transmission Rate}$</li>
+<li><strong>Propagation Delay</strong> (<em>‘The car on the highway’</em>)<br>Data run from an end to another</li>
+</ul>
+<p>a graph to demonstrate:<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://s2.loli.net/2024/02/28/zoZBSRVb2uKCgns.png"
+                      alt="图片.png"
+                ></p>
+</li>
+</ul>
 ]]></content>
       <tags>
         <tag>CS</tag>
@@ -3014,6 +3049,21 @@ Have I provided a clear understanding of how the results fit into a bigger pictu
   <entry>
     <title>pa</title>
     <url>/2024/01/28/pa/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>Talk to the God——Notes for jyy OS</title>
+    <url>/2024/02/28/OS/</url>
+    <content><![CDATA[<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p>jyy ‘The Green Advisor’ OS, NJU 2024 Spring<br>License same as the original course.<br>##</p>
+]]></content>
+      <tags>
+        <tag>CS</tag>
+        <tag>Notes</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>pa</title>
+    <url>/2024/02/28/pa-1/</url>
     <content><![CDATA[]]></content>
   </entry>
 </search>
