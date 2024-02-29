@@ -3044,8 +3044,14 @@ Have I provided a clear understanding of how the results fit into a bigger pictu
 <div class="note-large notel-blue"><div class="notel-title"><p>OSTEP Chapter 1,2</p>
 </div><div class="notel-content"><p>内容<br>支持换行<br>test</p>
  </div></div>
+<h2 id="OS-Overview"><a href="#OS-Overview" class="headerlink" title="OS Overview"></a>OS Overview</h2><h3 id="Lecture-2"><a href="#Lecture-2" class="headerlink" title="Lecture 2"></a>Lecture 2</h3><div class="note note-primary icon-padding"><i class="note-icon fa-solid fa-circle-arrow-right"></i><p><a class="link"   href="https://jyywiki.cn/OS/2024/lect2.md" >务必搭配jyywiki食用 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>可以认为是对状态机模型的深入阐述：<br>yzh版本：<a class="link"   href="https://jackcuii.github.io/2023/07/04/ysyx0004/" >https://jackcuii.github.io/2023/07/04/ysyx0004/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+</div>
 
-
+<p><em>“最小的应用程序”</em> 说明了什么？ 程序是状态机，状态机不能退出自己，只能从外部退出，操作系统也是程序，也是状态机，也不能退出自己。 用户程序—借助—&gt;操作系统—借助—&gt;硬件 来退出自己。</p>
+<blockquote>
+<p>硬件呢？它也是状态机，但从主板总控的视角上看，供电控制系统是伺服运行的，它<strong>从未</strong> <code>退出</code> 过</p>
+</blockquote>
+<p>深入理解状态机模型：理解调用和递归</p>
 ]]></content>
       <tags>
         <tag>CS</tag>
