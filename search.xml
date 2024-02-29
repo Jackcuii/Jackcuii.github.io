@@ -3042,7 +3042,24 @@ Have I provided a clear understanding of how the results fit into a bigger pictu
 </blockquote>
 <p><strong>神</strong>自我革命，<strong>神</strong>制造困境，<strong>神</strong>传达启示，<strong>神</strong>引发灵感。<br>本篇作为与<strong>神</strong>的对话，忠实记录了 jyyOS 24Spring 的课程笔记，实验实录，教材读书笔记和心得感受。</p>
 <div class="note-large notel-blue"><div class="notel-title"><p>OSTEP Chapter 1,2</p>
-</div><div class="notel-content"><p>内容<br>支持换行<br>test</p>
+</div><div class="notel-content"><p>3 Easy Pieces: virtualization, concurrency, persistence</p>
+<ul>
+<li><p>virtualization: physical—virtualization–&gt;virtual form<br>$\textbf{OS} \approx \textbf{VM}$<br>*<strong>standard library</strong> (APIs)<br>*<strong>resource manager</strong><br>ctrl-c used to terminate the <strong>foreground</strong> program in UNIX-based OSs<br><strong>ALSR</strong>: Address Space Layout Randomization: randomized the address where executables are put each time when the process is created to avoid buffer overflow attacks</p>
+</li>
+<li><p>concurrency: differenet processes ‘simultaneous’<br>*due to the OS execute the instruction groups not atomically, ill-designed multithreading programs may have unexpected results</p>
+</li>
+<li><p>persistence: store data persistently, namely, I&#x2F;O<br><strong>journaling</strong>:keep track of changes made to data<br>JBD: Journaling Block Device<br>and WAL in database<br><strong>copy-on-write</strong>:delay the copying of data until the moment it’s actually modified.<br>duplicate on use</p>
+</li>
+</ul>
+<p>Design aims:</p>
+<ul>
+<li>abstractions</li>
+<li>performance</li>
+<li>protection(isolation)</li>
+<li>reliability(not fail)</li>
+<li>…</li>
+</ul>
+<p>OS history…</p>
  </div></div>
 <h2 id="OS-Overview"><a href="#OS-Overview" class="headerlink" title="OS Overview"></a>OS Overview</h2><h3 id="Lecture-2"><a href="#Lecture-2" class="headerlink" title="Lecture 2"></a>Lecture 2</h3><div class="note note-primary icon-padding"><i class="note-icon fa-solid fa-circle-arrow-right"></i><p><a class="link"   href="https://jyywiki.cn/OS/2024/lect2.md" >务必搭配jyywiki食用 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>可以认为是对状态机模型的深入阐述：<br>yzh版本：<a class="link"   href="https://jackcuii.github.io/2023/07/04/ysyx0004/" >https://jackcuii.github.io/2023/07/04/ysyx0004/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 </div>
