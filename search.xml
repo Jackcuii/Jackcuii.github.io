@@ -3051,7 +3051,13 @@ Have I provided a clear understanding of how the results fit into a bigger pictu
 <blockquote>
 <p>硬件呢？它也是状态机，但从主板总控的视角上看，供电控制系统是伺服运行的，它<strong>从未</strong> <code>退出</code> 过</p>
 </blockquote>
-<p>深入理解状态机模型：理解调用和递归</p>
+<p>深入理解状态机模型：理解调用和递归<br><em>case:C语言解释器解决函数调用</em><br>递归和非递归的转化，还是要看代码理解一下</p>
+<blockquote>
+<p>某种程度上说，都是递归，或者说非递归就是递归，递归可以认为是一种固有的形式逻辑？</p>
+</blockquote>
+<div class="note-large notel-red"><div class="notel-title"><p>Spicy</p>
+</div><div class="notel-content"><p>更深入地理解状态机：理解编译和优化<br>编译就是状态机之间映射。<br>什么是优化？就是行为不变提高效率&#x2F;减少资源消耗。什么是行为不变？就是<strong>系统调用不变</strong>。（其余的操作<strong>都是黑箱</strong>，只有调用才和外界产生联系）<br>不仅如此？系统调用也可以改变，保证系统调用的行为一致（<strong>行为的行为</strong>），可以把程序本身somehow做成调用，也就是系统的一部分。（前沿了）<br>额…那这和没有操作系统的区别在于？</p>
+ </div></div>
 ]]></content>
       <tags>
         <tag>CS</tag>
