@@ -3088,4 +3088,74 @@ Have I provided a clear understanding of how the results fit into a bigger pictu
     <url>/2024/02/28/pa-1/</url>
     <content><![CDATA[]]></content>
   </entry>
+  <entry>
+    <title>Notes for Heterogeneous Parallel Programming By W. Hwu</title>
+    <url>/2024/03/01/HPP/</url>
+    <content><![CDATA[<p>UIUC ECE 408 on Coursera</p>
+<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/01/wga3bciAuOfXSHT.png" width="900">
+
+<h4 id="latency-cores-CPU-cores-amp-throughput-cores-GPU-cores"><a href="#latency-cores-CPU-cores-amp-throughput-cores-GPU-cores" class="headerlink" title="latency cores (CPU cores) & throughput cores (GPU cores)"></a>latency cores (CPU cores) &amp; throughput cores (GPU cores)</h4><ul>
+<li>Different design philosophy<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/01/qIVDYowUtTGdxFH.png" width="600"></li>
+</ul>
+<h5 id="CPU"><a href="#CPU" class="headerlink" title="CPU"></a>CPU</h5><ul>
+<li>Powerful ALU<ul>
+<li>Reduced operation latency</li>
+</ul>
+</li>
+<li>Large caches<ul>
+<li>Convert long latency memory accesses to short latency cache accesses</li>
+</ul>
+</li>
+<li>Sophisticated control<ul>
+<li>Branch prediction for reduced branch latency</li>
+<li>Data forwarding for reduced data latency</li>
+</ul>
+</li>
+</ul>
+<h5 id="GPU"><a href="#GPU" class="headerlink" title="GPU"></a>GPU</h5><ul>
+<li>Small caches<ul>
+<li>To boost memory throughput</li>
+</ul>
+</li>
+<li>Simple control<ul>
+<li>No branch prediction</li>
+<li>No data forwarding</li>
+</ul>
+</li>
+<li>Energy efficient ALUs<ul>
+<li>Many, long latency but heavily pipelined for high throughput</li>
+</ul>
+</li>
+<li>Require massive number of threads to tolerate latencies</li>
+</ul>
+<p>Therefore we use CPU to finish the sequential parts and GPU for parallel parts</p>
+<h4 id="Scalability-amp-Portability"><a href="#Scalability-amp-Portability" class="headerlink" title="Scalability & Portability"></a>Scalability &amp; Portability</h4><ul>
+<li><p>Scalability</p>
+<ul>
+<li>The same application runs efficiently on new generations of cores
+<li>The same application runs efficiently on more of the same cores<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/01/1Gu8iQbF43MpRTh.png" width="300"></li>
+</li></ul>
+</li>
+<li><p>Portability</p>
+<ul>
+<li>The same application runs efficiently on different types of cores</li>
+<li>The same application runs efficiently on systems with different organizations and interfaces  <img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/01/LQOUW5u4peybDSZ.png" width="300"></li>
+<li><ul>
+<li>Portability across many different HW types</li>
+<li>XBb vs. ARM, etc.</li>
+<li>Latency oriented CPUs vs. throughput oriented GPUs</li>
+<li>VLIU vs. SIMD vs. threading</li>
+<li>Shared memory vs. distributed memory</li>
+</ul>
+</li>
+</ul>
+<p>book 1,3</p>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>CS</tag>
+        <tag>Notes</tag>
+      </tags>
+  </entry>
 </search>
