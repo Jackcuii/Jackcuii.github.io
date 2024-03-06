@@ -3086,7 +3086,14 @@ good at large frames</li>
 </li>
 </ul>
 <div class="note-large notel-blue"><div class="notel-title"><p>Lab note</p>
-</div><div class="notel-content"><p>sudo mn -h : help<br>sudo mn : Open CLI<br>&gt; help<br>&gt; nodes : display nodes<br>&gt; net : display links<br>&gt; dump : detailed info<br>&gt; [node] [command] [args] : run command in a certain node<br>&gt; [node] xterm : open a seperate commandline for [node]<br>&gt; exit<br>sudo mn -c : clean up<br>the given exmaple could not run compatibly in Py3…</p>
+</div><div class="notel-content"><ul>
+<li><p>Mininet<br>sudo mn -h : help<br>sudo mn : Open CLI<br>&gt; help<br>&gt; nodes : display nodes<br>&gt; net : display links<br>&gt; dump : detailed info<br>&gt; [node] [command] [args] : run command in a certain node<br>&gt; [node] xterm : open a seperate commandline for [node]<br>&gt; exit<br>sudo mn -c : clean up<br>the given exmaple could not run compatibly in Py3…</p>
+</li>
+<li><p>Wireshark:<br><a class="link" href="https://www.howtogeek.com/104278/how-to-use-wireshark-to-capture-filter-and-inspect-packets/">Quick Check <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+</li>
+<li><p>Switchyard<br>Testcase syntax:</p>
+</li>
+</ul>
  </div></div>]]></content>
       <tags>
         <tag>CS</tag>
@@ -3147,6 +3154,10 @@ good at large frames</li>
 <h3 id="Lecture-3"><a href="#Lecture-3" class="headerlink" title="Lecture 3"></a>Lecture 3</h3><div class="note note-primary icon-padding"><i class="note-icon fa-solid fa-circle-arrow-right"></i><p><a class="link" href="https://jyywiki.cn/OS/2024/lect3.md">务必搭配jyywiki食用 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 </div>
 <p>物理世界也是状态机，计算机系统的状态机通过Intr和外界连接起来。<br>如何控制一台裸机？把程序放到RESET状态里！<br>固件Firmware：系统配置，开机检查，<strong>加载操作系统</strong><br>Legacy BIOS -&gt; UEFI：丰富的I/O设备, PIC IPIC…</p>
+<div class="note-large notel-orange"><div class="notel-title"><p>Extension: Learn from the God</p>
+</div><div class="notel-content"><p>GPT on the shell!<br><img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/06/7V1YSIWd8qiNDLz.jpg" alt="b0b8a7feeb7d08c76cf146201fc895e.jpg"></p>
+ </div></div>
+
 <p>浮现课上代码</p>
 ]]></content>
       <tags>
