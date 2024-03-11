@@ -3096,30 +3096,43 @@ good at large frames</li>
 </ul>
  </div></div>
 
-<p>没完事上面的 </p>
-<h3 id="Link-Access-MAC"><a href="#Link-Access-MAC" class="headerlink" title="Link Access: MAC"></a>Link Access: MAC</h3><p>前面少一小点 理想MAC协议之前<br>Ideal: </p>
+<p>没完事上面的 (Lecture 3)</p>
+<h3 id="Link-Access-MAC"><a href="#Link-Access-MAC" class="headerlink" title="Link Access: MAC"></a>Link Access: MAC</h3><p>Ideal: </p>
 <ul>
 <li>R bps for one</li>
 <li>R/M bps for M</li>
-<li>distributive</li>
+<li>fully-decentralized</li>
 <li>Simple</li>
 </ul>
 <h4 id="Channel-Partitioning"><a href="#Channel-Partitioning" class="headerlink" title="Channel Partitioning"></a>Channel Partitioning</h4><ul>
-<li>TDMA(tiee division multiple access): 缺</li>
-<li>CDMA(Code division multiple access): 后面有</li>
-<li>FDMA</li>
+<li>TDMA(time division multiple access):<br>fixed time slot<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/11/q5AiHYkVPW48Qtv.png" width="250"></li>
+<li>FDMA(frequency division multiple access):<br>fixed frequency band<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/11/DkYoLFAniQf8VsE.png" width="150"></li>
+<li>CDMA(code division multiple access):<br>Details in the future</li>
 </ul>
 <h4 id="Taking-Turns"><a href="#Taking-Turns" class="headerlink" title="Taking Turns"></a>Taking Turns</h4><ul>
-<li>Master &amp; Slaves:<br>Bluetooth: very weak(low-power) terminals</li>
-<li>IBM Token Ring<ul>
-<li>Single point failure.</li>
+<li>Polling: Master &amp; Slaves:<br>master asks slaves in turn<ul>
+<li>cons: polling overhead, latency, <strong>single failure</strong></li>
+<li>use: Bluetooth: very weak(low-power) terminals</li>
+</ul>
+</li>
+<li>Token passing:<ul>
+<li>cons: token overhead, latency, single point failure.</li>
+<li>use: IBM Token Ring</li>
 </ul>
 </li>
 </ul>
 <h4 id="Random-Access"><a href="#Random-Access" class="headerlink" title="Random Access"></a>Random Access</h4><ul>
-<li><p>ALOHA</p>
-<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">           +------------------------+</span><br><span class="line">           ↓                        |</span><br><span class="line">  Sender --+-- ACK --- fine         |</span><br><span class="line">           |                        ↑</span><br><span class="line">           +-- !ACK -+- p = P --- Resend</span><br><span class="line">                     |</span><br><span class="line">                     +-- p = 1-P --- Wait</span><br><span class="line">Enough time : Abort</span><br></pre></td></tr></table></figure></div>
-<p>What about ACK?</p>
+<li>ALOHA<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><figcaption><span>workflow</span></figcaption><table><tr><td class="code"><pre><span class="line">           +------------------------+</span><br><span class="line">           ↓                        |</span><br><span class="line">  Sender --+-- ACK --- fine         |</span><br><span class="line">           |                        ↑</span><br><span class="line">           +-- !ACK -+- p = P --- Resend</span><br><span class="line">                     |</span><br><span class="line">                     +-- p = 1-P --- Wait</span><br><span class="line">  </span><br><span class="line">Enough repeatations : Abort</span><br><span class="line"></span><br><span class="line">  Receiver -- checkpass -- ACK</span><br></pre></td></tr></table></figure></div>
+<blockquote>
+<p>What about ACK?<br>It is a simplified model, so we assume ACK is finished <strong>immediately and within the slot</strong>. (Once reach then accept)</p>
+</blockquote>
+</li>
+</ul>
+<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/11/ScFoCHKMEuTbPQX.png" width="600">
+
+<ul>
+<li><p>slotted ALOHA<br>Time in uniform slots = frame transmission time (T0)<br><strong>synchronized</strong><br>also p=P retransmission</p>
+<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/11/NbE9Jxe3jFMLkaf.png" width="600">
 </li>
 <li><p>CSMA(Carrier Sense Multiple Access) (载波侦听)<br>still has collisions<br>Ethernet<br>for propogation delay</p>
 <ul>
