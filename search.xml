@@ -3094,7 +3094,32 @@ good at large frames</li>
 <li><p>Switchyard<br>Testcase syntax:</p>
 </li>
 </ul>
- </div></div>]]></content>
+ </div></div>
+
+<p>没完事上面的 </p>
+<h3 id="Link-Access-MAC"><a href="#Link-Access-MAC" class="headerlink" title="Link Access: MAC"></a>Link Access: MAC</h3><p>前面少一小点 理想MAC协议之前<br>Ideal: </p>
+<ul>
+<li>R bps for one</li>
+<li>R/M bps for M</li>
+<li>distributive</li>
+<li>Simple</li>
+</ul>
+<h4 id="Channel-Partitioning"><a href="#Channel-Partitioning" class="headerlink" title="Channel Partitioning"></a>Channel Partitioning</h4><ul>
+<li>TDMA(tiee division multiple access): 缺</li>
+<li>CDMA(Code division multiple access): 后面有</li>
+<li>FDMA</li>
+</ul>
+<h4 id="Taking-Turns"><a href="#Taking-Turns" class="headerlink" title="Taking Turns"></a>Taking Turns</h4><ul>
+<li>Master &amp; Slaves:<br>Bluetooth: very weak(low-power) terminals</li>
+<li>IBM Token Ring<ul>
+<li>Single point failure.</li>
+</ul>
+</li>
+</ul>
+<h4 id="Random-Access"><a href="#Random-Access" class="headerlink" title="Random Access"></a>Random Access</h4><ul>
+<li>ALOHA<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">           +------------------------+</span><br><span class="line">           ↓                        |</span><br><span class="line">  Sender --+-- ACK --- fine         |</span><br><span class="line">           |                        ↑</span><br><span class="line">           +-- !ACK -+- p = P --- Resend</span><br><span class="line">                     |</span><br><span class="line">                     +-- p = 1-P --- Wait</span><br><span class="line">Enough time : Abort</span><br></pre></td></tr></table></figure></div></li>
+</ul>
+]]></content>
       <tags>
         <tag>CS</tag>
         <tag>Notes</tag>
@@ -3159,6 +3184,14 @@ good at large frames</li>
  </div></div>
 
 <p>浮现课上代码</p>
+<h3 id="Lecture-4"><a href="#Lecture-4" class="headerlink" title="Lecture 4"></a>Lecture 4</h3><div class="note note-primary icon-padding"><i class="note-icon fa-solid fa-circle-arrow-right"></i><p><a class="link" href="https://jyywiki.cn/OS/2024/lect4.md">务必搭配jyywiki食用 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+</div>
+<ul>
+<li>Coq 语言 -&gt; 经过形式化验证</li>
+<li><strong>这门课的逻辑思路</strong>：建模-&gt;用Python实现这个模型的Toy（能实现的原因：操作系统就是一个状态机！）-&gt;对比Toy和真实操作系统的区别-&gt;认识真实操作系统的性质</li>
+<li>如何设置？把所有<strong>性质</strong>都显式的assertion出来。</li>
+<li>操作系统的理解：管理状态机的状态机</li>
+</ul>
 ]]></content>
       <tags>
         <tag>CS</tag>
@@ -3212,14 +3245,12 @@ good at large frames</li>
 </ul>
 <p>Therefore we use CPU to finish the sequential parts and GPU for parallel parts</p>
 <h4 id="Scalability-amp-Portability"><a href="#Scalability-amp-Portability" class="headerlink" title="Scalability & Portability"></a>Scalability &amp; Portability</h4><ul>
-<li><p>Scalability</p>
-<ul>
+<li>Scalability<ul>
 <li>The same application runs efficiently on new generations of cores
 <li>The same application runs efficiently on more of the same cores<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/01/1Gu8iQbF43MpRTh.png" width="300"></li>
 </li></ul>
 </li>
-<li><p>Portability</p>
-<ul>
+<li>Portability<ul>
 <li>The same application runs efficiently on different types of cores</li>
 <li>The same application runs efficiently on systems with different organizations and interfaces  <img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/01/LQOUW5u4peybDSZ.png" width="300"></li>
 <li><ul>
@@ -3231,9 +3262,20 @@ good at large frames</li>
 </ul>
 </li>
 </ul>
-<p>book 1,3</p>
 </li>
+<li><img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/08/9mxfGzDd5SE1aRs.png">
+book 1,3</li>
 </ul>
+]]></content>
+      <tags>
+        <tag>CS</tag>
+        <tag>Notes</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Notes for Princeton ELE 475: Computer Arch</title>
+    <url>/2024/03/09/CA/</url>
+    <content><![CDATA[<h3 id="Review-Part"><a href="#Review-Part" class="headerlink" title="Review Part"></a>Review Part</h3><p>register allocation</p>
 ]]></content>
       <tags>
         <tag>CS</tag>
