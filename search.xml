@@ -3166,11 +3166,6 @@ good at large frames</li>
       </tags>
   </entry>
   <entry>
-    <title>pa</title>
-    <url>/2024/01/28/pa/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>Talk to the God——Notes for jyy OS</title>
     <url>/2024/02/28/OS/</url>
     <content><![CDATA[<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p>jyy ‘The Green Advisor’ OS, NJU 2024 Spring<br>License same as the original course.</p>
@@ -3218,30 +3213,34 @@ good at large frames</li>
 
 <h3 id="Lecture-3"><a href="#Lecture-3" class="headerlink" title="Lecture 3"></a>Lecture 3</h3><div class="note note-primary icon-padding"><i class="note-icon fa-solid fa-circle-arrow-right"></i><p><a class="link" href="https://jyywiki.cn/OS/2024/lect3.md">务必搭配jyywiki食用 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 </div>
-<p>物理世界也是状态机，计算机系统的状态机通过Intr和外界连接起来。<br>如何控制一台裸机？把程序放到RESET状态里！<br>固件Firmware：系统配置，开机检查，<strong>加载操作系统</strong><br>Legacy BIOS -&gt; UEFI：丰富的I/O设备, PIC IPIC…</p>
+<p>物理世界也是状态机，计算机系统的状态机通过Intr和外界连接起来。<br>如何控制一台裸机？把程序放到RESET状态里！<br>固件Firmware：系统配置，开机检查，<strong>加载操作系统</strong><br>Legacy BIOS -&gt; UEFI：丰富的I/O设备, PIC IPIC…<br>CIH病毒：破坏BIOS<br>EFI 分区，我们可以用mount挂载它。<br>还有一个Boot管理工具 <a class="link" href="https://www.rodsbooks.com/refind/">rEFInd <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<ul>
+<li>手册并不是写给学生的，但要痛苦的读</li>
+<li>AbstractMachine可以让你绕开手册</li>
+<li>模拟器需要做的其实就是状态转移</li>
+</ul>
 <div class="note-large notel-orange"><div class="notel-title"><p>Extension: Learn from the God</p>
 </div><div class="notel-content"><p>GPT on the shell!<br><img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/06/7V1YSIWd8qiNDLz.jpg" alt="b0b8a7feeb7d08c76cf146201fc895e.jpg"></p>
  </div></div>
 
-<p>浮现课上代码</p>
+<p>看到3.3节  浮现课上代码</p>
 <h3 id="Lecture-4"><a href="#Lecture-4" class="headerlink" title="Lecture 4"></a>Lecture 4</h3><div class="note note-primary icon-padding"><i class="note-icon fa-solid fa-circle-arrow-right"></i><p><a class="link" href="https://jyywiki.cn/OS/2024/lect4.md">务必搭配jyywiki食用 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 </div>
 <ul>
-<li>Coq 语言 -&gt; 经过形式化验证</li>
+<li>Coq 语言 -&gt; 经过<a class="link" href="https://cacm.acm.org/news/formal-software-verification-measures-up/">形式化验证 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
 <li><strong>这门课的逻辑思路</strong>：建模-&gt;用Python实现这个模型的Toy（能实现的原因：操作系统就是一个状态机！）-&gt;对比Toy和真实操作系统的区别-&gt;认识真实操作系统的性质</li>
 <li>如何设置？把所有<strong>性质</strong>都显式的assertion出来。</li>
-<li>操作系统的理解：管理状态机的状态机</li>
+<li>操作系统的理解：管理状态机的状态机, 最早的并发程序</li>
+<li>那我们如何来实现一个“状态机的状态机”玩具呢？如果有简单的工具就好了！——Generator</li>
+<li>数学视角下，状态机就是一个图，因此系统的状态就是图，因此就可以使用图论方法，比方说，用广度优先搜索验证程序/系统的正确性。</li>
 </ul>
+<p><strong>待完成，跑一下 30lineOS 复习Python Gene，余者完成</strong></p>
+<p>GDB TUI?</p>
 ]]></content>
       <tags>
         <tag>CS</tag>
         <tag>Notes</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>pa</title>
-    <url>/2024/02/28/pa-1/</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>Notes for Heterogeneous Parallel Programming By W. Hwu</title>
@@ -3303,8 +3302,11 @@ good at large frames</li>
 </li>
 </ul>
 </li>
-<li><img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/08/9mxfGzDd5SE1aRs.png">
-book 1,3</li>
+</ul>
+<h4 id="CUDA-Basics"><a href="#CUDA-Basics" class="headerlink" title="CUDA Basics"></a>CUDA Basics</h4><ul>
+<li><img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/08/9mxfGzDd5SE1aRs.png" width="600"></li>
+<li>Extension of C</li>
+<li>book 1,3</li>
 </ul>
 ]]></content>
       <tags>
