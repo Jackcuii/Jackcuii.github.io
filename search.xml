@@ -3117,7 +3117,21 @@ good at large frames</li>
 </li>
 </ul>
 <h4 id="Random-Access"><a href="#Random-Access" class="headerlink" title="Random Access"></a>Random Access</h4><ul>
-<li>ALOHA<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">           +------------------------+</span><br><span class="line">           ↓                        |</span><br><span class="line">  Sender --+-- ACK --- fine         |</span><br><span class="line">           |                        ↑</span><br><span class="line">           +-- !ACK -+- p = P --- Resend</span><br><span class="line">                     |</span><br><span class="line">                     +-- p = 1-P --- Wait</span><br><span class="line">Enough time : Abort</span><br></pre></td></tr></table></figure></div></li>
+<li><p>ALOHA</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">           +------------------------+</span><br><span class="line">           ↓                        |</span><br><span class="line">  Sender --+-- ACK --- fine         |</span><br><span class="line">           |                        ↑</span><br><span class="line">           +-- !ACK -+- p = P --- Resend</span><br><span class="line">                     |</span><br><span class="line">                     +-- p = 1-P --- Wait</span><br><span class="line">Enough time : Abort</span><br></pre></td></tr></table></figure></div>
+<p>What about ACK?</p>
+</li>
+<li><p>CSMA(Carrier Sense Multiple Access) (载波侦听)<br>still has collisions<br>Ethernet<br>for propogation delay</p>
+<ul>
+<li>Nonpersistent CSMA</li>
+<li>1-persistent CSMA</li>
+</ul>
+</li>
+</ul>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">Sender --- Listen --+-- Idle ---Send</span><br><span class="line">             ↑      |</span><br><span class="line">             |      +-- Busy --- Wait </span><br><span class="line">             |                    ↓</span><br><span class="line">             +--------------------+   </span><br></pre></td></tr></table></figure></div>
+<ul>
+<li>CSMA/CD(collison detection) (based on 1 persistent)<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">                                   +-- Wait rand(t) --- Abort &amp; Send Jam</span><br><span class="line">                                   |                      |</span><br><span class="line">Sender --- Listen --+-- Idle --- Send --- Collision? --- Yes</span><br><span class="line">              ↑     |                        |</span><br><span class="line">              |     +-- Busy --- Wait        No --- ACK</span><br><span class="line">              |                    ↓</span><br><span class="line">              +--------------------+   </span><br></pre></td></tr></table></figure></div>
+Minimum frame size: 2*propagation delay</li>
 </ul>
 ]]></content>
       <tags>
