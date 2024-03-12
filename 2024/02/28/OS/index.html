@@ -447,8 +447,8 @@ mjx-container[display="true"] + br {
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="pc">2024-03-12 16:04:39</span>
-            <span class="mobile">2024-03-12 16:04</span>
+            <span class="pc">2024-03-12 19:14:01</span>
+            <span class="mobile">2024-03-12 19:14</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -566,24 +566,34 @@ mjx-container[display="true"] + br {
 <p>ewigooooooojfewighwiorhgihiihrhfuwdhuhhudhhfhuhdhfhcndjncjnjdncdnufewigooooooojfewighwiorhgihiihrhfuwdhuhhudhhfhuhdhfhcndjncjnjdncdnufewigooooooojfewighwiorhgihiihrhfuwdhuhhudhhfhuhdhfhcndjncjnjdncdnufewigooooooojfewighwiorhgihiihrhfuwdhuhhudhhfhuhdhfhcndjncjnjdncdnufewigooooooojfewighwiorhgihiihrhfuwdhuhhudhhfhuhdhfhcndjncjnjdncdnufewigooooooojfewighwiorhgihiihrhfuwdhuhhudhhfhuhdhfhcndjncjnjdncdnufewigooooooojfewighwiorhgihiihrhfuwdhuhhudhhfhuhdhfhcndjncjnjdncdnufewigooooooojfewighwiorhgihiihrhfuwdhuhhudhhfhuhdhfhcndjncjnjdncdnufewigooooooojfewighwiorhgihiihrhfuwdhuhhudhhfhuhdhfhcndjncjnjdncdnufewigooooooojfewighwiorhgihiihrhfuwdhuhhudhhfhuhdhfhcndjncjnjdncdnufewigooooooojfewighwiorhgihiihrhfuwdhuhhudhhfhuhdhfhcndjncjnjdncdnufewigooooooojfewighwiorhgihiihrhfuwdhuhhudhhfhuhdhfhcndjncjnjdncdnufewigooooooojfewighwiorhgihiihrhfuwdhuhhudhhfhuhdhfhcndjncjnjdncdnufewigooooooojfewighwiorhgihiihrhfuwdhuhhudhhfhuhdhfhcndjncjnjdncdnufewigooooooojfewighwiorhgihiihrhfuwdhuhhudhhfhuhdhfhcndjncjnjdncdnufewigooooooojfewighwiorhgihiihrhfuwdhuhhudhhfhuhdhfhcndjncjnjdncdnufewigooooooojfewighwiorhgihiihrhfuwdhuhhudhhfhuhdhfhcndjncjnjdncdnufewigooooooojfewighwiorhgihiihrhfuwdhuhhudhhfhuhdhfhcndjncjnjdncdnufewigooooooojfewighwiorhgihiihrhfuwdhuhhudhhfhuhdhfhcndjncjnjdncdnufewigooooooojfewighwiorhgihiihrhfuwdhuhhudhhfhuhdhfhcndjncjnjdncdnufewigooooooojfewighwiorhgihiihrhfuwdhuhhudhhfhuhdhfhcndjncjnjdncdnufewigooooooojfewighwiorhgihiihrhfuwdhuhhudhhfhuhdhfhcndjncjnjdncdnufewigooooooojfewighwiorhgihiihrhfuwdhuhhudhhfhuhdhfhcndjncjnjdncdnufu</p>
 <h3 id="Lecture-5-C"><a href="#Lecture-5-C" class="headerlink" title="Lecture 5 (C)"></a>Lecture 5 (C)</h3><div class="note note-primary icon-padding"><i class="note-icon fa-solid fa-circle-arrow-right"></i><p><a class="link" target="_blank" rel="noopener" href="https://jyywiki.cn/OS/2024/lect5.md">务必搭配jyywiki食用 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 </div>
-<p>多线程程序：多个状态机共享内存，有私有的（C：栈区/Assemble：寄存器）</p>
-<div class="note note-green icon-padding"><i class="note-icon fa-solid fa-bolt"></i><p>核心方法论：Questioning and Proofing </p>
+<ul>
+<li>多线程程序：多个状态机共享内存，有私有的（C：栈区/Assemble：寄存器）</li>
+</ul>
+<div class="note note-green icon-padding"><i class="note-icon fa-solid fa-bolt"></i><p>核心方法论：<strong>Questioning and Proofing</strong><br>对给出的结论持怀疑态度，并且试着去构造案例去验证。（Hands dirty…）</p>
 </div>
 
 <ul>
 <li>如何证明共享内存？简单！</li>
-<li>如何证明不共享栈区？<br>找到栈区？指向栈区的指针！-&gt;局部变量<br>如何大致画出栈区范围？ stack overflow!</li>
+<li>如何证明不共享栈区？<br>找到栈区？指向栈区的“指针”！-&gt;局部变量取地址<br>如何大致画出栈区范围？ stack overflow! —&gt; default 8MB</li>
 </ul>
-<p><strong>待完成：跑一下Slide1下面的代码</strong><br>lama.cpp? CPU LLM Accele？</p>
+<p><strong>待完成：GA好像mosaic加了一个参数，看一下回放</strong><br><strong>进行到阅读源码部分</strong></p>
+<div class="note-large notel-orange"><div class="notel-title"><p>Extention: LLM</p>
+</div><div class="notel-content"><p>LLaMA.cpp: Support run LLM on CPU (OpenSource)<br><a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/622450960">https://zhuanlan.zhihu.com/p/622450960 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+ </div></div>
+
 <ul>
-<li>reading： Pthread库， GDB调试并发程序</li>
-<li>开放思想：“放弃编程原子性的假设”，进行中的状态机会被改变！<ul>
+<li><p><strong>需要reading： Pthread库， GDB调试并发程序</strong></p>
+</li>
+<li><p>开放<strong>你的</strong>思想：“放弃编程原子性的假设”，进行中的状态机会被改变！</p>
+<ul>
 <li>在一个处理器的多线程意义下，语句的原子性已经不存在了</li>
 <li>在多处理器的意义下，连一条汇编指令的原子性都不存在了</li>
 </ul>
 </li>
-<li>1+1都写不对了？确实，而且几乎没人能写对<br>Question 1+1: N个threads, sum最小是？ 2！**??**<br>线程安排是以一个NP-Complete问题，LLM级别的直觉也不能解决！</li>
-<li>更大的麻烦：编译器也是这么认为的！<br>回顾编译优化，现在每一条指令之间都可能是系统调用！<br><em>‘Heisenbug’</em>: “一个bug，你试图修复它，它就消失了！”————By Copilot<ul>
+<li><p>1+1都写不对了？确实，而且几乎没人能写对<br>Question 1+1: N个threads, sum最小是？ 2！**??**<br>线程安排是以一个NP-Complete问题，<em>LLM级别的直觉</em> 也不能解决！</p>
+</li>
+<li><p>更大的麻烦：编译器也是这么认为的！<br>回顾编译优化，现在每一条指令之间都可能是系统调用！<br><em>‘Heisenbug’</em>: “一个bug，你试图修复它，它就消失了！”————By Copilot</p>
+<ul>
 <li>更可怕的是当编译器执行了优化，可能会把并发错误隐藏起来！<br><strong>回看一下O1优化输出1000000的视频</strong></li>
 <li>waiting for flag bug:</li>
 <li><strong>听一下处理器也是状态机那里，或者说整个后面</strong></li>
