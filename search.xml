@@ -3340,12 +3340,22 @@ normalized time: <mjx-container class="MathJax" jax="SVG"><svg style="vertical-a
 </ul>
 <hr>
 <ul>
-<li>更大的麻烦：<strong>编译器</strong>也是这么认为的！<br>回顾编译优化，现在每一条指令之间都可能是系统调用！<br><em>‘Heisenbug’</em>: “一个bug，你试图修复它，它就消失了！”————By Copilot<ul>
+<li><p>更大的麻烦：<strong>编译器</strong>也是这么认为的！<br>回顾编译优化，现在每一条指令之间都可能是系统调用！<br>共享内存的背景下，几乎任何程序，都是“不可优化的”！<br><em>‘Heisenbug’</em>: Copilot：“一个bug，你试图修复它，它就消失了！” </p>
+<ul>
 <li>更可怕的是当编译器执行了优化，可能会把并发错误隐藏起来！<br><strong>回看一下O1优化输出1000000的视频</strong></li>
-<li>waiting for flag bug:</li>
-<li><strong>听一下处理器也是状态机那里，或者说整个后面</strong></li>
+<li>waiting for flag bug:<br>while(!flag);<br>“等另一个线程举起旗子”<br>也不行！编译器视角：要么直接过，<strong>要么死循环</strong>。<ul>
+<li>解决（也是很多并发的解决办法）：插入不可优化代码，见jyyppt/volatile</li>
+<li><strong>而本课程建议：加锁！</strong></li>
 </ul>
 </li>
+</ul>
+</li>
+<li><p><strong>听一下处理器也是状态机那里，或者说整个后面</strong></p>
+</li>
+</ul>
+<hr>
+<ul>
+<li>更更更大的麻烦：<strong>处理器</strong>也是这么认为的！</li>
 </ul>
 ]]></content>
       <tags>
