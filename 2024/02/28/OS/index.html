@@ -447,8 +447,8 @@ mjx-container[display="true"] + br {
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="pc">2024-03-13 20:25:52</span>
-            <span class="mobile">2024-03-13 20:25</span>
+            <span class="pc">2024-03-15 09:15:22</span>
+            <span class="mobile">2024-03-15 09:15</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -474,12 +474,12 @@ mjx-container[display="true"] + br {
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-file-word"></i>&nbsp;<span>1.6k Words</span>
+            <i class="fa-regular fa-file-word"></i>&nbsp;<span>2k Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>6 Mins</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>7 Mins</span>
         </span>
     
     
@@ -576,7 +576,7 @@ mjx-container[display="true"] + br {
 <li>如何证明共享内存？简单！</li>
 <li>如何证明不共享栈区？<br>找到栈区？指向栈区的“指针”！-&gt;局部变量取地址<br>如何大致画出栈区范围？ stack overflow! —&gt; default 8MB</li>
 </ul>
-<div class="note note-cyan icon-padding"><i class="note-icon fa-solid fa-codepen"></i><p>阅读代码：<a class="link" target="_blank" rel="noopener" href="https://github.com/Jackcuii/jyy-codes-test-and-read/blob/master/thread-lib/thread.h">最小线程库 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<div class="note note-cyan icon-padding"><i class="note-icon fa-solid fa-user-secret"></i><p>阅读代码：<a class="link" target="_blank" rel="noopener" href="https://github.com/Jackcuii/jyy-codes-test-and-read/blob/master/thread-lib/thread.h">最小线程库 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 </div>
 
 <p><strong>待完成：GA好像mosaic加了一个参数，看一下回放，jyy是怎么跑的小程序？</strong></p>
@@ -617,8 +617,24 @@ mjx-container[display="true"] + br {
 </ul>
 <hr>
 <ul>
-<li>更更更大的麻烦：<strong>处理器</strong>也是这么认为的！</li>
+<li>更更更大的麻烦：<strong>处理器</strong>也是这么认为的！（）</li>
 </ul>
+<h3 id="Lecture-6-C"><a href="#Lecture-6-C" class="headerlink" title="Lecture 6 (C)"></a>Lecture 6 (C)</h3><div class="note note-primary icon-padding"><i class="note-icon fa-solid fa-circle-arrow-right"></i><p><a class="link" target="_blank" rel="noopener" href="https://jyywiki.cn/OS/2024/lect6.md">务必搭配jyywiki食用 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+</div>
+<p>‘sequential creature’的反击：<br>互斥！不允许并发！给它们上锁，让状态机上的一部分缩成一个点！<br>如果都不让并发了？那还并发干什么？<br>运算是可以并行的。局部性原理（经典物理：“物体对相邻的物体产生影响需要时间！”），局部的计算都可以独立的进行，只需要谨慎的处理分块的边界。可以认为不能并发的<strong>任务</strong>部分远远少于可以并发的。</p>
+<p>如何互斥？对于一个处理器，关中断就可以了！<br>但当某一个程序卡死了，OS就卡死了。<br>怎么办？外部监控，利用NMI来外部监控OS是否执行正常。（如重置定时器等）<br>因此操作系统统治了中断，禁止用户程序控制中断。</p>
+<p><strong>如何运行jyy的代码（看录像）</strong></p>
+<blockquote>
+<p>不想看到的情况:</p>
+</blockquote>
+<div class="note note-green icon-padding"><i class="note-icon fa-solid fa-bolt"></i><p>核心方法论：<strong>Let model checker tell you!</strong><br>与其无意识的瞎猜，不如让Mosaic来告诉你答案！<br>如何知道这个状态机的性质，别忘了图论！</p>
+</div>
+
+<p>为什么“等在厕所门口”不行？<br>不能同时“看”和“写”！<br>要么闭着眼睛写，要么背着手看！</p>
+<p>软件解决如此困难，用硬件来解决就可以了！<br>硬件实现的原子指令 <strong>重听一下这里</strong><br>给我<strong>一点</strong>stop-the-world的机会，一个load/store.</p>
+<p>带比较的exchange<br>细节：lhj多处理器</p>
+<p>TSX Memory</p>
+<p>相比于上面的自旋锁，实际的自旋锁更为复杂<br>用户态的自旋锁会导致资源浪费！</p>
 
             </div>
 
@@ -748,7 +764,7 @@ mjx-container[display="true"] + br {
     <div class="post-toc">
         <div class="toc-title">On this page</div>
         <div class="page-title">Talk to the God——Notes for jyy OS</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#References"><span class="nav-text">References</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%AA%E8%AE%BA"><span class="nav-text">绪论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OS-Overview"><span class="nav-text">OS Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Lecture-2"><span class="nav-text">Lecture 2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lecture-3"><span class="nav-text">Lecture 3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lecture-4"><span class="nav-text">Lecture 4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lecture-5-C"><span class="nav-text">Lecture 5 (C)</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#References"><span class="nav-text">References</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%AA%E8%AE%BA"><span class="nav-text">绪论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OS-Overview"><span class="nav-text">OS Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Lecture-2"><span class="nav-text">Lecture 2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lecture-3"><span class="nav-text">Lecture 3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lecture-4"><span class="nav-text">Lecture 4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lecture-5-C"><span class="nav-text">Lecture 5 (C)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lecture-6-C"><span class="nav-text">Lecture 6 (C)</span></a></li></ol></li></ol>
 
     </div>
 </div>
