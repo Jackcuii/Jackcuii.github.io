@@ -447,8 +447,8 @@ mjx-container[display="true"] + br {
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="pc">2024-03-15 13:47:54</span>
-            <span class="mobile">2024-03-15 13:47</span>
+            <span class="pc">2024-03-15 13:50:52</span>
+            <span class="mobile">2024-03-15 13:50</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -616,7 +616,7 @@ mjx-container[display="true"] + br {
 </ul>
 <div class="note-large notel-red"><div class="notel-title"><p>Spicy</p>
 </div><div class="notel-content"><ul>
-<li>更更更大的麻烦：<strong>处理器</strong>也是这么认为的！（）<br>如果单线程可以乱序，处理器就可以乱序执行。<br>处理器取出多条指令，然后判断是否冲突。欸？这不就是编译器吗，同样会导致并发错误！<ul>
+<li>更更更大的麻烦：<strong>处理器</strong>也是这么认为的！（处理器也是编译器）<br>如果单线程乱序等效，处理器就可以乱序执行。<br>处理器取出多条指令，然后判断是否冲突。欸？这不就是编译器吗，同样会导致并发错误！<ul>
 <li>“相对论效应”：复杂的相对时序<br>多处理器的背景下，共享内存并不是简单共享“同一块”，会发现程序执行的绝对顺序完全不存在了，对于不同的CPU，观测到的时序可能是不一样的（因为多级缓存复杂的写入逻辑（copy-on-write 之类的））。</li>
 <li>model checker 都失效了<br>因为model checker是基于“一块共享内存”建模的<br>困难的 memory model (比如x86的 write buffer)<ul>
 <li>如果model不同，就很难相互模拟，比如ARM和x86之间</li>
