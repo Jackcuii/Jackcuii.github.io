@@ -3314,10 +3314,12 @@ normalized time: <mjx-container class="MathJax" jax="SVG"><svg style="vertical-a
 <li>如何证明共享内存？简单！</li>
 <li>如何证明不共享栈区？<br>找到栈区？指向栈区的“指针”！-&gt;局部变量取地址<br>如何大致画出栈区范围？ stack overflow! —&gt; default 8MB</li>
 </ul>
-<div class="note note-cyan icon-padding"><i class="note-icon fa-solid fa-user-secret"></i><p>阅读代码：<a class="link" href="https://github.com/Jackcuii/jyy-codes-test-and-read/blob/master/thread-lib/thread.h">最小线程库 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<div class="note note-cyan icon-padding"><i class="note-icon fa-solid fa-user-secret"></i><p>阅读代码：<a class="link" href="https://github.com/Jackcuii/jyy-codes-test-and-read/blob/master/thread-lib/thread.h">最小线程库 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>简化了线程API</p>
 </div>
 
-<p><strong>待完成：GA好像mosaic加了一个参数，看一下回放，jyy是怎么跑的小程序？</strong></p>
+<blockquote>
+<p>mosaic的使用：直接连起来即可，管道喂给collect.py这样就可以收集结果。</p>
+</blockquote>
 <div class="note-large notel-orange"><div class="notel-title"><p>Extention: LLM</p>
 </div><div class="notel-content"><p>LLaMA.cpp: Support run LLM on CPU (OpenSource)<br><a class="link" href="https://zhuanlan.zhihu.com/p/622450960">https://zhuanlan.zhihu.com/p/622450960 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
  </div></div>
@@ -3340,9 +3342,8 @@ normalized time: <mjx-container class="MathJax" jax="SVG"><svg style="vertical-a
 </ul>
 <hr>
 <ul>
-<li><p>更大的麻烦：<strong>编译器</strong>也是这么认为的！<br>回顾编译优化，现在每一条指令之间都可能是系统调用！<br>共享内存的背景下，几乎任何程序，都是“不可优化的”！<br><em>‘Heisenbug’</em>: Copilot：“一个bug，你试图修复它，它就消失了！” </p>
-<ul>
-<li>更可怕的是当编译器执行了优化，可能会把并发错误隐藏起来！<br><strong>回看一下O1优化输出1000000的视频</strong></li>
+<li>更大的麻烦：<strong>编译器</strong>也是这么认为的！<br>回顾编译优化，现在每一条指令之间都可能是系统调用！<br>共享内存的背景下，几乎任何程序，都是“不可优化的”！<br><em>‘Heisenbug’</em>: Copilot：“一个bug，你试图修复它，它就消失了！” <ul>
+<li>更可怕的是当编译器执行了优化，可能会把并发错误隐藏起来！<br>-O1 稳定 10000000：把和优化到寄存器里了，只最后写内存了一次<br>-O2 稳定 20000000: 直接编译成一个加了，遇到的概率很小</li>
 <li>waiting for flag bug:<br>while(!flag);<br>“等另一个线程举起旗子”<br>也不行！编译器视角：要么直接过，<strong>要么死循环</strong>。<ul>
 <li>解决（也是很多并发的解决办法）：插入不可优化代码，见jyyppt/volatile</li>
 <li><strong>而本课程建议：加锁！</strong></li>
@@ -3350,13 +3351,21 @@ normalized time: <mjx-container class="MathJax" jax="SVG"><svg style="vertical-a
 </li>
 </ul>
 </li>
-<li><p><strong>听一下处理器也是状态机那里，或者说整个后面</strong></p>
+</ul>
+<div class="note-large notel-red"><div class="notel-title"><p>Spicy</p>
+</div><div class="notel-content"><ul>
+<li>更更更大的麻烦：<strong>处理器</strong>也是这么认为的！（）<br>如果单线程可以乱序，处理器就可以乱序执行。<br>处理器取出多条指令，然后判断是否冲突。欸？这不就是编译器吗，同样会导致并发错误！<ul>
+<li>“相对论效应”：复杂的相对时序<br>多处理器的背景下，共享内存并不是简单共享“同一块”，会发现程序执行的绝对顺序完全不存在了，对于不同的CPU，观测到的时序可能是不一样的（因为多级缓存复杂的写入逻辑（copy-on-write 之类的））。</li>
+<li>model checker 都失效了<br>因为model checker是基于“一块共享内存”建模的<br>困难的 memory model (比如x86的 write buffer)<ul>
+<li>如果model不同，就很难相互模拟，比如ARM和x86之间</li>
+</ul>
 </li>
 </ul>
-<hr>
-<ul>
-<li>更更更大的麻烦：<strong>处理器</strong>也是这么认为的！（）</li>
+</li>
 </ul>
+ </div></div>
+
+
 <h3 id="Lecture-6-C"><a href="#Lecture-6-C" class="headerlink" title="Lecture 6 (C)"></a>Lecture 6 (C)</h3><div class="note note-primary icon-padding"><i class="note-icon fa-solid fa-circle-arrow-right"></i><p><a class="link" href="https://jyywiki.cn/OS/2024/lect6.md">务必搭配jyywiki食用 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 </div>
 <p>‘sequential creature’的反击：<br>互斥！不允许并发！给它们上锁，让状态机上的一部分缩成一个点！<br>如果都不让并发了？那还并发干什么？<br>运算是可以并行的。局部性原理（经典物理：“物体对相邻的物体产生影响需要时间！”），局部的计算都可以独立的进行，只需要谨慎的处理分块的边界。可以认为不能并发的<strong>任务</strong>部分远远少于可以并发的。</p>
