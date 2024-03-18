@@ -335,8 +335,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="pc">2024-03-11 10:16:51</span>
-            <span class="mobile">2024-03-11 10:16</span>
+            <span class="pc">2024-03-17 11:00</span>
+            <span class="mobile">2024-03-17 11</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -362,7 +362,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-file-word"></i>&nbsp;<span>3 Words</span>
+            <i class="fa-regular fa-file-word"></i>&nbsp;<span>64 Words</span>
         </span>
     
     
@@ -384,6 +384,16 @@
 
             <div class="article-content markdown-body">
                 <h3 id="Review-Part"><a href="#Review-Part" class="headerlink" title="Review Part"></a>Review Part</h3><p>register allocation</p>
+<h4 id="Pipeline"><a href="#Pipeline" class="headerlink" title="Pipeline"></a>Pipeline</h4><p>IF,DE,EX,MEM,WB<br>or F,D,X,M,W</p>
+<h4 id="Hazard"><a href="#Hazard" class="headerlink" title="Hazard"></a>Hazard</h4><ul>
+<li>Structural hazards: two instructions need the same hardware resource at the same time</li>
+<li>Schedule: explicitly avoids scheduling instructions </li>
+<li>Stall: stalls until earlier instruction is no longer using contended resource</li>
+<li>Duplicate: Add more hardware to design <blockquote>
+<p>Simple5-stage MIPS pipeline has no structural hazards specifically because ISA was designed that way</p>
+</blockquote>
+</li>
+</ul>
 
             </div>
 
@@ -498,7 +508,7 @@
     <div class="post-toc">
         <div class="toc-title">On this page</div>
         <div class="page-title">Notes for Princeton ELE 475: Computer Arch</div>
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Review-Part"><span class="nav-text">Review Part</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Review-Part"><span class="nav-text">Review Part</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Pipeline"><span class="nav-text">Pipeline</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hazard"><span class="nav-text">Hazard</span></a></li></ol></li></ol>
 
     </div>
 </div>

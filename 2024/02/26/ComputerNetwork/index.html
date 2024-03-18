@@ -447,8 +447,8 @@ mjx-container[display="true"] + br {
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="pc">2024-03-13 15:09:33</span>
-            <span class="mobile">2024-03-13 15:09</span>
+            <span class="pc">2024-03-18 12:23</span>
+            <span class="mobile">2024-03-18 12</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -474,12 +474,12 @@ mjx-container[display="true"] + br {
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-file-word"></i>&nbsp;<span>1k Words</span>
+            <i class="fa-regular fa-file-word"></i>&nbsp;<span>1.4k Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>6 Mins</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>8 Mins</span>
         </span>
     
     
@@ -495,7 +495,8 @@ mjx-container[display="true"] + br {
             
 
             <div class="article-content markdown-body">
-                <h2 id="Chapter1-Overview"><a href="#Chapter1-Overview" class="headerlink" title="Chapter1 Overview"></a>Chapter1 Overview</h2><h3 id="Network-Composition"><a href="#Network-Composition" class="headerlink" title="Network Composition"></a>Network Composition</h3><p><strong>Protocol</strong>: (Definition in Textbook P6)</p>
+                <p>L1-1 还有补充<br>L1-2 未完成<br>L2-1 未完成<br>L2-2 还有订正<br>L2-3 未完成</p>
+<h2 id="Chapter1-Overview"><a href="#Chapter1-Overview" class="headerlink" title="Chapter1 Overview"></a>Chapter1 Overview</h2><h3 id="Network-Composition"><a href="#Network-Composition" class="headerlink" title="Network Composition"></a>Network Composition</h3><p><strong>Protocol</strong>: (Definition in Textbook P6)</p>
 <ul>
 <li>Protocol is a state machine.</li>
 <li>No protocol ensures 100% reliability.</li>
@@ -507,7 +508,7 @@ mjx-container[display="true"] + br {
 </li>
 <li><p><strong>Network Core</strong><br>mainly the <strong>switch</strong><br>two model</p>
 <ul>
-<li>cilent/server model</li>
+<li>client/server model</li>
 <li>P2P model</li>
 </ul>
 <p>two switching</p>
@@ -732,33 +733,118 @@ normalized time: <mjx-container class="MathJax" jax="SVG"><svg style="vertical-a
 <li>Discovery end-hosts</li>
 <li>bootstrap communication with remote</li>
 </ul>
-<h5 id="DHCP-Dynamic-Host-Configuration-Protocol-RFC-2131"><a href="#DHCP-Dynamic-Host-Configuration-Protocol-RFC-2131" class="headerlink" title="DHCP (Dynamic Host Configuration Protocol) (RFC 2131)"></a>DHCP (Dynamic Host Configuration Protocol) (RFC 2131)</h5><p>broadcast for DHCP server(in the past: a real person)’s help<br><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="1.181ex" role="img" focusable="false" viewBox="0 -511 1000 522"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path></g></g></g></svg></mjx-container> tell you local IP, netmask, DNS, first-hop router.</p>
+<h5 id="DHCP-Dynamic-Host-Configuration-Protocol-RFC-2131"><a href="#DHCP-Dynamic-Host-Configuration-Protocol-RFC-2131" class="headerlink" title="DHCP (Dynamic Host Configuration Protocol) (RFC 2131)"></a>DHCP (Dynamic Host Configuration Protocol) (RFC 2131)</h5><p>broadcast for DHCP server(in the past: a real person)’s help<br><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="1.181ex" role="img" focusable="false" viewBox="0 -511 1000 522"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="2192" d="M56 237T56 250T70 270H835Q719 357 692 493Q692 494 692 496T691 499Q691 511 708 511H711Q720 511 723 510T729 506T732 497T735 481T743 456Q765 389 816 336T935 261Q944 258 944 250Q944 244 939 241T915 231T877 212Q836 186 806 152T761 85T740 35T732 4Q730 -6 727 -8T711 -11Q691 -11 691 0Q691 7 696 25Q728 151 835 230H70Q56 237 56 250Z"></path></g></g></g></svg></mjx-container> tell you local IP, netmask, DNS, IP of first-hop router.</p>
 <ul>
 <li>Procedure<ul>
-<li>cilent -&gt; broadcast: <code>DHCP_DISCOVER</code> <em>Any helper here?</em></li>
-<li>all DHCP servers -&gt; <strong>cilent??存疑</strong>: <code>DHCP_OFFER</code> <em>I’m here at &lt;IP&gt;</em></li>
-<li>cilent(choose one) -&gt; cilent: <code>DHCP_REQUEST</code> <em>I ask the helper at &lt;IP&gt; to help</em></li>
+<li>client -&gt; broadcast: <code>DHCP_DISCOVER</code> <em>Any helper here?</em></li>
+<li>all DHCP servers -&gt; <strong>client??存疑</strong>: <code>DHCP_OFFER</code> <em>I’m here at IP&lt;…&gt;</em></li>
+<li>client(choose one) -&gt; client: <code>DHCP_REQUEST</code> <em>I ask the helper at IP&lt;…&gt; to help</em></li>
 <li>selected DHCP server: <code>DHCP_ACK</code> <em>Let me tell you your configuration…</em></li>
-<li>(cilent quit) cilent：<code>DHCP_RELEASE</code> <em>I will go, unbind plz</em></li>
+<li>(client quit) client：<code>DHCP_RELEASE</code> <em>I will go, unbind plz</em></li>
+<li>soft quit: the binding will expire if the client do not renew/rebind it.</li>
 </ul>
 </li>
+</ul>
+<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/18/2bKzLsRcXSEBGHm.png" width="600">
+
+<ul>
+<li>Under failure</li>
 </ul>
 <hr>
-<p>Now you want to ping someone with an IP, how could you know his LAN?</p>
-<p><strong>Why?</strong></p>
-<h5 id="ARP-Address-Resolution-Protocol-RFC-826"><a href="#ARP-Address-Resolution-Protocol-RFC-826" class="headerlink" title="ARP (Address Resolution Protocol) (RFC 826)"></a>ARP (Address Resolution Protocol) (RFC 826)</h5><p>Map IP address to MAC address<br>Every host has a ARP table</p>
+<p>Now you want to ping someone with an IP, how could you know his MAC?<br>Why must be MAC? seem to useless in local net, but when remote MAC is for the destination, but MAC is for every next link.<br><strong>Why? must what is link layer for</strong></p>
+<h5 id="ARP-Address-Resolution-Protocol-RFC-826"><a href="#ARP-Address-Resolution-Protocol-RFC-826" class="headerlink" title="ARP (Address Resolution Protocol) (RFC 826)"></a>ARP (Address Resolution Protocol) (RFC 826)</h5><p>Map IP address to MAC address (only on LAN)<br>Every host has a ARP table</p>
 <ul>
-<li><p>Procedure (Local)</p>
-<ul>
-<li>cilent broadcast: <code>ARP_REQUEST</code> <em>Who has IP&lt;…&gt;? I’m MAC&lt;…&gt; IP&lt;…&gt;</em></li>
-</ul>
-</li>
-<li><p>Procedure (Remote)</p>
-<ul>
-<li>cilent: <code>ARP_REQUEST</code> <em>Who has IP&lt;…&gt;? I’m MAC&lt;…&gt; IP&lt;…&gt;</em></li>
+<li>Procedure (Local)<ul>
+<li>sender broadcast: <code>ARP_REQUEST</code> <em>Who has IP&lt;…&gt;? I’m MAC&lt;…&gt; IP&lt;…&gt;</em> (in MAC frame)</li>
+<li>receiver: <code>ARP_REPLY</code> <em>the dest is me… Hi MAC&lt;src&gt; My MAC is &lt;…&gt;</em> (in MAC frame) [cache the { IP&lt;src&gt;: MAC&lt;src&gt; } ]</li>
+<li>sender get it: [cache the { IP&lt;dst&gt;: MAC&lt;dst&gt; } ]<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/18/VomUYdcl3ENLqQC.png" width="600"></li>
 </ul>
 </li>
 </ul>
+<h5 id="A-remote-communication-case"><a href="#A-remote-communication-case" class="headerlink" title="A remote communication case"></a>A remote communication case</h5><ul>
+<li>Procedure<ul>
+<li>client enter the LAN: DHCP get the configurations</li>
+<li>want to remote comm: <ul>
+<li>use netmask to know it is a remote</li>
+<li>ARP get the MAC of first-hop router</li>
+</ul>
+</li>
+<li>send to first-hop router…\</li>
+</ul>
+</li>
+</ul>
+<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/18/XY98QRHvG1hlKmb.png" width="600">
+
+<p>MAC for the next stop!</p>
+<h4 id="Philosophy-of-ARP-amp-DHCP"><a href="#Philosophy-of-ARP-amp-DHCP" class="headerlink" title="Philosophy of ARP & DHCP"></a>Philosophy of ARP &amp; DHCP</h4><ul>
+<li>Broadcasting: Can use broadcast to make contact<ul>
+<li><strong>Scalable because of limited size？怎么理解</strong></li>
+</ul>
+</li>
+<li>Caching: remember the past for a while</li>
+<li>Store the information you learn to reduce overhead</li>
+<li>Soft state: eventually forget the past</li>
+<li>Associate a time-to-live field with the information</li>
+<li>… and either refresh or discard the information</li>
+<li>Key for robustness in the face of unpredictable change</li>
+</ul>
+<h3 id="Bridges-amp-Layer-2-switch"><a href="#Bridges-amp-Layer-2-switch" class="headerlink" title="Bridges & Layer-2 switch"></a>Bridges &amp; Layer-2 switch</h3><p>Interconnection between LANs</p>
+<ul>
+<li>store &amp; forward LAN frames</li>
+<li>exact bitwise copy</li>
+</ul>
+<h4 id="Bridge-IEEE-802-1D"><a href="#Bridge-IEEE-802-1D" class="headerlink" title="Bridge:(IEEE 802.1D)"></a>Bridge:(IEEE 802.1D)</h4><ul>
+<li>Philosophy<ul>
+<li>S&amp;F: select the frames for neighbor LAN</li>
+<li>Transparent: to stations, unaware of the bridge</li>
+<li>Plug &amp; play, self-learning: use once plugged in (do not need much configuration)</li>
+</ul>
+</li>
+</ul>
+<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/18/egFkcjTXDyrB5oY.png" width="600">
+
+
+<h5 id="Frame-broadcasting"><a href="#Frame-broadcasting" class="headerlink" title="Frame broadcasting"></a>Frame broadcasting</h5><p>9.10页</p>
+<ul>
+<li>“broadcast storm” in extended LAN<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/18/FOn87oelbM9PqQt.png" width="300"></li>
+</ul>
+<p>jamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjam</p>
+<ul>
+<li><p>Spanning tree protocol (Perlman)<br>eliminate the loops!<br>make a spanning tree on the physical topology!</p>
+<ul>
+<li>no configuration by ops and users</li>
+<li>self-healing</li>
+</ul>
+<p>make a spanning tree <strong>distributedly</strong></p>
+<ol>
+<li>Pick a root (agree on select the Min MAC)</li>
+<li>Prune</li>
+</ol>
+<p>for <strong>???</strong> loops:<br>  from a node view:</p>
+<p>synchro? rounds?</p>
+<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/18/xkDLRwaAdUmjbig.png" width-800="">
+
+<ul>
+<li>Robust:</li>
+<li><strong>Flooding</strong>: forward to all the valid exports except for the import<ul>
+<li>Philosophy: Waste, but <strong>learn from it!</strong> (bootstrap more precise/efficient forwarding)</li>
+<li>Example:<br>in spanning tree, I receive message of A from port p, so I know just forward to p when dst is A<br><em>cache the ‘knowledge’ with a certain timer</em></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="Address-Learning"><a href="#Address-Learning" class="headerlink" title="Address Learning"></a>Address Learning</h5><p>Address database<br><strong>Bridge do not know who is in his LAN originally!!</strong></p>
+<h4 id="More-than-Bridges"><a href="#More-than-Bridges" class="headerlink" title="More than Bridges"></a>More than Bridges</h4><ul>
+<li><strong>Hubs</strong>: physical repeater (Not in Link Layer)<br><em>Physically star, logically bus</em></li>
+<li><strong>Bridges</strong>: inter-LAN (forward + addr learning)</li>
+<li><strong>Layer2 Switches</strong>: inter-LAN/host (<strong>Bridge</strong> + collision free)</li>
+<li><strong>Layer3 Switches</strong>: Not for now, a router in nature, but not the same as router (not in Internet)</li>
+</ul>
+<h4 id="After-switched"><a href="#After-switched" class="headerlink" title="After switched"></a>After switched</h4><p>Less collision domain</p>
+<div class="highlight-container" data-rel="Text"><figure class="iseeu highlight text"><figcaption><span>Self-learing workflow</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">receive --- </span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+
+<p>P48kao</p>
 
             </div>
 
@@ -888,7 +974,7 @@ normalized time: <mjx-container class="MathJax" jax="SVG"><svg style="vertical-a
     <div class="post-toc">
         <div class="toc-title">On this page</div>
         <div class="page-title">Notes for Computer Network</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Chapter1-Overview"><span class="nav-text">Chapter1 Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Network-Composition"><span class="nav-text">Network Composition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#From-ISO-OSI-to-modern-Internet-Architecture"><span class="nav-text">From ISO-OSI to modern Internet Architecture</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Network-Performance"><span class="nav-text">Network Performance</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Link-Layer"><span class="nav-text">Link Layer</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Service"><span class="nav-text">Service</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LAN"><span class="nav-text">LAN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Link-Access-MAC"><span class="nav-text">Link Access: MAC</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Channel-Partitioning"><span class="nav-text">Channel Partitioning</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Taking-Turns"><span class="nav-text">Taking Turns</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Random-Access"><span class="nav-text">Random Access</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-persistent-in-IEEE-802-3-Wired-Ethernet"><span class="nav-text">1-persistent in IEEE 802.3 (Wired Ethernet)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Performance"><span class="nav-text">Performance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Link-layer-discovery"><span class="nav-text">Link layer discovery</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Protocols"><span class="nav-text">Protocols</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#DHCP-Dynamic-Host-Configuration-Protocol-RFC-2131"><span class="nav-text">DHCP (Dynamic Host Configuration Protocol) (RFC 2131)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ARP-Address-Resolution-Protocol-RFC-826"><span class="nav-text">ARP (Address Resolution Protocol) (RFC 826)</span></a></li></ol></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Chapter1-Overview"><span class="nav-text">Chapter1 Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Network-Composition"><span class="nav-text">Network Composition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#From-ISO-OSI-to-modern-Internet-Architecture"><span class="nav-text">From ISO-OSI to modern Internet Architecture</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Network-Performance"><span class="nav-text">Network Performance</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Link-Layer"><span class="nav-text">Link Layer</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Service"><span class="nav-text">Service</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LAN"><span class="nav-text">LAN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Link-Access-MAC"><span class="nav-text">Link Access: MAC</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Channel-Partitioning"><span class="nav-text">Channel Partitioning</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Taking-Turns"><span class="nav-text">Taking Turns</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Random-Access"><span class="nav-text">Random Access</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-persistent-in-IEEE-802-3-Wired-Ethernet"><span class="nav-text">1-persistent in IEEE 802.3 (Wired Ethernet)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Performance"><span class="nav-text">Performance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Link-layer-discovery"><span class="nav-text">Link layer discovery</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Protocols"><span class="nav-text">Protocols</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#DHCP-Dynamic-Host-Configuration-Protocol-RFC-2131"><span class="nav-text">DHCP (Dynamic Host Configuration Protocol) (RFC 2131)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ARP-Address-Resolution-Protocol-RFC-826"><span class="nav-text">ARP (Address Resolution Protocol) (RFC 826)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#A-remote-communication-case"><span class="nav-text">A remote communication case</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Philosophy-of-ARP-amp-DHCP"><span class="nav-text">Philosophy of ARP &amp; DHCP</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bridges-amp-Layer-2-switch"><span class="nav-text">Bridges &amp; Layer-2 switch</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Bridge-IEEE-802-1D"><span class="nav-text">Bridge:(IEEE 802.1D)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Frame-broadcasting"><span class="nav-text">Frame broadcasting</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Address-Learning"><span class="nav-text">Address Learning</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#More-than-Bridges"><span class="nav-text">More than Bridges</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#After-switched"><span class="nav-text">After switched</span></a></li></ol></li></ol></li></ol>
 
     </div>
 </div>
