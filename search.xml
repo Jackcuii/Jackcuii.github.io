@@ -3492,12 +3492,20 @@ normalized time: <mjx-container class="MathJax" jax="SVG"><svg style="vertical-a
 <ul>
 <li>直观的想法：cli -&gt; lock() -&gt; … -&gt; unlock() -&gt; sti</li>
 </ul>
-<p>正确准则这里需要重听<br>枷锁可以嵌套，怎么回到从前<br>保证中断状态不变这件事不容易：必须要保存中断状态。保存在哪？<br>每次关中断都+1，开中断-1，类似每次嵌套都把中断状态存到一个栈里，<strong>每个CPU</strong>都维护<br><strong>推荐阅读：XV6</strong></p>
+<p><strong>正确准则这里需要重听</strong><br>枷锁可以嵌套，怎么回到从前<br>保证中断状态不变这件事不容易：必须要保存中断状态。保存在哪？<br>每次关中断都+1，开中断-1，类似每次嵌套都把中断状态存到一个栈里，<strong>每个CPU</strong>都维护<br><strong>推荐阅读：XV6</strong></p>
 <div class="note note-cyan icon-padding"><i class="note-icon fa-solid fa-user-secret"></i><p>spinlock代码<br>一个启示：多写检查！！</p>
 </div>
 
 <div class="note note-green icon-padding"><i class="note-icon fa-solid fa-bolt"></i><p>跳出fast-pass的<strong>投机</strong>思维：即<strong>假设</strong>自己的代码是对的。<br>以后就没有人告诉你对不对了！而且你的未测代码越来越可能不对！</p>
-</div>]]></content>
+</div>
+
+
+<div class="note-large notel-red"><div class="notel-title"><p>Spicy</p>
+</div><div class="notel-content"><p>benchmark crimes<br>自旋锁的scalability极差！（类似于反比例）操作系统只在及其短促的操作上使用自旋锁<br>但Linux有大概180K个需要内存保护的函数，怎么办？<br>一个特性：绝大多数数据结构都是Read-mostly<br>可不可以读不加锁？RCU策略！<br>牺牲读写的一致性，选择write-on-copy，写入的时候建一份新的代码，这样<strong>总能读到</strong>一个。<br>用户程序<strong>应该能容忍</strong> <strong>少量的</strong>读到错的。（比方说路由表，读到错的大不了重发一次）<br>这样就解决了性能问题。<br>什么时候扔掉旧版本？阅读材料</p>
+ </div></div>
+
+<p><strong>重听一下性能问题2和后面的</strong></p>
+]]></content>
       <tags>
         <tag>CS</tag>
         <tag>Notes</tag>
