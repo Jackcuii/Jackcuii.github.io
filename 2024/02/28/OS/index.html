@@ -447,8 +447,8 @@ mjx-container[display="true"] + br {
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="pc">2024-03-19 10:09:07</span>
-            <span class="mobile">2024-03-19 10:09</span>
+            <span class="pc">2024-03-19 11:19:52</span>
+            <span class="mobile">2024-03-19 11:19</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -474,12 +474,12 @@ mjx-container[display="true"] + br {
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-file-word"></i>&nbsp;<span>2.4k Words</span>
+            <i class="fa-regular fa-file-word"></i>&nbsp;<span>2.8k Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>9 Mins</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>10 Mins</span>
         </span>
     
     
@@ -660,7 +660,20 @@ mjx-container[display="true"] + br {
 <p>带比较的exchange<br>细节：lhj多处理器</p>
 <p>TSX Memory</p>
 <p>相比于上面的自旋锁，实际的自旋锁更为复杂<br>用户态的自旋锁会导致资源浪费！</p>
+<h3 id="Lecture-7-C"><a href="#Lecture-7-C" class="headerlink" title="Lecture 7 (C)"></a>Lecture 7 (C)</h3><p>如何保证大家的运行？实现多把锁。<br>还要保证当一个解锁时，它所做的写必须都是对其他线程可见的（怎么实现先不用管，框架里帮你实现了）<br>虽然锁很好用，但并不容易正确处理锁。<br>容易出现忘记加锁了，从而造成数据竞争(Data race)<br><strong>Warning：一定会遇到并发错误</strong></p>
+<hr>
+<p>在现实运行中，并不止如此，还有中断！<br>当你进入临界区，触发中断，再试图进入临界区，此时已经上锁了，无法退出！因此仅有自旋是不对的。</p>
+<div class="note note-green icon-padding"><i class="note-icon fa-solid fa-bolt"></i><p>尽量不要<strong>用直觉</strong>去写代码，写错再删….</p>
+</div>
+<ul>
+<li>直观的想法：cli -&gt; lock() -&gt; … -&gt; unlock() -&gt; sti</li>
+</ul>
+<p>正确准则这里需要重听<br>枷锁可以嵌套，怎么回到从前<br>保证中断状态不变这件事不容易：必须要保存中断状态。保存在哪？<br>每次关中断都+1，开中断-1，类似每次嵌套都把中断状态存到一个栈里，<strong>每个CPU</strong>都维护<br><strong>推荐阅读：XV6</strong></p>
+<div class="note note-cyan icon-padding"><i class="note-icon fa-solid fa-user-secret"></i><p>spinlock代码<br>一个启示：多写检查！！</p>
+</div>
 
+<div class="note note-green icon-padding"><i class="note-icon fa-solid fa-bolt"></i><p>跳出fast-pass的<strong>投机</strong>思维：即<strong>假设</strong>自己的代码是对的。<br>以后就没有人告诉你对不对了！而且你的未测代码越来越可能不对！</p>
+</div>
             </div>
 
             
@@ -789,7 +802,7 @@ mjx-container[display="true"] + br {
     <div class="post-toc">
         <div class="toc-title">On this page</div>
         <div class="page-title">Talk to the God——Notes for jyy OS</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#References"><span class="nav-text">References</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%AA%E8%AE%BA"><span class="nav-text">绪论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OS-Overview"><span class="nav-text">OS Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Lecture-2"><span class="nav-text">Lecture 2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lecture-3"><span class="nav-text">Lecture 3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lecture-4"><span class="nav-text">Lecture 4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lecture-5-C"><span class="nav-text">Lecture 5 (C)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lecture-6-C"><span class="nav-text">Lecture 6 (C)</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#References"><span class="nav-text">References</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%AA%E8%AE%BA"><span class="nav-text">绪论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OS-Overview"><span class="nav-text">OS Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Lecture-2"><span class="nav-text">Lecture 2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lecture-3"><span class="nav-text">Lecture 3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lecture-4"><span class="nav-text">Lecture 4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lecture-5-C"><span class="nav-text">Lecture 5 (C)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lecture-6-C"><span class="nav-text">Lecture 6 (C)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lecture-7-C"><span class="nav-text">Lecture 7 (C)</span></a></li></ol></li></ol>
 
     </div>
 </div>
