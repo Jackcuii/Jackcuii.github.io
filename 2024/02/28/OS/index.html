@@ -447,8 +447,8 @@ mjx-container[display="true"] + br {
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="pc">2024-03-19 11:57:31</span>
-            <span class="mobile">2024-03-19 11:57</span>
+            <span class="pc">2024-03-21 12:01:18</span>
+            <span class="mobile">2024-03-21 12:01</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -474,12 +474,12 @@ mjx-container[display="true"] + br {
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-file-word"></i>&nbsp;<span>3k Words</span>
+            <i class="fa-regular fa-file-word"></i>&nbsp;<span>3.5k Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>11 Mins</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>13 Mins</span>
         </span>
     
     
@@ -668,10 +668,12 @@ mjx-container[display="true"] + br {
 <ul>
 <li>直观的想法：cli -&gt; lock() -&gt; … -&gt; unlock() -&gt; sti</li>
 </ul>
-<p><strong>正确准则这里需要重听</strong><br>枷锁可以嵌套，怎么回到从前<br>保证中断状态不变这件事不容易：必须要保存中断状态。保存在哪？<br>每次关中断都+1，开中断-1，类似每次嵌套都把中断状态存到一个栈里，<strong>每个CPU</strong>都维护<br><strong>推荐阅读：XV6</strong></p>
-<div class="note note-cyan icon-padding"><i class="note-icon fa-solid fa-user-secret"></i><p>spinlock代码<br>一个启示：多写检查！！</p>
-</div>
-
+<p><strong>正确准则这里需要重听</strong>、</p>
+<ul>
+<li>一个锁过程中可能会调用中断再次运行这段代码，那么就无法获得这个锁：陷入死锁！</li>
+<li>多个锁可以嵌套和穿插，但cli和sti只有一个，怎么保证<strong>回到从前</strong>？<br>保证中断状态不变这件事不容易：必须要保存中断状态。保存在哪？<br>每次关中断都+1，开中断-1，类似每次嵌套都把中断状态存到一个栈里，<strong>每个CPU</strong>都维护<br><strong>推荐阅读：XV6</strong><div class="note note-cyan icon-padding"><i class="note-icon fa-solid fa-user-secret"></i><p>spinlock代码<br>一个启示：多写检查！！</p>
+</div></li>
+</ul>
 <div class="note note-green icon-padding"><i class="note-icon fa-solid fa-bolt"></i><p>跳出fast-pass的<strong>投机</strong>思维：即<strong>假设</strong>自己的代码是对的。<br>以后就没有人告诉你对不对了！而且你的未测代码越来越可能不对！</p>
 </div>
 
@@ -681,6 +683,48 @@ mjx-container[display="true"] + br {
  </div></div>
 
 <p><strong>重听一下性能问题2和后面的</strong></p>
+<p>对于用户mutex就是黑箱就可以了</p>
+<h3 id="Lecture-8-Snack"><a href="#Lecture-8-Snack" class="headerlink" title="Lecture 8 (Snack)"></a>Lecture 8 (Snack)</h3><div class="note note-primary icon-padding"><i class="note-icon fa-solid fa-circle-arrow-right"></i><p><a class="link" target="_blank" rel="noopener" href="https://jyywiki.cn/OS/2024/lect8.md">务必搭配jyywiki食用 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>好用的工具 <a class="link" target="_blank" rel="noopener" href="https://gcc.godbolt.org/">Compiler Explorer <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+</div>
+<p>记住两件事：<br>未测代码都是错的！<br>我写的都是错的！</p>
+<p>编译器 + 编译选项 + 特定的硬件 + luck = BUG</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Requirements ---&gt; Design ---&gt; Code[Fault] ---&gt; Execution[Error] ---&gt; [Failure]</span><br><span class="line">              ↑           ↑        ↑                                     ↑</span><br><span class="line">mistake here--+-----------+   Where you make                        Where you find</span><br></pre></td></tr></table></figure></div>
+
+<p>调试就是观察状态机的侧面，以便于找到“第一个错误的状态”<br>printf就是状态的摘要，使人能够通过知识进行判断：快速的对执行进行分块，定位错误在哪一个块上<br>但在很多情况下，有很多的错误状态只是一个值，长得和别的值没有什么区别！</p>
+<hr>
+<p>调试一切（状态机）！<br>如何解决一个新问题？<br>UNIX哲学中，整个使用计算机都是编程，你都可以去观察侧面，怎么观察？</p>
+<ul>
+<li>make program verbose <code>-v</code></li>
+<li>Profiler <code>perf</code> and Trace <code>strace</code></li>
+</ul>
+<div class="note note-green icon-padding"><i class="note-icon fa-solid fa-bolt"></i><p><strong>核心方法论</strong>：strace/verbose 的不理解？GPT可以告诉你！<br>GPT非常擅长解释充满了陌生名词但没有复杂逻辑的东西</p>
+</div>
+
+<p>报错信息有的时候不可靠的，但是它一定“在什么地方打印出来”。<br>初学者（别人遇到过这个问题）—&gt; 资深程序员（发现原因并解决问题）（“找对象一定给要找程序员：因为出了问题都是自己的原因”）</p>
+<div class="note-large notel-primary"><div class="notel-title"><p>icon-padding</p>
+</div><div class="notel-content"><p>重新发现GDB： <a href="">GDB文档</a> <a href="">QuickGuide</a><br>一些梦寐以求的功能其实GDB已经实现了： 比方说逆向执行！（还有和并发相关的）</p>
+ </div></div>
+
+<p><strong>学习一下GDB in Python</strong></p>
+<div class="note-large notel-orange"><div class="notel-title"><p>Extention</p>
+</div><div class="notel-content"><p>GDB Cheat Sheet.<br>I have been on it for sometime, though pigeoning!</p>
+ </div></div>
+
+<div class="note-large notel-red"><div class="notel-title"><p>Spicy:</p>
+</div><div class="notel-content"><p>时间压力下，我们会被迫用肌肉记忆解决问题 —&gt; 停止自己的技术演进 —&gt; 最后技术与社区脱节，成为油腻的中年“键盘侠”<br>怎么办？</p>
+ </div></div>
+
+<p><strong>self那个补充</strong></p>
+<div class="note note-green icon-padding"><i class="note-icon fa-solid fa-bolt"></i><p>核心方法论：因为AI还“不够聪明”：AI is a benchmark! 如果你的代码AI能够理解，那么说明是好代码。</p>
+</div>
+
+<hr>
+<p>怎么办？</p>
+<ul>
+<li>多测试</li>
+<li>缩短Error和Failure：断言</li>
+</ul>
+<p><strong>Address那个</strong></p>
 
             </div>
 
@@ -810,7 +854,7 @@ mjx-container[display="true"] + br {
     <div class="post-toc">
         <div class="toc-title">On this page</div>
         <div class="page-title">Talk to the God——Notes for jyy OS</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#References"><span class="nav-text">References</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%AA%E8%AE%BA"><span class="nav-text">绪论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OS-Overview"><span class="nav-text">OS Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Lecture-2"><span class="nav-text">Lecture 2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lecture-3"><span class="nav-text">Lecture 3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lecture-4"><span class="nav-text">Lecture 4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lecture-5-C"><span class="nav-text">Lecture 5 (C)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lecture-6-C"><span class="nav-text">Lecture 6 (C)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lecture-7-C"><span class="nav-text">Lecture 7 (C)</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#References"><span class="nav-text">References</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%AA%E8%AE%BA"><span class="nav-text">绪论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OS-Overview"><span class="nav-text">OS Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Lecture-2"><span class="nav-text">Lecture 2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lecture-3"><span class="nav-text">Lecture 3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lecture-4"><span class="nav-text">Lecture 4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lecture-5-C"><span class="nav-text">Lecture 5 (C)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lecture-6-C"><span class="nav-text">Lecture 6 (C)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lecture-7-C"><span class="nav-text">Lecture 7 (C)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lecture-8-Snack"><span class="nav-text">Lecture 8 (Snack)</span></a></li></ol></li></ol>
 
     </div>
 </div>

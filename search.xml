@@ -3253,39 +3253,33 @@ normalized time: <mjx-container class="MathJax" jax="SVG"><svg style="vertical-a
 <li>… and either refresh or discard the information</li>
 <li>Key for robustness in the face of unpredictable change</li>
 </ul>
-<h3 id="Bridges-amp-Layer-2-switch"><a href="#Bridges-amp-Layer-2-switch" class="headerlink" title="Bridges & Layer-2 switch"></a>Bridges &amp; Layer-2 switch</h3><p>Interconnection between LANs</p>
-<ul>
+<h3 id="Interconnection-of-LANs-still-local"><a href="#Interconnection-of-LANs-still-local" class="headerlink" title="Interconnection of LANs (still local)"></a>Interconnection of LANs (still local)</h3><ul>
 <li>store &amp; forward LAN frames</li>
-<li>exact bitwise copy</li>
+<li>exact bitwise co y</li>
 </ul>
-<h4 id="Bridge-IEEE-802-1D"><a href="#Bridge-IEEE-802-1D" class="headerlink" title="Bridge:(IEEE 802.1D)"></a>Bridge:(IEEE 802.1D)</h4><ul>
-<li>Philosophy<ul>
+<h4 id="Bridge-IEEE-802-1D"><a href="#Bridge-IEEE-802-1D" class="headerlink" title="Bridge:(IEEE 802.1D)"></a>Bridge:(IEEE 802.1D)</h4><h5 id="Philosophy"><a href="#Philosophy" class="headerlink" title="Philosophy"></a>Philosophy</h5><ul>
 <li>S&amp;F: select the frames for neighbor LAN</li>
 <li>Transparent: to stations, unaware of the bridge</li>
 <li>Plug &amp; play, self-learning: use once plugged in (do not need much configuration)</li>
 </ul>
-</li>
-</ul>
 <img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/18/egFkcjTXDyrB5oY.png" width="600">
 
-
-<h5 id="Frame-broadcasting"><a href="#Frame-broadcasting" class="headerlink" title="Frame broadcasting"></a>Frame broadcasting</h5><p>9.10页</p>
-<ul>
-<li>“broadcast storm” in extended LAN<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/18/FOn87oelbM9PqQt.png" width="300"></li>
-</ul>
-<p>jamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjamjam</p>
-<ul>
-<li><p>Spanning tree protocol (Perlman)<br>eliminate the loops!<br>make a spanning tree on the physical topology!</p>
+<h5 id="Mechanisms"><a href="#Mechanisms" class="headerlink" title="Mechanisms"></a>Mechanisms</h5><p>9.10</p>
+<h6 id="Frame-broadcasting"><a href="#Frame-broadcasting" class="headerlink" title="Frame broadcasting"></a>Frame broadcasting</h6><ul>
+<li><p>“broadcast storm” in extended LAN</p>
+<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/18/FOn87oelbM9PqQt.png" width="300">
+</li>
+<li><p><strong>Spanning tree protocol</strong> (Perlman)<br>eliminate the loops!<br>make a spanning tree on the physical topology!</p>
 <ul>
 <li>no configuration by ops and users</li>
 <li>self-healing</li>
 </ul>
-<p>make a spanning tree <strong>distributedly</strong></p>
+<p>must make a spanning tree <strong>distributedly</strong>:</p>
 <ol>
 <li>Pick a root (agree on select the Min MAC)</li>
-<li>Prune</li>
+<li>Prune (only keep the shortest path, break ties(a simple agreement: lower ID, any is OK))</li>
 </ol>
-<p>for <strong>???</strong> loops:<br>  from a node view:</p>
+<p>Messages (Y, d, X): <em>“I’m X, I elect Y with distance d from me”</em></p>
 <p>synchro? rounds?</p>
 <img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/18/xkDLRwaAdUmjbig.png" width-800="">
 
@@ -3492,10 +3486,12 @@ normalized time: <mjx-container class="MathJax" jax="SVG"><svg style="vertical-a
 <ul>
 <li>直观的想法：cli -&gt; lock() -&gt; … -&gt; unlock() -&gt; sti</li>
 </ul>
-<p><strong>正确准则这里需要重听</strong><br>枷锁可以嵌套，怎么回到从前<br>保证中断状态不变这件事不容易：必须要保存中断状态。保存在哪？<br>每次关中断都+1，开中断-1，类似每次嵌套都把中断状态存到一个栈里，<strong>每个CPU</strong>都维护<br><strong>推荐阅读：XV6</strong></p>
-<div class="note note-cyan icon-padding"><i class="note-icon fa-solid fa-user-secret"></i><p>spinlock代码<br>一个启示：多写检查！！</p>
-</div>
-
+<p><strong>正确准则这里需要重听</strong>、</p>
+<ul>
+<li>一个锁过程中可能会调用中断再次运行这段代码，那么就无法获得这个锁：陷入死锁！</li>
+<li>多个锁可以嵌套和穿插，但cli和sti只有一个，怎么保证<strong>回到从前</strong>？<br>保证中断状态不变这件事不容易：必须要保存中断状态。保存在哪？<br>每次关中断都+1，开中断-1，类似每次嵌套都把中断状态存到一个栈里，<strong>每个CPU</strong>都维护<br><strong>推荐阅读：XV6</strong><div class="note note-cyan icon-padding"><i class="note-icon fa-solid fa-user-secret"></i><p>spinlock代码<br>一个启示：多写检查！！</p>
+</div></li>
+</ul>
 <div class="note note-green icon-padding"><i class="note-icon fa-solid fa-bolt"></i><p>跳出fast-pass的<strong>投机</strong>思维：即<strong>假设</strong>自己的代码是对的。<br>以后就没有人告诉你对不对了！而且你的未测代码越来越可能不对！</p>
 </div>
 
@@ -3505,6 +3501,48 @@ normalized time: <mjx-container class="MathJax" jax="SVG"><svg style="vertical-a
  </div></div>
 
 <p><strong>重听一下性能问题2和后面的</strong></p>
+<p>对于用户mutex就是黑箱就可以了</p>
+<h3 id="Lecture-8-Snack"><a href="#Lecture-8-Snack" class="headerlink" title="Lecture 8 (Snack)"></a>Lecture 8 (Snack)</h3><div class="note note-primary icon-padding"><i class="note-icon fa-solid fa-circle-arrow-right"></i><p><a class="link" href="https://jyywiki.cn/OS/2024/lect8.md">务必搭配jyywiki食用 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>好用的工具 <a class="link" href="https://gcc.godbolt.org/">Compiler Explorer <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+</div>
+<p>记住两件事：<br>未测代码都是错的！<br>我写的都是错的！</p>
+<p>编译器 + 编译选项 + 特定的硬件 + luck = BUG</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="code"><pre><span class="line">Requirements ---&gt; Design ---&gt; Code[Fault] ---&gt; Execution[Error] ---&gt; [Failure]</span><br><span class="line">              ↑           ↑        ↑                                     ↑</span><br><span class="line">mistake here--+-----------+   Where you make                        Where you find</span><br></pre></td></tr></table></figure></div>
+
+<p>调试就是观察状态机的侧面，以便于找到“第一个错误的状态”<br>printf就是状态的摘要，使人能够通过知识进行判断：快速的对执行进行分块，定位错误在哪一个块上<br>但在很多情况下，有很多的错误状态只是一个值，长得和别的值没有什么区别！</p>
+<hr>
+<p>调试一切（状态机）！<br>如何解决一个新问题？<br>UNIX哲学中，整个使用计算机都是编程，你都可以去观察侧面，怎么观察？</p>
+<ul>
+<li>make program verbose <code>-v</code></li>
+<li>Profiler <code>perf</code> and Trace <code>strace</code></li>
+</ul>
+<div class="note note-green icon-padding"><i class="note-icon fa-solid fa-bolt"></i><p><strong>核心方法论</strong>：strace/verbose 的不理解？GPT可以告诉你！<br>GPT非常擅长解释充满了陌生名词但没有复杂逻辑的东西</p>
+</div>
+
+<p>报错信息有的时候不可靠的，但是它一定“在什么地方打印出来”。<br>初学者（别人遇到过这个问题）—&gt; 资深程序员（发现原因并解决问题）（“找对象一定给要找程序员：因为出了问题都是自己的原因”）</p>
+<div class="note-large notel-primary"><div class="notel-title"><p>icon-padding</p>
+</div><div class="notel-content"><p>重新发现GDB： <a href="">GDB文档</a> <a href="">QuickGuide</a><br>一些梦寐以求的功能其实GDB已经实现了： 比方说逆向执行！（还有和并发相关的）</p>
+ </div></div>
+
+<p><strong>学习一下GDB in Python</strong></p>
+<div class="note-large notel-orange"><div class="notel-title"><p>Extention</p>
+</div><div class="notel-content"><p>GDB Cheat Sheet.<br>I have been on it for sometime, though pigeoning!</p>
+ </div></div>
+
+<div class="note-large notel-red"><div class="notel-title"><p>Spicy:</p>
+</div><div class="notel-content"><p>时间压力下，我们会被迫用肌肉记忆解决问题 —&gt; 停止自己的技术演进 —&gt; 最后技术与社区脱节，成为油腻的中年“键盘侠”<br>怎么办？</p>
+ </div></div>
+
+<p><strong>self那个补充</strong></p>
+<div class="note note-green icon-padding"><i class="note-icon fa-solid fa-bolt"></i><p>核心方法论：因为AI还“不够聪明”：AI is a benchmark! 如果你的代码AI能够理解，那么说明是好代码。</p>
+</div>
+
+<hr>
+<p>怎么办？</p>
+<ul>
+<li>多测试</li>
+<li>缩短Error和Failure：断言</li>
+</ul>
+<p><strong>Address那个</strong></p>
 ]]></content>
       <tags>
         <tag>CS</tag>
