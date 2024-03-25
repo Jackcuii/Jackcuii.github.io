@@ -3408,15 +3408,22 @@ drawbacks (in large scales) (not intepretale)</li>
     <url>/2024/02/28/OS/</url>
     <content><![CDATA[<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p>jyy ‘The Green Advisor’ OS, NJU 2024 Spring<br>License same as the original course.</p>
 <h2 id="Waiting-List"><a href="#Waiting-List" class="headerlink" title="Waiting List"></a>Waiting List</h2><ul>
-<li>第一周</li>
-<li>第二周</li>
-<li>第三周</li>
-<li>第四周</li>
-<li>第五周</li>
-<li>第六周</li>
-<li>第七周</li>
-<li>第八周<ul>
+<li>第一周+未解决</li>
+<li>第二周+未解决</li>
+<li>第三周+未解决</li>
+<li>第四周+未解决</li>
+<li>第五周+未解决</li>
+<li>第六周+未解决</li>
+<li>第七周+未解决<ul>
+<li>阅读XV6源码</li>
+<li>群除我佬的问题</li>
+<li>*benchmark crimes的阅读</li>
+<li>*RCU细节（缺少链接）</li>
+</ul>
+</li>
+<li>第八节+基本解决+遗留问题<ul>
 <li>学习一下GDB in Python</li>
+<li>阅读GDB文档，quick guide, cheat sheet</li>
 </ul>
 </li>
 </ul>
@@ -3590,22 +3597,27 @@ drawbacks (in large scales) (not intepretale)</li>
 <div class="note note-green icon-padding"><i class="note-icon fa-solid fa-bolt"></i><p>尽量不要<strong>用直觉</strong>去写代码，写错再删….</p>
 </div>
 <ul>
-<li>直观的想法：cli -&gt; lock() -&gt; … -&gt; unlock() -&gt; sti</li>
-</ul>
-<p><strong>正确准则这里需要重听</strong>、</p>
-<ul>
-<li>一个锁过程中可能会调用中断再次运行这段代码，那么就无法获得这个锁：陷入死锁！</li>
-<li>多个锁可以嵌套和穿插，但cli和sti只有一个，怎么保证<strong>回到从前</strong>？<br>保证中断状态不变这件事不容易：必须要保存中断状态。保存在哪？<br>每次关中断都+1，开中断-1，类似每次嵌套都把中断状态存到一个栈里，<strong>每个CPU</strong>都维护<br><strong>推荐阅读：XV6</strong><div class="note note-cyan icon-padding"><i class="note-icon fa-solid fa-user-secret"></i><p>spinlock代码<br>一个启示：多写检查！！</p>
+<li><p>直观的想法：cli -&gt; lock() -&gt; … -&gt; unlock() -&gt; sti</p>
+</li>
+<li><p>一个锁过程中可能会调用中断再次运行这段代码，那么就无法获得这个锁：陷入死锁！</p>
+</li>
+<li><p>多个锁可以嵌套和穿插，但cli和sti只有一个，怎么保证<strong>回到从前</strong>？<br>保证中断状态不变这件事不容易：必须要保存中断状态。保存在哪？<br>每次关中断都+1，开中断-1，类似每次嵌套都把中断状态存到一个栈里，<strong>每个CPU</strong>都维护<br><strong>推荐阅读：XV6</strong></p>
+<div class="note note-cyan icon-padding"><i class="note-icon fa-solid fa-user-secret"></i><p>很好的spinlock代码<br>一个启示：多写检查！！<br>另外jyy写的main里面也有很多值得学习的东西。</p>
 </div></li>
 </ul>
+<div class="note note-yellow icon-padding"><i class="note-icon fa-solid fa-group-arrows-rotate"></i><p>群除我佬：<br>关于spinlock的main在本地运行结果不正确的问题：<br>还有就是TCG是什么东西？</p>
+</div>
+
 <div class="note note-green icon-padding"><i class="note-icon fa-solid fa-bolt"></i><p>跳出fast-pass的<strong>投机</strong>思维：即<strong>假设</strong>自己的代码是对的。<br>以后就没有人告诉你对不对了！而且你的未测代码越来越可能不对！</p>
 </div>
 
 
 <div class="note-large notel-red"><div class="notel-title"><p>Spicy</p>
-</div><div class="notel-content"><p>benchmark crimes<br>自旋锁的scalability极差！（类似于反比例）操作系统只在及其短促的操作上使用自旋锁<br>但Linux有大概180K个需要内存保护的函数，怎么办？<br>一个特性：绝大多数数据结构都是Read-mostly<br>可不可以读不加锁？RCU策略！<br>牺牲读写的一致性，选择write-on-copy，写入的时候建一份新的代码，这样<strong>总能读到</strong>一个。<br>用户程序<strong>应该能容忍</strong> <strong>少量的</strong>读到错的。（比方说路由表，读到错的大不了重发一次）<br>这样就解决了性能问题。<br>什么时候扔掉旧版本？阅读材料</p>
+</div><div class="notel-content"><p><a class="link" href="https://gernot-heiser.org/benchmarking-crimes.html">benchmark crimes <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>自旋锁的scalability极差！（类似于反比例）操作系统只在及其短促的操作上使用自旋锁。Linux Kernel的分析见ppt链接<br>但Linux有大概180K个需要内存保护的函数，怎么办？<br>一个特性：绝大多数数据结构都是Read-mostly<br>可不可以读不加锁？RCU(Read-Copy-Update)策略！<br>牺牲读写的一致性，选择write-on-copy，写入的时候复制建一份新的（对于常见数据结构，不是傻傻的复制，又高效的部分复制），这样<strong>总能读到</strong>一个。<br>用户程序<strong>应该能容忍</strong> <strong>少量的</strong>读到错的。（比方说路由表，读到错的大不了重发一次）<br>这样就解决了性能问题。<br>什么时候扔掉旧版本？阅读材料（并没有啊。。。）</p>
  </div></div>
 
+
+<p><strong>XV6 Spinlock拿来在实验里用就行了</strong></p>
 <p><strong>重听一下性能问题2和后面的</strong></p>
 <p>对于用户mutex就是黑箱就可以了</p>
 <h3 id="Lecture-8-Snack"><a href="#Lecture-8-Snack" class="headerlink" title="Lecture 8 (Snack)"></a>Lecture 8 (Snack)</h3><div class="note note-primary icon-padding"><i class="note-icon fa-solid fa-circle-arrow-right"></i><p><a class="link" href="https://jyywiki.cn/OS/2024/lect8.md">务必搭配jyywiki食用 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>好用的工具 <a class="link" href="https://gcc.godbolt.org/">Compiler Explorer <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
