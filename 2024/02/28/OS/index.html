@@ -447,8 +447,8 @@ mjx-container[display="true"] + br {
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="pc">2024-03-25 09:06:48</span>
-            <span class="mobile">2024-03-25 09:06</span>
+            <span class="pc">2024-03-25 14:39:20</span>
+            <span class="mobile">2024-03-25 14:39</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -474,7 +474,7 @@ mjx-container[display="true"] + br {
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-file-word"></i>&nbsp;<span>3.6k Words</span>
+            <i class="fa-regular fa-file-word"></i>&nbsp;<span>3.7k Words</span>
         </span>
     
     
@@ -504,7 +504,10 @@ mjx-container[display="true"] + br {
 <li>第五周</li>
 <li>第六周</li>
 <li>第七周</li>
-<li>第八周</li>
+<li>第八周<ul>
+<li>学习一下GDB in Python</li>
+</ul>
+</li>
 </ul>
 <h2 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h2><p>在做了充足的心理准备之后，终于决定报了jyy老师的OS。</p>
 <blockquote>
@@ -707,35 +710,37 @@ mjx-container[display="true"] + br {
 <li>make program verbose <code>-v</code></li>
 <li>Profiler <code>perf</code> and Trace <code>strace</code></li>
 </ul>
+<blockquote>
+<p>经过查询，工具中的verbose好像真的是通过多级的if则printf组织的。。。(GPT)</p>
+</blockquote>
 <div class="note note-green icon-padding"><i class="note-icon fa-solid fa-bolt"></i><p><strong>核心方法论</strong>：strace/verbose 的不理解？GPT可以告诉你！<br>GPT非常擅长解释充满了陌生名词但没有复杂逻辑的东西</p>
 </div>
 
 <p>报错信息有的时候不可靠的，但是它一定“在什么地方打印出来”。<br>初学者（别人遇到过这个问题）—&gt; 资深程序员（发现原因并解决问题）（“找对象一定给要找程序员：因为出了问题都是自己的原因”）</p>
-<div class="note-large notel-primary"><div class="notel-title"><p>icon-padding</p>
-</div><div class="notel-content"><p>重新发现GDB： <a href="">GDB文档</a> <a href="">QuickGuide</a><br>一些梦寐以求的功能其实GDB已经实现了： 比方说逆向执行！（还有和并发相关的）</p>
- </div></div>
+<div class="note note-primary icon-padding"><i class="note-icon fa-solid fa-circle-arrow-right"></i><p><strong>重新发现GDB</strong>： <a href="">GDB文档</a> <a href="">QuickGuide</a><br>一些梦寐以求的功能其实GDB已经实现了： 比方说逆向执行！（还有和并发相关的）</p>
+</div>
 
-<p><strong>学习一下GDB in Python</strong></p>
 <div class="note-large notel-orange"><div class="notel-title"><p>Extention</p>
-</div><div class="notel-content"><p>GDB Cheat Sheet.<br>I have been on it for sometime, though pigeoning!</p>
+</div><div class="notel-content"><p>GDB Cheat Sheet.<br>I have been on it for sometime, though pigeoning!<br><a class="link" target="_blank" rel="noopener" href="https://github.com/Jackcuii/Commandline-quick-sheet">Commandline-quick-sheet <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
  </div></div>
 
 <div class="note-large notel-red"><div class="notel-title"><p>Spicy: Really Spicy!</p>
-</div><div class="notel-content"><p>时间压力下，我们会被迫用肌肉记忆解决问题 —&gt; 停止自己的技术演进 —&gt; 最后技术与社区脱节，成为油腻的中年“键盘侠”<br>怎么办？</p>
+</div><div class="notel-content"><p>时间压力下，我们会被迫用肌肉记忆解决问题<br>—&gt; 停止自己的技术演进<br>—&gt; 最后技术与社区脱节，成为油腻的中年“键盘侠”<br>怎么办？<br><img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/25/1hi9KtFRMXcGTrC.png" width="300"></p>
  </div></div>
 
-<p><strong>self那个补充</strong></p>
-<div class="note note-green icon-padding"><i class="note-icon fa-solid fa-bolt"></i><p>核心方法论：因为AI还“不够聪明”：AI is a benchmark! 如果你的代码AI能够理解，那么说明是好代码。</p>
+<p>应用调试理论：什么是好的代码？<br>Self-Explanatory Code: 代码应该是自解释的，不需要额外的注释<br>Self-evident Code: 代码应该是自证明的，可以通过阅读确认和需求的一致性。</p>
+<div class="note note-green icon-padding"><i class="note-icon fa-solid fa-bolt"></i><p><strong>核心方法论</strong>：因为AI还“不够聪明”：AI is a benchmark! 如果你的代码AI能够理解，那么说明是好代码。</p>
 </div>
 
 <hr>
-<p>编译选项：-fsanitize=address</p>
-<p>怎么办？</p>
+<p>写出BUG了怎么办？</p>
 <ul>
 <li>多测试</li>
 <li>缩短Error和Failure：断言</li>
 </ul>
-<p><strong>Address那个</strong></p>
+<blockquote>
+<p>编译选项：<code>-fsanitize=address</code> 自动添加断言检查存储错。</p>
+</blockquote>
 
             </div>
 
