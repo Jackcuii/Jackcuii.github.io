@@ -2960,7 +2960,7 @@ Have I provided a clear understanding of how the results fit into a bigger pictu
   <entry>
     <title>Notes for Computer Network</title>
     <url>/2024/02/26/ComputerNetwork/</url>
-    <content><![CDATA[<p>L1-1 还有补充<br>L1-2 未完成<br>L2-1 未完成<br>L2-2 还有订正<br>L2-3 未完成<br>L2-4 未完成</p>
+    <content><![CDATA[<p>L1-1 还有补充<br>L1-2 未完成<br>L2-1 未完成<br>L2-2 还有订正<br>L2-3 未完成<br>L2-4 几乎完成，残留问题已标注</p>
 <ul>
 <li>同步问题</li>
 </ul>
@@ -3261,7 +3261,7 @@ normalized time: <mjx-container class="MathJax" jax="SVG"><svg style="vertical-a
 <li>exact bitwise copy</li>
 </ul>
 <h4 id="Bridge-IEEE-802-1D"><a href="#Bridge-IEEE-802-1D" class="headerlink" title="Bridge:(IEEE 802.1D)"></a>Bridge:(IEEE 802.1D)</h4><h5 id="Philosophy"><a href="#Philosophy" class="headerlink" title="Philosophy"></a>Philosophy</h5><ul>
-<li>S&amp;F: select the frames for neighbor LAN</li>
+<li>S&amp;F: select the frames for neighbor LAN<br>Use the CSMA/CD to access LAN <strong>segment</strong></li>
 <li>Transparent: to stations, unaware of the bridge</li>
 <li>Plug &amp; play, self-learning: use once plugged in (do not need much configuration)</li>
 </ul>
@@ -3271,8 +3271,9 @@ normalized time: <mjx-container class="MathJax" jax="SVG"><svg style="vertical-a
 <h6 id="Frame-broadcasting"><a href="#Frame-broadcasting" class="headerlink" title="Frame broadcasting"></a>Frame broadcasting</h6><ul>
 <li>“broadcast storm” in extended LAN<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/18/FOn87oelbM9PqQt.png" width="300"></li>
 </ul>
-<p>JAM</p>
-<ul>
+<hr>
+<p>How to solve?</p>
+<h6 id="Loop-resolution"><a href="#Loop-resolution" class="headerlink" title="Loop resolution"></a>Loop resolution</h6><ul>
 <li><p><strong>Spanning tree protocol</strong> (Perlman)<br>eliminate the loops!<br>make a spanning tree on the physical topology!</p>
 <ul>
 <li>no configuration by ops and users</li>
@@ -3295,32 +3296,50 @@ normalized time: <mjx-container class="MathJax" jax="SVG"><svg style="vertical-a
 </ul>
 </li>
 </ul>
-<div class="note note-warning icon-padding"><i class="note-icon fa-solid fa-exclamation-circle"></i><p><strong>What about the Synchro problem, do really need synchro? no one tell me…</strong></p>
+<div class="note note-warning icon-padding"><i class="note-icon fa-solid fa-exclamation-circle"></i><p><strong>What about the Synchro problem, do really need synchro? no one tell me…</strong><br>how to choose port? store them all?</p>
 </div>  
-<p>  synchro? rounds?</p>
   <img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/18/xkDLRwaAdUmjbig.png" width="800">
-  (必考)
-
-
+  
+<p>  (必考)</p>
 <ul>
-<li>Robust:</li>
-<li><strong>Flooding</strong>: forward to all the valid exports except for the import<ul>
+<li>Robustness: After spanning tree is built, the root will still broadcast BPDU in certain frequency (eg. 2s), and all other nodes will flood them to all the ports including the blocked ones.<div class="note note-warning icon-padding"><i class="note-icon fa-solid fa-exclamation-circle"></i><p><strong>How to detect? what ambiguous!</strong></p>
+</div></li>
+</ul>
+<hr>
+<ul>
+<li><strong>Flooding</strong>: forward to all the <strong>valid</strong>(on the tree) exports except for the import<ul>
 <li>Philosophy: Waste, but <strong>learn from it!</strong> (bootstrap more precise/efficient forwarding)</li>
 <li>Example:<br>in spanning tree, I receive message of A from port p, so I know just forward to p when dst is A<br><em>cache the ‘knowledge’ with a certain timer</em></li>
 </ul>
 </li>
 </ul>
-<h5 id="Address-Learning"><a href="#Address-Learning" class="headerlink" title="Address Learning"></a>Address Learning</h5><p>Address database<br><strong>Bridge do not know who is in his LAN originally!!</strong></p>
+<h5 id="Address-Learning"><a href="#Address-Learning" class="headerlink" title="Address Learning"></a>Address Learning</h5><p>Address database:<br>mechanism: just as the timeout-switch lab<br>receive, learn;<br>know, forward;   adapt the lab!!!!!!!!<br>do not know, flood;</p>
+<p><strong>Bridge do not know who is in his LAN originally!!</strong></p>
 <h4 id="More-than-Bridges"><a href="#More-than-Bridges" class="headerlink" title="More than Bridges"></a>More than Bridges</h4><ul>
-<li><strong>Hubs</strong>: physical repeater (Not in Link Layer)<br><em>Physically star, logically bus</em></li>
-<li><strong>Bridges</strong>: inter-LAN (forward + addr learning)</li>
-<li><strong>Layer2 Switches</strong>: inter-LAN/host (<strong>Bridge</strong> + collision free)</li>
-<li><strong>Layer3 Switches</strong>: Not for now, a router in nature, but not the same as router (not in Internet)</li>
+<li><p><strong>Hubs</strong>: physical repeater (Not in Link Layer)<br><em>Physically star, logically bus</em>, 2 lines per end (transmit and receive) (collion vulnerable)</p>
+</li>
+<li><p><strong>Bridges</strong>: inter-LAN (forward + addr learning)<br>2-4 ports for LANs<br>as above</p>
+</li>
+<li><p><strong>Layer2 Switches</strong>: inter-LAN/host (<strong>Bridge</strong> + collision free)<br>many many ports for LANs/hosts</p>
+</li>
+<li><p><strong>Layer3 Switches</strong>: Not for now, a router in nature, but not the same as router (not in Internet)</p>
+</li>
 </ul>
-<h4 id="After-switched"><a href="#After-switched" class="headerlink" title="After switched"></a>After switched</h4><p>Less collision domain</p>
-<div class="highlight-container" data-rel="Text"><figure class="iseeu highlight text"><figcaption><span>Self-learing workflow</span></figcaption><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">receive --- </span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
-
-<p>P48kao</p>
+<h4 id="After-switched"><a href="#After-switched" class="headerlink" title="After switched"></a>After switched</h4><p>Not traditional view! All dedicated links.<br><img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/25/DF79Z6pQfPmwMEn.png" width="150"></p>
+<ul>
+<li>buffer and forward</li>
+<li>Ethernet Protocol on <strong>each</strong> link</li>
+<li>each link has its own collision domain</li>
+<li><strong>full deplux</strong>: Seperate send and receive</li>
+<li><strong>Switching</strong>: two forward process diff src and dst can happen simutaneously. (Multiplying)</li>
+<li>No change when adopting switch / adding more switches (scale easily)</li>
+<li>Station has dedicated capacity equal to original LAN (No summarize self understand)</li>
+<li>Interconnectable: switch – switch</li>
+<li>switch self-learning: like the former ones (必考)<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/25/dnYyjTsCcgLwq6H.png" width="300">
+drawbacks (in large scales) (not intepretale)</li>
+<li>Broadcast overload</li>
+<li>Lack of multiple paths</li>
+</ul>
 ]]></content>
       <tags>
         <tag>CS</tag>
@@ -3331,6 +3350,16 @@ normalized time: <mjx-container class="MathJax" jax="SVG"><svg style="vertical-a
     <title>Talk to the God——Notes for jyy OS</title>
     <url>/2024/02/28/OS/</url>
     <content><![CDATA[<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p>jyy ‘The Green Advisor’ OS, NJU 2024 Spring<br>License same as the original course.</p>
+<h2 id="Waiting-List"><a href="#Waiting-List" class="headerlink" title="Waiting List"></a>Waiting List</h2><ul>
+<li>第一周</li>
+<li>第二周</li>
+<li>第三周</li>
+<li>第四周</li>
+<li>第五周</li>
+<li>第六周</li>
+<li>第七周</li>
+<li>第八周</li>
+</ul>
 <h2 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h2><p>在做了充足的心理准备之后，终于决定报了jyy老师的OS。</p>
 <blockquote>
 <p>世界上有两种人：没见过<strong>神</strong>的人和见过jyy的人。</p>
@@ -3545,7 +3574,7 @@ normalized time: <mjx-container class="MathJax" jax="SVG"><svg style="vertical-a
 </div><div class="notel-content"><p>GDB Cheat Sheet.<br>I have been on it for sometime, though pigeoning!</p>
  </div></div>
 
-<div class="note-large notel-red"><div class="notel-title"><p>Spicy:</p>
+<div class="note-large notel-red"><div class="notel-title"><p>Spicy: Really Spicy!</p>
 </div><div class="notel-content"><p>时间压力下，我们会被迫用肌肉记忆解决问题 —&gt; 停止自己的技术演进 —&gt; 最后技术与社区脱节，成为油腻的中年“键盘侠”<br>怎么办？</p>
  </div></div>
 
@@ -3554,6 +3583,7 @@ normalized time: <mjx-container class="MathJax" jax="SVG"><svg style="vertical-a
 </div>
 
 <hr>
+<p>编译选项：-fsanitize=address</p>
 <p>怎么办？</p>
 <ul>
 <li>多测试</li>

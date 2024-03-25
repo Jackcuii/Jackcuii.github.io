@@ -447,8 +447,8 @@ mjx-container[display="true"] + br {
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="pc">2024-03-23 10:52:31</span>
-            <span class="mobile">2024-03-23 10:52</span>
+            <span class="pc">2024-03-25 10:09:40</span>
+            <span class="mobile">2024-03-25 10:09</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -474,12 +474,12 @@ mjx-container[display="true"] + br {
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-file-word"></i>&nbsp;<span>1.6k Words</span>
+            <i class="fa-regular fa-file-word"></i>&nbsp;<span>1.7k Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>9 Mins</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>10 Mins</span>
         </span>
     
     
@@ -495,7 +495,7 @@ mjx-container[display="true"] + br {
             
 
             <div class="article-content markdown-body">
-                <p>L1-1 还有补充<br>L1-2 未完成<br>L2-1 未完成<br>L2-2 还有订正<br>L2-3 未完成<br>L2-4 未完成</p>
+                <p>L1-1 还有补充<br>L1-2 未完成<br>L2-1 未完成<br>L2-2 还有订正<br>L2-3 未完成<br>L2-4 几乎完成，残留问题已标注</p>
 <ul>
 <li>同步问题</li>
 </ul>
@@ -796,7 +796,7 @@ normalized time: <mjx-container class="MathJax" jax="SVG"><svg style="vertical-a
 <li>exact bitwise copy</li>
 </ul>
 <h4 id="Bridge-IEEE-802-1D"><a href="#Bridge-IEEE-802-1D" class="headerlink" title="Bridge:(IEEE 802.1D)"></a>Bridge:(IEEE 802.1D)</h4><h5 id="Philosophy"><a href="#Philosophy" class="headerlink" title="Philosophy"></a>Philosophy</h5><ul>
-<li>S&amp;F: select the frames for neighbor LAN</li>
+<li>S&amp;F: select the frames for neighbor LAN<br>Use the CSMA/CD to access LAN <strong>segment</strong></li>
 <li>Transparent: to stations, unaware of the bridge</li>
 <li>Plug &amp; play, self-learning: use once plugged in (do not need much configuration)</li>
 </ul>
@@ -806,8 +806,9 @@ normalized time: <mjx-container class="MathJax" jax="SVG"><svg style="vertical-a
 <h6 id="Frame-broadcasting"><a href="#Frame-broadcasting" class="headerlink" title="Frame broadcasting"></a>Frame broadcasting</h6><ul>
 <li>“broadcast storm” in extended LAN<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/18/FOn87oelbM9PqQt.png" width="300"></li>
 </ul>
-<p>JAM</p>
-<ul>
+<hr>
+<p>How to solve?</p>
+<h6 id="Loop-resolution"><a href="#Loop-resolution" class="headerlink" title="Loop resolution"></a>Loop resolution</h6><ul>
 <li><p><strong>Spanning tree protocol</strong> (Perlman)<br>eliminate the loops!<br>make a spanning tree on the physical topology!</p>
 <ul>
 <li>no configuration by ops and users</li>
@@ -830,32 +831,50 @@ normalized time: <mjx-container class="MathJax" jax="SVG"><svg style="vertical-a
 </ul>
 </li>
 </ul>
-<div class="note note-warning icon-padding"><i class="note-icon fa-solid fa-exclamation-circle"></i><p><strong>What about the Synchro problem, do really need synchro? no one tell me…</strong></p>
+<div class="note note-warning icon-padding"><i class="note-icon fa-solid fa-exclamation-circle"></i><p><strong>What about the Synchro problem, do really need synchro? no one tell me…</strong><br>how to choose port? store them all?</p>
 </div>  
-<p>  synchro? rounds?</p>
   <img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/18/xkDLRwaAdUmjbig.png" width="800">
-  (必考)
-
-
+  
+<p>  (必考)</p>
 <ul>
-<li>Robust:</li>
-<li><strong>Flooding</strong>: forward to all the valid exports except for the import<ul>
+<li>Robustness: After spanning tree is built, the root will still broadcast BPDU in certain frequency (eg. 2s), and all other nodes will flood them to all the ports including the blocked ones.<div class="note note-warning icon-padding"><i class="note-icon fa-solid fa-exclamation-circle"></i><p><strong>How to detect? what ambiguous!</strong></p>
+</div></li>
+</ul>
+<hr>
+<ul>
+<li><strong>Flooding</strong>: forward to all the <strong>valid</strong>(on the tree) exports except for the import<ul>
 <li>Philosophy: Waste, but <strong>learn from it!</strong> (bootstrap more precise/efficient forwarding)</li>
 <li>Example:<br>in spanning tree, I receive message of A from port p, so I know just forward to p when dst is A<br><em>cache the ‘knowledge’ with a certain timer</em></li>
 </ul>
 </li>
 </ul>
-<h5 id="Address-Learning"><a href="#Address-Learning" class="headerlink" title="Address Learning"></a>Address Learning</h5><p>Address database<br><strong>Bridge do not know who is in his LAN originally!!</strong></p>
+<h5 id="Address-Learning"><a href="#Address-Learning" class="headerlink" title="Address Learning"></a>Address Learning</h5><p>Address database:<br>mechanism: just as the timeout-switch lab<br>receive, learn;<br>know, forward;   adapt the lab!!!!!!!!<br>do not know, flood;</p>
+<p><strong>Bridge do not know who is in his LAN originally!!</strong></p>
 <h4 id="More-than-Bridges"><a href="#More-than-Bridges" class="headerlink" title="More than Bridges"></a>More than Bridges</h4><ul>
-<li><strong>Hubs</strong>: physical repeater (Not in Link Layer)<br><em>Physically star, logically bus</em></li>
-<li><strong>Bridges</strong>: inter-LAN (forward + addr learning)</li>
-<li><strong>Layer2 Switches</strong>: inter-LAN/host (<strong>Bridge</strong> + collision free)</li>
-<li><strong>Layer3 Switches</strong>: Not for now, a router in nature, but not the same as router (not in Internet)</li>
+<li><p><strong>Hubs</strong>: physical repeater (Not in Link Layer)<br><em>Physically star, logically bus</em>, 2 lines per end (transmit and receive) (collion vulnerable)</p>
+</li>
+<li><p><strong>Bridges</strong>: inter-LAN (forward + addr learning)<br>2-4 ports for LANs<br>as above</p>
+</li>
+<li><p><strong>Layer2 Switches</strong>: inter-LAN/host (<strong>Bridge</strong> + collision free)<br>many many ports for LANs/hosts</p>
+</li>
+<li><p><strong>Layer3 Switches</strong>: Not for now, a router in nature, but not the same as router (not in Internet)</p>
+</li>
 </ul>
-<h4 id="After-switched"><a href="#After-switched" class="headerlink" title="After switched"></a>After switched</h4><p>Less collision domain</p>
-<div class="highlight-container" data-rel="Text"><figure class="iseeu highlight text"><figcaption><span>Self-learing workflow</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">receive --- </span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
-
-<p>P48kao</p>
+<h4 id="After-switched"><a href="#After-switched" class="headerlink" title="After switched"></a>After switched</h4><p>Not traditional view! All dedicated links.<br><img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/25/DF79Z6pQfPmwMEn.png" width="150"></p>
+<ul>
+<li>buffer and forward</li>
+<li>Ethernet Protocol on <strong>each</strong> link</li>
+<li>each link has its own collision domain</li>
+<li><strong>full deplux</strong>: Seperate send and receive</li>
+<li><strong>Switching</strong>: two forward process diff src and dst can happen simutaneously. (Multiplying)</li>
+<li>No change when adopting switch / adding more switches (scale easily)</li>
+<li>Station has dedicated capacity equal to original LAN (No summarize self understand)</li>
+<li>Interconnectable: switch – switch</li>
+<li>switch self-learning: like the former ones (必考)<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/25/dnYyjTsCcgLwq6H.png" width="300">
+drawbacks (in large scales) (not intepretale)</li>
+<li>Broadcast overload</li>
+<li>Lack of multiple paths</li>
+</ul>
 
             </div>
 
@@ -985,7 +1004,7 @@ normalized time: <mjx-container class="MathJax" jax="SVG"><svg style="vertical-a
     <div class="post-toc">
         <div class="toc-title">On this page</div>
         <div class="page-title">Notes for Computer Network</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Chapter1-Overview"><span class="nav-text">Chapter1 Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Network-Composition"><span class="nav-text">Network Composition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#From-ISO-OSI-to-modern-Internet-Architecture"><span class="nav-text">From ISO-OSI to modern Internet Architecture</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Network-Performance"><span class="nav-text">Network Performance</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Link-Layer"><span class="nav-text">Link Layer</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Service"><span class="nav-text">Service</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LAN"><span class="nav-text">LAN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Link-Access-MAC"><span class="nav-text">Link Access: MAC</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Channel-Partitioning"><span class="nav-text">Channel Partitioning</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Taking-Turns"><span class="nav-text">Taking Turns</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Random-Access"><span class="nav-text">Random Access</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-persistent-in-IEEE-802-3-Wired-Ethernet"><span class="nav-text">1-persistent in IEEE 802.3 (Wired Ethernet)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Performance"><span class="nav-text">Performance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Link-layer-discovery"><span class="nav-text">Link layer discovery</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Protocols"><span class="nav-text">Protocols</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#DHCP-Dynamic-Host-Configuration-Protocol-RFC-2131"><span class="nav-text">DHCP (Dynamic Host Configuration Protocol) (RFC 2131)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ARP-Address-Resolution-Protocol-RFC-826"><span class="nav-text">ARP (Address Resolution Protocol) (RFC 826)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#A-remote-communication-case"><span class="nav-text">A remote communication case</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Philosophy-of-ARP-amp-DHCP"><span class="nav-text">Philosophy of ARP &amp; DHCP</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Interconnection-of-LANs-still-local"><span class="nav-text">Interconnection of LANs (still local)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Bridge-IEEE-802-1D"><span class="nav-text">Bridge:(IEEE 802.1D)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Philosophy"><span class="nav-text">Philosophy</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Mechanisms"><span class="nav-text">Mechanisms</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Frame-broadcasting"><span class="nav-text">Frame broadcasting</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Address-Learning"><span class="nav-text">Address Learning</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#More-than-Bridges"><span class="nav-text">More than Bridges</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#After-switched"><span class="nav-text">After switched</span></a></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Chapter1-Overview"><span class="nav-text">Chapter1 Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Network-Composition"><span class="nav-text">Network Composition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#From-ISO-OSI-to-modern-Internet-Architecture"><span class="nav-text">From ISO-OSI to modern Internet Architecture</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Network-Performance"><span class="nav-text">Network Performance</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Link-Layer"><span class="nav-text">Link Layer</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Service"><span class="nav-text">Service</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LAN"><span class="nav-text">LAN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Link-Access-MAC"><span class="nav-text">Link Access: MAC</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Channel-Partitioning"><span class="nav-text">Channel Partitioning</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Taking-Turns"><span class="nav-text">Taking Turns</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Random-Access"><span class="nav-text">Random Access</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-persistent-in-IEEE-802-3-Wired-Ethernet"><span class="nav-text">1-persistent in IEEE 802.3 (Wired Ethernet)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Performance"><span class="nav-text">Performance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Link-layer-discovery"><span class="nav-text">Link layer discovery</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Protocols"><span class="nav-text">Protocols</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#DHCP-Dynamic-Host-Configuration-Protocol-RFC-2131"><span class="nav-text">DHCP (Dynamic Host Configuration Protocol) (RFC 2131)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ARP-Address-Resolution-Protocol-RFC-826"><span class="nav-text">ARP (Address Resolution Protocol) (RFC 826)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#A-remote-communication-case"><span class="nav-text">A remote communication case</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Philosophy-of-ARP-amp-DHCP"><span class="nav-text">Philosophy of ARP &amp; DHCP</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Interconnection-of-LANs-still-local"><span class="nav-text">Interconnection of LANs (still local)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Bridge-IEEE-802-1D"><span class="nav-text">Bridge:(IEEE 802.1D)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Philosophy"><span class="nav-text">Philosophy</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Mechanisms"><span class="nav-text">Mechanisms</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Frame-broadcasting"><span class="nav-text">Frame broadcasting</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Loop-resolution"><span class="nav-text">Loop resolution</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Address-Learning"><span class="nav-text">Address Learning</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#More-than-Bridges"><span class="nav-text">More than Bridges</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#After-switched"><span class="nav-text">After switched</span></a></li></ol></li></ol></li></ol>
 
     </div>
 </div>
