@@ -3373,12 +3373,42 @@ drawbacks (in large scales) (not intepretale)</li>
 </li>
 <li><p>Same physical layer: Power↑, SNR↑, BER↓</p>
 </li>
-<li><p>Dynamic SNR ↑↓ → 👉</p>
+<li><p>Dynamic SNR ↑↓ 👉 adapt Physical layer</p>
 </li>
 </ul>
-<h5 id="Multipath-propagation"><a href="#Multipath-propagation" class="headerlink" title="Multipath propagation"></a>Multipath propagation</h5><p>Self-interference<br><strong>补图</strong></p>
-<h5 id="Interference-from-other-sources"><a href="#Interference-from-other-sources" class="headerlink" title="Interference from other sources"></a>Interference from other sources</h5><p>e.g. 2.4GHz-phone-motors-mic<br>P21</p>
-<h4 id="Mechanism"><a href="#Mechanism" class="headerlink" title="Mechanism"></a>Mechanism</h4><p>IEEE 802.11</p>
+<h5 id="Multipath-propagation"><a href="#Multipath-propagation" class="headerlink" title="Multipath propagation"></a>Multipath propagation</h5><p>Self-interference<br><img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/25/Se2JgbjtGmrsLDd.png" width="400"></p>
+<p>JAMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm<br>JAMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm<br>JAMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm<br>JAMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm<br>JAMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm<br>JAMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm<br>JAMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm<br>JAMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm<br>JAMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm<br>JAMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm</p>
+<h5 id="Interference-from-other-sources"><a href="#Interference-from-other-sources" class="headerlink" title="Interference from other sources"></a>Interference from other sources</h5><p>e.g. 2.4GHz-phone-motors-microwave </p>
+<ul>
+<li>Broadcast medium<ul>
+<li>Anybody in proximity can hear and interfere</li>
+</ul>
+</li>
+<li>Cannot receive while transmitting<ul>
+<li>Our own (or nearby) transmission is deafening our receiver <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.054ex;" xmlns="http://www.w3.org/2000/svg" width="2.262ex" height="1.242ex" role="img" focusable="false" viewBox="0 -525 1000 549"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="21D2" d="M580 514Q580 525 596 525Q601 525 604 525T609 525T613 524T615 523T617 520T619 517T622 512Q659 438 720 381T831 300T927 263Q944 258 944 250T935 239T898 228T840 204Q696 134 622 -12Q618 -21 615 -22T600 -24Q580 -24 580 -17Q580 -13 585 0Q620 69 671 123L681 133H70Q56 140 56 153Q56 168 72 173H725L735 181Q774 211 852 250Q851 251 834 259T789 283T735 319L725 327H72Q56 332 56 347Q56 360 70 367H681L671 377Q638 412 609 458T580 514Z"></path></g></g></g></svg></mjx-container> Half-duplex</li>
+<li>Recently may full duplex</li>
+</ul>
+</li>
+<li>transmission always not intact</li>
+<li>Multiple wireless senders and receivers create many problems</li>
+</ul>
+<h4 id="Mechanism-WiFi-IEEE-802-11-Wireless-LANs"><a href="#Mechanism-WiFi-IEEE-802-11-Wireless-LANs" class="headerlink" title="Mechanism WiFi - IEEE 802.11 Wireless LANs"></a>Mechanism WiFi - IEEE 802.11 Wireless LANs</h4><h5 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h5><ul>
+<li>station：device with IEEE 802.11 MAC and phy layer</li>
+<li><strong>AP</strong>(Access Point): wired – wireless</li>
+<li><strong>BSS</strong>(Basic Service Set): a cell coordinated by AP</li>
+<li><strong>ESS</strong>(Extended Service Set): multiple BSSs interconnected by <strong>DS</strong>(Distribution System)(switches, wired network, wireless network)<strong>还需要求证DS究竟是什么</strong><br>ESS appears like a single logical LAN<br>Portals for Internet access.</li>
+</ul>
+<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/25/5hsFn4lDiVErXHK.png" img="600">
+
+<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/25/bxa9uQCTzEy64Sh.png" img="600">
+
+<p>对比有线帧和无线帧</p>
+<ul>
+<li><p>802.11b: spectrum divided into 11 channels<br>AP admin <strong>(？)</strong> : choose channel.<br>host associate with an AP</p>
+<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/25/dMpjDOBAYxRGeC3.png" width="300">
+- Passive
+<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/25/OhFQsE6ylNkI94V.png" width="300"></li>
+</ul>
 <h5 id="Scanning"><a href="#Scanning" class="headerlink" title="Scanning"></a>Scanning</h5><ul>
 <li>Passive: listen to all the channels</li>
 </ul>
@@ -3409,20 +3439,20 @@ drawbacks (in large scales) (not intepretale)</li>
     <url>/2024/02/28/OS/</url>
     <content><![CDATA[<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p>jyy ‘The Green Advisor’ OS, NJU 2024 Spring<br>License same as the original course.</p>
 <h2 id="Waiting-List"><a href="#Waiting-List" class="headerlink" title="Waiting List"></a>Waiting List</h2><ul>
-<li>第一周+未解决</li>
-<li>第二周+未解决</li>
-<li>第三周+未解决</li>
-<li>第四周+未解决</li>
-<li>第五周+未解决</li>
-<li>第六周+未解决</li>
-<li>第七周+未解决<ul>
+<li>第一节+未解决</li>
+<li>第二节+未解决</li>
+<li>第三节+未解决</li>
+<li>第四节+未解决</li>
+<li>第五节+未解决</li>
+<li>第六节+未解决</li>
+<li>第七节+基本解决 ✅<ul>
 <li>阅读XV6源码</li>
 <li>群除我佬的问题</li>
 <li>*benchmark crimes的阅读</li>
 <li>*RCU细节（缺少链接）</li>
 </ul>
 </li>
-<li>第八节+基本解决+遗留问题<ul>
+<li>第八节+基本解决+遗留问题 ✅<ul>
 <li>学习一下GDB in Python</li>
 <li>阅读GDB文档，quick guide, cheat sheet</li>
 </ul>
@@ -3469,6 +3499,45 @@ drawbacks (in large scales) (not intepretale)</li>
 <div class="note-large notel-red"><div class="notel-title"><p>Spicy</p>
 </div><div class="notel-content"><p>更深入地理解状态机：理解编译和优化<br>编译就是状态机之间映射。<br>什么是优化？就是行为不变提高效率/减少资源消耗。什么是行为不变？就是<strong>系统调用不变</strong>。（其余的操作<strong>都是黑箱</strong>，只有调用才和外界产生联系）<br>不仅如此？系统调用也可以改变，保证系统调用的行为一致（<strong>行为的行为</strong>），可以把程序本身somehow做成调用，也就是系统的一部分。（前沿了）<br>额…那这和没有操作系统的区别在于？</p>
  </div></div>
+
+<hr>
+<div class="note-large notel-green"><div class="notel-title"><p>M1 Log</p>
+</div><div class="notel-content"><blockquote>
+<p>特别说明：为了更适应英文环境，其实绝大多数的笔记都使用英语来记了，但由于绿导师的内容比较深，大面积的使用英语会使得“再提取”非常困难(鸡尾酒会效应)而且个别思考内容我第一次用英语乱找一个说法写上，下次自己都看不懂什么意思，因此就用中文记了，我可is not那种Chinese英语混着说的’fashion speaker’(doge)</p>
+</blockquote>
+<ul>
+<li>确实觉得祖传代码应该好好打击了!</li>
+<li>hj老师上周宣布算法的OJ由于系里禁止查重而取消，这两件事对比起来看让人唏嘘啊。。。</li>
+<li>学习GA在命令行里接入了GPT，感觉方便了许多！</li>
+<li><a class="link" href="https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap12.html">https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap12.html <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 欠一个</li>
+<li>编写可移植的代码？？？</li>
+<li>关于Hard Test的事例，略感恐惧<ul>
+<li>这个虽然给出了,但以后的实验呢，想都不敢想。。。<ul>
+<li>这个或许可以通过strace来发现，但“行为相同”到这个程度……<br>  Spicy</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Windows Kernel -&gt; offer API</li>
+<li>UNIX (Philosophy) -&gt; Everything is a file -&gt; files</li>
+<li>在某一个时刻，高级语言也会变成汇编语言，毕竟Programming终究也就是一个Wheel，好像跟蒸汽机没什么区别…</li>
+<li>没看后面的就想（问GPT）到了在哪找到state，切实感觉到了方法论的变化（GPT on the shell 之后，问GPT不用点鼠标了，频率飙升）</li>
+<li>man 5 proc</li>
+<li>32/64 robustness？</li>
+<li><em>raise the robustness</em><ul>
+<li>…</li>
+</ul>
+</li>
+<li>melt-down mechanism</li>
+<li>string robust</li>
+<li>storage robu</li>
+<li>kthreadd pid=2 ppid=0 内核线程守护进程，运行在内核上的进程,并不会显示在pstree里</li>
+</ul>
+<p>3.15 V1.0 感想：前前后后写了10几个小时，终于得到了第一个稳定的版本，确实感觉很菜（<br>coding 能力确实低下（虽然有熟悉环境的时间）<br>不过也确实感谢去年ICS的自行加练，一定程度上没有让差距拉的更大<br>现在效率确实远没有群众大佬高，但是感觉能力确实在一点点积累，也希望后面能跟上大家的进度。。。<br>在有些地方踌躇过多，但因为其实没有实际的经验，所以写出来的还是缺乏健壮性。。。<br>而且这么简单的功能写了如此之多行，属实是拾山<br>新的风暴确实已经刮起了  </p>
+ </div></div>
+
+
+
 
 <h3 id="Lecture-3"><a href="#Lecture-3" class="headerlink" title="Lecture 3"></a>Lecture 3</h3><div class="note note-primary icon-padding"><i class="note-icon fa-solid fa-circle-arrow-right"></i><p><a class="link" href="https://jyywiki.cn/OS/2024/lect3.md">务必搭配jyywiki食用 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 </div>
@@ -3560,6 +3629,31 @@ drawbacks (in large scales) (not intepretale)</li>
  </div></div>
 
 
+<div class="note-large notel-blue"><div class="notel-title"><p>OSTEP Chapter 25,26,27</p>
+</div><div class="notel-content"><ul>
+<li>PCB(Process Control Block) v.s. TCB(Thread Control Block)</li>
+<li>objdump参数：-g</li>
+<li><strong>工具使用valgrind, purify, helgrind</strong></li>
+<li>pthread库基础<ul>
+<li>pthread_create 创建线程 </li>
+<li>pthread_join 等待线程返回（并不是所有的场景都需要）</li>
+</ul>
+</li>
+<li>pthread lock<ul>
+<li>pthread_mutex_init</li>
+<li>pthread_mutex_lock</li>
+<li>pthread_mutex_unlock</li>
+<li>pthread_mutex_destroy</li>
+<li>pthread_mutex_trylock(一般不要用)</li>
+<li>pthread_mutex_timedlock(一般不要用)</li>
+</ul>
+</li>
+<li>pthread cond var 暂时略过</li>
+</ul>
+<p><strong>Multithreading Checklist</strong>:<br>🔻 </p>
+ </div></div>
+
+
 <h3 id="Lecture-6-C"><a href="#Lecture-6-C" class="headerlink" title="Lecture 6 (C)"></a>Lecture 6 (C)</h3><div class="note note-primary icon-padding"><i class="note-icon fa-solid fa-circle-arrow-right"></i><p><a class="link" href="https://jyywiki.cn/OS/2024/lect6.md">务必搭配jyywiki食用 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 </div>
 <p>‘sequential creature’的反击：<br>互斥！不允许并发！给它们上锁，让状态机上的一部分缩成一个点！<br>如果都不让并发了？那还并发干什么？<br>运算是可以并行的。局部性原理（经典物理：“物体对相邻的物体产生影响需要时间！”），局部的计算都可以独立的进行，只需要谨慎的处理分块的边界。可以认为不能并发的<strong>任务</strong>部分远远少于可以并发的。</p>
@@ -3617,10 +3711,10 @@ drawbacks (in large scales) (not intepretale)</li>
 </div><div class="notel-content"><p><a class="link" href="https://gernot-heiser.org/benchmarking-crimes.html">benchmark crimes <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>自旋锁的scalability极差！（类似于反比例）操作系统只在及其短促的操作上使用自旋锁。Linux Kernel的分析见ppt链接<br>但Linux有大概180K个需要内存保护的函数，怎么办？<br>一个特性：绝大多数数据结构都是Read-mostly<br>可不可以读不加锁？RCU(Read-Copy-Update)策略！<br>牺牲读写的一致性，选择write-on-copy，写入的时候复制建一份新的（对于常见数据结构，不是傻傻的复制，又高效的部分复制），这样<strong>总能读到</strong>一个。<br>用户程序<strong>应该能容忍</strong> <strong>少量的</strong>读到错的。（比方说路由表，读到错的大不了重发一次）<br>这样就解决了性能问题。<br>什么时候扔掉旧版本？阅读材料（并没有啊。。。）</p>
  </div></div>
 
-
 <p><strong>XV6 Spinlock拿来在实验里用就行了</strong></p>
-<p><strong>重听一下性能问题2和后面的</strong></p>
-<p>对于用户mutex就是黑箱就可以了</p>
+<hr>
+<p>性能问题：大量的自旋锁会浪费大量的资源。<br>持有锁的线程被中断？？，换一个自旋的，这样可能会100%地占用资源。<br>怎么办：在自旋的时候调度到其他线程（由操作系统来做！）<br>pthread_mutex_lock<br>Futex: 如果无人争抢就不会陷入操作系统内核，如果有人争抢就会交给操作系统调度。<br>有很多并不显然的困难问题</p>
+<p><strong>至少目前，mutex就是黑箱就可以了</strong></p>
 <h3 id="Lecture-8-Snack"><a href="#Lecture-8-Snack" class="headerlink" title="Lecture 8 (Snack)"></a>Lecture 8 (Snack)</h3><div class="note note-primary icon-padding"><i class="note-icon fa-solid fa-circle-arrow-right"></i><p><a class="link" href="https://jyywiki.cn/OS/2024/lect8.md">务必搭配jyywiki食用 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>好用的工具 <a class="link" href="https://gcc.godbolt.org/">Compiler Explorer <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 </div>
 <p>记住两件事：<br>未测代码都是错的！<br>我写的都是错的！</p>
@@ -3665,6 +3759,18 @@ drawbacks (in large scales) (not intepretale)</li>
 <blockquote>
 <p>编译选项：<code>-fsanitize=address</code> 自动添加断言检查存储错。</p>
 </blockquote>
+<h3 id="Lecture-9-C"><a href="#Lecture-9-C" class="headerlink" title="Lecture 9 (C)"></a>Lecture 9 (C)</h3><p>宏观理解锁<br>应用程序也会被中断，为什么不需要上锁？因为中断对用户程序是不可见的，中断程序(内核态)不回去试图获取用户态的🔒。</p>
+<p>状态机视角的同步，简单的状态变复杂，再让世界收束到简单的状态<br>”相互已知的简单状态“<br><em>“电子乐后驱jyy”</em></p>
+<p>消费者生产者问题，几乎可以解决所有的同步问题！<br>有一个通用的模型，一定有对应的接口实现！<br>就是条件变量，而这回不是傻傻的自旋，而是休眠，等待唤醒<br><code>pthread_cond_wait</code> and ``</p>
+<p>可惜还是错的（在听三段改错）</p>
+<p>一个锁实现真正正确的条件变量</p>
+<ol>
+<li>唤醒后再检查</li>
+<li>唤醒所有潜在被唤醒的人</li>
+</ol>
+<p><strong>我们最好这样写↑</strong></p>
+<p>为什么可以解决99%的问题？<br>计算任务都是有向无环图，计算图切分（有序思考方式）<br>（再听听）<br>还可以每个结点？</p>
+<p>1%<br>如果遇到了写不出的条件的怎么办？可以借助状态机进行状态转换。<br>写出了状态机，还是可以用消费者-生产者解决。</p>
 ]]></content>
       <tags>
         <tag>CS</tag>
