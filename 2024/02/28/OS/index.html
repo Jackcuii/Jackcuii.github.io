@@ -447,8 +447,8 @@ mjx-container[display="true"] + br {
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="pc">2024-03-26 16:44:27</span>
-            <span class="mobile">2024-03-26 16:44</span>
+            <span class="pc">2024-03-26 17:08:09</span>
+            <span class="mobile">2024-03-26 17:08</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -474,7 +474,7 @@ mjx-container[display="true"] + br {
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-file-word"></i>&nbsp;<span>4.9k Words</span>
+            <i class="fa-regular fa-file-word"></i>&nbsp;<span>5.1k Words</span>
         </span>
     
     
@@ -521,7 +521,8 @@ mjx-container[display="true"] + br {
 <p>世界上有两种人：没见过<strong>神</strong>的人和见过jyy的人。</p>
 </blockquote>
 <p><strong>神</strong>自我革命，<strong>神</strong>制造困境，<strong>神</strong>传达启示，<strong>神</strong>引发灵感。<br>本篇作为与<strong>神</strong>的对话，忠实记录了 jyyOS 24Spring 的课程笔记，实验实录，教材读书笔记和心得感受。</p>
-<h2 id="OS-Overview"><a href="#OS-Overview" class="headerlink" title="OS Overview"></a>OS Overview</h2><div class="note-large notel-blue"><div class="notel-title"><p>OSTEP Chapter 1,2</p>
+<h3 id="特别说明"><a href="#特别说明" class="headerlink" title="特别说明"></a>特别说明</h3><p>为了更适应英文环境，其实绝大多数的笔记都使用英语来记了，但由于绿导师的内容比较深，大面积的使用英语会使得“再提取”非常困难(鸡尾酒会效应)，而且个别思考内容我第一次用英语乱找一个说法写上，下次自己都看不懂什么意思，因此就用中文记了，我可am not那种Chinese英语mix着说的’fashion speaker’(doge)</p>
+<h2 id="Lecture-1"><a href="#Lecture-1" class="headerlink" title="Lecture 1"></a>Lecture 1</h2><div class="note-large notel-blue"><div class="notel-title"><p>OSTEP Chapter 1,2</p>
 </div><div class="notel-content"><p>3 Easy Pieces: virtualization, concurrency, persistence</p>
 <ul>
 <li><p>virtualization: physical—virtualization–&gt;virtual form<br><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="10.854ex" height="1.602ex" role="img" focusable="false" viewBox="0 -697 4797.6 708"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mtext"><path data-c="1D40E" d="M64 339Q64 431 96 502T182 614T295 675T420 696Q469 696 481 695Q620 680 709 589T798 339Q798 173 697 82T432 -10Q262 -10 163 85T64 339ZM625 454Q618 502 600 538T562 593T515 624T469 639T431 642Q331 642 276 563Q232 493 232 353Q232 315 234 285T244 216T267 148T308 94T372 56Q405 46 432 46Q517 46 567 106T627 267Q631 299 631 353Q631 418 625 454Z"></path><path data-c="1D412" d="M64 493Q64 582 120 636T264 696H272Q280 697 285 697Q380 697 454 645L480 669Q484 672 488 676T495 683T500 688T504 691T508 693T511 695T514 696T517 697T522 697Q536 697 539 691T542 652V577Q542 557 542 532T543 500Q543 472 540 465T524 458H511H505Q489 458 485 461T479 478Q472 529 449 564T393 614T336 634T287 639Q228 639 203 610T177 544Q177 517 195 493T247 457Q253 454 343 436T475 391Q574 326 574 207V200Q574 163 559 120Q517 12 389 -9Q380 -10 346 -10Q308 -10 275 -5T221 7T184 22T160 35T151 40L126 17Q122 14 118 10T111 3T106 -2T102 -5T98 -7T95 -9T92 -10T89 -11T84 -11Q70 -11 67 -4T64 35V108Q64 128 64 153T63 185Q63 203 63 211T69 223T77 227T94 228H100Q118 228 122 225T126 205Q130 125 193 88T345 51Q408 51 434 82T460 157Q460 196 439 221T388 257Q384 259 305 276T221 295Q155 313 110 366T64 493Z" transform="translate(864,0)"></path></g><g data-mml-node="mo" transform="translate(1780.8,0)"><path data-c="2248" d="M55 319Q55 360 72 393T114 444T163 472T205 482Q207 482 213 482T223 483Q262 483 296 468T393 413L443 381Q502 346 553 346Q609 346 649 375T694 454Q694 465 698 474T708 483Q722 483 722 452Q722 386 675 338T555 289Q514 289 468 310T388 357T308 404T224 426Q164 426 125 393T83 318Q81 289 69 289Q55 289 55 319ZM55 85Q55 126 72 159T114 210T163 238T205 248Q207 248 213 248T223 249Q262 249 296 234T393 179L443 147Q502 112 553 112Q609 112 649 141T694 220Q694 249 708 249T722 217Q722 153 675 104T555 55Q514 55 468 76T388 123T308 170T224 192Q164 192 125 159T83 84Q80 55 69 55Q55 55 55 85Z"></path></g><g data-mml-node="mtext" transform="translate(2836.6,0)"><path data-c="1D415" d="M592 686H604Q615 685 631 685T666 684T700 684T724 683Q829 683 835 686H843V624H744L611 315Q584 254 546 165Q492 40 482 19T461 -6L460 -7H409Q398 -4 391 9Q385 20 257 315L124 624H25V686H36Q57 683 190 683Q340 683 364 686H377V624H289L384 403L480 185L492 212Q504 240 529 298T575 405L670 624H582V686H592Z"></path><path data-c="1D40C" d="M314 0Q296 3 181 3T48 0H39V62H147V624H39V686H305Q316 679 323 667Q330 653 434 414L546 157L658 414Q766 662 773 674Q778 681 788 686H1052V624H944V62H1052V0H1040Q1016 3 874 3T708 0H696V62H804V341L803 618L786 580Q770 543 735 462T671 315Q540 13 536 9Q528 1 507 1Q485 1 477 9Q472 14 408 162T281 457T217 603Q215 603 215 334V62H323V0H314Z" transform="translate(869,0)"></path></g></g></g></svg></mjx-container><br>*<strong>standard library</strong> (APIs)<br>*<strong>resource manager</strong><br>ctrl-c used to terminate the <strong>foreground</strong> program in UNIX-based OSs<br><strong>ALSR</strong>: Address Space Layout Randomization: randomized the address where executables are put each time when the process is created to avoid buffer overflow attacks</p>
@@ -543,7 +544,7 @@ mjx-container[display="true"] + br {
  </div></div>
 
 
-<h3 id="Lecture-2"><a href="#Lecture-2" class="headerlink" title="Lecture 2"></a>Lecture 2</h3><div class="note note-primary icon-padding"><i class="note-icon fa-solid fa-circle-arrow-right"></i><p><a class="link" target="_blank" rel="noopener" href="https://jyywiki.cn/OS/2024/lect2.md">务必搭配jyywiki食用 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>可以认为是对状态机模型的深入阐述：<br>yzh版本：<a class="link" target="_blank" rel="noopener" href="https://jackcuii.github.io/2023/07/04/ysyx0004/">https://jackcuii.github.io/2023/07/04/ysyx0004/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h2 id="Lecture-2"><a href="#Lecture-2" class="headerlink" title="Lecture 2"></a>Lecture 2</h2><div class="note note-primary icon-padding"><i class="note-icon fa-solid fa-circle-arrow-right"></i><p><a class="link" target="_blank" rel="noopener" href="https://jyywiki.cn/OS/2024/lect2.md">务必搭配jyywiki食用 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>可以认为是对状态机模型的深入阐述：<br>yzh版本：<a class="link" target="_blank" rel="noopener" href="https://jackcuii.github.io/2023/07/04/ysyx0004/">https://jackcuii.github.io/2023/07/04/ysyx0004/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 </div>
 
 <p><em>“最小的应用程序”</em> 说明了什么？ 程序是状态机，状态机不能退出自己，只能从外部退出，操作系统也是程序，也是状态机，也不能退出自己。<br>用户程序—用syscall—借助—&gt;操作系统—用I/O message—借助—&gt;硬件 来退出自己。</p>
@@ -559,46 +560,49 @@ mjx-container[display="true"] + br {
  </div></div>
 
 <hr>
-<div class="note-large notel-green"><div class="notel-title"><p>M1 Log</p>
-</div><div class="notel-content"><blockquote>
-<p>特别说明：为了更适应英文环境，其实绝大多数的笔记都使用英语来记了，但由于绿导师的内容比较深，大面积的使用英语会使得“再提取”非常困难(鸡尾酒会效应)而且个别思考内容我第一次用英语乱找一个说法写上，下次自己都看不懂什么意思，因此就用中文记了，我可is not那种Chinese英语混着说的’fashion speaker’(doge)</p>
-</blockquote>
-<ul>
-<li>确实觉得祖传代码应该好好打击了!</li>
-<li>hj老师上周宣布算法的OJ由于系里禁止查重而取消，这两件事对比起来看让人唏嘘啊。。。</li>
-<li>学习GA在命令行里接入了GPT，感觉方便了许多！</li>
-<li><a class="link" target="_blank" rel="noopener" href="https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap12.html">https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap12.html <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 欠一个</li>
+<h2 id="M1-pstree"><a href="#M1-pstree" class="headerlink" title="M1:pstree"></a>M1:pstree</h2><div class="note-large notel-green"><div class="notel-title"><p>M1 Log</p>
+</div><div class="notel-content"><ul>
+<li>确实觉得祖传代码应该好好打击了!<ul>
+<li>hy老师上周宣布算法的OJ由于<strong>系里禁止</strong>查重而取消，这两件事对比起来看让人唏嘘啊。。。</li>
+</ul>
+</li>
+<li>学习jyy在命令行里接入了GPT，感觉方便了许多！</li>
+<li>没看后面的就想（问GPT）到了在哪找到state，切实感觉到了方法论的变化（GPT on the shell 之后，问GPT不用点鼠标了，频率飙升）</li>
+<li>🛐 <a class="link" target="_blank" rel="noopener" href="https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap12.html">欠债：POSIX参数约定 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
 <li>编写可移植的代码？？？</li>
 <li>关于Hard Test的事例，略感恐惧<ul>
-<li>这个虽然给出了,但以后的实验呢，想都不敢想。。。<ul>
+<li>这个虽然给出了,但以后的实验呢，想都不敢想。。。</li>
 <li>这个或许可以通过strace来发现，但“行为相同”到这个程度……</li>
+<li>另外就是发现OJ平台好像可以看到错误返回值</li>
 </ul>
 </li>
 </ul>
-</li>
+<div class="note-large notel-red"><div class="notel-title"><p>Spicy🌶</p>
+</div><div class="notel-content"><ul>
+<li>Windows Kernel -&gt; offer API</li>
+<li>UNIX (Philosophy) -&gt; Everything is a file -&gt; files</li>
+<li>在某一个时刻，高级语言也会变成汇编语言，毕竟Programming终究也就是一个Wheel，好像跟蒸汽机没什么区别…</li>
 </ul>
-<div class="note note-primary icon-padding"><i class="note-icon fa-solid fa-circle-arrow-right"></i><p><a class="link" target="_blank" rel="noopener" href="https://jyywiki.cn/OS/2024/lect2.md">务必搭配jyywiki食用 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
-</div>
-- Windows Kernel -&gt; offer API
-- UNIX (Philosophy) -&gt; Everything is a file -&gt; files
-- 在某一个时刻，高级语言也会变成汇编语言，毕竟Programming终究也就是一个Wheel，好像跟蒸汽机没什么区别...
-- 没看后面的就想（问GPT）到了在哪找到state，切实感觉到了方法论的变化（GPT on the shell 之后，问GPT不用点鼠标了，频率飙升）
-- man 5 proc
-- 32/64 robustness？
-- *raise the robustness*
-    - ...
-- melt-down mechanism
-- string robust
-- storage robu
-- kthreadd pid=2 ppid=0 内核线程守护进程，运行在内核上的进程,并不会显示在pstree里
-
-<p>3.15 V1.0 感想：前前后后写了10几个小时，终于得到了第一个稳定的版本，确实感觉很菜（<br>coding 能力确实低下（虽然有熟悉环境的时间）<br>不过也确实感谢去年ICS的自行加练，一定程度上没有让差距拉的更大<br>现在效率确实远没有群众大佬高，但是感觉能力确实在一点点积累，也希望后面能跟上大家的进度。。。<br>在有些地方踌躇过多，但因为其实没有实际的经验，所以写出来的还是缺乏健壮性。。。<br>而且这么简单的功能写了如此之多行，属实是拾山<br>新的风暴确实已经刮起了  </p>
  </div></div>
+<ul>
+<li>man 5 proc</li>
+<li>32/64 robustness？</li>
+<li><em>raise the robustness</em><ul>
+<li>…</li>
+</ul>
+</li>
+<li>还是要认真读manual，实验了半天得到的参数解析规则其实在文档里已经写了，不过好像手册没有明确写熔断？（比如说读到-V之后就不再解析了，后面错误参数也不管了）</li>
+<li>string robust</li>
+<li>storage robu</li>
+<li>kthreadd pid=2 ppid=0 内核线程守护进程，运行在内核上的进程,并不会显示在pstree里, 而且发现查询后得知线程在对应进程文件夹下的task文件夹里，不过在/proc中cd相应的序号，也可以进去，虽然实际上不在那里也ls不到，不知道是怎么实现的。<div class="note note-yellow icon-padding"><i class="note-icon fa-solid fa-group-arrows-rotate"></i><p>群除我佬之后发现原生pstree中是可以指定根的，只要指定根为0就可以发现了</p>
+</div></li>
+</ul>
+<p>3.15 V1.0 感想：前前后后写了10几个小时，终于得到了第一个稳定的版本，确实感觉很菜（<br>coding 能力确实低下（虽然有熟悉环境的时间）<br>不过也确实感谢去年ICS的自行加练，一定程度上没有让差距拉的更大<br>现在效率确实远没有群众大佬高，但是感觉能力确实在一点点积累，也希望后面能跟上大家的进度。。。<br>在有些地方踌躇过多，但因为其实没有实际的经验，所以写出来的还是缺乏健壮性。。。<br>而且这么简单的功能写了如此之多行，属实是拾山<br>新的风暴确实已经产生了！ </p> </div></div>
 
 
 
 
-<h3 id="Lecture-3"><a href="#Lecture-3" class="headerlink" title="Lecture 3"></a>Lecture 3</h3><div class="note note-primary icon-padding"><i class="note-icon fa-solid fa-circle-arrow-right"></i><p><a class="link" target="_blank" rel="noopener" href="https://jyywiki.cn/OS/2024/lect3.md">务必搭配jyywiki食用 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h2 id="Lecture-3"><a href="#Lecture-3" class="headerlink" title="Lecture 3"></a>Lecture 3</h2><div class="note note-primary icon-padding"><i class="note-icon fa-solid fa-circle-arrow-right"></i><p><a class="link" target="_blank" rel="noopener" href="https://jyywiki.cn/OS/2024/lect3.md">务必搭配jyywiki食用 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 </div>
 <p>物理世界也是状态机，计算机系统的状态机通过Intr和外界连接起来。<br>如何控制一台裸机？把程序放到RESET状态里！<br>固件Firmware：系统配置，开机检查，<strong>加载操作系统</strong><br>Legacy BIOS -&gt; UEFI：丰富的I/O设备, PIC IPIC…<br>CIH病毒：破坏BIOS<br>EFI 分区，我们可以用mount挂载它。<br>还有一个Boot管理工具 <a class="link" target="_blank" rel="noopener" href="https://www.rodsbooks.com/refind/">rEFInd <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 <ul>
@@ -611,7 +615,7 @@ mjx-container[display="true"] + br {
  </div></div>
 
 <p>看到3.3节  浮现课上代码</p>
-<h3 id="Lecture-4"><a href="#Lecture-4" class="headerlink" title="Lecture 4"></a>Lecture 4</h3><div class="note note-primary icon-padding"><i class="note-icon fa-solid fa-circle-arrow-right"></i><p><a class="link" target="_blank" rel="noopener" href="https://jyywiki.cn/OS/2024/lect4.md">务必搭配jyywiki食用 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h2 id="Lecture-4"><a href="#Lecture-4" class="headerlink" title="Lecture 4"></a>Lecture 4</h2><div class="note note-primary icon-padding"><i class="note-icon fa-solid fa-circle-arrow-right"></i><p><a class="link" target="_blank" rel="noopener" href="https://jyywiki.cn/OS/2024/lect4.md">务必搭配jyywiki食用 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 </div>
 <ul>
 <li>Coq 语言 -&gt; 经过<a class="link" target="_blank" rel="noopener" href="https://cacm.acm.org/news/formal-software-verification-measures-up/">形式化验证 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
@@ -624,7 +628,7 @@ mjx-container[display="true"] + br {
 <p><strong>待完成，跑一下 30lineOS 复习Python Gene，余者完成</strong></p>
 <p>GDB TUI?</p>
 <p>ewigooooooojfewighwiorhgihiihrhfuwdhuhhudhhfhuhdhfhcndjncjnjdncdnufewigooooooojfewighwiorhgihiihrhfuwdhuhhudhhfhuhdhfhcndjncjnjdncdnufewigooooooojfewighwiorhgihiihrhfuwdhuhhudhhfhuhdhfhcndjncjnjdncdnufewigooooooojfewighwiorhgihiihrhfuwdhuhhudhhfhuhdhfhcndjncjnjdncdnufewigooooooojfewighwiorhgihiihrhfuwdhuhhudhhfhuhdhfhcndjncjnjdncdnufewigooooooojfewighwiorhgihiihrhfuwdhuhhudhhfhuhdhfhcndjncjnjdncdnufewigooooooojfewighwiorhgihiihrhfuwdhuhhudhhfhuhdhfhcndjncjnjdncdnufewigooooooojfewighwiorhgihiihrhfuwdhuhhudhhfhuhdhfhcndjncjnjdncdnufewigooooooojfewighwiorhgihiihrhfuwdhuhhudhhfhuhdhfhcndjncjnjdncdnufewigooooooojfewighwiorhgihiihrhfuwdhuhhudhhfhuhdhfhcndjncjnjdncdnufewigooooooojfewighwiorhgihiihrhfuwdhuhhudhhfhuhdhfhcndjncjnjdncdnufewigooooooojfewighwiorhgihiihrhfuwdhuhhudhhfhuhdhfhcndjncjnjdncdnufewigooooooojfewighwiorhgihiihrhfuwdhuhhudhhfhuhdhfhcndjncjnjdncdnufewigooooooojfewighwiorhgihiihrhfuwdhuhhudhhfhuhdhfhcndjncjnjdncdnufewigooooooojfewighwiorhgihiihrhfuwdhuhhudhhfhuhdhfhcndjncjnjdncdnufewigooooooojfewighwiorhgihiihrhfuwdhuhhudhhfhuhdhfhcndjncjnjdncdnufewigooooooojfewighwiorhgihiihrhfuwdhuhhudhhfhuhdhfhcndjncjnjdncdnufewigooooooojfewighwiorhgihiihrhfuwdhuhhudhhfhuhdhfhcndjncjnjdncdnufewigooooooojfewighwiorhgihiihrhfuwdhuhhudhhfhuhdhfhcndjncjnjdncdnufewigooooooojfewighwiorhgihiihrhfuwdhuhhudhhfhuhdhfhcndjncjnjdncdnufewigooooooojfewighwiorhgihiihrhfuwdhuhhudhhfhuhdhfhcndjncjnjdncdnufewigooooooojfewighwiorhgihiihrhfuwdhuhhudhhfhuhdhfhcndjncjnjdncdnufewigooooooojfewighwiorhgihiihrhfuwdhuhhudhhfhuhdhfhcndjncjnjdncdnufu</p>
-<h3 id="Lecture-5-C"><a href="#Lecture-5-C" class="headerlink" title="Lecture 5 (C)"></a>Lecture 5 (C)</h3><div class="note note-primary icon-padding"><i class="note-icon fa-solid fa-circle-arrow-right"></i><p><a class="link" target="_blank" rel="noopener" href="https://jyywiki.cn/OS/2024/lect5.md">务必搭配jyywiki食用 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h2 id="Lecture-5-C"><a href="#Lecture-5-C" class="headerlink" title="Lecture 5 (C)"></a>Lecture 5 (C)</h2><div class="note note-primary icon-padding"><i class="note-icon fa-solid fa-circle-arrow-right"></i><p><a class="link" target="_blank" rel="noopener" href="https://jyywiki.cn/OS/2024/lect5.md">务必搭配jyywiki食用 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 </div>
 <ul>
 <li>多线程程序：多个状态机共享内存，有私有的（C：栈区/Assemble：寄存器）</li>
@@ -713,7 +717,7 @@ mjx-container[display="true"] + br {
  </div></div>
 
 
-<h3 id="Lecture-6-C"><a href="#Lecture-6-C" class="headerlink" title="Lecture 6 (C)"></a>Lecture 6 (C)</h3><div class="note note-primary icon-padding"><i class="note-icon fa-solid fa-circle-arrow-right"></i><p><a class="link" target="_blank" rel="noopener" href="https://jyywiki.cn/OS/2024/lect6.md">务必搭配jyywiki食用 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h2 id="Lecture-6-C"><a href="#Lecture-6-C" class="headerlink" title="Lecture 6 (C)"></a>Lecture 6 (C)</h2><div class="note note-primary icon-padding"><i class="note-icon fa-solid fa-circle-arrow-right"></i><p><a class="link" target="_blank" rel="noopener" href="https://jyywiki.cn/OS/2024/lect6.md">务必搭配jyywiki食用 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 </div>
 <p>‘sequential creature’的反击：<br>互斥！不允许并发！给它们上锁，让状态机上的一部分缩成一个点！<br>如果都不让并发了？那还并发干什么？<br>运算是可以并行的。局部性原理（经典物理：“物体对相邻的物体产生影响需要时间！”），局部的计算都可以独立的进行，只需要谨慎的处理分块的边界。可以认为不能并发的<strong>任务</strong>部分远远少于可以并发的。</p>
 <p>如何互斥？对于一个处理器，关中断就可以了！<br>但当某一个程序卡死了，OS就卡死了。<br>怎么办？外部监控，利用NMI来外部监控OS是否执行正常。（如重置定时器等）<br>因此操作系统统治了中断，禁止用户程序控制中断。</p>
@@ -745,7 +749,7 @@ mjx-container[display="true"] + br {
 <p>带比较的exchange<br>细节：lhj多处理器</p>
 <p>TSX Memory</p>
 <p>相比于上面的自旋锁，实际的自旋锁更为复杂<br>用户态的自旋锁会导致资源浪费！</p>
-<h3 id="Lecture-7-C"><a href="#Lecture-7-C" class="headerlink" title="Lecture 7 (C)"></a>Lecture 7 (C)</h3><p>如何保证大家的运行？实现多把锁。<br>还要保证当一个解锁时，它所做的写必须都是对其他线程可见的（怎么实现先不用管，框架里帮你实现了）<br>虽然锁很好用，但并不容易正确处理锁。<br>容易出现忘记加锁了，从而造成数据竞争(Data race)<br><strong>Warning：一定会遇到并发错误</strong></p>
+<h2 id="Lecture-7-C"><a href="#Lecture-7-C" class="headerlink" title="Lecture 7 (C)"></a>Lecture 7 (C)</h2><p>如何保证大家的运行？实现多把锁。<br>还要保证当一个解锁时，它所做的写必须都是对其他线程可见的（怎么实现先不用管，框架里帮你实现了）<br>虽然锁很好用，但并不容易正确处理锁。<br>容易出现忘记加锁了，从而造成数据竞争(Data race)<br><strong>Warning：一定会遇到并发错误</strong></p>
 <hr>
 <p>在现实运行中，并不止如此，还有中断！<br>当你进入临界区，触发中断，再试图进入临界区，此时已经上锁了，无法退出！因此仅有自旋是不对的。</p>
 <div class="note note-green icon-padding"><i class="note-icon fa-solid fa-bolt"></i><p>尽量不要<strong>用直觉</strong>去写代码，写错再删….</p>
@@ -774,7 +778,7 @@ mjx-container[display="true"] + br {
 <hr>
 <p>性能问题：大量的自旋锁会浪费大量的资源。<br>持有锁的线程被中断？？，换一个自旋的，这样可能会100%地占用资源。<br>怎么办：在自旋的时候调度到其他线程（由操作系统来做！）<br>pthread_mutex_lock<br>Futex: 如果无人争抢就不会陷入操作系统内核，如果有人争抢就会交给操作系统调度。<br>有很多并不显然的困难问题</p>
 <p><strong>至少目前，mutex就是黑箱就可以了</strong></p>
-<h3 id="Lecture-8-Snack"><a href="#Lecture-8-Snack" class="headerlink" title="Lecture 8 (Snack)"></a>Lecture 8 (Snack)</h3><div class="note note-primary icon-padding"><i class="note-icon fa-solid fa-circle-arrow-right"></i><p><a class="link" target="_blank" rel="noopener" href="https://jyywiki.cn/OS/2024/lect8.md">务必搭配jyywiki食用 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>好用的工具 <a class="link" target="_blank" rel="noopener" href="https://gcc.godbolt.org/">Compiler Explorer <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h2 id="Lecture-8-Snack"><a href="#Lecture-8-Snack" class="headerlink" title="Lecture 8 (Snack)"></a>Lecture 8 (Snack)</h2><div class="note note-primary icon-padding"><i class="note-icon fa-solid fa-circle-arrow-right"></i><p><a class="link" target="_blank" rel="noopener" href="https://jyywiki.cn/OS/2024/lect8.md">务必搭配jyywiki食用 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>好用的工具 <a class="link" target="_blank" rel="noopener" href="https://gcc.godbolt.org/">Compiler Explorer <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 </div>
 <p>记住两件事：<br>未测代码都是错的！<br>我写的都是错的！</p>
 <p>编译器 + 编译选项 + 特定的硬件 + luck = BUG</p>
@@ -818,7 +822,7 @@ mjx-container[display="true"] + br {
 <blockquote>
 <p>编译选项：<code>-fsanitize=address</code> 自动添加断言检查存储错。</p>
 </blockquote>
-<h3 id="Lecture-9-C"><a href="#Lecture-9-C" class="headerlink" title="Lecture 9 (C)"></a>Lecture 9 (C)</h3><p>宏观理解锁<br>应用程序也会被中断，为什么不需要上锁？因为中断对用户程序是不可见的，中断程序(内核态)不回去试图获取用户态的🔒。</p>
+<h2 id="Lecture-9-C"><a href="#Lecture-9-C" class="headerlink" title="Lecture 9 (C)"></a>Lecture 9 (C)</h2><p>宏观理解锁<br>应用程序也会被中断，为什么不需要上锁？因为中断对用户程序是不可见的，中断程序(内核态)不回去试图获取用户态的🔒。</p>
 <p>状态机视角的同步，简单的状态变复杂，再让世界收束到简单的状态<br>”相互已知的简单状态“<br><em>“电子乐后驱jyy”</em></p>
 <p>消费者生产者问题，几乎可以解决所有的同步问题！<br>有一个通用的模型，一定有对应的接口实现！<br>就是条件变量，而这回不是傻傻的自旋，而是休眠，等待唤醒<br><code>pthread_cond_wait</code> and ``</p>
 <p>可惜还是错的（在听三段改错）</p>
@@ -959,7 +963,7 @@ mjx-container[display="true"] + br {
     <div class="post-toc">
         <div class="toc-title">On this page</div>
         <div class="page-title">Talk to the God——Notes for jyy OS</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#References"><span class="nav-text">References</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Waiting-List"><span class="nav-text">Waiting List</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%AA%E8%AE%BA"><span class="nav-text">绪论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OS-Overview"><span class="nav-text">OS Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Lecture-2"><span class="nav-text">Lecture 2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lecture-3"><span class="nav-text">Lecture 3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lecture-4"><span class="nav-text">Lecture 4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lecture-5-C"><span class="nav-text">Lecture 5 (C)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lecture-6-C"><span class="nav-text">Lecture 6 (C)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lecture-7-C"><span class="nav-text">Lecture 7 (C)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lecture-8-Snack"><span class="nav-text">Lecture 8 (Snack)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lecture-9-C"><span class="nav-text">Lecture 9 (C)</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#References"><span class="nav-text">References</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Waiting-List"><span class="nav-text">Waiting List</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%AA%E8%AE%BA"><span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E5%88%AB%E8%AF%B4%E6%98%8E"><span class="nav-text">特别说明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-1"><span class="nav-text">Lecture 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-2"><span class="nav-text">Lecture 2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#M1-pstree"><span class="nav-text">M1:pstree</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-3"><span class="nav-text">Lecture 3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-4"><span class="nav-text">Lecture 4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-5-C"><span class="nav-text">Lecture 5 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-6-C"><span class="nav-text">Lecture 6 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-7-C"><span class="nav-text">Lecture 7 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-8-Snack"><span class="nav-text">Lecture 8 (Snack)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-9-C"><span class="nav-text">Lecture 9 (C)</span></a></li></ol>
 
     </div>
 </div>
