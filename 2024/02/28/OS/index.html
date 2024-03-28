@@ -447,8 +447,8 @@ mjx-container[display="true"] + br {
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="pc">2024-03-26 17:43:12</span>
-            <span class="mobile">2024-03-26 17:43</span>
+            <span class="pc">2024-03-28 13:01:32</span>
+            <span class="mobile">2024-03-28 13:01</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -474,12 +474,12 @@ mjx-container[display="true"] + br {
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-file-word"></i>&nbsp;<span>5.2k Words</span>
+            <i class="fa-regular fa-file-word"></i>&nbsp;<span>6.8k Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>19 Mins</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>24 Mins</span>
         </span>
     
     
@@ -553,7 +553,9 @@ mjx-container[display="true"] + br {
 <blockquote>
 <p>硬件呢？它也是状态机，但从主板总控的视角上看，供电控制系统是伺服运行的，它<strong>从未</strong> <code>退出</code> 过</p>
 </blockquote>
-<p>深入理解状态机模型：理解调用和递归<br><em>case:C语言解释器解决函数调用</em><br>递归和非递归的转化，还是要看代码理解一下</p>
+<p>深入理解状态机模型：理解调用和递归<br><em>case:C语言解释器解决函数调用</em></p>
+<p>2.1 和 2.2 还没</p>
+<p>递归向非递归的转换：<br>其实就是手动来实现了栈，也就是函数调用的过程，跳出“出去回来”的思维模式，一切其实都是在“顺序” “前进”</p>
 <blockquote>
 <p>某种程度上说，都是递归，或者说非递归就是递归，递归可以认为是一种固有的形式逻辑？</p>
 </blockquote>
@@ -561,6 +563,7 @@ mjx-container[display="true"] + br {
 </div><div class="notel-content"><p>更深入地理解状态机：理解编译和优化<br>编译就是状态机之间映射。<br>什么是优化？就是行为不变提高效率/减少资源消耗。什么是行为不变？就是<strong>系统调用不变</strong>。（其余的操作<strong>都是黑箱</strong>，只有调用才和外界产生联系）<br>不仅如此？系统调用也可以改变，保证系统调用的行为一致（<strong>行为的行为</strong>），可以把程序本身somehow做成调用，也就是系统的一部分。（前沿了）<br>额…那这和没有操作系统的区别在于？</p>
  </div></div>
 
+<p>还有很多🛐🛐🛐🛐</p>
 <hr>
 <h2 id="M1-pstree"><a href="#M1-pstree" class="headerlink" title="M1:pstree"></a>M1:pstree</h2><div class="note-large notel-green"><div class="notel-title"><p>M1 Log</p>
 </div><div class="notel-content"><ul>
@@ -836,7 +839,7 @@ mjx-container[display="true"] + br {
 </blockquote>
 <h2 id="Lecture-9-C"><a href="#Lecture-9-C" class="headerlink" title="Lecture 9 (C)"></a>Lecture 9 (C)</h2><p>宏观理解锁<br>应用程序也会被中断，为什么不需要上锁？因为中断对用户程序是不可见的，中断程序(内核态)不回去试图获取用户态的🔒。</p>
 <p>状态机视角的同步，简单的状态变复杂，再让世界收束到简单的状态<br>”相互已知的简单状态“<br><em>“电子乐后驱jyy”</em></p>
-<p>消费者生产者问题，几乎可以解决所有的同步问题！<br>有一个通用的模型，一定有对应的接口实现！<br>就是条件变量，而这回不是傻傻的自旋，而是休眠，等待唤醒<br><code>pthread_cond_wait</code> and ``</p>
+<p>消费者生产者问题，几乎可以解决所有的同步问题！<br>有一个通用的模型，一定有对应的接口实现！<br>就是条件变量，而这回不是傻傻的自旋，而是休眠，等待唤醒<br><code>pthread_cond_wait</code> and <code>pthread_cond_signal</code></p>
 <p>可惜还是错的（在听三段改错）</p>
 <p>一个锁实现真正正确的条件变量</p>
 <ol>
@@ -846,6 +849,24 @@ mjx-container[display="true"] + br {
 <p><strong>我们最好这样写↑</strong></p>
 <p>为什么可以解决99%的问题？<br>计算任务都是有向无环图，计算图切分（有序思考方式）<br>（再听听）<br>还可以每个结点？</p>
 <p>1%<br>如果遇到了写不出的条件的怎么办？可以借助状态机进行状态转换。<br>写出了状态机，还是可以用消费者-生产者解决。</p>
+<h2 id="Lecture-10-C"><a href="#Lecture-10-C" class="headerlink" title="Lecture 10 (C)"></a>Lecture 10 (C)</h2><p>我们可以用互斥锁来控制同步<br>自旋锁和互斥锁？<br>pthread要求必须是同一个线程require和release</p>
+<p>适用于一般模型：给每条边分别加锁！就像是一个拓扑排序！给入边上锁，给出边解锁！</p>
+<p>理解信号量：口袋和球<br>信号量可以理解成是互斥锁的自然扩展，不过允许不同的人去放球（释放锁）和拿球（获取锁）<br>所以就可以用信号量去实现上面的模型！</p>
+<p>信号量还可以用来管理计数型资源</p>
+<p>信号量来实现生产者消费者问题？为什么非要有两个袋子？</p>
+<p>信号量不太好实现选择的问题，二选一的情况下必须要你来决定球扔给谁，但也因此更高效（不会唤醒所有后继节点）</p>
+<hr>
+<p>对比：<br><strong>哲学家吃饭问题</strong><br>用信号量很难实现：所有人都会拿起左边的筷子，然后等待右边的筷子，最后死锁<br>用条件变量：无脑实现，因为互斥锁保证了一下拿两个筷子。</p>
+<p>怎么用信号量解决？有一些方案</p>
+<ol>
+<li>从桌子上赶走一个人，总有一个人能拿到。</li>
+<li>给叉子编号，总拿大的、小的</li>
+</ol>
+<p>但这是一种trick，并不scalable。<br>————因为当问题变复杂时，你都要去考虑这个问题，而且还不一定能解决。相比之下，条件变量更加简单, 更普适。<br>对于现实世界，更多的并发问题都是线程数规模远小于单线程任务量，条件变量的开销就显得不值一提。</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>《 Email to Green Advisor 》<br>这篇其实从学期一初就开始写了，希望的是等到OS这门课出分之后发给绿导师，希望当时我是以一个幸存者的心态，完成了这门课全部的任务，取得了一个不错的分数（不得不这样）比较轻松的发送这篇邮件。</p>
+<p>这门课给我的体验的是很好的，我想对比的是同是这学期的算法设计与分析课。黄宇老师的算法课有着非常的清晰的讲解，我也不得不承认确实是一门好课，我用了一个月左右才想清楚了为什么这门课会让我感到痛苦。就是：对于对OI有一定接触的我来说，这些经典“算法”早已没有了初见的新鲜感，更重要的是每节课都在向我传达一个概念“你又不能做什么，你又没法会什么”，因为这些都需要“灵感”，（课上的方法论甚至都不足以解决那占比80%的考试题😭（当然任何形式的考试都承担着检验以外的筛选作用））。相比之下我觉得OS给我的感觉是每一节课后，“我又能做成什么，我又能解决更多问题（乃至所有问题）”。不同于上算法课之前上刑场一般的心理负担，每节操作系统课虽然带着成吨的没读完的OSTEP，没理解完的讲义，没整理完的笔记，没学完的工具，没写完的实验，但都是无比期待的。我觉得这可能是一种“极客主义”。</p>
+<p>我想提出一点异见的就是您说只发表“not trivial”的工作。我接触到了一个概念就是do not judge novelty，我觉得，对于一般的研究者而言，他们可能终其一生都无法做出creative的工作，但他们的工作也是有价值的，也需要一个获得认同的平台。（在知乎看到过一个人说一个化学教授说，我们做实验，失败了，也是有价值的，至少别人看到了，知道这样做不行，不用再好费时间了。类似地，CS里面有一些仅仅是方法的融合怪，至少也可以证明这些方法的交叉不会产生奇妙的“化学反应”。）可能只有聪明人做科研才是有价值的，但是在大量聪明人去经商/捞钱的今天，让一些不聪明的人去回收一些low fruit也是应该的。（虽然说 do not judge novelty今天已经变味，更多成为了一种灌水的辩护，这个界限也很难分辨…）</p>
+<p>还有就是对这门课程的建议，我觉得这门课的地位已经不言而喻，作为第一个入选CSDIY的国内课程，我觉得这是无上的光荣（比什么CCF发的什么奖项含金量高太多，毕竟这是华语区<strong>热爱CS</strong>的人投出来的票，好过某随意增减名额把OIer的未来当儿戏的组织太多）。相比于上海交大的一些透露着买办阶级的所谓的好课（质量固然是有的，毕竟是从海外ctrl+C/V来的），这门课更像是一座灯塔。但我发现了一个问题就是，由于您各种意义上一个“聪明人”，所以您上课的节奏虽然适中，但有一些结构上的问题加以忽略。对于拔尖班之类的大佬，他们的可以很快地处理和解决问题点，并且在节奏稍缓的时候迅速的将结构组织起来。但对于我这样反应比较慢的人来说，我全程都在高强度的处理一些思考点（有些甚至还当堂处理不完）最后的感受就是只体会到了一些零散的点。之后虽然有回放可以反复观看，但是由于短时记忆遗忘的问题，就会有一种夹生感，最后需要数倍的时间去组织起来。因此我觉得如果在讲义和授课中更加强调一点结构，这门课就会向普通的同学，乃至开源之后的更广泛的受众群体更加友好。</p>
 
             </div>
 
@@ -975,7 +996,7 @@ mjx-container[display="true"] + br {
     <div class="post-toc">
         <div class="toc-title">On this page</div>
         <div class="page-title">Talk to the God——Notes for jyy OS</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#References"><span class="nav-text">References</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Waiting-List"><span class="nav-text">Waiting List</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%AA%E8%AE%BA"><span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E5%88%AB%E8%AF%B4%E6%98%8E"><span class="nav-text">特别说明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-1"><span class="nav-text">Lecture 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-2"><span class="nav-text">Lecture 2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#M1-pstree"><span class="nav-text">M1:pstree</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-3"><span class="nav-text">Lecture 3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-4"><span class="nav-text">Lecture 4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-5-C"><span class="nav-text">Lecture 5 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-6-C"><span class="nav-text">Lecture 6 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-7-C"><span class="nav-text">Lecture 7 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-8-Snack"><span class="nav-text">Lecture 8 (Snack)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-9-C"><span class="nav-text">Lecture 9 (C)</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#References"><span class="nav-text">References</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Waiting-List"><span class="nav-text">Waiting List</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%AA%E8%AE%BA"><span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E5%88%AB%E8%AF%B4%E6%98%8E"><span class="nav-text">特别说明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-1"><span class="nav-text">Lecture 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-2"><span class="nav-text">Lecture 2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#M1-pstree"><span class="nav-text">M1:pstree</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-3"><span class="nav-text">Lecture 3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-4"><span class="nav-text">Lecture 4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-5-C"><span class="nav-text">Lecture 5 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-6-C"><span class="nav-text">Lecture 6 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-7-C"><span class="nav-text">Lecture 7 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-8-Snack"><span class="nav-text">Lecture 8 (Snack)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-9-C"><span class="nav-text">Lecture 9 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-10-C"><span class="nav-text">Lecture 10 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="nav-text">后记</span></a></li></ol>
 
     </div>
 </div>

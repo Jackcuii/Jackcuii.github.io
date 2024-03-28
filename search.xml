@@ -2964,6 +2964,7 @@ Have I provided a clear understanding of how the results fit into a bigger pictu
 <ul>
 <li>同步问题</li>
 </ul>
+<p>L2-5 </p>
 <h2 id="Chapter1-Overview"><a href="#Chapter1-Overview" class="headerlink" title="Chapter1 Overview"></a>Chapter1 Overview</h2><h3 id="Network-Composition"><a href="#Network-Composition" class="headerlink" title="Network Composition"></a>Network Composition</h3><p><strong>Protocol</strong>: (Definition in Textbook P6)</p>
 <ul>
 <li>Protocol is a state machine.</li>
@@ -3341,8 +3342,7 @@ drawbacks (in large scales) (not intepretale)</li>
 <li>Lack of multiple paths</li>
 </ul>
 <p>（Rubbish did not finish it！没完事）</p>
-<h3 id="Wireless"><a href="#Wireless" class="headerlink" title="Wireless"></a>Wireless</h3><h4 id="Philosophy-1"><a href="#Philosophy-1" class="headerlink" title="Philosophy"></a>Philosophy</h4><p>Wireless, Mobility</p>
-<p>少一小点</p>
+<h3 id="Wireless"><a href="#Wireless" class="headerlink" title="Wireless"></a>Wireless</h3><h4 id="Philosophy-1"><a href="#Philosophy-1" class="headerlink" title="Philosophy"></a>Philosophy</h4><p>Wireless, Mobility(handoff, mobile change base station, some wired also needs)</p>
 <h4 id="Components"><a href="#Components" class="headerlink" title="Components"></a>Components</h4><ul>
 <li>wireless hosts:<br>user devices, stationary/mobile</li>
 <li>base station:<ul>
@@ -3354,16 +3354,15 @@ drawbacks (in large scales) (not intepretale)</li>
 <li>typically mobile - base station</li>
 <li>also used in backbone link, saving cable cost</li>
 <li>MAC</li>
+<li>different rates and dis…<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/27/KRy7VFsOrB4Wiq8.png" width="200"></li>
 </ul>
 </li>
 </ul>
-<p>rates &amp; distance</p>
 <h4 id="Model"><a href="#Model" class="headerlink" title="Model"></a>Model</h4><ul>
 <li>Infrastucture mode: base – mobile<br>like master&amp;slave<br>save mobiles’ power</li>
-<li>Ad-hoc mode: hosts self-organization</li>
+<li>Ad-hoc mode: hosts self-organization, route among themselves<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/25/CeAfvyPpjKdQhXH.png" width="300"></li>
 </ul>
-<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/25/CeAfvyPpjKdQhXH.png" width="300">
-
+<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/27/h1ErUAvGCBTgiko.png" width="600">
 
 <h4 id="Characteristics"><a href="#Characteristics" class="headerlink" title="Characteristics"></a>Characteristics</h4><h5 id="Attenuation"><a href="#Attenuation" class="headerlink" title="Attenuation:"></a>Attenuation:</h5><p><strong>FSPL</strong>: Free Space Path Loss<br><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.798ex;" xmlns="http://www.w3.org/2000/svg" width="12.546ex" height="3.023ex" role="img" focusable="false" viewBox="0 -983.5 5545.2 1336.2"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="1D443" d="M287 628Q287 635 230 637Q206 637 199 638T192 648Q192 649 194 659Q200 679 203 681T397 683Q587 682 600 680Q664 669 707 631T751 530Q751 453 685 389Q616 321 507 303Q500 302 402 301H307L277 182Q247 66 247 59Q247 55 248 54T255 50T272 48T305 46H336Q342 37 342 35Q342 19 335 5Q330 0 319 0Q316 0 282 1T182 2Q120 2 87 2T51 1Q33 1 33 11Q33 13 36 25Q40 41 44 43T67 46Q94 46 127 49Q141 52 146 61Q149 65 218 339T287 628ZM645 554Q645 567 643 575T634 597T609 619T560 635Q553 636 480 637Q463 637 445 637T416 636T404 636Q391 635 386 627Q384 621 367 550T332 412T314 344Q314 342 395 342H407H430Q542 342 590 392Q617 419 631 471T645 554Z"></path></g><g data-mml-node="mi" transform="translate(675,-150) scale(0.707)"><path data-c="1D45F" d="M21 287Q22 290 23 295T28 317T38 348T53 381T73 411T99 433T132 442Q161 442 183 430T214 408T225 388Q227 382 228 382T236 389Q284 441 347 441H350Q398 441 422 400Q430 381 430 363Q430 333 417 315T391 292T366 288Q346 288 334 299T322 328Q322 376 378 392Q356 405 342 405Q286 405 239 331Q229 315 224 298T190 165Q156 25 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 114 189T154 366Q154 405 128 405Q107 405 92 377T68 316T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g></g><g data-mml-node="mo" transform="translate(1321.7,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="mo" transform="translate(2377.5,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mfrac" transform="translate(2766.5,0)"><g data-mml-node="mrow" transform="translate(220,485) scale(0.707)"><g data-mml-node="mn"><path data-c="34" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z"></path></g><g data-mml-node="mi" transform="translate(500,0)"><path data-c="1D70B" d="M132 -11Q98 -11 98 22V33L111 61Q186 219 220 334L228 358H196Q158 358 142 355T103 336Q92 329 81 318T62 297T53 285Q51 284 38 284Q19 284 19 294Q19 300 38 329T93 391T164 429Q171 431 389 431Q549 431 553 430Q573 423 573 402Q573 371 541 360Q535 358 472 358H408L405 341Q393 269 393 222Q393 170 402 129T421 65T431 37Q431 20 417 5T381 -10Q370 -10 363 -7T347 17T331 77Q330 86 330 121Q330 170 339 226T357 318T367 358H269L268 354Q268 351 249 275T206 114T175 17Q164 -11 132 -11Z"></path></g><g data-mml-node="mi" transform="translate(1070,0)"><path data-c="1D451" d="M366 683Q367 683 438 688T511 694Q523 694 523 686Q523 679 450 384T375 83T374 68Q374 26 402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487H491Q506 153 506 145Q506 140 503 129Q490 79 473 48T445 8T417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157Q33 205 53 255T101 341Q148 398 195 420T280 442Q336 442 364 400Q369 394 369 396Q370 400 396 505T424 616Q424 629 417 632T378 637H357Q351 643 351 645T353 664Q358 683 366 683ZM352 326Q329 405 277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q233 26 290 98L298 109L352 326Z"></path></g><g data-mml-node="mi" transform="translate(1590,0)"><path data-c="1D453" d="M118 -162Q120 -162 124 -164T135 -167T147 -168Q160 -168 171 -155T187 -126Q197 -99 221 27T267 267T289 382V385H242Q195 385 192 387Q188 390 188 397L195 425Q197 430 203 430T250 431Q298 431 298 432Q298 434 307 482T319 540Q356 705 465 705Q502 703 526 683T550 630Q550 594 529 578T487 561Q443 561 443 603Q443 622 454 636T478 657L487 662Q471 668 457 668Q445 668 434 658T419 630Q412 601 403 552T387 469T380 433Q380 431 435 431Q480 431 487 430T498 424Q499 420 496 407T491 391Q489 386 482 386T428 385H372L349 263Q301 15 282 -47Q255 -132 212 -173Q175 -205 139 -205Q107 -205 81 -186T55 -132Q55 -95 76 -78T118 -61Q162 -61 162 -103Q162 -122 151 -136T127 -157L118 -162Z"></path></g></g><g data-mml-node="mi" transform="translate(823.5,-345) scale(0.707)"><path data-c="1D450" d="M34 159Q34 268 120 355T306 442Q362 442 394 418T427 355Q427 326 408 306T360 285Q341 285 330 295T319 325T330 359T352 380T366 386H367Q367 388 361 392T340 400T306 404Q276 404 249 390Q228 381 206 359Q162 315 142 235T121 119Q121 73 147 50Q169 26 205 26H209Q321 26 394 111Q403 121 406 121Q410 121 419 112T429 98T420 83T391 55T346 25T282 0T202 -11Q127 -11 81 37T34 159Z"></path></g><rect width="1713.2" height="60" x="120" y="220"></rect></g><g data-mml-node="msup" transform="translate(4719.7,0)"><g data-mml-node="mo"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g><g data-mml-node="mn" transform="translate(422,363) scale(0.707)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g></g></g></g></svg></mjx-container><br>d: distance, f: frequency, c: speed of light<br>Reflection, diffraction, absorption, terrain contours (urban, rural, vegetation), humidity</p>
 <p>SNR: Signal-to-Noise Ratio<br>BER: Bit Error Rate</p>
@@ -3396,38 +3395,126 @@ drawbacks (in large scales) (not intepretale)</li>
 <li>station：device with IEEE 802.11 MAC and phy layer</li>
 <li><strong>AP</strong>(Access Point): wired – wireless</li>
 <li><strong>BSS</strong>(Basic Service Set): a cell coordinated by AP</li>
-<li><strong>ESS</strong>(Extended Service Set): multiple BSSs interconnected by <strong>DS</strong>(Distribution System)(switches, wired network, wireless network)<strong>还需要求证DS究竟是什么</strong><br>ESS appears like a single logical LAN<br>Portals for Internet access.</li>
+<li><strong>ESS</strong>(Extended Service Set): multiple BSSs interconnected by <strong>DS</strong>(Distribution System)(switches, wired network, wireless network)<br>ESS appears like a <strong>single logical LAN</strong><br>Portals for Internet access.</li>
 </ul>
 <img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/25/5hsFn4lDiVErXHK.png" img="600">
 
 <img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/25/bxa9uQCTzEy64Sh.png" img="600">
 
 <p>对比有线帧和无线帧</p>
-<ul>
-<li><p>802.11b: spectrum divided into 11 channels<br>AP admin <strong>(？)</strong> : choose channel.<br>host associate with an AP</p>
-<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/25/dMpjDOBAYxRGeC3.png" width="300">
-- Passive
-<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/25/OhFQsE6ylNkI94V.png" width="300"></li>
-</ul>
-<h5 id="Scanning"><a href="#Scanning" class="headerlink" title="Scanning"></a>Scanning</h5><ul>
-<li>Passive: listen to all the channels</li>
-</ul>
-<h5 id="MAC"><a href="#MAC" class="headerlink" title="MAC"></a>MAC</h5><ul>
-<li><strong>Hidden terminal problem</strong>: A sends to B, C sends to B, but A cannot hear C<ul>
-<li>4 Frame Exchanges: </li>
-<li><strong>图</strong></li>
+<h5 id="Association"><a href="#Association" class="headerlink" title="Association"></a>Association</h5><ul>
+<li>802.11b: spectrum divided into 11 channels<br>AP admin <strong>(？)</strong> : choose channel.<br>host associate with an AP</li>
+<li>Scanning<ul>
+<li>Passive<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/27/BiheZLNDbpzIJdx.png" width="300"></li>
+<li>Positive<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/27/swRfairJ29HTAWN.png" width="300">
+Then DHCP!</li>
 </ul>
 </li>
-<li><strong>Exposed terminal problem</strong>: A sends to B, C sends to D, A cannot send to B</li>
-<li>Signal fading: A sends to B, C sends to B, but A cannot hear C</li>
+</ul>
+<h5 id="MAC"><a href="#MAC" class="headerlink" title="MAC"></a>MAC</h5><ul>
+<li><strong>Hidden terminal problem</strong>:<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/27/Q4TZOlVUawgCBXW.png" width="150">
+A &amp; C do not know each other so they keep twittering.
+- **Solution: 4 Frame Exchange**
+<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/27/h8gA3b9z4EuKVLD.png" width="500"></li>
+<li><strong>Exposed terminal problem</strong>: A sends to B, C sends to D, A cannot send to B<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/27/PCLcOrMsWj2y7gw.png" width="200"> 
+thinking inference but actually not.</li>
+<li>Signal fading:<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/27/mbtLachw2WX6iTk.png" width="150"> 
+A &amp; C can not hear each other with inference of B</li>
+</ul>
+<blockquote>
+<p>🤬<strong>Really Ambiguous Terms</strong>：<br>Actually according to <a class="link" href="https://en.wikipedia.org/wiki/Medium_access_control">Wikipedia <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>, <strong>Medium Access Control</strong>, <strong>Media Access Control</strong>, <strong>Multiple Access Control</strong>, <strong>MAC</strong> are <strong>exactly the same</strong> thing! </p>
+</blockquote>
+<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/27/afzUQHtlK7pkRJ6.png" width="600">
+
+<ul>
+<li><p><strong>SIFS</strong> (Short Inter Frame Space)</p>
+<ul>
+<li>Shortest gap (IFS), highest priority</li>
+<li>“all immediate responses”: ACK, <strong>LLC PDU</strong>, Poll response, CTS</li>
+</ul>
+</li>
+<li><p>PIFS (point coordination function IFS)</p>
+</li>
+<li><p>Mid-length IFS</p>
+</li>
+<li><p>Used by the centralized controller in PCF scheme when issuing polls</p>
+</li>
+<li><p>DIFS (distributed coordination function IFS)</p>
+</li>
+<li><p>Longest IFS</p>
+</li>
+<li><p>Used for other asynchronous frames contending for access</p>
+</li>
 </ul>
 <p>LLC和MAC？？？？？？？注意<br>区别MAC和MAC！！！！</p>
 <p>3-level hierarchy</p>
 <ul>
-<li>SIFS: Short Interframe Space<br>ACK, <strong>LLC PDU</strong>, Poll response, CTS</li>
+<li>SIFS: Short Interframe Space</li>
 </ul>
 <p>DCF:</p>
 <p>CSMA/CA:<br>No CD:</p>
+<h2 id="Network-Layer"><a href="#Network-Layer" class="headerlink" title="Network Layer"></a>Network Layer</h2><h3 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h3><ul>
+<li>Switching/Routing<br>determine routes, shortest path…(multiple nodes)</li>
+<li>Forwarding<br>Move packet from input to output(single node)(determined by routing)<br>Error handling, queuing and scheduling<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/27/gahtKFTMUrvIBNf.png" width="200"></li>
+<li>Connection Setup<br>in some network arch, especially in virtual circuit switching</li>
+</ul>
+<h3 id="Service-Model"><a href="#Service-Model" class="headerlink" title="Service Model"></a>Service Model</h3><ul>
+<li>for individual packet:<ul>
+<li>guarantee delivery</li>
+<li>guarantee + limited delay</li>
+</ul>
+</li>
+<li>for stream:<ul>
+<li>in-ordere</li>
+<li>minimum bandwidth</li>
+<li>limited of variety of inter-packet spacing</li>
+</ul>
+</li>
+</ul>
+<p>Aborted: ATM<br><img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/27/7SZku6yODY3Peb8.png" width="300"><br>Good service, but too expensive!</p>
+<h3 id="IP"><a href="#IP" class="headerlink" title="IP"></a>IP</h3><p>ppt 14-17</p>
+<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/27/eDNCFZvHGO8d5ln.png" width="600">
+
+<p>ppt 19</p>
+<h4 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h4><p>  <img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/27/GoB7Yd2v1jzbyuh.png" width="600"> （不确定）</p>
+<ul>
+<li><p>Lookup:<br>  challenge is speed!<br>  &lt;range, port&gt; not &lt;an IP, port&gt; <strong>too much!</strong><br>  aggregated IPs<br>  <strong>Longest prefix matching rule</strong>(enable precise control of routing)</p>
+<ul>
+<li>high efficiency: tree data structure!<br>a <strong>01 Trie</strong>!<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/27/9djE2lx8kHI4wX3.png" width="400">
+(必考:按表画树)</li>
+</ul>
+<p>high tech: hardwarize again: TCM 3-state chip! ASICs</p>
+</li>
+<li><p>Task：</p>
+<ul>
+<li>Update packet header</li>
+<li>LPM lookup on dst<br>(重新组织这一部分)</li>
+</ul>
+</li>
+</ul>
+<h4 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h4><img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/27/HUrsA7mbjBVQvSf.png" width="300">
+
+<h5 id="Packet-Classification"><a href="#Packet-Classification" class="headerlink" title="Packet Classification"></a>Packet Classification</h5><p>ppt30 自相矛盾 3132<br>some law issues</p>
+<h5 id="Scheduler"><a href="#Scheduler" class="headerlink" title="Scheduler"></a>Scheduler</h5><ul>
+<li><p>must fast!</p>
+</li>
+<li><p>Priority scheduler: first serve nobility</p>
+<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/27/tkIEBZq5xcFvLJG.png" width="200">
+</li>
+<li><p>Round-robin scheduler: each queue in turn</p>
+<ul>
+<li>Fair queuing (FQ): round-robin for packets of different size (fair in size or fair in sum)</li>
+<li>Weighted fair queueing (WFQ): serve proportional to weight</li>
+</ul>
+</li>
+</ul>
+<h5 id="Switching-fabric"><a href="#Switching-fabric" class="headerlink" title="Switching fabric"></a>Switching fabric</h5><p>ppt 36 -39<br><img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/27/xordp9KEJtDXhC7.png" width="400"></p>
+<h4 id="VC"><a href="#VC" class="headerlink" title="VC"></a>VC</h4><p>JAMMMMMMMMMMMMMAJAMAJAJAJAJAAJJAMMMMMMMMMMMMMAJAMAJAJAJAJAAJJAMMMMMMMMMMMMMAJAMAJAJAJAJAAJJAMMMMMMMMMMMMMAJAMAJAJAJAJAAJJAMMMMMMMMMMMMMAJAMAJAJAJAJAAJJAMMMMMMMMMMMMMAJAMAJAJAJAJAAJJAMMMMMMMMMMMMMAJAMAJAJAJAJAAJJAMMMMMMMMMMMMMAJAMAJAJAJAJAAJJAMMMMMMMMMMMMMAJAMAJAJAJAJAAJJAMMMMMMMMMMMMMAJAMAJAJAJAJAAJJAMMMMMMMMMMMMMAJAMAJAJAJAJAAJJAMMMMMMMMMMMMMAJAMAJAJAJAJAAJJAMMMMMMMMMMMMMAJAMAJAJAJAJAAJJAMMMMMMMMMMMMMAJAMAJAJAJAJAAJJAMMMMMMMMMMMMMAJAMAJAJAJAJAAJJAMMMMMMMMMMMMMAJAMAJAJAJAJAAJJAMMMMMMMMMMMMMAJAMAJAJAJAJAAJJAMMMMMMMMMMMMMAJAMAJAJAJAJAAJJAMMMMMMMMMMMMMAJAMAJAJAJAJAAJJAMMMMMMMMMMMMMAJAMAJAJAJAJAAJJAMMMMMMMMMMMMMAJAMAJAJAJAJAAJJAMMMMMMMMMMMMMAJAMAJAJAJAJAAJJAMMMMMMMMMMMMMAJAMAJAJAJAJAAJJAMMMMMMMMMMMMMAJAMAJAJAJAJAAJJAMMMMMMMMMMMMMAJAMAJAJAJAJAAJJAMMMMMMMMMMMMMAJAMAJAJAJAJAAJJAMMMMMMMMMMMMMAJAMAJAJAJAJAAJJAMMMMMMMMMMMMMAJAMAJAJAJAJAAJJAMMMMMMMMMMMMMAJAMAJAJAJAJAAJJAMMMMMMMMMMMMMAJAMAJAJAJAJAAJJAMMMMMMMMMMMMMAJAMAJAJAJAJAAJJAMMMMMMMMMMMMMAJAMAJAJAJAJAAJJAMMMMMMMMMMMMMAJAMAJAJAJAJAAJJAMMMMMMMMMMMMMAJAMAJAJAJAJAAJJAMMMMMMMMMMMMMAJAMAJAJAJAJAAJJAMMMMMMMMMMMMMAJAMAJAJAJAJAAJJAMMMMMMMMMMMMMAJAMAJAJAJAJAAJJAMMMMMMMMMMMMMAJAMAJAJAJAJAAJJAMMMMMMMMMMMMMAJAMAJAJAJAJAAJJAMMMMMMMMMMMMMAJAMAJAJAJAJAAJ<br>IP Aborted but others may use like military</p>
+<p>Virtual circuit networks: packet, but preserve resources for you<br>(ATM, X.25…)</p>
+<p>Datagram networks: packet, b</p>
+<p>42 查表为什么会出现区别？</p>
+<p>Forwarding table for VC<br>&lt;Input port, Incoming VC, Output port, Outgoing VC&gt;</p>
+<p>42 to 52</p>
 ]]></content>
       <tags>
         <tag>CS</tag>
@@ -3495,7 +3582,9 @@ drawbacks (in large scales) (not intepretale)</li>
 <blockquote>
 <p>硬件呢？它也是状态机，但从主板总控的视角上看，供电控制系统是伺服运行的，它<strong>从未</strong> <code>退出</code> 过</p>
 </blockquote>
-<p>深入理解状态机模型：理解调用和递归<br><em>case:C语言解释器解决函数调用</em><br>递归和非递归的转化，还是要看代码理解一下</p>
+<p>深入理解状态机模型：理解调用和递归<br><em>case:C语言解释器解决函数调用</em></p>
+<p>2.1 和 2.2 还没</p>
+<p>递归向非递归的转换：<br>其实就是手动来实现了栈，也就是函数调用的过程，跳出“出去回来”的思维模式，一切其实都是在“顺序” “前进”</p>
 <blockquote>
 <p>某种程度上说，都是递归，或者说非递归就是递归，递归可以认为是一种固有的形式逻辑？</p>
 </blockquote>
@@ -3503,6 +3592,7 @@ drawbacks (in large scales) (not intepretale)</li>
 </div><div class="notel-content"><p>更深入地理解状态机：理解编译和优化<br>编译就是状态机之间映射。<br>什么是优化？就是行为不变提高效率/减少资源消耗。什么是行为不变？就是<strong>系统调用不变</strong>。（其余的操作<strong>都是黑箱</strong>，只有调用才和外界产生联系）<br>不仅如此？系统调用也可以改变，保证系统调用的行为一致（<strong>行为的行为</strong>），可以把程序本身somehow做成调用，也就是系统的一部分。（前沿了）<br>额…那这和没有操作系统的区别在于？</p>
  </div></div>
 
+<p>还有很多🛐🛐🛐🛐</p>
 <hr>
 <h2 id="M1-pstree"><a href="#M1-pstree" class="headerlink" title="M1:pstree"></a>M1:pstree</h2><div class="note-large notel-green"><div class="notel-title"><p>M1 Log</p>
 </div><div class="notel-content"><ul>
@@ -3778,7 +3868,7 @@ drawbacks (in large scales) (not intepretale)</li>
 </blockquote>
 <h2 id="Lecture-9-C"><a href="#Lecture-9-C" class="headerlink" title="Lecture 9 (C)"></a>Lecture 9 (C)</h2><p>宏观理解锁<br>应用程序也会被中断，为什么不需要上锁？因为中断对用户程序是不可见的，中断程序(内核态)不回去试图获取用户态的🔒。</p>
 <p>状态机视角的同步，简单的状态变复杂，再让世界收束到简单的状态<br>”相互已知的简单状态“<br><em>“电子乐后驱jyy”</em></p>
-<p>消费者生产者问题，几乎可以解决所有的同步问题！<br>有一个通用的模型，一定有对应的接口实现！<br>就是条件变量，而这回不是傻傻的自旋，而是休眠，等待唤醒<br><code>pthread_cond_wait</code> and ``</p>
+<p>消费者生产者问题，几乎可以解决所有的同步问题！<br>有一个通用的模型，一定有对应的接口实现！<br>就是条件变量，而这回不是傻傻的自旋，而是休眠，等待唤醒<br><code>pthread_cond_wait</code> and <code>pthread_cond_signal</code></p>
 <p>可惜还是错的（在听三段改错）</p>
 <p>一个锁实现真正正确的条件变量</p>
 <ol>
@@ -3788,6 +3878,24 @@ drawbacks (in large scales) (not intepretale)</li>
 <p><strong>我们最好这样写↑</strong></p>
 <p>为什么可以解决99%的问题？<br>计算任务都是有向无环图，计算图切分（有序思考方式）<br>（再听听）<br>还可以每个结点？</p>
 <p>1%<br>如果遇到了写不出的条件的怎么办？可以借助状态机进行状态转换。<br>写出了状态机，还是可以用消费者-生产者解决。</p>
+<h2 id="Lecture-10-C"><a href="#Lecture-10-C" class="headerlink" title="Lecture 10 (C)"></a>Lecture 10 (C)</h2><p>我们可以用互斥锁来控制同步<br>自旋锁和互斥锁？<br>pthread要求必须是同一个线程require和release</p>
+<p>适用于一般模型：给每条边分别加锁！就像是一个拓扑排序！给入边上锁，给出边解锁！</p>
+<p>理解信号量：口袋和球<br>信号量可以理解成是互斥锁的自然扩展，不过允许不同的人去放球（释放锁）和拿球（获取锁）<br>所以就可以用信号量去实现上面的模型！</p>
+<p>信号量还可以用来管理计数型资源</p>
+<p>信号量来实现生产者消费者问题？为什么非要有两个袋子？</p>
+<p>信号量不太好实现选择的问题，二选一的情况下必须要你来决定球扔给谁，但也因此更高效（不会唤醒所有后继节点）</p>
+<hr>
+<p>对比：<br><strong>哲学家吃饭问题</strong><br>用信号量很难实现：所有人都会拿起左边的筷子，然后等待右边的筷子，最后死锁<br>用条件变量：无脑实现，因为互斥锁保证了一下拿两个筷子。</p>
+<p>怎么用信号量解决？有一些方案</p>
+<ol>
+<li>从桌子上赶走一个人，总有一个人能拿到。</li>
+<li>给叉子编号，总拿大的、小的</li>
+</ol>
+<p>但这是一种trick，并不scalable。<br>————因为当问题变复杂时，你都要去考虑这个问题，而且还不一定能解决。相比之下，条件变量更加简单, 更普适。<br>对于现实世界，更多的并发问题都是线程数规模远小于单线程任务量，条件变量的开销就显得不值一提。</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>《 Email to Green Advisor 》<br>这篇其实从学期一初就开始写了，希望的是等到OS这门课出分之后发给绿导师，希望当时我是以一个幸存者的心态，完成了这门课全部的任务，取得了一个不错的分数（不得不这样）比较轻松的发送这篇邮件。</p>
+<p>这门课给我的体验的是很好的，我想对比的是同是这学期的算法设计与分析课。黄宇老师的算法课有着非常的清晰的讲解，我也不得不承认确实是一门好课，我用了一个月左右才想清楚了为什么这门课会让我感到痛苦。就是：对于对OI有一定接触的我来说，这些经典“算法”早已没有了初见的新鲜感，更重要的是每节课都在向我传达一个概念“你又不能做什么，你又没法会什么”，因为这些都需要“灵感”，（课上的方法论甚至都不足以解决那占比80%的考试题😭（当然任何形式的考试都承担着检验以外的筛选作用））。相比之下我觉得OS给我的感觉是每一节课后，“我又能做成什么，我又能解决更多问题（乃至所有问题）”。不同于上算法课之前上刑场一般的心理负担，每节操作系统课虽然带着成吨的没读完的OSTEP，没理解完的讲义，没整理完的笔记，没学完的工具，没写完的实验，但都是无比期待的。我觉得这可能是一种“极客主义”。</p>
+<p>我想提出一点异见的就是您说只发表“not trivial”的工作。我接触到了一个概念就是do not judge novelty，我觉得，对于一般的研究者而言，他们可能终其一生都无法做出creative的工作，但他们的工作也是有价值的，也需要一个获得认同的平台。（在知乎看到过一个人说一个化学教授说，我们做实验，失败了，也是有价值的，至少别人看到了，知道这样做不行，不用再好费时间了。类似地，CS里面有一些仅仅是方法的融合怪，至少也可以证明这些方法的交叉不会产生奇妙的“化学反应”。）可能只有聪明人做科研才是有价值的，但是在大量聪明人去经商/捞钱的今天，让一些不聪明的人去回收一些low fruit也是应该的。（虽然说 do not judge novelty今天已经变味，更多成为了一种灌水的辩护，这个界限也很难分辨…）</p>
+<p>还有就是对这门课程的建议，我觉得这门课的地位已经不言而喻，作为第一个入选CSDIY的国内课程，我觉得这是无上的光荣（比什么CCF发的什么奖项含金量高太多，毕竟这是华语区<strong>热爱CS</strong>的人投出来的票，好过某随意增减名额把OIer的未来当儿戏的组织太多）。相比于上海交大的一些透露着买办阶级的所谓的好课（质量固然是有的，毕竟是从海外ctrl+C/V来的），这门课更像是一座灯塔。但我发现了一个问题就是，由于您各种意义上一个“聪明人”，所以您上课的节奏虽然适中，但有一些结构上的问题加以忽略。对于拔尖班之类的大佬，他们的可以很快地处理和解决问题点，并且在节奏稍缓的时候迅速的将结构组织起来。但对于我这样反应比较慢的人来说，我全程都在高强度的处理一些思考点（有些甚至还当堂处理不完）最后的感受就是只体会到了一些零散的点。之后虽然有回放可以反复观看，但是由于短时记忆遗忘的问题，就会有一种夹生感，最后需要数倍的时间去组织起来。因此我觉得如果在讲义和授课中更加强调一点结构，这门课就会向普通的同学，乃至开源之后的更广泛的受众群体更加友好。</p>
 ]]></content>
       <tags>
         <tag>CS</tag>
