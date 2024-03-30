@@ -4013,7 +4013,10 @@ A &amp; C can not hear each other with inference of B</li>
   <entry>
     <title>Notes for Princeton ELE 475: Computer Arch</title>
     <url>/2024/03/09/CA/</url>
-    <content><![CDATA[<h3 id="Review-Part"><a href="#Review-Part" class="headerlink" title="Review Part"></a>Review Part</h3><p>register allocation</p>
+    <content><![CDATA[<h3 id="Reading-List"><a href="#Reading-List" class="headerlink" title="Reading List"></a>Reading List</h3><ul>
+<li><input disabled="" type="checkbox"> Chap1</li>
+</ul>
+<h3 id="Review-Part"><a href="#Review-Part" class="headerlink" title="Review Part"></a>Review Part</h3><p>register allocation</p>
 <h4 id="Pipeline"><a href="#Pipeline" class="headerlink" title="Pipeline"></a>Pipeline</h4><p>IF,DE,EX,MEM,WB<br>or F,D,X,M,W</p>
 <h4 id="Hazard"><a href="#Hazard" class="headerlink" title="Hazard"></a>Hazard</h4><ul>
 <li>Structural hazards: two instructions need the same hardware resource at the same time</li>
