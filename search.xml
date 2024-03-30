@@ -2960,11 +2960,18 @@ Have I provided a clear understanding of how the results fit into a bigger pictu
   <entry>
     <title>Notes for Computer Network</title>
     <url>/2024/02/26/ComputerNetwork/</url>
-    <content><![CDATA[<p>L1-1 还有补充<br>L1-2 未完成<br>L2-1 未完成<br>L2-2 还有订正<br>L2-3 未完成<br>L2-4 几乎完成，残留问题已标注， 最后没讲完！！！</p>
-<ul>
-<li>同步问题</li>
+    <content><![CDATA[<ul>
+<li><input disabled="" type="checkbox"> L1-1 还有补充</li>
+<li><input disabled="" type="checkbox"> L1-2 未完成</li>
+<li><input disabled="" type="checkbox"> L2-1 未完成</li>
+<li><input disabled="" type="checkbox"> L2-2 还有订正</li>
+<li><input disabled="" type="checkbox"> L2-3 未完成</li>
+<li><input checked="" disabled="" type="checkbox"> L2-4 几乎完成，残留问题已标注， 最后没讲完！！！<ul>
+<li><input disabled="" type="checkbox"> 同步问题</li>
 </ul>
-<p>L2-5 </p>
+</li>
+<li><input disabled="" type="checkbox"> L2-5</li>
+</ul>
 <h2 id="Chapter1-Overview"><a href="#Chapter1-Overview" class="headerlink" title="Chapter1 Overview"></a>Chapter1 Overview</h2><h3 id="Network-Composition"><a href="#Network-Composition" class="headerlink" title="Network Composition"></a>Network Composition</h3><p><strong>Protocol</strong>: (Definition in Textbook P6)</p>
 <ul>
 <li>Protocol is a state machine.</li>
@@ -3376,7 +3383,6 @@ drawbacks (in large scales) (not intepretale)</li>
 </li>
 </ul>
 <h5 id="Multipath-propagation"><a href="#Multipath-propagation" class="headerlink" title="Multipath propagation"></a>Multipath propagation</h5><p>Self-interference<br><img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/25/Se2JgbjtGmrsLDd.png" width="400"></p>
-<p>JAMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm<br>JAMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm<br>JAMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm<br>JAMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm<br>JAMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm<br>JAMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm<br>JAMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm<br>JAMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm<br>JAMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm<br>JAMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm</p>
 <h5 id="Interference-from-other-sources"><a href="#Interference-from-other-sources" class="headerlink" title="Interference from other sources"></a>Interference from other sources</h5><p>e.g. 2.4GHz-phone-motors-microwave </p>
 <ul>
 <li>Broadcast medium<ul>
@@ -3426,27 +3432,32 @@ A &amp; C can not hear each other with inference of B</li>
 </blockquote>
 <img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/27/afzUQHtlK7pkRJ6.png" width="600">
 
+<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/30/pwjUM4X5lPkyzDd.png" width="400">
+
+<p><strong>3-level IFS</strong><br>We use shorter IFS for high priority so that the high-order one can steal the turn at the gap between the lower ones.</p>
 <ul>
-<li><p><strong>SIFS</strong> (Short Inter Frame Space)</p>
-<ul>
+<li><strong>SIFS</strong> (Short Inter Frame Space)<ul>
 <li>Shortest gap (IFS), highest priority</li>
-<li>“all immediate responses”: ACK, <strong>LLC PDU</strong>, Poll response, CTS</li>
+<li>“all immediate responses”: <ul>
+<li><strong>LLC PDU</strong></li>
+<li><strong>Poll response</strong></li>
+<li>ACK/CTS/RTS<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/30/X2Z87oYWgLDu49y.png" width="400"></li>
 </ul>
 </li>
-<li><p>PIFS (point coordination function IFS)</p>
+</ul>
 </li>
-<li><p>Mid-length IFS</p>
+<li><strong>PIFS</strong> (point coordination function IFS)<ul>
+<li>Mid-length IFS</li>
+<li>Used by the centralized controller in PCF scheme when issuing polls</li>
+</ul>
 </li>
-<li><p>Used by the centralized controller in PCF scheme when issuing polls</p>
-</li>
-<li><p>DIFS (distributed coordination function IFS)</p>
-</li>
-<li><p>Longest IFS</p>
-</li>
-<li><p>Used for other asynchronous frames contending for access</p>
+<li>DIFS (distributed coordination function IFS)<ul>
+<li>Longest IFS, for asynchronous frames contending for access ??</li>
+</ul>
 </li>
 </ul>
-<p>LLC和MAC？？？？？？？注意<br>区别MAC和MAC！！！！</p>
+<p>JAMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm<br>JAMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm<br>JAMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm<br>JAMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm<br>JAMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm<br>JAMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm<br>JAMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm<br>JAMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm<br>JAMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm<br>JAMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm</p>
+<h3 id="PCF-Point-Coordination-Function"><a href="#PCF-Point-Coordination-Function" class="headerlink" title="PCF(Point Coordination Function)"></a>PCF(Point Coordination Function)</h3><p>LLC和MAC？？？？？？？注意<br>区别MAC和MAC！！！！</p>
 <p>3-level hierarchy</p>
 <ul>
 <li>SIFS: Short Interframe Space</li>
@@ -4015,6 +4026,11 @@ A &amp; C can not hear each other with inference of B</li>
     <url>/2024/03/09/CA/</url>
     <content><![CDATA[<h3 id="Reading-List"><a href="#Reading-List" class="headerlink" title="Reading List"></a>Reading List</h3><ul>
 <li><input disabled="" type="checkbox"> Chap1</li>
+<li><input disabled="" type="checkbox"> Appendix A</li>
+<li><input disabled="" type="checkbox"> H&amp;P5 C-1 - C-26、C-30 - C-58、C-61 - C-81</li>
+<li><input disabled="" type="checkbox"> H&amp;P5 B-1 - B-40</li>
+<li><input disabled="" type="checkbox"> H&amp;P5 147 - 192, 197 - 202, 207 - 221, </li>
+<li><input disabled="" type="checkbox"> S&amp;L 177 - 367,Tomasulo 算法</li>
 </ul>
 <h3 id="Review-Part"><a href="#Review-Part" class="headerlink" title="Review Part"></a>Review Part</h3><p>register allocation</p>
 <h4 id="Pipeline"><a href="#Pipeline" class="headerlink" title="Pipeline"></a>Pipeline</h4><p>IF,DE,EX,MEM,WB<br>or F,D,X,M,W</p>
