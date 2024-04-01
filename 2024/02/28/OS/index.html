@@ -447,8 +447,8 @@ mjx-container[display="true"] + br {
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="pc">2024-04-01 16:04:48</span>
-            <span class="mobile">2024-04-01 16:04</span>
+            <span class="pc">2024-04-01 20:51:45</span>
+            <span class="mobile">2024-04-01 20:51</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -517,6 +517,8 @@ mjx-container[display="true"] + br {
 <li>阅读GDB文档，quick guide, cheat sheet</li>
 </ul>
 </li>
+<li>第九节 ✅ 🛐</li>
+<li>第十节 ⛔</li>
 </ul>
 <h2 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h2><p>在做了充足的心理准备之后，终于决定报了jyy老师的OS。</p>
 <blockquote>
@@ -823,7 +825,7 @@ mjx-container[display="true"] + br {
 <div class="note-large notel-red"><div class="notel-title"><p>Spicy: Really Spicy!</p>
 </div><div class="notel-content"><p>时间压力下，我们会被迫用肌肉记忆解决问题<br>—&gt; 停止自己的技术演进<br>—&gt; 最后技术与社区脱节，成为油腻的中年“键盘侠”<br>怎么办？<br><img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/25/1hi9KtFRMXcGTrC.png" width="300"></p>
  </div></div>
-<p>tetttttttttgtttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttgggggtetttttttttgtttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttgggggtetttttttttgtttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttgggggtetttttttttgtttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttgggggtetttttttttgtttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttgggggtetttttttttgtttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttgggggtetttttttttgtttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttgggggtetttttttttgtttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttgggggtetttttttttgtttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttgggggtetttttttttgtttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttgggggtetttttttttgtttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttgggggtetttttttttgtttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttgggggtetttttttttgtttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttgggggtetttttttttgtttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttggggg</p>
+
 <p>应用调试理论：什么是好的代码？<br>Self-Explanatory Code: 代码应该是自解释的，不需要额外的注释<br>Self-evident Code: 代码应该是自证明的，可以通过阅读确认和需求的一致性。</p>
 <div class="note note-green icon-padding"><i class="note-icon fa-solid fa-bolt"></i><p><strong>核心方法论</strong>：因为AI还“不够聪明”：AI is a benchmark! 如果你的代码AI能够理解，那么说明是好代码。</p>
 </div>
@@ -840,8 +842,6 @@ mjx-container[display="true"] + br {
 <h2 id="Lecture-9-C"><a href="#Lecture-9-C" class="headerlink" title="Lecture 9 (C)"></a>Lecture 9 (C)</h2><p>宏观理解锁<br>应用程序也会被中断，为什么不需要上锁？因为中断对用户程序是不可见的，中断程序(内核态)不回去试图获取用户态的🔒。</p>
 <p>状态机视角的同步，简单的状态变复杂，再让世界收束到简单的状态<br>”相互已知的简单状态“<br><em>“电子乐后驱jyy”</em></p>
 <p>消费者生产者问题，可以解决99%的同步问题！<br>概念模型：往有限缓冲区放东西/取东西</p>
-<p>就是条件变量，而这回不是傻傻的自旋，而是<br><code>pthread_cond_wait</code> and <code>pthread_cond_signal</code></p>
-<p>可惜还是错的（在听三段改错）</p>
 <div class="note note-cyan icon-padding"><i class="note-icon fa-solid fa-user-secret"></i><p><a class="link" target="_blank" rel="noopener" href="https://github.com/Jackcuii/jyy-codes-test-and-read/blob/master/pc-1.c">第一个错误的生产者-消费者实现 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 </div>
 <div class="note note-cyan icon-padding"><i class="note-icon fa-solid fa-user-secret"></i><p><a class="link" target="_blank" rel="noopener" href="https://github.com/Jackcuii/jyy-codes-test-and-read/blob/master/pc-2.c">第一个正确的生产者-消费者实现 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br>虽然它总是在“自旋”在浪费cpu资源！</p>
@@ -851,18 +851,27 @@ mjx-container[display="true"] + br {
 </div>
 <p>有一个通用的模型，一定有对应的接口实现。<br>我们发明了条件变量，但还不要这么傻（休眠，等待唤醒）：当然有现成的库！</p>
 <div class="note note-cyan icon-padding"><i class="note-icon fa-solid fa-user-secret"></i><p><a class="link" target="_blank" rel="noopener" href="https://github.com/Jackcuii/jyy-codes-test-and-read/blob/master/pc-cv.c">使用了条件变量的接口！很可惜，还是错的 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 书上解释了🛐</p>
-</div>s
+</div>
+<div class="note note-cyan icon-padding"><i class="note-icon fa-solid fa-user-secret"></i><p><a class="link" target="_blank" rel="noopener" href="https://github.com/Jackcuii/jyy-codes-test-and-read/blob/master/pc-cv-broadcast.c">真正全局正确的实现，正确打开方式 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+</div>
 
-
-
-<p>一个锁实现真正正确的条件变量</p>
+<p><strong>一个锁实现真正正确的条件变量</strong></p>
 <ol>
 <li>唤醒后再检查</li>
 <li>唤醒所有潜在被唤醒的人</li>
 </ol>
 <p><strong>我们最好这样写↑</strong></p>
-<p>为什么可以解决99%的问题？<br>计算任务都是有向无环图，计算图切分（有序思考方式）<br>（再听听）<br>还可以每个结点？</p>
-<p>1%<br>如果遇到了写不出的条件的怎么办？可以借助状态机进行状态转换。<br>写出了状态机，还是可以用消费者-生产者解决。</p>
+<p>为什么可以解决99%的问题？<br>计算任务都是有向无环图，计算图切分（有序思考方式）</p>
+<ol>
+<li>一个生产者，每个核心是消费者，生产者（调度器）拓扑排序计算图，把任务分配给消费者即可。（线程池的工作原理）</li>
+<li>还可以每个结点都设置一个条件变量。同步条件就是依赖的都完成了</li>
+</ol>
+<p>1%<br>如果遇到了写不出的条件的怎么办？可以借助状态机进行状态转换。<br>写出了状态机，还是可以用条件变量解决。</p>
+<div class="note-large notel-primary"><div class="notel-title"><p>icon-padding</p>
+</div><div class="notel-content"><p>这个要看jyy的第九节的视频（🐟的实现）</p>
+ </div></div>
+
+
 <h2 id="Lecture-10-C"><a href="#Lecture-10-C" class="headerlink" title="Lecture 10 (C)"></a>Lecture 10 (C)</h2><p>我们可以用互斥锁来控制同步<br>自旋锁和互斥锁？<br>pthread要求必须是同一个线程require和release</p>
 <p>适用于一般模型：给每条边分别加锁！就像是一个拓扑排序！给入边上锁，给出边解锁！</p>
 <p>理解信号量：口袋和球<br>信号量可以理解成是互斥锁的自然扩展，不过允许不同的人去放球（释放锁）和拿球（获取锁）<br>所以就可以用信号量去实现上面的模型！</p>
