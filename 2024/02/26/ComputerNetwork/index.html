@@ -447,8 +447,8 @@ mjx-container[display="true"] + br {
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="pc">2024-03-30 23:56:52</span>
-            <span class="mobile">2024-03-30 23:56</span>
+            <span class="pc">2024-04-10 12:05</span>
+            <span class="mobile">2024-04-10 12</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -474,12 +474,12 @@ mjx-container[display="true"] + br {
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-file-word"></i>&nbsp;<span>2.4k Words</span>
+            <i class="fa-regular fa-file-word"></i>&nbsp;<span>3.1k Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>14 Mins</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>18 Mins</span>
         </span>
     
     
@@ -944,7 +944,7 @@ drawbacks (in large scales) (not intepretale)</li>
 
 <p>对比有线帧和无线帧</p>
 <h5 id="Association"><a href="#Association" class="headerlink" title="Association"></a>Association</h5><ul>
-<li>802.11b: spectrum divided into 11 channels<br>AP admin <strong>(？)</strong> : choose channel.<br>host associate with an AP</li>
+<li>802.11b: spectrum divided into 11 channels<br>AP admin <strong>(？)</strong> : choose channel.🤬<br>host associate with an AP</li>
 <li>Scanning<ul>
 <li>Passive<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/27/BiheZLNDbpzIJdx.png" width="300"></li>
 <li>Positive<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/27/swRfairJ29HTAWN.png" width="300">
@@ -975,7 +975,7 @@ A &amp; C can not hear each other with inference of B</li>
 <li>Shortest gap (IFS), highest priority</li>
 <li>“all immediate responses”: <ul>
 <li><strong>LLC PDU</strong></li>
-<li><strong>Poll response</strong></li>
+<li>Poll response: as below</li>
 <li>ACK/CTS/RTS<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/03/30/X2Z87oYWgLDu49y.png" width="400"></li>
 </ul>
 </li>
@@ -992,12 +992,36 @@ A &amp; C can not hear each other with inference of B</li>
 </li>
 </ul>
 <p>JAMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm<br>JAMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm<br>JAMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm<br>JAMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm<br>JAMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm<br>JAMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm<br>JAMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm<br>JAMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm<br>JAMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm<br>JAMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMm</p>
-<h3 id="PCF-Point-Coordination-Function"><a href="#PCF-Point-Coordination-Function" class="headerlink" title="PCF(Point Coordination Function)"></a>PCF(Point Coordination Function)</h3><p>LLC和MAC？？？？？？？注意<br>区别MAC和MAC！！！！</p>
-<p>3-level hierarchy</p>
+<h3 id="DCF-Distributed-Coordination-Function"><a href="#DCF-Distributed-Coordination-Function" class="headerlink" title="DCF(Distributed Coordination Function)"></a>DCF(Distributed Coordination Function)</h3><p><strong>CSMA/CA</strong></p>
 <ul>
-<li>SIFS: Short Interframe Space</li>
+<li>but not CD<ul>
+<li>difficult to detect collision for fading (can not distinguish from noise and own trans)</li>
+<li>can detect all hidden terminal…</li>
 </ul>
-<p>DCF:</p>
+</li>
+<li>very much error, so use ACK</li>
+</ul>
+<h3 id="PCF-Point-Coordination-Function"><a href="#PCF-Point-Coordination-Function" class="headerlink" title="PCF(Point Coordination Function)"></a>PCF(Point Coordination Function)</h3><ul>
+<li>use centralized controller to polling master (point coordinator)<br>PIFS(seize the gap, lock out all asynchronous frames)</li>
+<li>for time-sensitive traffic (QoS)</li>
+<li>always AP be the point coordinator<ul>
+<li>has a polling list</li>
+<li>poll stations in round-robin</li>
+<li>the IFS is shown below 👇</li>
+<li>a superframe is divided into CFP and CP<ul>
+<li>CFP for PCF &amp; CP for DCF</li>
+<li>theoretically, CFP can take up all the superframe, however practically 30%-50%(GPT)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>🤬P38: 如何理解下面那个if..if, 间隔怎么选取？图上和ppt不一致<br>🤬P39: 如何理解第三条<br><img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/04/03/ctV4W2KT713Pugy.png" width="600"></p>
+<p><a class="link" target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_40535588/article/details/118799731">A extended description <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>LLC和MAC？？？？？？？注意<br>区别MAC和MAC！！！！</p>
+<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/04/03/UBox2Hy6g97WIRp.png" width="600">
+
+<p>🤬 超帧长度不是用beacon确定的吗，这算什么？？</p>
 <p>CSMA/CA:<br>No CD:</p>
 <h2 id="Network-Layer"><a href="#Network-Layer" class="headerlink" title="Network Layer"></a>Network Layer</h2><h3 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h3><ul>
 <li>Switching/Routing<br>determine routes, shortest path…(multiple nodes)</li>
@@ -1061,6 +1085,170 @@ A &amp; C can not hear each other with inference of B</li>
 <p>42 查表为什么会出现区别？</p>
 <p>Forwarding table for VC<br>&lt;Input port, Incoming VC, Output port, Outgoing VC&gt;</p>
 <p>42 to 52</p>
+<h3 id="IP-Protocol"><a href="#IP-Protocol" class="headerlink" title="IP Protocol"></a>IP Protocol</h3><ul>
+<li>IP layer entity resides on each host and router</li>
+<li>Provides connectionless service (i.e. datagram mechanism)d</li>
+</ul>
+<h3 id="IP-Suit"><a href="#IP-Suit" class="headerlink" title="IP Suit"></a>IP Suit</h3><h4 id="NAT-Network-Address-Translation"><a href="#NAT-Network-Address-Translation" class="headerlink" title="NAT(Network Address Translation)"></a>NAT(Network Address Translation)</h4><p>translate when interfaces with broader Internet</p>
+<h5 id="Purpose"><a href="#Purpose" class="headerlink" title="Purpose"></a>Purpose</h5><ul>
+<li>act as firewall (only from inside to outside)</li>
+<li>save IP addresses</li>
+<li>Isolate ISP/Organization change (just change the NAT)</li>
+</ul>
+<h5 id="Types"><a href="#Types" class="headerlink" title="Types"></a>Types</h5><ul>
+<li><strong>Static NAT</strong>: 1:1 mapping (for server)</li>
+<li><strong>Dynamic NAT</strong>: pool of public IP, assign for private (for client PCs in Intranet)</li>
+<li>Single-Address NAT: all private IP map to one public IP<br>Overloading/Masquerading/Network Address Port Translation (NAPT)🤬</li>
+</ul>
+<p>1:1<br><img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/04/10/OiQMZWrCuzqbK4a.png" width="600"></p>
+<p>Single Address<br><img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/04/10/tyFiV7BLUT56ksS.png" width="600"></p>
+<h5 id="NAT-hinders-P2P"><a href="#NAT-hinders-P2P" class="headerlink" title="NAT hinders P2P"></a>NAT hinders P2P</h5><p>Relaying (in Skype)<br><strong>P9</strong></p>
+<p>普通路由器vsNAT路由器</p>
+<h4 id="ICMP-Internet-Control-Message-Protocol-RFC792-4-layer"><a href="#ICMP-Internet-Control-Message-Protocol-RFC792-4-layer" class="headerlink" title="ICMP(Internet Control Message Protocol, RFC792) (4 layer)"></a>ICMP(Internet Control Message Protocol, RFC792) (4 layer)</h4><ul>
+<li>transfer err and ctrl msgs</li>
+<li>encapsulated in datagram<ul>
+<li>protocol type = 1</li>
+<li>not reliable</li>
+</ul>
+</li>
+</ul>
+<h5 id="Format"><a href="#Format" class="headerlink" title="Format"></a>Format</h5><img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/04/10/OgczpmQVYj71BdI.png" width="600">
+in
+<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/04/10/t8meJUvy2ZbqADF.png" width="200">
+
+<p>ICMP types: maybe do not need to recite… ⏩ppt P13<br>some formats…<br><img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/04/10/fgdNLaIQHO25z93.png" width="600"></p>
+<h5 id="Use"><a href="#Use" class="headerlink" title="Use"></a>Use</h5><ul>
+<li><p>Ping</p>
+<ul>
+<li>test dest reachability</li>
+<li>calculate round-trip time</li>
+<li>count hops (TTL)</li>
+</ul>
+</li>
+<li><p><em>traceroute</em>:</p>
+<ul>
+<li>send packets with increasing TTL(1,2,3…)</li>
+<li>reveal the nodes by TTL expired message</li>
+<li>suffer from dynamic routing</li>
+</ul>
+</li>
+<li><p>Path MTU</p>
+<ul>
+<li>send packets with DF(do not fragment) bit set</li>
+<li>router send back <em>parameter unintelligible</em> if too large</li>
+<li>decrease size and try until no error</li>
+<li>suffer from dynamic routing</li>
+</ul>
+</li>
+</ul>
+<h4 id="Mobile-IP"><a href="#Mobile-IP" class="headerlink" title="Mobile IP"></a>Mobile IP</h4><p>mobile device’s IP pretend to be unchanged.<br><strong>P24</strong><br>Triangle:<br>P26</p>
+<h5 id="function"><a href="#function" class="headerlink" title="function"></a>function</h5><ul>
+<li>Discovery</li>
+</ul>
+<p>Tunnel : IP packet in IP packet?</p>
+<h3 id="IPv6"><a href="#IPv6" class="headerlink" title="IPv6"></a>IPv6</h3><h4 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h4><ul>
+<li>address exhaustion</li>
+<li>poor processing speed of header</li>
+<li>poor QoS support</li>
+<li>No fragmentation at routers</li>
+<li>???</li>
+</ul>
+<h4 id="RFCs"><a href="#RFCs" class="headerlink" title="RFCs"></a>RFCs</h4><h4 id="4-to-6-Evolution"><a href="#4-to-6-Evolution" class="headerlink" title="4 to 6 Evolution"></a>4 to 6 Evolution</h4><img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/04/08/4HJ7nWDFtfKyV9g.png" width="600">
+
+<h3 id="Routing"><a href="#Routing" class="headerlink" title="Routing"></a>Routing</h3><p>choose path and build routing tables for VC networks??</p>
+<h4 id="Characteristics-1"><a href="#Characteristics-1" class="headerlink" title="Characteristics"></a>Characteristics</h4><ul>
+<li>efficiency</li>
+<li>resilience</li>
+<li>stability </li>
+<li><strong>…</strong></li>
+</ul>
+<h4 id="ELements"><a href="#ELements" class="headerlink" title="ELements"></a>ELements</h4><h5 id="Performance-criteria"><a href="#Performance-criteria" class="headerlink" title="Performance criteria"></a>Performance criteria</h5><img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/04/10/lGBHUXbVswI6JEj.png" width="300">
+jammmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmm
+- minimum hop
+- least cost
+  - what is cost?
+    - Minimum delay: queue length
+    - Largest throughput: 1/throughput
+  
+<h5 id="Decision-time-amp-place"><a href="#Decision-time-amp-place" class="headerlink" title="Decision time & place"></a>Decision time &amp; place</h5><ul>
+<li>time<ul>
+<li>for each packet - datagram network</li>
+<li>when configure VC - VC network</li>
+</ul>
+</li>
+<li>place<ul>
+<li>centralized coordination</li>
+<li>source routing</li>
+<li>distributed(by switches)</li>
+</ul>
+</li>
+</ul>
+<h5 id="Network-info-source-amp-info-update-timing"><a href="#Network-info-source-amp-info-update-timing" class="headerlink" title="Network info source & info update timing"></a>Network info source &amp; info update timing</h5><ul>
+<li><p>source</p>
+<ul>
+<li>Local information</li>
+<li>Adjacent switches</li>
+<li>All switches in the network</li>
+</ul>
+</li>
+<li><p>timing</p>
+<ul>
+<li>Update periodically</li>
+<li>Upon major changes in switches or links</li>
+<li>Fixed (manual configuration)</li>
+</ul>
+</li>
+</ul>
+<h4 id="Strategy"><a href="#Strategy" class="headerlink" title="Strategy"></a>Strategy</h4><h5 id="Central-static"><a href="#Central-static" class="headerlink" title="Central(static)"></a>Central(static)</h5><ul>
+<li>single fixed route for each src-dest</li>
+<li>least-cost algo</li>
+<li>reconfig when major change</li>
+</ul>
+<h5 id="Distributed-flooding"><a href="#Distributed-flooding" class="headerlink" title="Distributed: flooding"></a>Distributed: flooding</h5><p>do not need any info<br>just flood the packet</p>
+<ul>
+<li>duplicates: many receive many copies</li>
+<li>cyvle problem: may cause storm<ul>
+<li>handle: hop count</li>
+</ul>
+</li>
+</ul>
+<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/04/10/ljIDo9QneFvRcuB.png" width="300">
+
+<p>jammmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmjammmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm<br><strong>P15</strong></p>
+<h5 id="Distributed-random"><a href="#Distributed-random" class="headerlink" title="Distributed: random"></a>Distributed: random</h5><ul>
+<li>do not need network info</li>
+<li>select one outgoing path for retransmission</li>
+<li>random / round &amp; robin / probability calc</li>
+<li>suitable for strongly-connected network</li>
+<li>always not optimal<br><strong>P17</strong><br><mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.666ex;" xmlns="http://www.w3.org/2000/svg" width="14.536ex" height="2.363ex" role="img" focusable="false" viewBox="0 -750 6425.1 1044.2"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="1D477" d="M162 62L302 623Q302 624 258 624H234Q214 624 209 626T200 638Q200 677 217 684Q220 686 439 686Q667 685 684 682Q686 681 693 680Q713 677 733 671T782 649T829 602T847 528Q847 450 784 382T604 293Q571 288 469 287H373L346 176Q340 151 333 122T321 78L317 64Q317 62 361 62H387Q420 62 420 44Q417 10 404 2L399 0L357 1Q331 2 224 2Q149 2 109 1T65 0Q43 0 43 17Q43 21 47 33Q52 54 57 58T89 62H113H162ZM692 558Q692 611 617 622Q610 623 529 624H452L381 343H458H492Q604 343 641 389Q662 414 677 471T692 558Z"></path></g><g data-mml-node="mi" transform="translate(756,-150) scale(0.707)"><path data-c="1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path></g></g><g data-mml-node="mo" transform="translate(1327.7,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="msub" transform="translate(2383.5,0)"><g data-mml-node="mi"><path data-c="1D479" d="M258 624H235Q214 624 209 626T199 639Q203 678 216 684Q220 686 422 686H446H525Q634 686 698 674T806 620Q843 583 843 535Q843 505 833 478T805 432T768 396T728 370T690 352T662 342L651 338L654 336Q658 334 667 327T688 310Q719 278 719 237Q719 222 710 165T701 94Q701 35 748 35Q775 35 793 57T819 101Q822 112 826 114T843 117H849Q881 117 881 99Q881 78 852 39T781 -11Q765 -17 728 -17Q537 -13 537 94Q537 110 552 169T567 243Q567 292 529 309Q517 316 508 316T441 318H375L374 314Q374 312 343 189T311 64Q311 62 355 62H382Q414 62 414 44Q410 6 397 2L393 0L351 1Q325 2 221 2Q147 2 108 1T65 0Q48 0 43 15Q47 54 60 60Q64 62 113 62H162L302 623Q302 624 258 624ZM687 555Q687 617 589 623Q581 624 513 624H451L420 498Q413 468 405 436T392 388L388 371Q388 369 458 369Q464 369 485 369T515 369T541 372T570 377T596 386T624 400Q649 417 664 457T683 522T687 555Z"></path></g><g data-mml-node="mi" transform="translate(905,-150) scale(0.707)"><path data-c="1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path></g></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(3582.5,0)"><g data-mml-node="mo"><path data-c="2F" d="M423 750Q432 750 438 744T444 730Q444 725 271 248T92 -240Q85 -250 75 -250Q68 -250 62 -245T56 -231Q56 -221 230 257T407 740Q411 750 423 750Z"></path></g></g><g data-mml-node="msub" transform="translate(4082.5,0)"><g data-mml-node="mi"><path data-c="3A3" d="M666 247Q664 244 652 126T638 4V0H351Q131 0 95 0T57 5V6Q54 12 57 17L73 36Q89 54 121 90T182 159L305 299L56 644L55 658Q55 677 60 681Q63 683 351 683H638V679Q640 674 652 564T666 447V443H626V447Q618 505 604 543T559 605Q529 626 478 631T333 637H294H189L293 494Q314 465 345 422Q400 346 400 340Q400 338 399 337L154 57Q407 57 428 58Q476 60 508 68T551 83T575 103Q595 125 608 162T624 225L626 251H666V247Z"></path></g><g data-mml-node="mi" transform="translate(755,-150) scale(0.707)"><path data-c="1D457" d="M297 596Q297 627 318 644T361 661Q378 661 389 651T403 623Q403 595 384 576T340 557Q322 557 310 567T297 596ZM288 376Q288 405 262 405Q240 405 220 393T185 362T161 325T144 293L137 279Q135 278 121 278H107Q101 284 101 286T105 299Q126 348 164 391T252 441Q253 441 260 441T272 442Q296 441 316 432Q341 418 354 401T367 348V332L318 133Q267 -67 264 -75Q246 -125 194 -164T75 -204Q25 -204 7 -183T-12 -137Q-12 -110 7 -91T53 -71Q70 -71 82 -81T95 -112Q95 -148 63 -167Q69 -168 77 -168Q111 -168 139 -140T182 -74L193 -32Q204 11 219 72T251 197T278 308T289 365Q289 372 288 376Z"></path></g></g><g data-mml-node="msub" transform="translate(5178.8,0)"><g data-mml-node="mi"><path data-c="1D479" d="M258 624H235Q214 624 209 626T199 639Q203 678 216 684Q220 686 422 686H446H525Q634 686 698 674T806 620Q843 583 843 535Q843 505 833 478T805 432T768 396T728 370T690 352T662 342L651 338L654 336Q658 334 667 327T688 310Q719 278 719 237Q719 222 710 165T701 94Q701 35 748 35Q775 35 793 57T819 101Q822 112 826 114T843 117H849Q881 117 881 99Q881 78 852 39T781 -11Q765 -17 728 -17Q537 -13 537 94Q537 110 552 169T567 243Q567 292 529 309Q517 316 508 316T441 318H375L374 314Q374 312 343 189T311 64Q311 62 355 62H382Q414 62 414 44Q410 6 397 2L393 0L351 1Q325 2 221 2Q147 2 108 1T65 0Q48 0 43 15Q47 54 60 60Q64 62 113 62H162L302 623Q302 624 258 624ZM687 555Q687 617 589 623Q581 624 513 624H451L420 498Q413 468 405 436T392 388L388 371Q388 369 458 369Q464 369 485 369T515 369T541 372T570 377T596 386T624 400Q649 417 664 457T683 522T687 555Z"></path></g><g data-mml-node="mi" transform="translate(905,-150) scale(0.707)"><path data-c="1D457" d="M297 596Q297 627 318 644T361 661Q378 661 389 651T403 623Q403 595 384 576T340 557Q322 557 310 567T297 596ZM288 376Q288 405 262 405Q240 405 220 393T185 362T161 325T144 293L137 279Q135 278 121 278H107Q101 284 101 286T105 299Q126 348 164 391T252 441Q253 441 260 441T272 442Q296 441 316 432Q341 418 354 401T367 348V332L318 133Q267 -67 264 -75Q246 -125 194 -164T75 -204Q25 -204 7 -183T-12 -137Q-12 -110 7 -91T53 -71Q70 -71 82 -81T95 -112Q95 -148 63 -167Q69 -168 77 -168Q111 -168 139 -140T182 -74L193 -32Q204 11 219 72T251 197T278 308T289 365Q289 372 288 376Z"></path></g></g></g></g></svg></mjx-container></li>
+</ul>
+<h5 id="Distributed-Adaptive"><a href="#Distributed-Adaptive" class="headerlink" title="Distributed: Adaptive"></a>Distributed: Adaptive</h5><ul>
+<li><strong>Used by almost all packet switching networks</strong></li>
+<li>change as conditions on the network change</li>
+<li>Requires network info<br>Tradeoff: high quality info – overhead</li>
+<li>Aid in congestion control???</li>
+</ul>
+<p>P19 <strong>example</strong></p>
+<h4 id="Classic-Algo"><a href="#Classic-Algo" class="headerlink" title="Classic Algo"></a>Classic Algo</h4><p>*Prim &amp; Kruskal</p>
+<h5 id="Dijkstra"><a href="#Dijkstra" class="headerlink" title="Dijkstra"></a>Dijkstra</h5><p>…</p>
+<ul>
+<li><p>complexity: <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="5.832ex" height="2.452ex" role="img" focusable="false" viewBox="0 -833.9 2577.6 1083.9"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D442" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"></path></g><g data-mml-node="mo" transform="translate(763,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="msup" transform="translate(1152,0)"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mn" transform="translate(633,363) scale(0.707)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g></g><g data-mml-node="mo" transform="translate(2188.6,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container> best <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="9.847ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 4352.3 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D442" d="M740 435Q740 320 676 213T511 42T304 -22Q207 -22 138 35T51 201Q50 209 50 244Q50 346 98 438T227 601Q351 704 476 704Q514 704 524 703Q621 689 680 617T740 435ZM637 476Q637 565 591 615T476 665Q396 665 322 605Q242 542 200 428T157 216Q157 126 200 73T314 19Q404 19 485 98T608 313Q637 408 637 476Z"></path></g><g data-mml-node="mo" transform="translate(763,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(1152,0)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mi" transform="translate(1918.7,0)"><path data-c="6C" d="M42 46H56Q95 46 103 60V68Q103 77 103 91T103 124T104 167T104 217T104 272T104 329Q104 366 104 407T104 482T104 542T103 586T103 603Q100 622 89 628T44 637H26V660Q26 683 28 683L38 684Q48 685 67 686T104 688Q121 689 141 690T171 693T182 694H185V379Q185 62 186 60Q190 52 198 49Q219 46 247 46H263V0H255L232 1Q209 2 183 2T145 3T107 3T57 1L34 0H26V46H42Z"></path><path data-c="6F" d="M28 214Q28 309 93 378T250 448Q340 448 405 380T471 215Q471 120 407 55T250 -10Q153 -10 91 57T28 214ZM250 30Q372 30 372 193V225V250Q372 272 371 288T364 326T348 362T317 390T268 410Q263 411 252 411Q222 411 195 399Q152 377 139 338T126 246V226Q126 130 145 91Q177 30 250 30Z" transform="translate(278,0)"></path><path data-c="67" d="M329 409Q373 453 429 453Q459 453 472 434T485 396Q485 382 476 371T449 360Q416 360 412 390Q410 404 415 411Q415 412 416 414V415Q388 412 363 393Q355 388 355 386Q355 385 359 381T368 369T379 351T388 325T392 292Q392 230 343 187T222 143Q172 143 123 171Q112 153 112 133Q112 98 138 81Q147 75 155 75T227 73Q311 72 335 67Q396 58 431 26Q470 -13 470 -72Q470 -139 392 -175Q332 -206 250 -206Q167 -206 107 -175Q29 -140 29 -75Q29 -39 50 -15T92 18L103 24Q67 55 67 108Q67 155 96 193Q52 237 52 292Q52 355 102 398T223 442Q274 442 318 416L329 409ZM299 343Q294 371 273 387T221 404Q192 404 171 388T145 343Q142 326 142 292Q142 248 149 227T179 192Q196 182 222 182Q244 182 260 189T283 207T294 227T299 242Q302 258 302 292T299 343ZM403 -75Q403 -50 389 -34T348 -11T299 -2T245 0H218Q151 0 138 -6Q118 -15 107 -34T95 -74Q95 -84 101 -97T122 -127T170 -155T250 -167Q319 -167 361 -139T403 -75Z" transform="translate(778,0)"></path></g><g data-mml-node="mo" transform="translate(3196.7,0)"><path data-c="2061" d=""></path></g><g data-mml-node="mi" transform="translate(3363.3,0)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(3963.3,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container></p>
+</li>
+<li><p>may happen oscillation:<br>support link cost equals amount of carried traffic</p>
+<p>如何解决震动？P29</p>
+</li>
+</ul>
+<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/04/10/7Y35WHAZKpJq2CP.png" width="800">
+再细看
+
+<p>count to infinity problem</p>
+<h5 id="Bellman-Ford"><a href="#Bellman-Ford" class="headerlink" title="Bellman-Ford"></a>Bellman-Ford</h5><ul>
+<li>Distributed<ul>
+<li>flooding, random, <strong>adaptive</strong></li>
+</ul>
+</li>
+</ul>
+<p>两种都是静态动态杰克</p>
 
             </div>
 
@@ -1190,7 +1378,7 @@ A &amp; C can not hear each other with inference of B</li>
     <div class="post-toc">
         <div class="toc-title">On this page</div>
         <div class="page-title">Notes for Computer Network</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Chapter1-Overview"><span class="nav-text">Chapter1 Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Network-Composition"><span class="nav-text">Network Composition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#From-ISO-OSI-to-modern-Internet-Architecture"><span class="nav-text">From ISO-OSI to modern Internet Architecture</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Network-Performance"><span class="nav-text">Network Performance</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Link-Layer"><span class="nav-text">Link Layer</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Service"><span class="nav-text">Service</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LAN"><span class="nav-text">LAN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Link-Access-MAC"><span class="nav-text">Link Access: MAC</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Channel-Partitioning"><span class="nav-text">Channel Partitioning</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Taking-Turns"><span class="nav-text">Taking Turns</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Random-Access"><span class="nav-text">Random Access</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-persistent-in-IEEE-802-3-Wired-Ethernet"><span class="nav-text">1-persistent in IEEE 802.3 (Wired Ethernet)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Performance"><span class="nav-text">Performance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Link-layer-discovery"><span class="nav-text">Link layer discovery</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Protocols"><span class="nav-text">Protocols</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#DHCP-Dynamic-Host-Configuration-Protocol-RFC-2131"><span class="nav-text">DHCP (Dynamic Host Configuration Protocol) (RFC 2131)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ARP-Address-Resolution-Protocol-RFC-826"><span class="nav-text">ARP (Address Resolution Protocol) (RFC 826)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#A-remote-communication-case"><span class="nav-text">A remote communication case</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Philosophy-of-ARP-amp-DHCP"><span class="nav-text">Philosophy of ARP &amp; DHCP</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Interconnection-of-LANs-still-local"><span class="nav-text">Interconnection of LANs (still local)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Bridge-IEEE-802-1D"><span class="nav-text">Bridge:(IEEE 802.1D)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Philosophy"><span class="nav-text">Philosophy</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Mechanisms"><span class="nav-text">Mechanisms</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Frame-broadcasting"><span class="nav-text">Frame broadcasting</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Loop-resolution"><span class="nav-text">Loop resolution</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Address-Learning"><span class="nav-text">Address Learning</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#More-than-Bridges"><span class="nav-text">More than Bridges</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#After-switched"><span class="nav-text">After switched</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Wireless"><span class="nav-text">Wireless</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Philosophy-1"><span class="nav-text">Philosophy</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Components"><span class="nav-text">Components</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Model"><span class="nav-text">Model</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Characteristics"><span class="nav-text">Characteristics</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Attenuation"><span class="nav-text">Attenuation:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Multipath-propagation"><span class="nav-text">Multipath propagation</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Interference-from-other-sources"><span class="nav-text">Interference from other sources</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Mechanism-WiFi-IEEE-802-11-Wireless-LANs"><span class="nav-text">Mechanism WiFi - IEEE 802.11 Wireless LANs</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Architecture"><span class="nav-text">Architecture</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Association"><span class="nav-text">Association</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#MAC"><span class="nav-text">MAC</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PCF-Point-Coordination-Function"><span class="nav-text">PCF(Point Coordination Function)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Network-Layer"><span class="nav-text">Network Layer</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Function"><span class="nav-text">Function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Service-Model"><span class="nav-text">Service Model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IP"><span class="nav-text">IP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Input"><span class="nav-text">Input</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Output"><span class="nav-text">Output</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Packet-Classification"><span class="nav-text">Packet Classification</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Scheduler"><span class="nav-text">Scheduler</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Switching-fabric"><span class="nav-text">Switching fabric</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#VC"><span class="nav-text">VC</span></a></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Chapter1-Overview"><span class="nav-text">Chapter1 Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Network-Composition"><span class="nav-text">Network Composition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#From-ISO-OSI-to-modern-Internet-Architecture"><span class="nav-text">From ISO-OSI to modern Internet Architecture</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Network-Performance"><span class="nav-text">Network Performance</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Link-Layer"><span class="nav-text">Link Layer</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Service"><span class="nav-text">Service</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LAN"><span class="nav-text">LAN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Link-Access-MAC"><span class="nav-text">Link Access: MAC</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Channel-Partitioning"><span class="nav-text">Channel Partitioning</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Taking-Turns"><span class="nav-text">Taking Turns</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Random-Access"><span class="nav-text">Random Access</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-persistent-in-IEEE-802-3-Wired-Ethernet"><span class="nav-text">1-persistent in IEEE 802.3 (Wired Ethernet)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Performance"><span class="nav-text">Performance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Link-layer-discovery"><span class="nav-text">Link layer discovery</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Protocols"><span class="nav-text">Protocols</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#DHCP-Dynamic-Host-Configuration-Protocol-RFC-2131"><span class="nav-text">DHCP (Dynamic Host Configuration Protocol) (RFC 2131)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ARP-Address-Resolution-Protocol-RFC-826"><span class="nav-text">ARP (Address Resolution Protocol) (RFC 826)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#A-remote-communication-case"><span class="nav-text">A remote communication case</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Philosophy-of-ARP-amp-DHCP"><span class="nav-text">Philosophy of ARP &amp; DHCP</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Interconnection-of-LANs-still-local"><span class="nav-text">Interconnection of LANs (still local)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Bridge-IEEE-802-1D"><span class="nav-text">Bridge:(IEEE 802.1D)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Philosophy"><span class="nav-text">Philosophy</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Mechanisms"><span class="nav-text">Mechanisms</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Frame-broadcasting"><span class="nav-text">Frame broadcasting</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Loop-resolution"><span class="nav-text">Loop resolution</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Address-Learning"><span class="nav-text">Address Learning</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#More-than-Bridges"><span class="nav-text">More than Bridges</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#After-switched"><span class="nav-text">After switched</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Wireless"><span class="nav-text">Wireless</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Philosophy-1"><span class="nav-text">Philosophy</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Components"><span class="nav-text">Components</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Model"><span class="nav-text">Model</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Characteristics"><span class="nav-text">Characteristics</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Attenuation"><span class="nav-text">Attenuation:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Multipath-propagation"><span class="nav-text">Multipath propagation</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Interference-from-other-sources"><span class="nav-text">Interference from other sources</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Mechanism-WiFi-IEEE-802-11-Wireless-LANs"><span class="nav-text">Mechanism WiFi - IEEE 802.11 Wireless LANs</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Architecture"><span class="nav-text">Architecture</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Association"><span class="nav-text">Association</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#MAC"><span class="nav-text">MAC</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DCF-Distributed-Coordination-Function"><span class="nav-text">DCF(Distributed Coordination Function)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PCF-Point-Coordination-Function"><span class="nav-text">PCF(Point Coordination Function)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Network-Layer"><span class="nav-text">Network Layer</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Function"><span class="nav-text">Function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Service-Model"><span class="nav-text">Service Model</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IP"><span class="nav-text">IP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Input"><span class="nav-text">Input</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Output"><span class="nav-text">Output</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Packet-Classification"><span class="nav-text">Packet Classification</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Scheduler"><span class="nav-text">Scheduler</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Switching-fabric"><span class="nav-text">Switching fabric</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#VC"><span class="nav-text">VC</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IP-Protocol"><span class="nav-text">IP Protocol</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IP-Suit"><span class="nav-text">IP Suit</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#NAT-Network-Address-Translation"><span class="nav-text">NAT(Network Address Translation)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Purpose"><span class="nav-text">Purpose</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Types"><span class="nav-text">Types</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#NAT-hinders-P2P"><span class="nav-text">NAT hinders P2P</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ICMP-Internet-Control-Message-Protocol-RFC792-4-layer"><span class="nav-text">ICMP(Internet Control Message Protocol, RFC792) (4 layer)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Format"><span class="nav-text">Format</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Use"><span class="nav-text">Use</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Mobile-IP"><span class="nav-text">Mobile IP</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#function"><span class="nav-text">function</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IPv6"><span class="nav-text">IPv6</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Motivation"><span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#RFCs"><span class="nav-text">RFCs</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-to-6-Evolution"><span class="nav-text">4 to 6 Evolution</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Routing"><span class="nav-text">Routing</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Characteristics-1"><span class="nav-text">Characteristics</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ELements"><span class="nav-text">ELements</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Performance-criteria"><span class="nav-text">Performance criteria</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Decision-time-amp-place"><span class="nav-text">Decision time &amp; place</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Network-info-source-amp-info-update-timing"><span class="nav-text">Network info source &amp; info update timing</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Strategy"><span class="nav-text">Strategy</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Central-static"><span class="nav-text">Central(static)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Distributed-flooding"><span class="nav-text">Distributed: flooding</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Distributed-random"><span class="nav-text">Distributed: random</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Distributed-Adaptive"><span class="nav-text">Distributed: Adaptive</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Classic-Algo"><span class="nav-text">Classic Algo</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Dijkstra"><span class="nav-text">Dijkstra</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Bellman-Ford"><span class="nav-text">Bellman-Ford</span></a></li></ol></li></ol></li></ol></li></ol>
 
     </div>
 </div>
