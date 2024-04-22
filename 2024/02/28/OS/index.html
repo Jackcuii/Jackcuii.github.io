@@ -447,8 +447,8 @@ mjx-container[display="true"] + br {
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="pc">2024-04-09 11:57:36</span>
-            <span class="mobile">2024-04-09 11:57</span>
+            <span class="pc">2024-04-22 09:49:25</span>
+            <span class="mobile">2024-04-22 09:49</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -474,12 +474,12 @@ mjx-container[display="true"] + br {
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-file-word"></i>&nbsp;<span>7.4k Words</span>
+            <i class="fa-regular fa-file-word"></i>&nbsp;<span>7.8k Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>26 Mins</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>28 Mins</span>
         </span>
     
     
@@ -521,6 +521,8 @@ mjx-container[display="true"] + br {
 <li>第十节 ⛔</li>
 <li>第十一节 ✅</li>
 <li>第十二节 ✅</li>
+<li>第十三节 ⛔</li>
+<li>第十四节 ✅ 🛐</li>
 </ul>
 <h2 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h2><p>在做了充足的心理准备之后，终于决定报了jyy老师的OS。</p>
 <blockquote>
@@ -910,6 +912,50 @@ mjx-container[display="true"] + br {
 <p>无非就是<strong>上错了🔒</strong>和<strong>忘了上🔒</strong><br><strong>两条原则</strong>：用🔒保护数据，严格避免数据竞争</p>
 <p><strong>本质困难</strong>：“反人性(sequential)” 和 “后果自负(No compile error!)”</p>
 <p>Atomicity Violation（ABA）<br>Order Violation（BA）：use-after-free… 最后那里？</p>
+<h2 id="Lecture-13-C"><a href="#Lecture-13-C" class="headerlink" title="Lecture 13 (C)"></a>Lecture 13 (C)</h2><h2 id="Lecture-14-V"><a href="#Lecture-14-V" class="headerlink" title="Lecture 14 (V)"></a>Lecture 14 (V)</h2><div class="note note-primary icon-padding"><i class="note-icon fa-solid fa-circle-arrow-right"></i><p><a class="link" target="_blank" rel="noopener" href="https://jyywiki.cn/OS/2024/lect14.md">务必搭配jyywiki食用 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+</div>
+<p>控制系统的加载</p>
+<div class="note note-cyan icon-padding"><i class="note-icon fa-solid fa-user-secret"></i><p>阅读minimal加载的makefile🛐</p>
+</div>
+<ul>
+<li><p>fork 复制一份状态机（为什么只能复制？<br>区分：返回值不同<br>fork bomb！<br>USE mosaic<br>fork_demo为什么是48种？？？</p>
+<ul>
+<li>诡异的“8个hello”<br>你没有正确理解printf!<br>buf也被复制了！<br>unbuffer, line buffer, fully buffer…<br>（谨慎的使用任何隐含假设！）</li>
+<li>fork 时候默认继承了环境变量</li>
+</ul>
+</li>
+<li><p>execve<br>抛弃现有的所有状态，准备好参数，设置为另一个状态机的初始状态<br>进程总是从这个开始</p>
+<ul>
+<li>PATH 环境变量：execve的查找顺序</li>
+</ul>
+</li>
+<li><p>_exit<br>atexit (normal process exit 时调用回调函数, 注意，这是<strong>C的机制</strong>)</p>
+<ul>
+<li>return 非0</li>
+<li>exit(x) 都是Normal exit</li>
+</ul>
+<p>上面都是调用libc–C语言库的退出，都是对C可见的，所以都是Normal exit</p>
+<ul>
+<li>_exit(0) 利用系统调用直接退出执行的是exit_group</li>
+<li>__exit(0) 是执行exit</li>
+</ul>
+<p>上面都是非正常退出<br>调查这些问题，别忘了Strace…</p>
+</li>
+</ul>
+<p>“操作系统是状态机的管理者，它把所有状态机都剪碎存在数据结构里，当想要执行的时候再拼接起来，加载到CPU上。”</p>
+<h2 id="Lecture-15-V"><a href="#Lecture-15-V" class="headerlink" title="Lecture 15 (V)"></a>Lecture 15 (V)</h2><p>28min左右<br>/proc/maps<br>pmap<br>gdb<br>地址空间是有读写权限的内存段</p>
+<p>入侵进程的地址空间！：gdb<br>外挂！</p>
+<ul>
+<li>最早期的游戏外挂，一个物理的查找表！Game Genie</li>
+<li>劫持红警的地址空间：Filter</li>
+<li>gdb就是一个巨大的外挂！<ul>
+<li>访问proc/mem procfs提供给我们的一个文件，直接指向整个地址空间，可以用文件操作来修改地址空间</li>
+<li>或者说外挂是一种游戏的调试器！</li>
+</ul>
+</li>
+</ul>
+<p>ydotool</p>
+<p>按键精灵</p>
 <h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>《 Email to Green Advisor 》<br>这篇其实从学期一初就开始写了，希望的是等到OS这门课出分之后发给绿导师，希望当时我是以一个幸存者的心态，完成了这门课全部的任务，取得了一个不错的分数（不得不这样）比较轻松的发送这篇邮件。</p>
 <p>这门课给我的体验的是很好的，我想对比的是同是这学期的算法设计与分析课。黄宇老师的算法课有着非常的清晰的讲解，我也不得不承认确实是一门好课，我用了一个月左右才想清楚了为什么这门课会让我感到痛苦。就是：对于对OI有一定接触的我来说，这些经典“算法”早已没有了初见的新鲜感，更重要的是每节课都在向我传达一个概念“你又不能做什么，你又没法会什么”，因为这些都需要“灵感”，（课上的方法论甚至都不足以解决那占比80%的考试题😭（当然任何形式的考试都承担着检验以外的筛选作用））。相比之下我觉得OS给我的感觉是每一节课后，“我又能做成什么，我又能解决更多问题（乃至所有问题）”。不同于上算法课之前上刑场一般的心理负担，每节操作系统课虽然带着成吨的没读完的OSTEP，没理解完的讲义，没整理完的笔记，没学完的工具，没写完的实验，但都是无比期待的。我觉得这可能是一种“极客主义”。</p>
 <p>我想提出一点异见的就是您说只发表“not trivial”的工作。我接触到了一个概念就是do not judge novelty，我觉得，对于一般的研究者而言，他们可能终其一生都无法做出creative的工作，但他们的工作也是有价值的，也需要一个获得认同的平台。（在知乎看到过一个人说一个化学教授说，我们做实验，失败了，也是有价值的，至少别人看到了，知道这样做不行，不用再好费时间了。类似地，CS里面有一些仅仅是方法的融合怪，至少也可以证明这些方法的交叉不会产生奇妙的“化学反应”。）可能只有聪明人做科研才是有价值的，但是在大量聪明人去经商/捞钱的今天，让一些不聪明的人去回收一些low fruit也是应该的。（虽然说 do not judge novelty今天已经变味，更多成为了一种灌水的辩护，这个界限也很难分辨…）</p>
@@ -1043,7 +1089,7 @@ mjx-container[display="true"] + br {
     <div class="post-toc">
         <div class="toc-title">On this page</div>
         <div class="page-title">Talk to the God——Notes for jyy OS</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#References"><span class="nav-text">References</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Waiting-List"><span class="nav-text">Waiting List</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%AA%E8%AE%BA"><span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E5%88%AB%E8%AF%B4%E6%98%8E"><span class="nav-text">特别说明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-1"><span class="nav-text">Lecture 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-2"><span class="nav-text">Lecture 2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#M1-pstree"><span class="nav-text">M1:pstree</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-3"><span class="nav-text">Lecture 3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-4"><span class="nav-text">Lecture 4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-5-C"><span class="nav-text">Lecture 5 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-6-C"><span class="nav-text">Lecture 6 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-7-C"><span class="nav-text">Lecture 7 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-8-Snack"><span class="nav-text">Lecture 8 (Snack)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-9-C"><span class="nav-text">Lecture 9 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-10-C"><span class="nav-text">Lecture 10 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-11-Snack"><span class="nav-text">Lecture 11 (Snack)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-12-C"><span class="nav-text">Lecture 12 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="nav-text">后记</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#References"><span class="nav-text">References</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Waiting-List"><span class="nav-text">Waiting List</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%AA%E8%AE%BA"><span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E5%88%AB%E8%AF%B4%E6%98%8E"><span class="nav-text">特别说明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-1"><span class="nav-text">Lecture 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-2"><span class="nav-text">Lecture 2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#M1-pstree"><span class="nav-text">M1:pstree</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-3"><span class="nav-text">Lecture 3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-4"><span class="nav-text">Lecture 4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-5-C"><span class="nav-text">Lecture 5 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-6-C"><span class="nav-text">Lecture 6 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-7-C"><span class="nav-text">Lecture 7 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-8-Snack"><span class="nav-text">Lecture 8 (Snack)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-9-C"><span class="nav-text">Lecture 9 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-10-C"><span class="nav-text">Lecture 10 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-11-Snack"><span class="nav-text">Lecture 11 (Snack)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-12-C"><span class="nav-text">Lecture 12 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-13-C"><span class="nav-text">Lecture 13 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-14-V"><span class="nav-text">Lecture 14 (V)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-15-V"><span class="nav-text">Lecture 15 (V)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="nav-text">后记</span></a></li></ol>
 
     </div>
 </div>
