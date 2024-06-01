@@ -447,8 +447,8 @@ mjx-container[display="true"] + br {
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="pc">2024-05-23 16:33:19</span>
-            <span class="mobile">2024-05-23 16:33</span>
+            <span class="pc">2024-05-30 12:01:34</span>
+            <span class="mobile">2024-05-30 12:01</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -474,12 +474,12 @@ mjx-container[display="true"] + br {
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-file-word"></i>&nbsp;<span>8.9k Words</span>
+            <i class="fa-regular fa-file-word"></i>&nbsp;<span>9.4k Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>32 Mins</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>34 Mins</span>
         </span>
     
     
@@ -531,6 +531,9 @@ mjx-container[display="true"] + br {
 <li>第二十节 ⛔</li>
 <li>第二十一节 ⛔</li>
 <li>第二十二节 ✅ 🛐XV6重要！</li>
+<li>第二十三节 ⛔</li>
+<li>第二十四节 ⛔</li>
+<li>第二十五节 ⛔</li>
 </ul>
 <h2 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h2><p>在做了充足的心理准备之后，终于决定报了jyy老师的OS。</p>
 <blockquote>
@@ -985,6 +988,28 @@ mjx-container[display="true"] + br {
 </ul>
 <p>ydotool</p>
 <p>按键精灵</p>
+<h2 id="Lecture-16-V"><a href="#Lecture-16-V" class="headerlink" title="Lecture 16 (V)"></a>Lecture 16 (V)</h2><p>操作系统对象：<br>第一种理解：文件（有名字的对象）  Everything(what thing? 操作系统对象) is a file.<br>第二种理解：字节流（终端，外设）和字节序列（普通文件）<br>访问对象需要<del>找对象</del>指针：程序中的指针指向对象，但永远不可能指向“操作系统对象”。<br>如何指向“操作系统对象”，系统调用！（Matrix中的人不会看到外面的罐子！系统调用就是蓝药丸！）<br>文件描述符（会考）：指向操作系统对象的指针</p>
+<p>Win’s File Descriptor：handle 句柄（历史问题）</p>
+<hr>
+<p>另一种对象 IPC Endpoints<br>管道（一种特殊的流）：pipe就是buffer 读口和写口共享<br>两端一般是用两个文件描述符指向（但文件只有一个！）<br>并不是严格的buffer，<br>如果没数据，读不会返回<br>如果没人拿，写不会返回</p>
+<p>实现了<strong>I</strong>nter<strong>P</strong>roc<strong>C</strong>ommunication<br>是一种进程间同步机制，可以实现成异步的<br>命名管道：<br>用mkfifo()创建，有对应的文件名</p>
+<blockquote>
+<p>We also have UNIX domain sockets for local inter-process communication–they also have a name in the file system like “/var/run/docker.sock”. This is similar to a named pipe.</p>
+</blockquote>
+<p>匿名管道：<br>用pipe()创建<br>自己同时持有两个口，有用吗<br>在fork时，duplicate一份管道不会被复制，因为管道不在地址空间里，只是一个指针，所以是浅拷贝。<br>之后，关掉一个口，就建立了一个父子进程之间的管道</p>
+<p>操作系统：对象+API</p>
+<p>Shell “Kernel的壳”</p>
+<p>Kernel-Shell-I/O-Human</p>
+<p>Shell是把用户指令翻译成系统调用的语言</p>
+<p>man sh</p>
+<p>为什么人工智能我们还要读手册</p>
+<p>因为人工智能只会告诉你最常用的解法</p>
+<p>GPT Archive 也引入这种补充功能</p>
+<p>make 展开</p>
+<p>实现一个shell</p>
+<p>runcmd那块</p>
+<p>技巧gdb skip function</p>
+<p>看一下调试部分，以及最后的解释？</p>
 <h2 id="Lecture-17-V"><a href="#Lecture-17-V" class="headerlink" title="Lecture 17 (V)"></a>Lecture 17 (V)</h2><div class="note note-primary icon-padding"><i class="note-icon fa-solid fa-circle-arrow-right"></i><p><a class="link" target="_blank" rel="noopener" href="https://jyywiki.cn/OS/2024/lect17.md">务必搭配jyywiki食用 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 </div>
 
@@ -1243,7 +1268,7 @@ mjx-container[display="true"] + br {
     <div class="post-toc">
         <div class="toc-title">On this page</div>
         <div class="page-title">Talk to the God——Notes for jyy OS</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#References"><span class="nav-text">References</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Waiting-List"><span class="nav-text">Waiting List</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%AA%E8%AE%BA"><span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E5%88%AB%E8%AF%B4%E6%98%8E"><span class="nav-text">特别说明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-1"><span class="nav-text">Lecture 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-2"><span class="nav-text">Lecture 2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#M1-pstree"><span class="nav-text">M1:pstree</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-3"><span class="nav-text">Lecture 3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-4"><span class="nav-text">Lecture 4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-5-C"><span class="nav-text">Lecture 5 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-6-C"><span class="nav-text">Lecture 6 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-7-C"><span class="nav-text">Lecture 7 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-8-Snack"><span class="nav-text">Lecture 8 (Snack)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-9-C"><span class="nav-text">Lecture 9 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-10-C"><span class="nav-text">Lecture 10 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-11-Snack"><span class="nav-text">Lecture 11 (Snack)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-12-C"><span class="nav-text">Lecture 12 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-13-C"><span class="nav-text">Lecture 13 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-14-V"><span class="nav-text">Lecture 14 (V)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-15-V"><span class="nav-text">Lecture 15 (V)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-17-V"><span class="nav-text">Lecture 17 (V)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#L1"><span class="nav-text">L1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-18-V"><span class="nav-text">Lecture 18 (V)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-19-V-%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6%EF%BC%8C%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5"><span class="nav-text">Lecture 19 (V) 可执行文件，静态链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-20-V"><span class="nav-text">Lecture 20 (V)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-21-K-Syscall-intr"><span class="nav-text">Lecture 21 (K) Syscall, intr</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-22-K-from-Thread-to-Process"><span class="nav-text">Lecture 22 (K) from Thread to Process</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-23-K-Schedule"><span class="nav-text">Lecture 23 (K) Schedule</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#References"><span class="nav-text">References</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Waiting-List"><span class="nav-text">Waiting List</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%AA%E8%AE%BA"><span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E5%88%AB%E8%AF%B4%E6%98%8E"><span class="nav-text">特别说明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-1"><span class="nav-text">Lecture 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-2"><span class="nav-text">Lecture 2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#M1-pstree"><span class="nav-text">M1:pstree</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-3"><span class="nav-text">Lecture 3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-4"><span class="nav-text">Lecture 4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-5-C"><span class="nav-text">Lecture 5 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-6-C"><span class="nav-text">Lecture 6 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-7-C"><span class="nav-text">Lecture 7 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-8-Snack"><span class="nav-text">Lecture 8 (Snack)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-9-C"><span class="nav-text">Lecture 9 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-10-C"><span class="nav-text">Lecture 10 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-11-Snack"><span class="nav-text">Lecture 11 (Snack)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-12-C"><span class="nav-text">Lecture 12 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-13-C"><span class="nav-text">Lecture 13 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-14-V"><span class="nav-text">Lecture 14 (V)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-15-V"><span class="nav-text">Lecture 15 (V)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-16-V"><span class="nav-text">Lecture 16 (V)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-17-V"><span class="nav-text">Lecture 17 (V)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#L1"><span class="nav-text">L1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-18-V"><span class="nav-text">Lecture 18 (V)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-19-V-%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6%EF%BC%8C%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5"><span class="nav-text">Lecture 19 (V) 可执行文件，静态链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-20-V"><span class="nav-text">Lecture 20 (V)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-21-K-Syscall-intr"><span class="nav-text">Lecture 21 (K) Syscall, intr</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-22-K-from-Thread-to-Process"><span class="nav-text">Lecture 22 (K) from Thread to Process</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-23-K-Schedule"><span class="nav-text">Lecture 23 (K) Schedule</span></a></li></ol>
 
     </div>
 </div>
