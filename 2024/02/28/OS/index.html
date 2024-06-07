@@ -447,8 +447,8 @@ mjx-container[display="true"] + br {
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="pc">2024-06-07 17:26:33</span>
-            <span class="mobile">2024-06-07 17:26</span>
+            <span class="pc">2024-06-07 17:29:32</span>
+            <span class="mobile">2024-06-07 17:29</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -999,12 +999,13 @@ mjx-container[display="true"] + br {
 <p>匿名管道：<br>用pipe()创建<br>自己同时持有两个口，有用吗<br>在fork时，duplicate一份管道不会被复制，因为管道不在地址空间里，只是一个指针，所以是浅拷贝。<br>之后，关掉一个口，就建立了一个父子进程之间的管道</p>
 <p>操作系统：对象+API<br>Shell “Kernel的壳”：Kernel-Shell-I/O-Human<br>Shell是把用户指令翻译成系统调用的语言<br>易用性是核心特征，高效，简洁，目标是工作流搭建<br><code>&gt;</code>,<code>&lt;</code>,<code>2&gt;</code>,<code>|</code>,<code>&amp;</code>,<code>&amp;&amp;</code>,<code>||</code>,<code>$()</code>,<code>;</code>,<code>&lt;()</code>…<br>和GUI做到的一样（其实是GUI和CLI一样）：<code>^Z</code>,<code>jobs</code>,<code>fg</code>,<code>&amp;</code>,<code>bg</code>,<code>wait</code></p>
 <p>🛐man sh</p>
-<div class="note note-green icon-padding"><i class="note-icon fa-solid fa-bolt"></i><p>为什么人工智能我们还要读手册（可惜学期中真没时间读（太摆了））<br>因为人工智能只会告诉你最常用的解法</p>
+<div class="note note-green icon-padding"><i class="note-icon fa-solid fa-bolt"></i><p><strong>为什么人工智能时代我们还要读手册</strong>（可惜学期中真没时间读（太摆了））<br>因为人工智能只会告诉你最常用的解法<br>Extend: GPT Archive 也引入这种补充功能</p>
 </div>
-<p>GPT Archive 也引入这种补充功能<br>_start 定义程序入口，链接器会把程序入口指向这里。</p>
-<div class="note note-green icon-padding"><i class="note-icon fa-solid fa-bolt"></i><p>必先利其器：init.gdb gdb的预运行脚本，可以实现比方说跳过一些函数等等。🛐<br>还可以利用Python编写脚本作为hook等等。</p>
+
+
+<div class="note note-green icon-padding"><i class="note-icon fa-solid fa-bolt"></i><p><strong>必先利其器</strong>：init.gdb gdb的预运行脚本，可以实现比方说跳过一些函数等等。🛐<br>还可以利用Python编写脚本作为hook等等。</p>
 </div>
-<p>两个编译选项 -ffreestanding -nostdlib</p>
+<p>_start 定义程序入口，链接器会把程序入口指向这里。<br>两个编译选项 -ffreestanding -nostdlib</p>
 <blockquote>
 <p>💲不要假设任何特定的库函数，例如main函数，会存在。这对于编写操作系统内核或嵌入式系统的代码非常有用，因为这些代码通常不会链接到标准库。<br>  💲不要假设任何特定的硬件地址布局。这意味着编译器不会假设任何特定的内存布局或寄存器布局。<br>  💲这个选项通常用于编写操作系统内核、引导加载器、嵌入式系统代码或其他不依赖于标准库的代码。<br>  ——GPT</p>
 </blockquote>
