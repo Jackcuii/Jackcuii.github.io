@@ -447,8 +447,8 @@ mjx-container[display="true"] + br {
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="pc">2024-06-04 17:14:27</span>
-            <span class="mobile">2024-06-04 17:14</span>
+            <span class="pc">2024-06-07 09:08:35</span>
+            <span class="mobile">2024-06-07 09:08</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -1943,7 +1943,10 @@ Additional window from <mjx-container class="MathJax" jax="SVG"><svg style="vert
 <p>Shen me ta ma de jiao zuo fairness!<br>🔱<strong>If you don’t get full demand, no one gets more than you</strong></p>
 <p>What if router has different size?<br>Ideal: bitwise fairness (but no practical)<br>Handle: Fair Queuing</p>
 <p><a href="https://smms.app/image/gdVvtq23pnjZwcy" target="_blank"><img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/05/13/gdVvtq23pnjZwcy.png"></a></p>
-<h2 id="Multimedia"><a href="#Multimedia" class="headerlink" title="Multimedia"></a>Multimedia</h2><img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/05/20/glXyNHBuFsGMdjZ.png" width="300">
+<h2 id="Multimedia"><a href="#Multimedia" class="headerlink" title="Multimedia"></a>Multimedia</h2><blockquote>
+<p>This part of content seem to be deleted in the <strong>Eighth Version</strong></p>
+</blockquote>
+<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/05/20/glXyNHBuFsGMdjZ.png" width="300">
 
 <p>Analog → Digital Signal</p>
 <ul>
@@ -2128,11 +2131,24 @@ Additional window from <mjx-container class="MathJax" jax="SVG"><svg style="vert
 </ul>
 <h5 id="DS-Architecture"><a href="#DS-Architecture" class="headerlink" title="DS Architecture"></a>DS Architecture</h5><p>for Edge router</p>
 <ul>
-<li>Per-flow (each traffic flow will be check individually) traffic management</li>
-<li><strong>Marking</strong>: classify the flows into different QoSs (set the header <code>TOS</code>/<code>TC</code> field)</li>
-<li><strong>Policing</strong> packets as in-profile and out-profile: monitor if the flow obeys the SLA, if true then in-profile otherwise then out-profile</li>
+<li><p>Per-flow (each traffic flow will be check individually) traffic management</p>
+</li>
+<li><p><strong>Marking</strong>: classify the flows into different QoSs (set the header <code>TOS</code>/<code>TC</code> field)</p>
+</li>
+<li><p><strong>Policing</strong>:<br>distinguish packets with in-profile and out-profile: monitor if the flow obeys the SLA, if true then in-profile otherwise then out-profile</p>
+<ul>
+<li>monitor average rate, peak rate and burst size</li>
+<li><strong>Shaping</strong>: shape the traffic to in-profile<ul>
+<li>Leaky Bucket<br>departure: <strong>fixed</strong>-rated traffic<br>may drop pkts when bucket is full<img lazyload="" src="/images/loading.svg" data-src="https://s2.loli.net/2024/06/06/gehqkSwx79oH5r3.png" width="400"></li>
 </ul>
-<p>for Internal router</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>🤬都整形了，还要标记干什么？</p>
+<blockquote>
+<p>Marking and policing are not seperate process, when you police the flow (in/out profile) you <strong>may</strong> mark them to tell other routers.(so-called intra-class marking)<br>for Internal router</p>
+</blockquote>
 <ul>
 <li>Per-class traffic management (do not distinguish the pkts from different flows in the same class)</li>
 <li><strong>Buffering and scheduling</strong> based on marks(header)</li>

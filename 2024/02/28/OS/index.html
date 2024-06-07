@@ -447,8 +447,8 @@ mjx-container[display="true"] + br {
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="pc">2024-06-06 11:01:15</span>
-            <span class="mobile">2024-06-06 11:01</span>
+            <span class="pc">2024-06-07 17:26:33</span>
+            <span class="mobile">2024-06-07 17:26</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -474,12 +474,12 @@ mjx-container[display="true"] + br {
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-file-word"></i>&nbsp;<span>9.4k Words</span>
+            <i class="fa-regular fa-file-word"></i>&nbsp;<span>13.5k Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>34 Mins</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>49 Mins</span>
         </span>
     
     
@@ -524,13 +524,13 @@ mjx-container[display="true"] + br {
 <li>第十三节 ⛔</li>
 <li>第十四节 ✅ 🛐</li>
 <li>第十五节 ⛔</li>
-<li>第十六节 ⛔</li>
+<li>第十六节 ✅ 🛐 *🛐init.gdb</li>
 <li>第十七节 ✅ 🛐🛐🛐🛐🛐🛐🛐</li>
 <li>第十八节 ⛔</li>
 <li>第十九节 ⛔</li>
 <li>第二十节 ⛔</li>
 <li>第二十一节 ⛔</li>
-<li>第二十二节 ✅ 🛐XV6重要！</li>
+<li>第二十二节 ✅ *🛐XV6重要！</li>
 <li>第二十三节 ⛔</li>
 <li>第二十四节 ⛔</li>
 <li>第二十五节 ⛔</li>
@@ -997,19 +997,20 @@ mjx-container[display="true"] + br {
 <p>We also have UNIX domain sockets for local inter-process communication–they also have a name in the file system like “/var/run/docker.sock”. This is similar to a named pipe.</p>
 </blockquote>
 <p>匿名管道：<br>用pipe()创建<br>自己同时持有两个口，有用吗<br>在fork时，duplicate一份管道不会被复制，因为管道不在地址空间里，只是一个指针，所以是浅拷贝。<br>之后，关掉一个口，就建立了一个父子进程之间的管道</p>
-<p>操作系统：对象+API</p>
-<p>Shell “Kernel的壳”</p>
-<p>Kernel-Shell-I/O-Human</p>
-<p>Shell是把用户指令翻译成系统调用的语言</p>
-<p>man sh</p>
-<p>为什么人工智能我们还要读手册</p>
-<p>因为人工智能只会告诉你最常用的解法</p>
-<p>GPT Archive 也引入这种补充功能</p>
-<p>make 展开</p>
-<p>实现一个shell</p>
-<p>runcmd那块</p>
-<p>技巧gdb skip function</p>
-<p>看一下调试部分，以及最后的解释？</p>
+<p>操作系统：对象+API<br>Shell “Kernel的壳”：Kernel-Shell-I/O-Human<br>Shell是把用户指令翻译成系统调用的语言<br>易用性是核心特征，高效，简洁，目标是工作流搭建<br><code>&gt;</code>,<code>&lt;</code>,<code>2&gt;</code>,<code>|</code>,<code>&amp;</code>,<code>&amp;&amp;</code>,<code>||</code>,<code>$()</code>,<code>;</code>,<code>&lt;()</code>…<br>和GUI做到的一样（其实是GUI和CLI一样）：<code>^Z</code>,<code>jobs</code>,<code>fg</code>,<code>&amp;</code>,<code>bg</code>,<code>wait</code></p>
+<p>🛐man sh</p>
+<div class="note note-green icon-padding"><i class="note-icon fa-solid fa-bolt"></i><p>为什么人工智能我们还要读手册（可惜学期中真没时间读（太摆了））<br>因为人工智能只会告诉你最常用的解法</p>
+</div>
+<p>GPT Archive 也引入这种补充功能<br>_start 定义程序入口，链接器会把程序入口指向这里。</p>
+<div class="note note-green icon-padding"><i class="note-icon fa-solid fa-bolt"></i><p>必先利其器：init.gdb gdb的预运行脚本，可以实现比方说跳过一些函数等等。🛐<br>还可以利用Python编写脚本作为hook等等。</p>
+</div>
+<p>两个编译选项 -ffreestanding -nostdlib</p>
+<blockquote>
+<p>💲不要假设任何特定的库函数，例如main函数，会存在。这对于编写操作系统内核或嵌入式系统的代码非常有用，因为这些代码通常不会链接到标准库。<br>  💲不要假设任何特定的硬件地址布局。这意味着编译器不会假设任何特定的内存布局或寄存器布局。<br>  💲这个选项通常用于编写操作系统内核、引导加载器、嵌入式系统代码或其他不依赖于标准库的代码。<br>  ——GPT</p>
+</blockquote>
+<div class="note note-cyan icon-padding"><i class="note-icon fa-solid fa-user-secret"></i><p><a class="link" target="_blank" rel="noopener" href="https://github.com/Jackcuii/jyy-codes-test-and-read/blob/master/sh/sh.c">Freestanding shell <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link" target="_blank" rel="noopener" href="https://github.com/Jackcuii/jyy-codes-test-and-read/blob/master/sh/visualize.py">Python script <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+</div>
+<p>dup系统调用<br>亿些细节：Shell语句的优先级；空格会导致灾难；bash/zsh（更强的shell）不兼容（Shebang指定bash）…<br>case: 文件描述符的定向设置先进行，然后才是命令的执行，所以<code>sudo echo hello &gt; /etc/a.txt</code>无法正确执行，因为没有权限改描述符！</p>
 <h2 id="Lecture-17-V"><a href="#Lecture-17-V" class="headerlink" title="Lecture 17 (V)"></a>Lecture 17 (V)</h2><div class="note note-primary icon-padding"><i class="note-icon fa-solid fa-circle-arrow-right"></i><p><a class="link" target="_blank" rel="noopener" href="https://jyywiki.cn/OS/2024/lect17.md">务必搭配jyywiki食用 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 </div>
 
@@ -1130,7 +1131,7 @@ mjx-container[display="true"] + br {
 <p>调度：<br>建模→预测→决策</p>
 <p>UNIX Niceness<br>[-20, 20) 越小的越坏，“坏”就是不愿意让给别人<br>Nice相差10大概是资源差十倍<br>When Nices equals<br>不能Round-and-Robin，低占用的即时前台程序不能和高占用的后台R&amp;R。</p>
 <p>再听一下MLFQ🐒<br>CFS<br>红黑树</p>
-<div class="note-large notel-red"><div class="notel-title"><p>🌶️Spicy:</p>
+<div class="note-large notel-red"><div class="notel-title"><p>🌶️Spicy: 实现（bug）</p>
 </div><div class="notel-content"><p>优先级反转🐒<br>Linux：解决不了，拜拜<br>安卓手机越用越卡，一些垃圾应用获得高优先级的🔒，导致了系统的卡顿</p>
 <p>对称多处理器 SMP<br>不能随机分配，线程退出之后处理器会”围观别人干活”<br>也不能谁空分给谁，会损失缓存的信息：同处理器跨核L1就没了，跨处理器L2/L3也没了（具体架构相关）</p>
 <p>事实上SMP还是不理想的建模：现在的处理器不对称了</p>
@@ -1139,6 +1140,140 @@ mjx-container[display="true"] + br {
  </div></div>
 
 
+
+<div class="note-large notel-blue"><div class="notel-title"><p>OSTEP Chapter 13</p>
+</div><div class="notel-content"><p>Some OS isolate its different parts from others to achieve even better reliabilty. <strong>MicroKernel</strong></p>
+ </div></div>
+
+<h2 id="Lecture-24-K-K-of-what…-from-OS-to-MetaPhysics"><a href="#Lecture-24-K-K-of-what…-from-OS-to-MetaPhysics" class="headerlink" title="Lecture 24 (K? K of what…) from OS to MetaPhysics"></a>Lecture 24 (K? K of what…) from OS to MetaPhysics</h2><div class="note note-primary icon-padding"><i class="note-icon fa-solid fa-circle-arrow-right"></i><p><a class="link" target="_blank" rel="noopener" href="https://jyywiki.cn/OS/2024/lect24.md">务必搭配jyywiki食用 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+</div>
+<p>Turing Complete<br>Turing machine 1D<br>life game… 2D<br>We… 3D<br>程序判断自己是否在虚拟机中，正如我们观察自己是否在Matrix里</p>
+<ul>
+<li><p>🔱What if we add Neural Network to the life game?<br>Do we create a new life form?</p>
+</li>
+<li><p>How do we know the future? (seriously)<br>We pray.(we syscall)<br>How do we(proc) know travel in time?<br>We(proc) syscall.</p>
+</li>
+<li><p>🔱Programming is nothing but syscall!</p>
+</li>
+<li><p>We could set some 0-1 array in a special-defined area in the gamelife, and then the area will set the next state of the game.<br>We could set the number and syscall, so our programs interact with the ‘outside world’.<br>We set some bytes to I/O registers with OS, and the screen make people addicted to Genshin Impact life game. Some keys are hit, and OS is killed.<br>🔱We could put some infos into the singlarity, then ….<br>🔱We could put some fish and pigs in the sacrifial ceremony, and the god give us something? (People with poor imagination, we do the same thing up till now with the support of neurons!)</p>
+</li>
+<li><p>🔱Whether causality exists if we can travel in time?<br>Whether the mathematical system is consistent if we can query the oracle in the special area of the life game? (Maybe P=NP?)</p>
+</li>
+<li><p>🔱jyy：人类优越感是用来维持人类生存的机制。我们带着残缺来到这个世界，我们用机器来带来完美的救赎。<br>宣扬机器主宰论会不会被当成邪教被👮‍抓走，所以我刚才都<strong>停留在</strong>数学的讨论上。</p>
+</li>
+<li><p>Debugger：<br>Time travel in state machine. record and replay. (GDB, QEMU)</p>
+</li>
+<li><p>Profiler实现：（<strong>这里重听一下</strong>）<br>最简单的实现，不停的每隔一会终端，看在执行什么，得出统计意义的perf。<br>硬件支持：Performance Monitoring Unit</p>
+</li>
+<li><p>Verifier：<br>如何应付更广阔的取值空间？（state machine 分叉太多？）用更加巧妙地表示，状态不是取值，而是方程组！</p>
+</li>
+</ul>
+<p>很多个终端<br><code>tty</code>,<code>stty</code>这个问题在之前修正Tmux的时候涉及到了<br><code>ttyd</code></p>
+<p>man setpgid/getpgid 🛐</p>
+<p>信号（和中断有什么区别？）<br>操作系统给程序发信号<br>Core Dump什么的也是信号<br>但信号可以被屏蔽，可以自定义handler，SIGKILL不能被屏蔽<br>kill是发送信号，而不是纱！🪐岁月史书</p>
+<p>我们不能掌握复杂系统。我们建造一些简单的系统。我们尝试理解复杂系统的时候，不由自主地去用我们能理解的东西去理解它们。然后想一想现在系统和这个toy有什么区别。</p>
+<p><strong>航空母舰重听</strong></p>
+<p>🔱A Fairy Tale:<br>How to maintain an aircraft carrier, such a complicated system?<br>Genius design it. We just lookup the manual and wrench it, then it works.</p>
+<h2 id="Lecture-25-P-1-Bit-Storage"><a href="#Lecture-25-P-1-Bit-Storage" class="headerlink" title="Lecture 25 (P) 1-Bit Storage"></a>Lecture 25 (P) 1-Bit Storage</h2><div class="note note-primary icon-padding"><i class="note-icon fa-solid fa-circle-arrow-right"></i><p><a class="link" target="_blank" rel="noopener" href="https://jyywiki.cn/OS/2024/lect25.md">务必搭配jyywiki食用 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+</div>
+<p>States in Physical World</p>
+<div class="note note-primary icon-padding"><i class="note-icon fa-solid fa-circle-arrow-right"></i><p><a class="link" target="_blank" rel="noopener" href="https://www.allaboutcircuits.com/technical-articles/introduction-to-dram-dynamic-random-access-memory/">不错的文章，这个网站也很有用 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+</div>
+<p>存储器就是一个bit/byte(或者更大) Array<br>可以按block读写数据<br>稳定、可靠、可辨别地改变物理状态<br>把字刻在石头上！</p>
+<p>磁存储🪐：电磁效应，物理世界和数字世界的Edge</p>
+<ul>
+<li>小朋友的磁写板就是最简单的二位磁存储！</li>
+<li>顺序读写的时代悲歌，旧核时代的机械浪漫：磁带（<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex;" xmlns="http://www.w3.org/2000/svg" width="15.093ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 6671 1000"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g><g data-mml-node="mi" transform="translate(500,0)"><path data-c="1D437" d="M287 628Q287 635 230 637Q207 637 200 638T193 647Q193 655 197 667T204 682Q206 683 403 683Q570 682 590 682T630 676Q702 659 752 597T803 431Q803 275 696 151T444 3L430 1L236 0H125H72Q48 0 41 2T33 11Q33 13 36 25Q40 41 44 43T67 46Q94 46 127 49Q141 52 146 61Q149 65 218 339T287 628ZM703 469Q703 507 692 537T666 584T629 613T590 629T555 636Q553 636 541 636T512 636T479 637H436Q392 637 386 627Q384 623 313 339T242 52Q242 48 253 48T330 47Q335 47 349 47T373 46Q499 46 581 128Q617 164 640 212T683 339T703 469Z"></path></g><g data-mml-node="mo" transform="translate(1328,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mo" transform="translate(1717,0)"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g><g data-mml-node="mn" transform="translate(2495,0)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="mo" transform="translate(2995,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g><g data-mml-node="mo" transform="translate(3384,0)"><path data-c="28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path></g><g data-mml-node="mi" transform="translate(3773,0)"><path data-c="1D434" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"></path></g><g data-mml-node="mi" transform="translate(4523,0)"><path data-c="1D435" d="M231 637Q204 637 199 638T194 649Q194 676 205 682Q206 683 335 683Q594 683 608 681Q671 671 713 636T756 544Q756 480 698 429T565 360L555 357Q619 348 660 311T702 219Q702 146 630 78T453 1Q446 0 242 0Q42 0 39 2Q35 5 35 10Q35 17 37 24Q42 43 47 45Q51 46 62 46H68Q95 46 128 49Q142 52 147 61Q150 65 219 339T288 628Q288 635 231 637ZM649 544Q649 574 634 600T585 634Q578 636 493 637Q473 637 451 637T416 636H403Q388 635 384 626Q382 622 352 506Q352 503 351 500L320 374H401Q482 374 494 376Q554 386 601 434T649 544ZM595 229Q595 273 572 302T512 336Q506 337 429 337Q311 337 310 336Q310 334 293 263T258 122L240 52Q240 48 252 48T333 46Q422 46 429 47Q491 54 543 105T595 229Z"></path></g><g data-mml-node="mi" transform="translate(5282,0)"><text data-variant="normal" transform="scale(1,-1)" font-size="884px" font-family="serif">面</text></g><g data-mml-node="mo" transform="translate(6282,0)"><path data-c="29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path></g></g></g></svg></mjx-container>）📼<br>成本很低，但只能顺序读写</li>
+<li>我们意念合一！：磁鼓(<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="7.128ex" height="1.57ex" role="img" focusable="false" viewBox="0 -683 3150.4 694"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g><g data-mml-node="mi" transform="translate(500,0)"><path data-c="1D437" d="M287 628Q287 635 230 637Q207 637 200 638T193 647Q193 655 197 667T204 682Q206 683 403 683Q570 682 590 682T630 676Q702 659 752 597T803 431Q803 275 696 151T444 3L430 1L236 0H125H72Q48 0 41 2T33 11Q33 13 36 25Q40 41 44 43T67 46Q94 46 127 49Q141 52 146 61Q149 65 218 339T287 628ZM703 469Q703 507 692 537T666 584T629 613T590 629T555 636Q553 636 541 636T512 636T479 637H436Q392 637 386 627Q384 623 313 339T242 52Q242 48 253 48T330 47Q335 47 349 47T373 46Q499 46 581 128Q617 164 640 212T683 339T703 469Z"></path></g><g data-mml-node="mo" transform="translate(1550.2,0)"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g><g data-mml-node="mi" transform="translate(2550.4,0)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g></g></g></svg></mjx-container>)🥁<br>n个并联的一圈磁带和读写头，比较快的随机读写</li>
+<li>杂交的内卷（磁带<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0.02ex;" xmlns="http://www.w3.org/2000/svg" width="1.76ex" height="1.09ex" role="img" focusable="false" viewBox="0 -491 778 482"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g></g></g></svg></mjx-container>磁鼓）：磁盘(<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="7.128ex" height="1.57ex" role="img" focusable="false" viewBox="0 -683 3150.4 694"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="mi" transform="translate(500,0)"><path data-c="1D437" d="M287 628Q287 635 230 637Q207 637 200 638T193 647Q193 655 197 667T204 682Q206 683 403 683Q570 682 590 682T630 676Q702 659 752 597T803 431Q803 275 696 151T444 3L430 1L236 0H125H72Q48 0 41 2T33 11Q33 13 36 25Q40 41 44 43T67 46Q94 46 127 49Q141 52 146 61Q149 65 218 339T287 628ZM703 469Q703 507 692 537T666 584T629 613T590 629T555 636Q553 636 541 636T512 636T479 637H436Q392 637 386 627Q384 623 313 339T242 52Q242 48 253 48T330 47Q335 47 349 47T373 46Q499 46 581 128Q617 164 640 212T683 339T703 469Z"></path></g><g data-mml-node="mo" transform="translate(1550.2,0)"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g><g data-mml-node="mi" transform="translate(2550.4,0)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g></g></g></svg></mjx-container>)💽<br>随机存储的速度还是相对很慢<br>改进：<br>Advanced Host Controller Interface (AHCI)<br>Native Command Queuing (NCQ)<br>半离线地处理读写指令，由磁盘控制器对指令进行排序和合并<br>…等等技术<br>如今的磁盘控制器和缓存已经是一个小的CPU！操作系统无脑发数据就可以了。<br>存在着一整套协议，一定程度可以控制磁盘的service（比如确保写入持久存储）</li>
+<li>保存图标上的活化石：软盘💾<br>移动的存储介质<br>可移动的代价：不清洁的环境，读写非常慢</li>
+</ul>
+<p>坑（光）存储🪐：</p>
+<ul>
+<li>把字刻在<del>石头</del>塑料上！：光盘💿<br>可以刻得很密集，还可以像刻版印刷一样压出来！<br>便于复制分发，一瞬间就可以写入<br>非常持久！</li>
+<li>书写新世纪的挽歌：🗿<br>今日份罗塞塔石碑<br>刻在玻璃内部的永久存储</li>
+</ul>
+<p>电存储：短时高速高密度的最终解决方案</p>
+<ul>
+<li>SSD闪存🔌<br>几乎具有所有优点：容量越大，读写越快，超大规模并行<br>已经超过了接口协议的能力<br>磁盘控制器：电路并行+算法+一个微型的<strong>计算机系统</strong>：使得优化后的读写极快<br>（软件定义硬件！）<br>致命的缺点：Wear out，放不干净电，万次读写<br>FTL：如何克服Wear out？又一个虚拟内存系统，VR眼jing<ul>
+<li>security issue:<br>整个是一个copy-on-write系统，修改就复制，尽量不做抹除操作<br>这样并不能抹除</li>
+<li>越加密，越复杂，越安全，可靠性就会越低（无法恢复）</li>
+</ul>
+</li>
+</ul>
+<p><strong>劣质产品重听</strong></p>
+<h2 id="Lecture-26-P-I-x2F-O"><a href="#Lecture-26-P-I-x2F-O" class="headerlink" title="Lecture 26(P) I/O"></a>Lecture 26(P) I/O</h2><p>计算机系统对外部世界的边缘：I/O<br>Mem-mapped I/O: CPU并不关心自己接的是什么，它只能看到一个地址空间<br>把一部分地址空间分给“外面”就可以了<br>I/O就是“线”<br>把寄存器赋予一个地址<br>通过控制寄存器，状态寄存器，数据寄存器，来和外设交互</p>
+<ul>
+<li>串口(UART)🔌</li>
+<li>键盘控制器接口(IBM PC/AT 8042 PS/2)⌨</li>
+<li>磁盘控制器💽<ul>
+<li>ATA 40pin</li>
+<li>IDE,SATA…</li>
+</ul>
+</li>
+<li>打印机🖨<ul>
+<li>早期的画的是“矢量图”，“移动的画笔”<br>画面就是绘制指令序列<br>PostScript 是描述页面的DSL (Page DL),类似于一种汇编<br>PDF 就是 PostScript Ultra<br>打印机的CPU就是一个Page DL的解释器，<br>打印机是将汇编指令翻译成机械运动的机器</li>
+</ul>
+</li>
+<li>Something not exist yet: 💫<br>获取良好的可拓展性：为未来的外设留下接口<br>需要一个特殊的接口，把I/O虚拟化</li>
+<li>PCI总线：<br>总线有自己的虚拟的地址空间，CPU通过总线和外设交互<br>总线会识别I/O设备，给他们分配总线地址，并负责把数据分发到各个I/O设备上<br>CPU只能看到一个I/O也就是总线。<ul>
+<li>总线还会桥接到其他总线上，比如USB总线</li>
+<li>即插即用不是一个Easy story</li>
+</ul>
+</li>
+</ul>
+<p>但CPU只有一个可屏蔽中断引脚<br>所以需要一个中断控制器,管理（排序）来自不同外设的中断<br>Intel 8259 PIC, APIC…</p>
+<ul>
+<li>IPI: CPU 也可以给 CPU 发中断<br>总是先Reset一个CPU，执行启动程序，然后再给其他CPU发IPI，启动他们<br>CPU 也是 CPU 的外设！</li>
+</ul>
+<p>如何处理非常慢的外设交互（eg.大数据存盘）<br>交给其他的CPU去做，不过这个CPU不需要很强：只会memcpy就可以了！<br>DMA 协处理器🐟<br><strong>TLB Flash摸鱼了🐟</strong></p>
+<p><strong>Keyboard ctrler的地方摸鱼了🐟</strong></p>
+<p>计算机系统里充满了CPU</p>
+<p>CPU的核心，DMA，打印机，网卡…<br>以及…<strong>GPU</strong>！</p>
+<p>马里奥的奇迹🪐<br>在性能很低的处理器上实现60fps<br>GPU的祖宗NES PPU</p>
+<p>走向3D<br>虚假的真实感：Screen Space Ambient Occlusion<br>从伪-3D到空间多面体建模<br>真实的真实感：Ray Tracing</p>
+<p>有限的、固定的、重复的指令，把这个功能分离出来，就可以做得时钟周期更快，<strong>并行度更高</strong></p>
+<p><strong>最后总结一下🐟</strong></p>
+<h2 id="Lecture-27-P-vfs-Driver"><a href="#Lecture-27-P-vfs-Driver" class="headerlink" title="Lecture 27(P) vfs, Driver"></a>Lecture 27(P) vfs, Driver</h2><p>文件是“虚拟磁盘”<br>Syscalls: mmap,lseek,ftruncate</p>
+<blockquote>
+<p>GPT的一个趋势：self-validation</p>
+</blockquote>
+<p>还是那个方法论：用AI来写一个小的验证代码</p>
+<p>无尽的细节：偏移量管理<br>父子进程共用一个offset，文件描述符是浅拷贝。（存在大量的并发追加操作，如写入终端、写入日志）<br>open:获得一个独立的offset<br>dup: 两个共享offset<br>execve: 文件描述符不变<br>O_APPEND: 保证写入的时候是追加，打开时永远指向文件末尾</p>
+<blockquote>
+<p>有大量的细节都是与fork交叉带来的，因为进程的状态机并不只是内存和寄存器，还有操作系统内核中维护的文件描述符表、页表、信号处理表等等。<br>操作系统：<strong>平方级别</strong>（<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.576ex;" xmlns="http://www.w3.org/2000/svg" width="2.825ex" height="2.463ex" role="img" focusable="false" viewBox="0 -833.9 1248.8 1088.7"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msubsup"><g data-mml-node="mi"><path data-c="1D436" d="M50 252Q50 367 117 473T286 641T490 704Q580 704 633 653Q642 643 648 636T656 626L657 623Q660 623 684 649Q691 655 699 663T715 679T725 690L740 705H746Q760 705 760 698Q760 694 728 561Q692 422 692 421Q690 416 687 415T669 413H653Q647 419 647 422Q647 423 648 429T650 449T651 481Q651 552 619 605T510 659Q484 659 454 652T382 628T299 572T226 479Q194 422 175 346T156 222Q156 108 232 58Q280 24 350 24Q441 24 512 92T606 240Q610 253 612 255T628 257Q648 257 648 248Q648 243 647 239Q618 132 523 55T319 -22Q206 -22 128 53T50 252Z"></path></g><g data-mml-node="mn" transform="translate(845.3,363) scale(0.707)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path></g><g data-mml-node="mi" transform="translate(748,-247) scale(0.707)"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g></g></g></g></svg></mjx-container>）的复杂度膨胀</p>
+</blockquote>
+<p>如何实现Everything is a file？<br>真实的文件好说，虚拟的文件呢？这里听一下🐟</p>
+<p>文件 = 实现了文件操作的 “Anything”（能“像文件一样”被操作的东西都是文件）<br>设备驱动: 把系统调用 “翻译” 成与设备能听懂的数据的内核代码<br>vfs的虚拟文件们：</p>
+<ul>
+<li>devfs</li>
+<li>procfs</li>
+</ul>
+<p>都是有一个驱动程序，在file syscall，往用户传进来的buf里写，假装自己是个文件。</p>
+<h2 id="Lecture-28-P-fs"><a href="#Lecture-28-P-fs" class="headerlink" title="Lecture 28(P) fs"></a>Lecture 28(P) fs</h2><div class="note note-primary icon-padding"><i class="note-icon fa-solid fa-circle-arrow-right"></i><p><a class="link" target="_blank" rel="noopener" href="https://jyywiki.cn/OS/2024/lect28.md">务必搭配jyywiki食用 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+</div>
+<p>信息的局部性：树状层次结构。<br>数据/非数据的文件管理：</p>
+<ul>
+<li>Unix-like: 都在/中</li>
+<li>数据Windows: C: D: E:…（A. B.是软盘）每个驱动器一个根<br>非数据Windows特有的机制：注册表（一个巨大的配置文件）<br>但它不在文件系统里<br>Win里面有一类为设备的对象，但也有类似Everything is a file的机制</li>
+</ul>
+<p>mount 🐟<br>mount就是目录树的嫁接。（改掉了原来的目录，但是文件还在）<br>mount就可以把某一个设备挂载到某一个目录上<br>procfs是一个不需要设备的文件系统，只需要一个驱动程序<br>/proc 其实只是一个普通的目录，只是procfs被mount挂载在了上面（甚至可以被挂载在不同地方很多份）<br>提供了<strong>灵活性</strong>，不同的目录可以分配给不同的设备</p>
+<p>文件可以是是虚拟的设备<br>那么把某个文件(比如某个镜像)挂载到某个目录上呢？<br>loopback device（不能被写在？🐟）<br>制造一个虚拟的设备，把文件关联到这个设备上，然后把这个设备挂载到某个目录上</p>
+<p>FHS🐟</p>
+<p>目录管理 mkdir,rmdir,getdents<br>User-friendly: globbing</p>
+<p>文件系统允许一个文件被多次引用<br>硬链接🐟<br>符号链接/软链接(Symbolic Link)🐟</p>
+<p>现实我们面对的是块设备而不是随机存储设备：<br>小的读写都会被严重放大</p>
+<ul>
+<li><p>古早现实：单目录文件非常少不超过几十个，单文件比较小，文件系统要尽可能小<br>纯真的链表最为合适<br>目录：就是一个文件<br>两种设计🐟<br>解决可靠性问题：存很多份</p>
+<p>FAT32.读代码🐟</p>
+</li>
+</ul>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>《 Email to Green Advisor 》<br>这篇其实从学期一初就开始写了，希望的是等到OS这门课出分之后发给绿导师，希望当时我是以一个幸存者的心态，完成了这门课全部的任务，取得了一个不错的分数（不得不这样）比较轻松的发送这篇邮件。</p>
+<p>这门课给我的体验的是很好的，我想对比的是同是这学期的算法设计与分析课。黄宇老师的算法课有着非常的清晰的讲解，我也不得不承认确实是一门好课，我用了一个月左右才想清楚了为什么这门课会让我感到痛苦。就是：对于对OI有一定接触的我来说，这些经典“算法”早已没有了初见的新鲜感，更重要的是每节课都在向我传达一个概念“你又不能做什么，你又没法会什么”，因为这些都需要“灵感”，（课上的方法论甚至都不足以解决那占比80%的考试题😭（当然任何形式的考试都承担着检验以外的筛选作用））。相比之下我觉得OS给我的感觉是每一节课后，“我又能做成什么，我又能解决更多问题（乃至所有问题）”。不同于上算法课之前上刑场一般的心理负担，每节操作系统课虽然带着成吨的没读完的OSTEP，没理解完的讲义，没整理完的笔记，没学完的工具，没写完的实验，但都是无比期待的。我觉得这可能是一种“极客主义”。</p>
+<p>我想提出一点异见的就是您说只发表“not trivial”的工作。我接触到了一个概念就是do not judge novelty，我觉得，对于一般的研究者而言，他们可能终其一生都无法做出creative的工作，但他们的工作也是有价值的，也需要一个获得认同的平台。（在知乎看到过一个人说一个化学教授说，我们做实验，失败了，也是有价值的，至少别人看到了，知道这样做不行，不用再好费时间了。类似地，CS里面有一些仅仅是方法的融合怪，至少也可以证明这些方法的交叉不会产生奇妙的“化学反应”。）可能只有聪明人做科研才是有价值的，但是在大量聪明人去经商/捞钱的今天，让一些不聪明的人去回收一些low fruit也是应该的。（虽然说 do not judge novelty今天已经变味，更多成为了一种灌水的辩护，这个界限也很难分辨…）</p>
+<p>还有就是对这门课程的建议，我觉得这门课的地位已经不言而喻，作为第一个入选CSDIY的国内课程，我觉得这是无上的光荣（比什么CCF发的什么奖项含金量高太多，毕竟这是华语区<strong>热爱CS</strong>的人投出来的票，好过某随意增减名额把OIer的未来当儿戏的组织太多）。相比于上海交大的一些透露着买办阶级的所谓的好课（质量固然是有的，毕竟是从海外ctrl+C/V来的），这门课更像是一座灯塔。但我发现了一个问题就是，由于您各种意义上一个“聪明人”，所以您上课的节奏虽然适中，但有一些结构上的问题加以忽略。对于拔尖班之类的大佬，他们的可以很快地处理和解决问题点，并且在节奏稍缓的时候迅速的将结构组织起来。但对于我这样反应比较慢的人来说，我全程都在高强度的处理一些思考点（有些甚至还当堂处理不完）最后的感受就是只体会到了一些零散的点。之后虽然有回放可以反复观看，但是由于短时记忆遗忘的问题，就会有一种夹生感，最后需要数倍的时间去组织起来。因此我觉得如果在讲义和授课中更加强调一点结构，这门课就会向普通的同学，乃至开源之后的更广泛的受众群体更加友好。</p>
+<p>系统知识，明白自己干什么，提高理想注意，水完这个<br>建议增加分级制度和每年新内容的Update Log</p>
+<p>课程主页爬到了第三,第二是AI，第一是默认页</p>
 
             </div>
 
@@ -1268,7 +1403,7 @@ mjx-container[display="true"] + br {
     <div class="post-toc">
         <div class="toc-title">On this page</div>
         <div class="page-title">Talk to the God——Notes for jyy OS</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#References"><span class="nav-text">References</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Waiting-List"><span class="nav-text">Waiting List</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%AA%E8%AE%BA"><span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E5%88%AB%E8%AF%B4%E6%98%8E"><span class="nav-text">特别说明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-1"><span class="nav-text">Lecture 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-2"><span class="nav-text">Lecture 2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#M1-pstree"><span class="nav-text">M1:pstree</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-3"><span class="nav-text">Lecture 3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-4"><span class="nav-text">Lecture 4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-5-C"><span class="nav-text">Lecture 5 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-6-C"><span class="nav-text">Lecture 6 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-7-C"><span class="nav-text">Lecture 7 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-8-Snack"><span class="nav-text">Lecture 8 (Snack)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-9-C"><span class="nav-text">Lecture 9 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-10-C"><span class="nav-text">Lecture 10 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-11-Snack"><span class="nav-text">Lecture 11 (Snack)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-12-C"><span class="nav-text">Lecture 12 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-13-C"><span class="nav-text">Lecture 13 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-14-V"><span class="nav-text">Lecture 14 (V)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-15-V"><span class="nav-text">Lecture 15 (V)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-16-V"><span class="nav-text">Lecture 16 (V)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-17-V"><span class="nav-text">Lecture 17 (V)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#L1"><span class="nav-text">L1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-18-V"><span class="nav-text">Lecture 18 (V)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-19-V-%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6%EF%BC%8C%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5"><span class="nav-text">Lecture 19 (V) 可执行文件，静态链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-20-V"><span class="nav-text">Lecture 20 (V)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-21-K-Syscall-intr"><span class="nav-text">Lecture 21 (K) Syscall, intr</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-22-K-from-Thread-to-Process"><span class="nav-text">Lecture 22 (K) from Thread to Process</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-23-K-Schedule"><span class="nav-text">Lecture 23 (K) Schedule</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#References"><span class="nav-text">References</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Waiting-List"><span class="nav-text">Waiting List</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%AA%E8%AE%BA"><span class="nav-text">绪论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E5%88%AB%E8%AF%B4%E6%98%8E"><span class="nav-text">特别说明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-1"><span class="nav-text">Lecture 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-2"><span class="nav-text">Lecture 2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#M1-pstree"><span class="nav-text">M1:pstree</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-3"><span class="nav-text">Lecture 3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-4"><span class="nav-text">Lecture 4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-5-C"><span class="nav-text">Lecture 5 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-6-C"><span class="nav-text">Lecture 6 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-7-C"><span class="nav-text">Lecture 7 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-8-Snack"><span class="nav-text">Lecture 8 (Snack)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-9-C"><span class="nav-text">Lecture 9 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-10-C"><span class="nav-text">Lecture 10 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-11-Snack"><span class="nav-text">Lecture 11 (Snack)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-12-C"><span class="nav-text">Lecture 12 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-13-C"><span class="nav-text">Lecture 13 (C)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-14-V"><span class="nav-text">Lecture 14 (V)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-15-V"><span class="nav-text">Lecture 15 (V)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-16-V"><span class="nav-text">Lecture 16 (V)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-17-V"><span class="nav-text">Lecture 17 (V)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#L1"><span class="nav-text">L1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-18-V"><span class="nav-text">Lecture 18 (V)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-19-V-%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6%EF%BC%8C%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5"><span class="nav-text">Lecture 19 (V) 可执行文件，静态链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-20-V"><span class="nav-text">Lecture 20 (V)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-21-K-Syscall-intr"><span class="nav-text">Lecture 21 (K) Syscall, intr</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-22-K-from-Thread-to-Process"><span class="nav-text">Lecture 22 (K) from Thread to Process</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-23-K-Schedule"><span class="nav-text">Lecture 23 (K) Schedule</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-24-K-K-of-what%E2%80%A6-from-OS-to-MetaPhysics"><span class="nav-text">Lecture 24 (K? K of what…) from OS to MetaPhysics</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-25-P-1-Bit-Storage"><span class="nav-text">Lecture 25 (P) 1-Bit Storage</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-26-P-I-x2F-O"><span class="nav-text">Lecture 26(P) I&#x2F;O</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-27-P-vfs-Driver"><span class="nav-text">Lecture 27(P) vfs, Driver</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-28-P-fs"><span class="nav-text">Lecture 28(P) fs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8E%E8%AE%B0"><span class="nav-text">后记</span></a></li></ol>
 
     </div>
 </div>
