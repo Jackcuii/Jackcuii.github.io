@@ -366,8 +366,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="pc">2024-11-02 18:55:33</span>
-            <span class="mobile">2024-11-02 18:55</span>
+            <span class="pc">2024-11-04 12:58:38</span>
+            <span class="mobile">2024-11-04 12:58</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -389,12 +389,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fa-regular fa-file-word"></i>&nbsp;<span>3k Words</span>
+            <i class="fa-regular fa-file-word"></i>&nbsp;<span>3.2k Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fa-regular fa-clock"></i>&nbsp;<span>12 Mins</span>
+            <i class="fa-regular fa-clock"></i>&nbsp;<span>13 Mins</span>
         </span>
     
     
@@ -513,7 +513,8 @@
 <p>自己写的函数呢?</p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">fn f(i: i32) -&gt; Result&lt;i32, bool&gt; &#123;</span><br><span class="line">    if i &gt;= 0 &#123; Ok(i) &#125;</span><br><span class="line">    else &#123; Err(false) &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fn g(i: i32) -&gt; Result&lt;i32, bool&gt; &#123;</span><br><span class="line">    let t = f(i)?;</span><br><span class="line">    Ok(t) // 因为确定 t 不是 Err, t 在这里已经是 i32 类型</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fn main() &#123;</span><br><span class="line">    let r = g(10000);</span><br><span class="line">    if let Ok(v) = r &#123;</span><br><span class="line">        println!(&quot;Ok: g(10000) = &#123;&#125;&quot;, v);</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        println!(&quot;Err&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 <p>? 符的实际作用是将 Result 类非异常的值直接取出，如果有异常就将异常 Result 返回出去。所以，? 符仅用于返回值类型为 Result&lt;T, E&gt; 的函数，其中 E 类型必须和 ? 所处理的 Result 的 E 类型一致。</p>
-
+<p>用kind方法可以获取错误类型<br>像try catch一样的用法</p>
+<div class="highlight-container" data-rel="Rust"><figure class="iseeu highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">use</span> std::io;</span><br><span class="line"><span class="keyword">use</span> std::io::Read;</span><br><span class="line"><span class="keyword">use</span> std::fs::File;</span><br><span class="line"></span><br><span class="line"><span class="keyword">fn</span> <span class="title function_">read_text_from_file</span>(path: &amp;<span class="type">str</span>) <span class="punctuation">-&gt;</span> <span class="type">Result</span>&lt;<span class="type">String</span>, io::Error&gt; &#123;</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">f</span> = File::<span class="title function_ invoke__">open</span>(path)?;</span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">mut </span><span class="variable">s</span> = <span class="type">String</span>::<span class="title function_ invoke__">new</span>();</span><br><span class="line">    f.<span class="title function_ invoke__">read_to_string</span>(&amp;<span class="keyword">mut</span> s)?;</span><br><span class="line">    <span class="title function_ invoke__">Ok</span>(s)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">fn</span> <span class="title function_">main</span>() &#123;</span><br><span class="line">    <span class="keyword">let</span> <span class="variable">str_file</span> = <span class="title function_ invoke__">read_text_from_file</span>(<span class="string">&quot;hello.txt&quot;</span>);</span><br><span class="line">    <span class="keyword">match</span> str_file &#123;</span><br><span class="line">        <span class="title function_ invoke__">Ok</span>(s) =&gt; <span class="built_in">println!</span>(<span class="string">&quot;&#123;&#125;&quot;</span>, s),</span><br><span class="line">        <span class="title function_ invoke__">Err</span>(e) =&gt; &#123;</span><br><span class="line">            <span class="keyword">match</span> e.<span class="title function_ invoke__">kind</span>() &#123;</span><br><span class="line">                io::ErrorKind::NotFound =&gt; &#123;</span><br><span class="line">                    <span class="built_in">println!</span>(<span class="string">&quot;No such file&quot;</span>);</span><br><span class="line">                &#125;,</span><br><span class="line">                _ =&gt; &#123;</span><br><span class="line">                    <span class="built_in">println!</span>(<span class="string">&quot;Cannot read the file&quot;</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
             </div>
 
             
